@@ -1,0 +1,23 @@
+{% extends 'painless/base.painless'%}
+{% load is_keyword %}
+{% block content %}
+{% if is_keyword %}
+if ({{col}}?.length() == 10) {
+    def result = false;
+    try {
+        def res = Float.parseFloat({{ col }});
+    } catch (Exception e) {
+        result = true;
+    }
+    return result
+} else {
+    return true
+}
+{% else %}
+if ({{col}}.toString().length() == 10) {
+    return false
+} else {
+    return true
+}
+{% endif %}
+{% endblock %}

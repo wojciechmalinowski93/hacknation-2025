@@ -1,0 +1,50 @@
+{% load static i18n %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% trans "A comment was posted on the resource" %}</title>
+</head>
+<body>
+<div style="width:650px; margin:auto;">
+    <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td style="width:100%; overflow:hidden; float:left;">
+                <img src="{{ host }}{% static "mails/logo-otwarte-dane.png" %}" alt="{% trans 'Download images' %}" style="height:2cm;">
+            </td>
+        </tr>
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td align="left" style="padding-top:10px; padding-bottom:10px; max-width:580px;border-collapse: collapse;text-align:left; vertical-align:middle;">
+                <div style="text-align:left;font-size:28px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid black;color:black;">
+                    {% trans "A COMMENT WAS POSTED ON THE RESOURCE" %} {{ resource.title }}
+                </div>
+            </td>
+        </tr>
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td align="left" style="padding-top:10px; padding-bottom:10px; max-width:580px; overflow:hidden;">
+                <img src="{{ host }}{% static "mails/kreska-mail.png" %}" alt="{% trans 'Download images' %}">
+            </td>
+        </tr>
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td align="left" style="padding-top:10px; padding-bottom:10px; max-width:580px;border-collapse: collapse;text-align:left;vertical-align:middle;">
+                {% if test %}
+                <p>
+                    {% trans "addresses:" %}  {{ resource.comment_mail_recipients|join:", " }}<br />
+                </p>
+                {% endif %}
+                <p style="text-align:left;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid black;color:black;line-height:1.15;display: block !important;">
+                    {% blocktrans with title=resource.title dataset_title=resource.dataset.title url=resource.frontend_absolute_url %}On the resource {{ title }} [<a href="{{ url }}">{{ url }}</a>] from data set {{ dataset_title }} was posted a comment:{% endblocktrans %}<br />
+                </p>
+                <p style="text-align:left;font-family: Open Sans Light , Arial, Helvetica, sans-serif;font-weight:700;text-decoration:none solid black;color:black;line-height:1.15;display:block !important;">
+                    {{ comment|linebreaksbr }}
+                </p>
+            </td>
+        </tr>
+        {% trans 'Wiadomość została wygenerowana automatycznie przez oprogramowanie portalu Dane.gov.pl w wyniku zgłoszenia przez użytkownika uwagi o treści jak wyżej.<br><br>Kontakt z Zespołem portalu Dane.gov.pl: <a href="mailto:kontakt@dane.gov.pl" target="_blank">kontakt@dane.gov.pl</a>' as footer_txt %}
+        {% include 'mails/_footer.html' with signature=False footer_txt=footer_txt font_color='black' %}
+    </table>
+</div>
+</body>
+</html>

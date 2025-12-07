@@ -1,0 +1,14 @@
+<ul class="nav nav-pills" id="{{tab_id}}-pills-tab" role="tablist">
+    {% for nav in tabs_nav %}
+        <li class="nav-item">
+            <a class="nav-link{% if forloop.first %} active{% endif %}" id="{{ nav.pane_id }}-tab" data-toggle="pill" href="#{{ nav.pane_id }}" role="tab" aria-controls="{{nav.pane_id}}" aria-selected="false">{{ nav.label }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<div class="tab-content" id="{{tab_id}}-pills-tabContent">
+    {% for tab_details in tabs %}
+        <div class="tab-pane fade{% if forloop.first %} show active{% endif %}" id="{{ tab_details.pane_id }}" role="tabpanel" aria-labelledby="{{ tab_details.pane_id }}-tab">
+            {{ tab_details.table }}
+        </div>
+    {% endfor %}
+</div>

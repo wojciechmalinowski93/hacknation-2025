@@ -1,0 +1,44 @@
+{% load i18n static%}
+
+{% include "widgets/data_alert.html" %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/resource_widgets.css' %}">
+
+<table class="table table-stripped table-condensed resource-widget">
+    <thead>
+    <tr>
+        <th>{% blocktrans %}Add verification rule{% endblocktrans %}:</th>
+        {% for select in selects %}
+            <th>
+                <select name="rule_type_{{ select.1 }}">
+                    {{ select.0|safe }}
+                </select>
+            </th>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>{% blocktrans %}Data type{% endblocktrans %}:</th>
+        {% for field in fields %}
+            <th>{{ field }}</th>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>{% blocktrans %}Columns headers{% endblocktrans %}:</th>
+        {% for header in headers %}
+            <th title="{{ header }}">{{ header }}</th>
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% if data %}
+        {% for row in data %}
+            <tr>
+                <td></td>
+                {% for col in row %}
+                    <td>{{ col }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+</table>

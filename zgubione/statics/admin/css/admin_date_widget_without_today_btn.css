@@ -1,0 +1,6 @@
+.field-planned_sending_date .datetimeshortcuts a:first-child {
+    display: none;
+}
+.field-planned_sending_date .datetimeshortcuts a[id^="calendarlink"] {
+    display: inline;
+}

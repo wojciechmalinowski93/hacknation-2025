@@ -1,0 +1,1653 @@
+{
+    "info": {
+        "version": "1.0",
+        "description": "PLACEHOLDER",
+        "title": "DANE.GOV.PL RDF API (DCAT-AP)"
+    },
+    "paths": {
+        "/catalog": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns catalog of datasets",
+                "description": "<p>Datasets data in the format of <b>dcat:Catalog</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "required": false,
+                        "schema": {
+                            "example": 1,
+                            "description": "Page number. Default value is 1.",
+                            "minimum": 1,
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Page number. Default value is 1."
+                    },
+                    {
+                        "in": "query",
+                        "name": "per_page",
+                        "required": false,
+                        "schema": {
+                            "example": 10,
+                            "description": "Page size. Default value is 20, max allowed page size is 100.",
+                            "minimum": 1,
+                            "maximum": 100,
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Page size. Default value is 20, max allowed page size is 100."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "<p>Sort distributions inside datasets by following fields in ascending or descending direction.<br/></p><table><thead><tr><th>Field</th><th>Examples</th></tr></thead><tbody><tr><td>id</td><td><a href=\"/catalog?sort=id\">/catalog?sort=id</a><br/><a href=\"/catalog?sort=-id\">/catalog?sort=-id</a></td></tr><tr><td>title</td><td><a href=\"/catalog?sort=title\">/catalog?sort=title</a><br/><a href=\"/catalog?sort=-title\">/catalog?sort=-title</a></td></tr><tr><td>modified</td><td><a href=\"/catalog?sort=modified\">/catalog?sort=modified</a><br/><a href=\"/catalog?sort=-modified\">/catalog?sort=-modified</a></td></tr><tr><td>created</td><td><a href=\"/catalog?sort=created\">/catalog?sort=created</a><br/><a href=\"/catalog?sort=-created\">/catalog?sort=-created</a></td></tr></tbody></table>"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseCatalog"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog.{rdf_format}": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns catalog of datasets",
+                "description": "<p>Datasets data in the format of <b>dcat:Catalog</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "required": false,
+                        "schema": {
+                            "example": 1,
+                            "description": "Page number. Default value is 1.",
+                            "minimum": 1,
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Page number. Default value is 1."
+                    },
+                    {
+                        "in": "query",
+                        "name": "per_page",
+                        "required": false,
+                        "schema": {
+                            "example": 10,
+                            "description": "Page size. Default value is 20, max allowed page size is 100.",
+                            "minimum": 1,
+                            "maximum": 100,
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Page size. Default value is 20, max allowed page size is 100."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "<p>Sort distributions inside datasets by following fields in ascending or descending direction.<br/></p><table><thead><tr><th>Field</th><th>Examples</th></tr></thead><tbody><tr><td>id</td><td><a href=\"/catalog?sort=id\">/catalog?sort=id</a><br/><a href=\"/catalog?sort=-id\">/catalog?sort=-id</a></td></tr><tr><td>title</td><td><a href=\"/catalog?sort=title\">/catalog?sort=title</a><br/><a href=\"/catalog?sort=-title\">/catalog?sort=-title</a></td></tr><tr><td>modified</td><td><a href=\"/catalog?sort=modified\">/catalog?sort=modified</a><br/><a href=\"/catalog?sort=-modified\">/catalog?sort=-modified</a></td></tr><tr><td>created</td><td><a href=\"/catalog?sort=created\">/catalog?sort=created</a><br/><a href=\"/catalog?sort=-created\">/catalog?sort=-created</a></td></tr></tbody></table>"
+                    },
+                    {
+                        "in": "path",
+                        "name": "rdf_format",
+                        "required": true,
+                        "schema": {
+                            "example": "jsonld",
+                            "description": "Response format",
+                            "type": "string",
+                            "enum": [
+                                ".jsonld",
+                                ".json-ld",
+                                ".rdf",
+                                ".xml",
+                                ".n3",
+                                ".ttl",
+                                ".turtle",
+                                ".nt",
+                                ".ntriples",
+                                ".nt11",
+                                ".nquads",
+                                ".trix",
+                                ".trig"
+                            ]
+                        },
+                        "description": "Response format"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseCatalog"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/dataset/{id}": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns single dataset",
+                "description": "<p>Specific dataset data in the format of <b>dcat:Dataset</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "example": "447",
+                            "description": "Dataset ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Dataset ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseDataset"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/dataset/{id}.{rdf_format}": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns single dataset",
+                "description": "<p>Specific dataset data in the format of <b>dcat:Dataset</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "example": "447",
+                            "description": "Dataset ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Dataset ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "rdf_format",
+                        "required": true,
+                        "schema": {
+                            "example": "jsonld",
+                            "description": "Response format",
+                            "type": "string",
+                            "enum": [
+                                ".jsonld",
+                                ".json-ld",
+                                ".rdf",
+                                ".xml",
+                                ".n3",
+                                ".ttl",
+                                ".turtle",
+                                ".nt",
+                                ".ntriples",
+                                ".nt11",
+                                ".nquads",
+                                ".trix",
+                                ".trig"
+                            ]
+                        },
+                        "description": "Response format"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseDataset"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/dataset/{id},{slug}": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns single dataset",
+                "description": "<p>Specific dataset data in the format of <b>dcat:Dataset</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "example": "447",
+                            "description": "Dataset ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Dataset ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "slug",
+                        "required": true,
+                        "schema": {
+                            "example": "dataset-title",
+                            "description": "Dataset slug",
+                            "type": "string"
+                        },
+                        "description": "Dataset slug"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseDataset"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/dataset/{id},{slug}.{rdf_format}": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns single dataset",
+                "description": "<p>Specific dataset data in the format of <b>dcat:Dataset</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "example": "447",
+                            "description": "Dataset ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Dataset ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "slug",
+                        "required": true,
+                        "schema": {
+                            "example": "dataset-title",
+                            "description": "Dataset slug",
+                            "type": "string"
+                        },
+                        "description": "Dataset slug"
+                    },
+                    {
+                        "in": "path",
+                        "name": "rdf_format",
+                        "required": true,
+                        "schema": {
+                            "example": "jsonld",
+                            "description": "Response format",
+                            "type": "string",
+                            "enum": [
+                                ".jsonld",
+                                ".json-ld",
+                                ".rdf",
+                                ".xml",
+                                ".n3",
+                                ".ttl",
+                                ".turtle",
+                                ".nt",
+                                ".ntriples",
+                                ".nt11",
+                                ".nquads",
+                                ".trix",
+                                ".trig"
+                            ]
+                        },
+                        "description": "Response format"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseDataset"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/dataset/{id}/resource/{res_id}": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns single resource",
+                "description": "<p>Specific resource data in the format of <b>dcat:Distribution</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "example": "447",
+                            "description": "Dataset ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Dataset ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "res_id",
+                        "required": true,
+                        "schema": {
+                            "example": "1000",
+                            "description": "Resource ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Resource ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseDataset"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/dataset/{id}/resource/{res_id}.{rdf_format}": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns single resource",
+                "description": "<p>Specific resource data in the format of <b>dcat:Distribution</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "example": "447",
+                            "description": "Dataset ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Dataset ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "res_id",
+                        "required": true,
+                        "schema": {
+                            "example": "1000",
+                            "description": "Resource ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Resource ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "rdf_format",
+                        "required": true,
+                        "schema": {
+                            "example": "jsonld",
+                            "description": "Response format",
+                            "type": "string",
+                            "enum": [
+                                ".jsonld",
+                                ".json-ld",
+                                ".rdf",
+                                ".xml",
+                                ".n3",
+                                ".ttl",
+                                ".turtle",
+                                ".nt",
+                                ".ntriples",
+                                ".nt11",
+                                ".nquads",
+                                ".trix",
+                                ".trig"
+                            ]
+                        },
+                        "description": "Response format"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseDataset"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/dataset/{id}/resource/{res_id},{slug}": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns single resource",
+                "description": "<p>Specific resource data in the format of <b>dcat:Distribution</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "example": "447",
+                            "description": "Dataset ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Dataset ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "res_id",
+                        "required": true,
+                        "schema": {
+                            "example": "1000",
+                            "description": "Resource ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Resource ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "slug",
+                        "required": true,
+                        "schema": {
+                            "example": "resource-title",
+                            "description": "Resource slug",
+                            "type": "string"
+                        },
+                        "description": "Resource slug"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseDataset"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/dataset/{id}/resource/{res_id},{slug}.{rdf_format}": {
+            "get": {
+                "tags": [
+                    "RDF API Endpoints"
+                ],
+                "summary": "Returns single resource",
+                "description": "<p>Specific resource data in the format of <b>dcat:Distribution</b>.</p>\n",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Accept-Language",
+                        "required": false,
+                        "schema": {
+                            "description": "Sets language code. Supported languages are english (en) and polish (pl)",
+                            "type": "string"
+                        },
+                        "description": "Sets language code. Supported languages are english (en) and polish (pl)"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "example": "447",
+                            "description": "Dataset ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Dataset ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "res_id",
+                        "required": true,
+                        "schema": {
+                            "example": "1000",
+                            "description": "Resource ID",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "description": "Resource ID"
+                    },
+                    {
+                        "in": "path",
+                        "name": "slug",
+                        "required": true,
+                        "schema": {
+                            "example": "resource-title",
+                            "description": "Resource slug",
+                            "type": "string"
+                        },
+                        "description": "Resource slug"
+                    },
+                    {
+                        "in": "path",
+                        "name": "rdf_format",
+                        "required": true,
+                        "schema": {
+                            "example": "jsonld",
+                            "description": "Response format",
+                            "type": "string",
+                            "enum": [
+                                ".jsonld",
+                                ".json-ld",
+                                ".rdf",
+                                ".xml",
+                                ".n3",
+                                ".ttl",
+                                ".turtle",
+                                ".nt",
+                                ".ntriples",
+                                ".nt11",
+                                ".nquads",
+                                ".trix",
+                                ".trig"
+                            ]
+                        },
+                        "description": "Response format"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "valid response in json-ld format",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseDataset"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "openapi": "3.0.3",
+    "components": {
+        "schemas": {
+            "URIReference": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "required": [
+                    "@id"
+                ]
+            },
+            "URIReferences": {
+                "oneOf": [
+                    {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/URIReference"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/schemas/URIReference"
+                    }
+                ]
+            },
+            "MultiLanguageValues": {
+                "oneOf": [
+                    {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/MultiLanguageValue"
+                        },
+                        "minItems": 2
+                    },
+                    {
+                        "$ref": "#/components/schemas/MultiLanguageValue"
+                    }
+                ],
+                "example": [
+                    {
+                        "@language": "pl",
+                        "@value": "string"
+                    },
+                    {
+                        "@language": "en",
+                        "@value": "string"
+                    }
+                ]
+            },
+            "MultiLanguageValue": {
+                "type": "object",
+                "properties": {
+                    "@language": {
+                        "type": "string",
+                        "enum": [
+                            "pl",
+                            "en"
+                        ]
+                    },
+                    "@value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "@language",
+                    "@value"
+                ]
+            },
+            "XSDDateTime": {
+                "type": "object",
+                "properties": {
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "xsd:dateTime"
+                        ]
+                    },
+                    "@value": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "@type",
+                    "@value"
+                ]
+            },
+            "XSDDate": {
+                "type": "object",
+                "properties": {
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "xsd:date"
+                        ]
+                    },
+                    "@value": {
+                        "type": "string",
+                        "format": "date"
+                    }
+                },
+                "required": [
+                    "@type",
+                    "@value"
+                ]
+            },
+            "XSDDecimal": {
+                "type": "object",
+                "properties": {
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "xsd:decimal"
+                        ]
+                    },
+                    "@value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "@type",
+                    "@value"
+                ]
+            },
+            "LanguageReferences": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/URIReference"
+                },
+                "minItems": 2,
+                "maxItems": 2,
+                "example": [
+                    {
+                        "@id": "http://publications.europa.eu/resource/authority/language/ENG"
+                    },
+                    {
+                        "@id": "http://publications.europa.eu/resource/authority/language/POL"
+                    }
+                ]
+            },
+            "DCTMediaType": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "pattern": "^https:\\/\\/www\\.iana\\.org\\/assignments\\/media-types\\/.*$"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "dct:MediaType"
+                        ]
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type"
+                ]
+            },
+            "DCTMediaTypeOrExtent": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "pattern": "^http:\\/\\/publications\\.europa\\.eu\\/resource\\/authority\\/file-type\\/.*$"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "dct:MediaTypeOrExtent"
+                        ]
+                    },
+                    "skos:inScheme": {
+                        "$ref": "#/components/schemas/URIReference"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "skos:inScheme"
+                ]
+            },
+            "DCTLinguisticSystem": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "pattern": "^http:\\/\\/publications\\.europa\\.eu\\/resource\\/authority\\/language\\/\\w{3}$"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "dct:LinguisticSystem"
+                        ]
+                    },
+                    "skos:inScheme": {
+                        "$ref": "#/components/schemas/URIReference"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "skos:inScheme"
+                ]
+            },
+            "DCTLocation": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "dct:Location"
+                        ]
+                    },
+                    "skos:inScheme": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dct:identifier": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dcat:centroid": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type"
+                ]
+            },
+            "DCTFrequency": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "dct:Frequency"
+                        ]
+                    },
+                    "skos:inScheme": {
+                        "$ref": "#/components/schemas/URIReference"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "skos:inScheme"
+                ]
+            },
+            "SKOSConcept": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "skos:Concept"
+                        ]
+                    },
+                    "skos:prefLabel": {
+                        "$ref": "#/components/schemas/MultiLanguageValues"
+                    },
+                    "skos:inScheme": {
+                        "$ref": "#/components/schemas/URIReference"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "skos:inScheme"
+                ]
+            },
+            "SKOSConceptScheme": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "skos:ConceptScheme"
+                        ]
+                    },
+                    "dct:title": {
+                        "$ref": "#/components/schemas/MultiLanguageValues"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type"
+                ]
+            },
+            "VCARDKind": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "enum": [
+                            "_:VcardKind"
+                        ]
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "vcard:Kind"
+                        ]
+                    },
+                    "vcard:fn": {
+                        "type": "string"
+                    },
+                    "vcard:hasEmail": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "example": "mailto:user@domain.com"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "vcard:fn"
+                ]
+            },
+            "FOAFDocument": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "foaf:Document"
+                        ]
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type"
+                ]
+            },
+            "FOAFAgent": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "foaf:Agent"
+                        ]
+                    },
+                    "foaf:name": {
+                        "$ref": "#/components/schemas/MultiLanguageValues"
+                    },
+                    "foaf:mbox": {
+                        "type": "string",
+                        "format": "email",
+                        "example": "user@domain.com"
+                    },
+                    "foaf:homepage": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dct:type": {
+                        "$ref": "#/components/schemas/URIReference"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "foaf:name"
+                ]
+            },
+            "DCATDistribution": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "dcat:Distribution"
+                        ]
+                    },
+                    "dct:format": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dcat:mediaType": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dct:language": {
+                        "$ref": "#/components/schemas/LanguageReferences"
+                    },
+                    "adms:status": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dct:title": {
+                        "$ref": "#/components/schemas/MultiLanguageValues"
+                    },
+                    "dct:description": {
+                        "$ref": "#/components/schemas/MultiLanguageValues"
+                    },
+                    "dct:issued": {
+                        "$ref": "#/components/schemas/XSDDateTime"
+                    },
+                    "dct:modified": {
+                        "$ref": "#/components/schemas/XSDDateTime"
+                    },
+                    "dcat:accessURL": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dcat:downloadURL": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dcat:byteSize": {
+                        "$ref": "#/components/schemas/XSDDecimal"
+                    },
+                    "dcat:license": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "foaf:page": {
+                        "$ref": "#/components/schemas/URIReferences"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "dct:language",
+                    "adms:status",
+                    "dct:title",
+                    "dct:description",
+                    "dct:issued",
+                    "dct:modified",
+                    "dcat:accessURL",
+                    "dcat:downloadURL",
+                    "dcat:byteSize",
+                    "dcat:license"
+                ]
+            },
+            "DCATDataset": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "dcat:Dataset",
+                                "foaf:Document"
+                            ]
+                        }
+                    },
+                    "dcat:distribution": {
+                        "$ref": "#/components/schemas/URIReferences"
+                    },
+                    "dct:publisher": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dcat:contactPoint": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dcat:theme": {
+                        "$ref": "#/components/schemas/URIReferences"
+                    },
+                    "dcat:landingPage": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dct:accrualPeriodicity": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dct:language": {
+                        "$ref": "#/components/schemas/LanguageReferences"
+                    },
+                    "dct:identifier": {
+                        "type": "string"
+                    },
+                    "dct:title": {
+                        "$ref": "#/components/schemas/MultiLanguageValues"
+                    },
+                    "dct:description": {
+                        "$ref": "#/components/schemas/MultiLanguageValues"
+                    },
+                    "dct:issued": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "dct:modified": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "owl:versionInfo": {
+                        "type": "string"
+                    },
+                    "dcat:keyword": {
+                        "oneOf": [
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "foaf:page": {
+                        "$ref": "#/components/schemas/URIReferences"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "dct:publisher",
+                    "dcat:contactPoint",
+                    "dcat:landingPage",
+                    "dct:accrualPeriodicity",
+                    "dct:language",
+                    "dct:identifier",
+                    "dct:title",
+                    "dct:description",
+                    "dct:issued",
+                    "dct:modified",
+                    "owl:versionInfo"
+                ]
+            },
+            "DCATCatalog": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "dcat:Catalog"
+                        ]
+                    },
+                    "dct:publisher": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dct:language": {
+                        "$ref": "#/components/schemas/LanguageReferences"
+                    },
+                    "foaf:homepage": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dct:spatial": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dcat:themeTaxonomy": {
+                        "$ref": "#/components/schemas/URIReference"
+                    },
+                    "dcat:dataset": {
+                        "$ref": "#/components/schemas/URIReferences"
+                    },
+                    "dct:title": {
+                        "$ref": "#/components/schemas/MultiLanguageValues"
+                    },
+                    "dct:description": {
+                        "$ref": "#/components/schemas/MultiLanguageValues"
+                    },
+                    "dct:issued": {
+                        "$ref": "#/components/schemas/XSDDate"
+                    },
+                    "dct:modified": {
+                        "$ref": "#/components/schemas/XSDDateTime"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "dct:publisher",
+                    "dct:language",
+                    "foaf:homepage",
+                    "dct:spatial",
+                    "dcat:themeTaxonomy",
+                    "dct:title",
+                    "dct:description",
+                    "dct:issued",
+                    "dct:modified"
+                ]
+            },
+            "PagedCollection": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "enum": [
+                            "_:PagedCollection"
+                        ]
+                    },
+                    "@type": {
+                        "type": "string",
+                        "enum": [
+                            "hydra:PagedCollection"
+                        ]
+                    },
+                    "hydra:itemsPerPage": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "hydra:totalItems": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "hydra:previousPage": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "hydra:nextPage": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "hydra:firstPage": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "hydra:lastPage": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "required": [
+                    "@id",
+                    "@type",
+                    "hydra:itemsPerPage",
+                    "hydra:totalItems"
+                ]
+            },
+            "Namespaces": {
+                "type": "object",
+                "properties": {
+                    "adms": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/ns/adms#"
+                        ]
+                    },
+                    "dcat": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/ns/dcat#"
+                        ]
+                    },
+                    "dct": {
+                        "type": "string",
+                        "enum": [
+                            "http://purl.org/dc/terms/"
+                        ]
+                    },
+                    "foaf": {
+                        "type": "string",
+                        "enum": [
+                            "http://xmlns.com/foaf/0.1/"
+                        ]
+                    },
+                    "gsp": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.opengis.net/ont/geosparql#"
+                        ]
+                    },
+                    "hydra": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/ns/hydra/core#"
+                        ]
+                    },
+                    "locn": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/ns/locn#"
+                        ]
+                    },
+                    "owl": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/2002/07/owl#"
+                        ]
+                    },
+                    "rdf": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        ]
+                    },
+                    "rdfs": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/2000/01/rdf-schema#"
+                        ]
+                    },
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "http://schema.org/"
+                        ]
+                    },
+                    "skos": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/2004/02/skos/core#"
+                        ]
+                    },
+                    "spdx": {
+                        "type": "string",
+                        "enum": [
+                            "http://spdx.org/rdf/terms#"
+                        ]
+                    },
+                    "time": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/2006/time"
+                        ]
+                    },
+                    "vcard": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/2006/vcard/ns#"
+                        ]
+                    },
+                    "xsd": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.w3.org/2001/XMLSchema#"
+                        ]
+                    }
+                },
+                "required": [
+                    "adms",
+                    "dcat",
+                    "dct",
+                    "foaf",
+                    "gsp",
+                    "hydra",
+                    "locn",
+                    "owl",
+                    "rdf",
+                    "rdfs",
+                    "schema",
+                    "skos",
+                    "spdx",
+                    "time",
+                    "vcard",
+                    "xsd"
+                ]
+            },
+            "ResponseCatalog": {
+                "type": "object",
+                "properties": {
+                    "@context": {
+                        "$ref": "#/components/schemas/Namespaces"
+                    },
+                    "@graph": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/components/schemas/DCATCatalog"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PagedCollection"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCATDataset"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCATDistribution"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTMediaType"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTMediaTypeOrExtent"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTLinguisticSystem"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTLocation"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTFrequency"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SKOSConcept"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SKOSConceptScheme"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/VCARDKind"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/FOAFAgent"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/FOAFDocument"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "@context",
+                    "@graph"
+                ]
+            },
+            "ResponseDataset": {
+                "type": "object",
+                "properties": {
+                    "@context": {
+                        "$ref": "#/components/schemas/Namespaces"
+                    },
+                    "@graph": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/components/schemas/DCATDataset"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCATDistribution"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTMediaType"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTMediaTypeOrExtent"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTLinguisticSystem"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTFrequency"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SKOSConcept"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SKOSConceptScheme"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/VCARDKind"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/FOAFAgent"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "@context",
+                    "@graph"
+                ]
+            },
+            "ResponseResource": {
+                "type": "object",
+                "properties": {
+                    "@context": {
+                        "$ref": "#/components/schemas/Namespaces"
+                    },
+                    "@graph": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/components/schemas/DCATDistribution"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTMediaType"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTMediaTypeOrExtent"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DCTLinguisticSystem"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SKOSConcept"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SKOSConceptScheme"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "@context",
+                    "@graph"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "From date"
+msgstr "Od daty"
+
+msgid "To date"
+msgstr "Do daty"
+
+msgid ""
+"Please enter the correct %(username)s and password for a staff account. Note "
+"that both fields may be case-sensitive."
+msgstr "Brak uprawnień do panelu administratora."
+
+msgid "Translation (EN)"
+msgstr "Tłumaczenie (EN)"
+
+msgid "Add validation rule"
+msgstr "Dodaj regułę walidacji"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Columns headers"
+msgstr "Nagłówki kolumn"
+
+msgid "string"
+msgstr "dane tekstowe"
+
+msgid "number"
+msgstr "pole numeryczne"
+
+msgid "integer"
+msgstr "liczba całkowita"
+
+msgid "float"
+msgstr "liczba zmiennoprzecinkowa"
+
+msgid "numeric"
+msgstr "Pole numeryczne"
+
+msgid "date"
+msgstr "data"
+
+msgid "any"
+msgstr "dowolny typ"
+
+msgid "time"
+msgstr "czas"
+
+msgid "datetime"
+msgstr "data i czas"
+
+msgid "bool"
+msgstr "dane typu logicznego"
+
+msgid "boolean"
+msgstr "wartość logiczna PRAWDA/FAŁSZ"
+
+msgid "Below are the first row numbers and values that do not meet the selected rule"
+msgstr "Poniżej znajdują się pierwsze numery wierszy i wartości, które nie spełniają wybranej reguły"
+
+msgid "Query"
+msgstr "Wyszukiwanie"
+
+msgid "Coordinates"
+msgstr "Współrzędne"
+
+msgid "Address"
+msgstr "Dane adresowe"
+
+msgid "geographical coordinates"
+msgstr "współrzędne geograficzne"
+
+msgid "address"
+msgstr "adres"
+
+msgid "Expand"
+msgstr "Rozwiń"
+
+msgid "universal address"
+msgstr "adres uniwersalny"
+
+msgid "occured more than once"
+msgstr "wystąpił więcej niż raz"
+
+msgid "l"
+msgstr "długość geograficzna"
+
+msgid "b"
+msgstr "szerokość geograficzna"
+
+msgid "place"
+msgstr "miejscowość"
+
+msgid "street"
+msgstr "ulica"
+
+msgid "uaddress"
+msgstr "adres uniwersalny"
+
+msgid "postal_code"
+msgstr "kod pocztowy"
+
+msgid "house_number"
+msgstr "numer domu"
+
+msgid "Redefine the map by selecting only once the required element of the map set."
+msgstr "Ponów definiowanie mapy wybierając tylko raz wymagany element zestawu mapowego."
+
+#, python-format
+msgid "Delete selected %(verbose_name_plural)s"
+msgstr "Usuń wybrane %(verbose_name_plural)s"
+
+msgid "No permissions to the admin panel."
+msgstr "Brak uprawnień do panelu administratora."
+
+msgid "An error occurred and the account switch failed."
+msgstr "Wystąpił błąd i nie udało się przełączyć konta. Spróbuj ponownie później."

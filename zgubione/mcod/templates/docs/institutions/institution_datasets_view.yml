@@ -1,0 +1,21 @@
+{%load i18n %}
+---
+tags:
+ - {% trans "API Endpoints" %}
+summary: {% trans "Returns institution's datasets" %}
+description: |
+  {% spaceless%}
+      <p>Gives the ability to browse, filter and search for datasets of given institution.</p>
+      {% include "docs/datasets/obj_description.html" %}
+  {% endspaceless %}
+security: []
+
+parameters:
+    schema: DatasetApiSearchRequest
+responses:
+    200:
+        description: {% trans "Valid response in JSONAPI format" %}
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/Datasets'

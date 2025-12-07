@@ -1,0 +1,9 @@
+{% extends "wagtailadmin/admin_base.html" %}
+{% load wagtailadmin_tags wagtailcore_tags i18n %}
+{% load static %}
+
+{% block branding_favicon %}
+    <link rel="shortcut icon" href="{% static 'images/favicon-cms.png' %}" />
+{% endblock %}
+
+{% block branding_title %}CMS Otwarte Dane{% endblock %}

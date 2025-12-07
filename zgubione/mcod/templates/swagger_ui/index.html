@@ -1,0 +1,162 @@
+{% load static %}
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>dane.gov.pl api</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'swagger_ui/swagger-ui.css' %}"
+    />
+    {% if custom_css %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'swagger_ui/' %}{{ custom_css }}"
+    />
+    {% endif %}
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'swagger_ui/favicon-32x32.png' %}"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'swagger_ui/favicon-16x16.png' %}"
+      sizes="16x16"
+    />
+    <style>
+      html {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 0;
+        background: #fff;
+      }
+
+        .swagger-ui .info a {
+           color: #0865c9;
+        }
+
+        .swagger-ui .opblock.opblock-get .opblock-summary-method {
+           background: #575757;
+        }
+
+        .swagger-ui .info .title small {
+           background: #515461;
+        }
+
+        .swagger-ui .info .title small.version-stamp {
+           background-color: #3D5403;
+        }
+
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <div id="swagger-ui"></div>
+
+    <script src="{% static 'swagger_ui/swagger-ui-bundle.js' %}"></script>
+    <script src="{% static 'swagger_ui/swagger-ui-standalone-preset.js' %}"></script>
+    <script>
+        function replace_tag_name(from_selector, to_tag_name) {
+            document.querySelectorAll(from_selector).forEach(function(from_element) {
+                let to_element = document.createElement(to_tag_name);
+                to_element.innerHTML = from_element.innerHTML;
+                for (let index = from_element.attributes.length - 1; index >= 0; --index) {
+                    to_element.attributes.setNamedItem(from_element.attributes[index].cloneNode());
+                }
+                from_element.parentNode.replaceChild(to_element, from_element);
+            });
+        }
+
+
+      window.onload = function () {
+          const HideEmptyTagsPlugin = () => {
+              return {
+                  statePlugins: {
+                      spec: {
+                          wrapSelectors: {
+                              taggedOperations: (ori) => (...args) => {
+                                  return ori(...args)
+                                      .filter(tagMeta => tagMeta.get("operations") && tagMeta.get("operations").size > 0)
+                              }
+                          }
+                      }
+                  }
+              }
+          };
+          // Begin Swagger UI call region
+          const ui = SwaggerUIBundle({
+              urls: {{ spec_urls|safe }},
+              dom_id: '#swagger-ui',
+              deepLinking: true,
+              validatorUrl: null,
+              presets: [
+                  SwaggerUIBundle.presets.apis,
+                  SwaggerUIStandalonePreset
+              ],
+              plugins: [
+                  {#/SwaggerUIBundle.plugins.Topbar,#}
+                  SwaggerUIBundle.plugins.DownloadUrl,
+                  HideEmptyTagsPlugin
+              ],
+              layout: "StandaloneLayout",
+              onComplete: function() {
+                  replace_tag_name("h2.title", "h1");
+                  replace_tag_name("h3.opblock-tag", "h2");
+                  replace_tag_name("h4", "h3");
+                  replace_tag_name("h5", "h4");
+              }
+          });
+          // End Swagger UI call region
+          window.ui = ui;
+
+          topbar = document.getElementsByClassName('topbar-wrapper')[0];
+          span = topbar.getElementsByTagName('span')[0];
+          span.parentNode.removeChild(span);
+          img = topbar.getElementsByTagName('img')[0];
+          img.src = '/static/images/logo-175x50-white.png';
+          img.alt = 'Otwarte Dane';
+          img.height = 50;
+          img.width = 175;
+      }
+    </script>
+    <footer class="swagger-ui swagger-container">
+      <div class="wrapper">
+        <section class="block col-12 footer">
+          <div>
+            Maintened by the
+            <a href="https://www.gov.pl/cyfryzacja" target="_blank"
+              >Chancellery of the Prime Minister of the Republic of Poland</a
+            >. Created with
+            <a href="https://swagger.io/tools/swagger-ui/" target="_blank"
+              >Swagger UI</a
+            >.
+          </div>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

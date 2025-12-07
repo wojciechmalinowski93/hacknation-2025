@@ -1,0 +1,11 @@
+{% load i18n %}
+
+{% trans 'Dear Sir or Madam,' %}
+
+{% trans 'Thank you for your interest in the newsletter of dane.gov.pl. To confirm the subscription, click the link:' %}
+
+{{ url }}
+
+{% trans 'The link above will be active for 24 hours.' %}
+
+{% trans 'The message has been generated automatically. Please do not reply.' %}

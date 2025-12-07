@@ -1,0 +1,12 @@
+Zgłoszono propozycję aplikacji:
+E-mail zgłaszającego: {{ applicant_email }}
+Tytuł aplikacji: {{ title }}
+Autor: {{ author }}
+Adres url aplikacji: {{ url }}
+Opis aplikacji: {{ notes }}
+Lista zbiorów danych używanych przez aplikację (opcjonalne):
+{{ datasets }}
+Lista zbiorów danych zewnętrznych używanych przez aplikację (opcjonalne):
+{{ external_datasets }}
+Słowa kluczowe (opcjonalne):
+{{ keywords|join:", " }}

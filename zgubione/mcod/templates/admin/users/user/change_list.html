@@ -1,0 +1,9 @@
+{% extends 'admin/change_list.html' %}
+
+{% load static %}
+
+{% block extrahead %}
+{{ block.super }}
+    <script type="text/javascript" src="{% static 'admin/js/bootstrap-multiselect.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/bootstrap-multiselect.css' %}" media="all" />
+{% endblock %}

@@ -1,0 +1,7 @@
+{% load i18n %}
+{% if not data %}
+    <div class="alert alert-danger">
+        <button class="close" data-dismiss="alert">×</button>
+        {% blocktrans %}The data cannot be displayed correctly. Change the data type.{% endblocktrans %}
+    </div>
+{% endif %}

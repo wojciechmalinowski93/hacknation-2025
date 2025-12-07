@@ -1,0 +1,42 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <style>
+        .expandable {
+            display: none;
+        }
+        .expand-btn {
+            text-decoration: none;
+        }
+        .expand-btn::before {
+            content: "Pokaż pełny opis błędu";
+        }
+        .expand-btn.expanded::before {
+            content: "Ukryj pełny opis błędu";
+        }
+    </style>
+{% endblock %}
+
+{% block extrajs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $(function () {
+            $(".expandable").each(function(index) {
+                var $expandable = $(this);
+                var $p = $('<p><a class="expand-btn" href="#"></a><p>');
+                const EXPANDED = 'expanded';
+                $p.children('a').click(function() {
+                    if($(this).hasClass(EXPANDED)) {
+                        $(this).removeClass(EXPANDED);
+                        $expandable.slideUp();
+                    } else {
+                        $(this).addClass(EXPANDED);
+                        $expandable.slideDown();
+                    }
+                });
+                $expandable.before($p);
+            });
+        });
+    </script>
+{% endblock %}

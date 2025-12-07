@@ -1,0 +1,321 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="catalog" type="catalogType"/>
+    <xs:complexType name="keywordsType" mixed="true">
+        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="keyword"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="organizationType">
+        <xs:all>
+            <xs:element type="xs:integer" name="id"/>
+            <xs:element type="organizationTypeType" name="type"/>
+            <xs:element type="xs:anyURI" name="url"/>
+            <xs:element type="xs:dateTime" name="created"/>
+            <xs:element type="xs:integer" name="published_datasets_count"/>
+            <xs:element type="xs:dateTime" name="modified"/>
+            <xs:element type="xs:string" name="city"/>
+            <xs:element type="xs:string" name="email"/>
+            <xs:element type="xs:string" name="regon"/>
+            <xs:element type="xs:string" name="epuap"/>
+            <xs:element type="xs:string" name="title"/>
+            <xs:element type="xs:string" name="street_type"/>
+            <xs:element type="xs:string" name="street_number"/>
+            <xs:element type="xs:string" name="website"/>
+            <xs:element type="xs:string" name="postal_code"/>
+            <xs:element type="xs:string" name="phone_number"/>
+            <xs:element type="xs:string" name="street"/>
+            <xs:element type="xs:string" name="abbreviation"/>
+            <xs:element type="xs:string" name="flat_number"/>
+            <xs:element type="xs:integer" name="published_resources_count"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="resourceType">
+        <xs:all>
+            <xs:element type="xs:integer" name="id"/>
+            <xs:element type="xs:anyURI" name="download_url"/>
+            <xs:element type="resourceTypeType" name="type"/>
+            <xs:element type="xs:integer" name="views_count"/>
+            <xs:element type="xs:dateTime" name="created"/>
+            <xs:element type="xs:string" name="file_size"/>
+            <xs:element type="xs:string" name="format"/>
+            <xs:element type="xs:string" name="title"/>
+            <xs:element type="xs:anyURI" name="access_url"/>
+            <xs:element type="xs:integer" name="downloads_count"/>
+            <xs:element type="xs:string" name="special_signs"/>
+            <xs:element type="xs:string" name="description"/>
+            <xs:element name="openness_score">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="visualization_types">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="visualization_type" maxOccurs="3" minOccurs="0">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="chart"/>
+                                    <xs:enumeration value="map"/>
+                                    <xs:enumeration value="table"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element type="xs:string" name="data_date"/>
+            <xs:element name="has_high_value_data">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="False"/>
+                        <xs:enumeration value="True"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="has_high_value_data_from_ec_list">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="False"/>
+                        <xs:enumeration value="True"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="has_dynamic_data">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="False"/>
+                        <xs:enumeration value="True"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="has_research_data">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="False"/>
+                        <xs:enumeration value="True"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="contains_protected_data">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="False"/>
+                        <xs:enumeration value="True"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element type="regionsType" name="regions"/>
+            <xs:element type="supplementsType" name="supplements"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="resourcesType">
+        <xs:sequence>
+            <xs:element type="resourceType" name="resource" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="datasetType">
+        <xs:all>
+            <xs:element type="xs:integer" name="id"/>
+            <xs:element type="xs:anyURI" name="url"/>
+            <xs:element type="xs:string" name="notes"/>
+            <xs:element type="xs:dateTime" name="verified"/>
+            <xs:element name="source">
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element type="sourceUpdateFrequencyType" name="update_frequency" minOccurs="0"/>
+                        <xs:element type="xs:anyURI" name="url" minOccurs="0"/>
+                        <xs:element type="xs:dateTime" name="last_import_timestamp" minOccurs="0"/>
+                        <xs:element type="xs:string" name="title" minOccurs="0"/>
+                    </xs:all>
+                </xs:complexType>
+            </xs:element>
+            <xs:element type="xs:dateTime" name="created"/>
+            <xs:element type="xs:integer" name="downloads_count"/>
+            <xs:element type="xs:string" name="title"/>
+            <xs:element type="datasetUpdateFrequencyType" name="update_frequency"/>
+            <xs:element type="organizationType" name="organization"/>
+            <xs:element type="xs:integer" name="published_resources_count"/>
+            <xs:element name="categories">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="categoryType" name="category" maxOccurs="unbounded" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element type="keywordsType" name="keywords"/>
+            <xs:element type="xs:integer" name="views_count"/>
+            <xs:element type="xs:string" name="conditions"/>
+            <xs:element name="license">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="CC0 1.0"/>
+                        <xs:enumeration value="CC BY 4.0"/>
+                        <xs:enumeration value="CC BY-SA 4.0"/>
+                        <xs:enumeration value="CC BY-NC 4.0"/>
+                        <xs:enumeration value="CC BY-NC-SA 4.0"/>
+                        <xs:enumeration value="CC BY-ND 4.0"/>
+                        <xs:enumeration value="CC BY-NC-ND 4.0"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="has_high_value_data">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="False"/>
+                        <xs:enumeration value="True"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="has_high_value_data_from_ec_list">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="False"/>
+                        <xs:enumeration value="True"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="has_dynamic_data">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="False"/>
+                        <xs:enumeration value="True"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="has_research_data">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="False"/>
+                        <xs:enumeration value="True"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element type="resourcesType" name="resources"/>
+            <xs:element type="regionsType" name="regions"/>
+            <xs:element type="supplementsType" name="supplements"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="categoryType">
+        <xs:all>
+            <xs:element type="xs:integer" name="id"/>
+            <xs:element name="code">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="AGRI"/>
+                        <xs:enumeration value="EDUC"/>
+                        <xs:enumeration value="ENVI"/>
+                        <xs:enumeration value="ENER"/>
+                        <xs:enumeration value="TRAN"/>
+                        <xs:enumeration value="TECH"/>
+                        <xs:enumeration value="ECON"/>
+                        <xs:enumeration value="SOCI"/>
+                        <xs:enumeration value="HEAL"/>
+                        <xs:enumeration value="GOVE"/>
+                        <xs:enumeration value="REGI"/>
+                        <xs:enumeration value="JUST"/>
+                        <xs:enumeration value="INTR"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element type="xs:string" name="title"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="categoriesType">
+        <xs:sequence>
+            <xs:element type="categoryType" name="category" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="visualization_typesType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="visualization_type" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="catalogType">
+        <xs:sequence>
+            <xs:element type="datasetType" name="dataset" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="datasetUpdateFrequencyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Nie dotyczy"/>
+            <xs:enumeration value="Jednorazowe udostępnienie"/>
+            <xs:enumeration value="Nieregularnie"/>
+            <xs:enumeration value="Rocznie"/>
+            <xs:enumeration value="Co pół roku"/>
+            <xs:enumeration value="Kwartalnie"/>
+            <xs:enumeration value="Miesięcznie"/>
+            <xs:enumeration value="Co tydzień"/>
+            <xs:enumeration value="Codziennie"/>
+            <xs:enumeration value=""/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="sourceUpdateFrequencyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="codziennie"/>
+            <xs:enumeration value="co tydzień"/>
+            <xs:enumeration value="co miesiąc"/>
+            <xs:enumeration value="co kwartał"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="organizationTypeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Administracja samorządowa"/>
+            <xs:enumeration value="Administracja rządowa"/>
+            <xs:enumeration value="Podmioty prywatne"/>
+            <xs:enumeration value="Deweloperzy"/>
+            <xs:enumeration value="Inne"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="resourceTypeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Plik"/>
+            <xs:enumeration value="Strona internetowa"/>
+            <xs:enumeration value="API"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="regionType">
+        <xs:all>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:string" name="hierarchy_label"/>
+            <xs:element type="xs:integer" name="region_id"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="regionsType">
+        <xs:sequence>
+            <xs:element type="regionType" name="region" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="supplementType">
+        <xs:all>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:anyURI" name="file_url"/>
+            <xs:element type="xs:string" name="file_size"/>
+            <xs:element name="language">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="pl"/>
+                        <xs:enumeration value="en"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="supplementsType">
+        <xs:sequence>
+            <xs:element type="supplementType" name="supplement" maxOccurs="10" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

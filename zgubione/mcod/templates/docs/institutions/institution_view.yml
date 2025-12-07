@@ -1,0 +1,21 @@
+{% load i18n %}
+---
+tags:
+ - {% trans "API Endpoints" %}
+summary: {% trans "Returns institution" %}
+description: |
+  {% spaceless %}
+      <p>Returns institution with given ID</p>
+      {% include "docs/institutions/obj_description.html" %}
+  {% endspaceless %}
+security: []
+
+parameters:
+    schema: InstitutionApiRequest
+responses:
+    200:
+        description: {% trans "Valid response in JSONAPI format" %}
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/Institution'

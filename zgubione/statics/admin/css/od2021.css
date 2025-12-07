@@ -1,0 +1,894 @@
+html {
+	scroll-behavior: smooth;
+}
+
+
+body.od2021 {
+	font-size: 100%;
+	color: #333;
+	background-color: #124;
+	font-family: Arial;
+	line-height: 1.2;
+}
+
+.od2021 * {
+	margin:0;
+	/*padding:0;*/
+	text-shadow: none;
+}
+
+p.irreversible-deletion-warning {
+	font-weight: bold;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.col-2 {
+	width: 16.666667%;
+}
+.col-3 {
+	width: 25%;
+}
+.col-5 {
+	width: 41.666667%
+}
+.col-6 {
+	width: 50%;
+}
+
+/* BOOTSTRAP overwrite */
+.od2021 .btn {
+	font-size: inherit;
+}
+.od2021 .btn-group .btn {
+	font-size: .875rem;
+}
+.od2021 .btn-group .btn.btn-mini {
+	padding: 2px 15px;
+}
+/*/ BOOTSTRAP overwrite */
+
+
+
+/* ALERTS */
+.od2021 .alert {
+	box-shadow: 0 3px 5px rgba(0,0,0, 0.3);
+	text-shadow: none;
+}
+.od2021 .alert.alert-success {
+	color: #373;
+}
+.od2021 .alert.alert-error {
+	color: #a33;
+	list-style-type:none;
+}
+.od2021 .breadcrumb ~ .alert {
+    margin: 0 0 0.75rem 0;
+    padding: 0.75rem 2rem 0.75em 1rem;
+}
+.od2021 .alert .errorlist {
+	color: inherit;
+	margin-left: 0;
+	padding-left: 1rem;
+}
+/*/ ALERTS */
+
+
+
+/* DJANGO suit layout */
+.od2021 #wrap {
+	/* overwrite bg */
+	background: linear-gradient(to right, #124 200px, #eee 200px);
+}
+.od2021 .suit-columns #suit-left {
+	background-color: #124; /* in case of */
+}
+.od2021 .suit-columns #suit-center {
+	background-color: #eee; /* in case of */
+}
+/*/ DJANGO suit layout */
+
+
+
+/* PAGE HEADER */
+.od2021 .header {
+	background-image: none;
+	background-color: #124;
+	color: #999;
+}
+.od2021 .header a {
+	color: #fff;
+}
+.od2021 .header #branding {
+	border: 0;
+}
+.header .header-content .header-column i.icon-time{
+    margin-top:2px;
+}
+/*/ PAGE HEADER */
+
+
+
+/* PAGE FOOTER */
+.od2021 .footer {
+	margin-left: 200px;
+	font-size: inherit;
+	background-color: #124;
+	color: #ccc;
+}
+.od2021 .footer a {
+	color: #fff;
+	font-size: 14px;
+}
+.od2021 .footer .content {
+	border: 0;
+}
+.od2021 .footer .content .branding {
+	width: auto;
+}
+.od2021 .copyright {
+	display: none;
+}
+/*/ PAGE FOOTER */
+
+
+/* HOME - quick access menu */
+.minw-600 {
+	min-width: 600px;
+}
+.minw-500 {
+	min-width: 500px;
+}
+.minw-400 {
+	min-width: 400px;
+}
+.od2021 .table-overview {
+	margin: 15px 0;
+}
+.od2021 .table-overview caption {
+}
+.od2021 .table-overview caption a {
+	position: relative;
+}
+.od2021 .table-overview caption a::after {
+	content: "";
+	position: absolute;
+	top: 7px;
+	right: -10px;
+	width: 0;
+	height: 0;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 6px solid #666;
+}
+.od2021 .table-overview tbody {
+ display: none;
+}
+.od2021 .table-overview th {
+	text-align: left;
+	font-size: 14px;
+}
+.od2021 .table-overview td {
+	background: none;
+	font-size: 14px;
+}
+/*/ HOME - quick access menu *
+
+
+/* HEADERS */
+.od2021 .content-title {
+	display:block;
+	margin-bottom: 15px;
+	font-size: 175%;
+	position: relative;
+	padding: 10px 0 20px 0;
+}
+.od2021 .content-title::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 90%;
+	height: 5px;
+	width: 30px;
+	display: block;
+	background-color: #ccc;
+}
+/*/ HEADERS */
+
+
+
+/* LEFT NAVIGATION */
+.od2021 .od-left-nav {
+	margin-top: 10px;
+}
+.od2021 .od-left-nav > ul > li {
+	padding: 5px;
+	border-bottom: 1px solid #246;
+}
+.od2021 .od-left-nav > ul > li:last-child {
+	border-bottom: 0;
+}
+.od2021 .od-left-nav > ul > li > a {
+	padding: 10px;
+	text-transform: uppercase;
+	line-height: 1;
+}
+.od2021 .od-left-nav > ul > li > a i {
+	display: none;
+}
+.od2021 .od-left-nav > ul > li.active > a {
+	font-weight: bold;
+	color: #ff0;
+	border-bottom: 2px solid #ff0
+}
+.od2021 .od-left-nav li.active a {
+	color: #fff;
+}
+.od2021 .od-left-nav li.active a:hover {
+	color: #fff;
+}
+.od2021 .od-left-nav li.active li.active a {
+	font-weight: bold;
+	color: #ff0;
+	border-bottom: 2px solid #ff0
+}
+.od2021 .od-left-nav ul ul {
+	padding-bottom: 15px;
+}
+.od2021 .od-left-nav li li {
+	padding: 0 0 0 20px;
+	font-size: 87.5%;
+	margin-top: 5px;
+}
+.od2021 .od-left-nav a {
+	text-decoration: none;
+	display: block;
+	position: relative;
+	padding: 2px 5px;
+	z-index: 1;
+	color: #fff;
+	line-height: 1.2;
+}
+.od2021 .od-left-nav a:hover {
+	color: #fff;
+}
+.od2021 .od-left-nav a::after {
+	content: "";
+	position: absolute;
+	top:100%;
+	left:0;
+	width: 0;
+	height: 2px;
+	background-color: #fff;
+	z-index: -1;
+	transition: all .3s;
+}
+.od2021 .od-left-nav a:hover::after {
+	width:100%;
+}
+/*/ LEFT NAVIGATION */
+
+
+
+/* BREADCRUMBS */
+.od2021 .breadcrumb {
+    background-color: inherit;
+    padding: 0 0 1rem 0;
+}
+/*/ BREADCRUMBS */
+
+
+
+/* TABLE TOOLBAR - object tools */
+.od2021 .object-tools {
+	float: none;
+}
+.od2021 .object-tools .btn {
+	float: none;
+	margin: 0 0 15px 0;
+}
+.od2021 .actions {
+  /*display: none;*/
+  padding-bottom:15px;
+}
+.od2021 .admindatefilter {
+	padding-left: 0;
+}
+.od2021 .admindatefilter p {
+	margin-right: 30px;
+}
+.od2021 .admindatefilter .datetimeshortcuts {
+    margin-left: 5px;
+}
+.od2021 .search-container input,
+.od2021 .search-filter {
+	font-size: 0.875rem;
+}
+/*/ TABLE TOOLBAR - object tools */
+
+
+
+/* TABLE - list view */
+.od2021 #content-main .results{
+    padding-bottom:15px;
+}
+
+.od2021 table.table-bordered {
+	border: none;
+}
+.od2021 table.table-bordered > thead > tr th {
+  background: #333;
+	color: #ccc;
+	font-weight: normal;
+	text-shadow: 0;
+}
+.od2021 table.table-bordered > thead > tr th.sortable a {
+	color: #fff;
+}
+.od2021 table.table-bordered > thead > tr th .sortoptions > a {
+	background-color: #fff;
+	height: 16px;
+	border-radius: 5px;
+	margin-left: 1px;
+}
+.od2021 .table th,
+.od2021 .table td {
+	vertical-align: middle;
+	font-size: 16px;
+}
+.od2021 .table.table-hover tbody tr:hover > td,
+.od2021 .table.table-hover tbody tr:hover > th {
+	background-color: #ffc;
+}
+.od2021 .table .field-title, .od2021 .table .field-_title {
+	min-width: 300px;
+}
+.od2021 .table td.field-category,
+.od2021 .table td.field-uuid,
+.od2021 .table td.field-_notes,
+.od2021 .table td.field-short_description,
+.od2021 .table td.field-_truncated_comment {
+	font-size: 14px;
+}
+.od2021 .table td.field-status,
+.od2021 .table td.field-status_label,
+.od2021 .table td.field-decision_label,
+.od2021 .table td.field-state_label,
+.od2021 .table td.field-state,
+.od2021 .table td.field-is_agent,
+.od2021 .table td.field-is_superuser,
+.od2021 .table td.field-is_staff,
+.od2021 .table td.field-is_official,
+.od2021 .table td.field-category,
+.od2021 .table td.field-formats,
+.od2021 .table td.field-preview_link,
+.od2021 .table td.field-obj_history,
+.od2021 .table td.field-display_status_str,
+.od2021 .table td.field-status_capitalized,
+.od2021 .table td.field-type_col {
+	text-align: center;
+}
+.od2021 .table td.field-created,
+.od2021 .table td.field-_created,
+.od2021 .table td.field-modified,
+.od2021 .table td.field-last_login,
+.od2021 .table td.field-submission_date,
+.od2021 .table td.field-decision_date,
+.od2021 .table td.field-report_date,
+.od2021 .table td.field-execution_date,
+.od2021 .table td.field-start_date,
+.od2021 .table td.field-finish_date,
+.od2021 .table td.field-planned_sending_date,
+.od2021 .table td.field-sending_date,
+.od2021 .table td.field-_start,
+.od2021 .table td.field-_end,
+.od2021 .table td.field-date_done,
+.od2021 .table td.field-verified,
+.od2021 .table td.field-data_date {
+	color: #333;
+	white-space: nowrap;
+	font-size: 14px;
+}
+.od2021 .table td.field-file_size,
+.od2021 .table td.field-participants_numbers,
+.od2021 .table td.field-participants_number,
+.od2021 .table td.field-_modules_count {
+	text-align: right;
+}
+.od2021 .table td.field-file_size span.unknown {
+	font-size: 14px;
+	color: #999;
+}
+/*/ TABLE - list view */
+
+
+/* PAGINATION */
+.od2021 .pagination-block {
+	margin: 15px 0;
+}
+.od2021 .pagination-info {
+	margin: 5px;
+}
+/*/ PAGINATION */
+
+
+/* FORMS */
+.od2021 .control-group {
+	margin: 0 0 20px 0;
+	font-size: 87.5%;
+}
+.od2021 .control-label > label {
+	font-size: 100%;
+	font-weight: bold;
+	text-align: left;
+}
+.od2021 .control-label > label.required::after {
+	content: "";
+}
+.od2021 .control-label > label.required span {
+	display: block;
+	font-weight: normal;
+	color: #666;
+}
+
+.od2021 .control-label.readonly-control-label > label {
+	cursor: text;
+}
+.od2021 label[for="id_openness_score"] {
+	cursor: text;
+	/* Default by Bootstrap for labels is pointer. Setting readonly on a field makes Django admin render the field without using the widget
+	 See: mcod_field_contents_foreign_linked and django.contrib.admin.helpers.AdminReadonlyField.contents
+	 */
+}
+
+.od2021 .error .control-label > label.required span {
+	color: inherit;
+}
+.od2021 .form-horizontal input,
+.od2021 .form-horizontal textarea,
+.od2021 .form-horizontal select {
+    font-size: 14px;
+}
+
+/* save btn */
+.od2021 .save-box .btn-success {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* delete btn */
+.od2021 .save-box .btn-danger {
+	font-weight: bold;
+	background: #B30000;
+	color: #fff;
+	padding: 5px 0;
+}
+
+.btn-link {
+   border-color: transparent;
+   cursor: pointer;
+   color: #074a92;
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   border-radius: 0;
+}
+
+.od2021 input[name=title],
+.od2021 input[name=slug],
+.od2021 input[name=title_en],
+.od2021 input[name=slug_en],
+.form-row.field-title_en input,
+.form-row.field-slug_en input,
+.form-row.field-slug input{
+	width: 99%;
+}
+
+.od2021 input[name=epuap],
+.od2021 input[name=electronic_delivery_address],
+.od2021 input[name=regon],
+.od2021 input[name=website] {
+	width: 245px;
+}
+
+.od2021 .form-horizontal .control-group .help-block,
+.od2021 .form-horizontal .control-group .help-inline {
+	color: #444;
+	font-size: 0.75rem;
+	padding: 0;
+	display: block;
+}
+.od2021 .form-horizontal .control-group span.readonly {
+	word-break: break-all;
+}
+/*/ FORMS */
+
+#user_form input[type="email"]:read-only, #user_form input[type="password"]:read-only {
+	cursor: text;
+	background-color: #fff;
+}
+
+/* TABS */
+.od2021 ul.nav-tabs {
+	margin: 0;
+	padding: 5px 0 0 5px;
+	border-bottom: 0;
+	background-color: #0857AA;
+	z-index: 0;
+	position: relative;
+	font-size: 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.od2021 ul.nav-tabs li {
+	margin: 0 1px 0 0;
+	border: 0;
+}
+
+.od2021 ul.nav-tabs li a {
+	margin: 0;
+	border: 0;
+	color: #fff;
+	background-color: inherit;
+	border-radius: 0;
+	font-size: 16px;
+	height: 20px;
+	line-height: 20px;
+	box-shadow: none;
+	text-transform: none;
+	position: relative;
+	text-decoration: none;
+}
+.od2021 ul.nav-tabs li.disabled a {
+	text-decoration: line-through;
+}
+.od2021 ul.nav-tabs li a.error {
+	background-color: #f2dede;
+	color: #f33;
+	border-radius: 5px 5px 0 0;
+}
+.od2021 ul.nav-tabs li a::after {
+	content: "";
+	position: absolute;
+	left:50%;
+	right:50%;
+	bottom: 0;
+	height: 5px;
+	width: 0;
+	background-color: #f5f5f5;
+	transition: all .3s;
+}
+.od2021 ul.nav-tabs li a:hover::after {
+	left:0;
+	right:0;
+	width: 100%;
+}
+
+.od2021 ul.nav-tabs li.active a {
+	margin: 0;
+	border: 0;
+	background-color: #f5f5f5;
+	color: #000;
+	text-shadow: none;
+	border-radius: 5px 5px 0 0;
+}
+
+.od2021 .tab-content {
+	border: 5px solid #0857aa;
+	border-top: none;
+	background-color: #f5f5f5;
+	padding: 15px;
+	line-height: 1.4;
+	z-index: 2;
+	position: relative;
+}
+
+/* alert */
+.od2021 .tab-content .alert {
+	margin-bottom: 1rem;
+}
+/*/ TABS */
+
+
+.od2021 .email-label-user {
+    display: block;
+}
+.od2021 .email-label-host {
+    display: block;
+    color: #555;
+    font-size: 12px;
+}
+
+/* SELECT2 */
+.od2021 .select2-selection,
+.od2021 .select2-search__field,
+.od2021 .select2-results {
+	font-size: 0.875rem;
+}
+/*/ SELECT2 */
+
+
+/* RIGHT COLUMN - TOOLBOX */
+.od2021 .inner-right-column h4 {
+	padding-top: 1rem;
+}
+/*/ RIGHT COLUMN - TOOLBOX */
+
+
+/* MODAL */
+.od2021 .modal-backdrop.fade.in {
+	z-index: 1;
+}
+.od2021 .modal.fade.in {
+	left: 50%;
+	transform: translateX(-50%);
+}
+/*/ MODAL */
+
+
+
+/* LOGIN PAGE */
+.od2021.login #wrap {
+	background: inherit;
+}
+
+.od2021.login #wrap h1 {
+	background: #F6F7F8;
+	font-size: inherit;
+	color: #000;
+	text-shadow: none;
+	padding: 10px 15px;
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+}
+.od2021.login #wrap .icon-lock {
+	display: none;
+}
+.od2021.login #login-form label {
+	font-size: inherit;
+	font-weight: bold;
+}
+.od2021.login #login-form label.required::after {
+	display: none;
+}
+.od2021.login #login-form .form-row input {
+	font-size: inherit;
+	padding: 6px 10px;
+}
+.od2021.login #login-form .btn.btn-info {
+	background: #39c;
+	border: 0 none;
+	padding: 5px 15px;
+	text-shadow: none;
+}
+.od2021.login .errornote {
+		margin: 0;
+    position: absolute;
+    width: 289px;
+    left: 50%;
+    top: 25%;
+    margin-left: -170px;
+    margin-top: -100px;
+}
+/*/ LOGIN PAGE */
+
+#id_has_high_value_data.inline input, #id_has_dynamic_data.inline input {
+	vertical-align:text-bottom;
+}
+
+.inner-two-columns .inner-center-column .tab-content { /* ODSOFT-2924 */
+	overflow: auto;
+}
+.deletelink, #duplicate_button {
+	padding: 0;
+}
+
+.btn.extra-btn {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+li.disabledTab {
+	cursor: not-allowed;
+}
+
+a.disabledTab {
+	pointer-events: none;
+	cursor: not-allowed;
+}
+/* Fixes error described in ODSOFT-2926, caused by setting: display: flex; */
+/* https://github.com/darklow/django-suit/compare/v.0.2.26...v.0.2.28 */
+.suit-columns { /* ODSOFT-2926 */
+	display: block;
+}
+.form-horizontal .inline-related h3 span.remove-handler {
+	float: right;
+	margin-right: 10px;
+	font-weight: 400;
+}
+
+.tmp-is-manual-data-date-update{
+    margin-left: 40px;
+}
+
+.tmp-is-manual-data-date-update,
+.tmp-is-manual-data-date-update label,
+.tmp-is-manual-data-date-update input{
+    display:inline-block;
+    font-size: 100%;
+}
+.tmp-is-manual-data-date-update input{
+    margin-left:10px;
+}
+
+.control-group.field-is_auto_data_date .control-label,
+.control-group.field-automatic_data_date_start .control-label,
+.control-group.field-data_date_update_period .control-label,
+.control-group.field-automatic_data_date_end .control-label{
+   border-bottom: none;
+}
+
+.control-group.field-is_auto_data_date label,
+.control-group.field-automatic_data_date_start label,
+.control-group.field-data_date_update_period label,
+.control-group.field-automatic_data_date_end label,
+.control-group.field-endless_data_date_update label{
+   display:inline-block;
+   font-size: 100%;
+   margin-left:10px;
+}
+.control-group.field-endless_data_date_update label{
+    padding-left:120px;
+}
+
+.control-group.field-endless_data_date_update .controls input{
+    margin-left:50px
+}
+.field-is_auto_data_date span.conf-label{
+    display:block;
+    border-bottom:1px solid black;
+    width:35%;
+}
+label[for="is_promoted"] {
+	font-size:16px;
+	margin-left:15px;
+}
+
+a {
+	color: #074A92;
+}
+
+.muted {
+	color: #333;
+}
+
+.label.label-important, .badge.badge-important {
+	background-color: #95302e;
+}
+
+.label.label-success, .badge.badge-success {
+	background-color: #346235;
+}
+
+.label.label-info, .badge.badge-info {
+	background-color: #285B77;
+}
+
+.label, .badge {
+	background-color: #575757;
+	font-size: 12px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+   color: #333;
+}
+
+.selector .search-label-icon {
+	background: url(../img/search.svg) 0 0 no-repeat;
+	display: inline-block;
+	height: 18px;
+	width: 18px;
+}
+
+#dataset_form .actions {
+	margin-top:10px;
+}
+#dataset_form .actions span.action-label{
+	display:none;
+}
+#delete_confirmation,
+#save_dga_confirmation{
+	color: black;
+}
+#delete_confirmation ul,
+#save_dga_confirmation ul {
+	list-style-type: '- ';
+	margin:10px;
+	margin-left:20px;
+}
+
+.breadcrumb>li>.divider {
+   color: #4D4D4D;
+}
+
+.form-horizontal .control-group .controls .selector .selector-available a:not(.active), .form-horizontal .control-group .controls .selector .selector-chosen a:not(.active) {
+   color: #555;
+}
+
+.pagination ul>.disabled>span, .pagination ul>.disabled>a, .pagination ul>.disabled>a:hover, .pagination ul>.disabled>a:focus {
+   color: #444;
+}
+
+.od2021 .table.table-hover tbody tr.selected:hover > td,.od2021 .table.table-hover tbody tr.selected:hover > th {
+   background-color: #629baf;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#user-gov-list-container:hover {
+	cursor: pointer;
+}
+
+#user-gov-list{
+	display: none;
+	position: absolute;
+	width: max-content;
+	max-width: 250px;
+	background-color: #124;
+	align-items: center;
+	border: 1px solid white;
+	border-top: none;
+	margin-top: 13px;
+}
+
+#user-gov-list>div{
+	z-index: 1000;
+	background-color: #124;
+	align-items: center;
+}
+
+#user-tools{
+	display: flex;
+	padding: 0;
+	height: 100%;
+	align-items: center;
+}
+
+.admin-gov-user-list{
+	background-color: #124;
+	z-index: 1000;
+	width: 100%;
+	padding: 5px 10px 5px 10px
+}
+
+.user-gov-list__item {
+	padding: 5px;
+	width: 100%;
+	border-top: 1px white solid;
+	overflow-wrap: break-word;
+}
+
+.user-gov-list__switch {
+	color: white;
+	font-weight: bold;
+	border-top: none;
+}
+
+.user-gov-list__image {
+	width: 20px;
+	height: 15px;
+	filter: invert(41%) sepia(3%) saturate(11%) hue-rotate(345deg) brightness(94%) contrast(92%);
+}
+#user-gov-list-container {
+	.rotate {
+		transform: rotate(180deg);
+	}
+}

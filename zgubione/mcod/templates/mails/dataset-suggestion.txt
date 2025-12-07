@@ -1,0 +1,23 @@
+{% load i18n core_tags %}
+
+{% trans 'Resource demand reported' %}
+
+{% get_verbose_field_name obj "title" %}:
+
+{{ obj.title|default:"-" }}
+
+{% get_verbose_field_name obj "notes" %}:
+
+{{ obj.notes|default:"-" }}
+
+{% get_verbose_field_name obj "organization_name" %}:
+
+{{ obj.organization_name|default:"-" }}
+
+{% get_verbose_field_name obj "data_link" %}:
+
+{{ obj.data_link|default:"-" }}
+
+{% get_verbose_field_name obj "potential_possibilities" %}:
+
+{{ obj.potential_possibilities|default:"-" }}

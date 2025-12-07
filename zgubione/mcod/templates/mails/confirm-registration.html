@@ -1,0 +1,62 @@
+{% load static i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% blocktrans %}Registration confirmation{% endblocktrans %}</title>
+</head>
+<body>
+
+<div style="width:650px; margin:auto;">
+    <table border="0" cellspacing="0" cellpadding="0" align="center"
+           style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+
+
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td style="padding-top:10px; padding-bottom:10px; width:100%; overflow:hidden; float:left;"><img
+                    src="{{ host }}{% static "mails/logo-otwarte-dane.png" %}" alt="Download images"></td>
+        </tr>
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td align="left"
+                style="padding-top:10px; padding-bottom:10px; max-width:580px;border-collapse: collapse;text-align:left; vertical-align:middle">
+                <div style="text-align:left;font-size:36px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102); text-transform:uppercase">
+                    {% blocktrans %}Dear user of the open data portal (dane.gov.pl){% endblocktrans %}
+                </div>
+            </td>
+        </tr>
+
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td align="left" style="padding-top:10px; padding-bottom:10px; max-width:580px; overflow:hidden;"><img
+                    src="{{ host }}{% static "mails/kreska-mail.png" %}" alt="Download images"></td>
+        </tr>
+
+
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td align="left"
+                style="padding-top:10px; padding-bottom:10px; max-width:580px;border-collapse: collapse;text-align:left;vertical-align:middle">
+                <p style="text-align:left;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;display: block !important;">
+                    {% blocktrans %}Thank you for creating an account.{% endblocktrans %}<br>
+                    {% blocktrans %}If you did not create an account, please ignore this message. {% endblocktrans %}<br>
+                    {% blocktrans %}In order to complete the registration process, click (or copy and paste in the address field of the web browser) into the link below.{% endblocktrans %}
+                </p>
+                <p style="text-align:left;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;display: block !important;">
+                    <a href="{{ link }}" target="_blank" nh-safe-redirect="" data-saferedirecturl="*"
+                       style="text-align:left;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;display: block !important;color: #008294;text-decoration: underline;">
+                        {{ link }}
+                    </a>
+                </p>
+            {% if limit %}
+                <p style="text-align:left;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;display: block !important;">
+                    {% blocktrans %}The link is valid for {{ limit }} hours.{% endblocktrans %}
+                </p>
+            {% endif %}
+            </td>
+        </tr>
+
+        {% include 'mails/_footer.html' with strip=True %}
+    </table>
+
+</div>
+</body>
+</html>

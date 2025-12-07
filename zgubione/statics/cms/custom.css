@@ -1,0 +1,133 @@
+/* Custom CSS styles for CMS Panel */
+.pagination {
+	margin-top: 10px;
+}
+
+input[type=color] {
+    height: 55px;
+    width: 30%;
+}
+
+.cta-block > .field > .field__label,
+.banner-block > .field > .field__label {
+    font-size: x-large;
+    margin: 20px 0 10px 0;
+}
+
+.c-sf-container .field.required > label::after {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    margin-left: 0.1em !important;
+}
+
+.stream-menu-closed {
+    margin: 0 30px;
+}
+
+@media screen and (min-width: 800px) {
+    .c-sf-block {
+        width: calc(100vw - 200px);
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .c-sf-block {
+        max-width: 100vw;
+    }
+}
+
+.c-sf-block {
+    width: auto;
+}
+
+
+div.copy_pl_to_en {
+    margin: 10px 0 20px 15px;
+}
+
+div.copy_pl_to_en > span {
+    background-color: #f37e77;
+    color: #fff;
+    padding: 6px 10px 10px;
+    transition: border-color .2s ease;
+    border-top: 4px solid #f37e77;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+div.copy_pl_to_en > span:hover {
+    border-top: 4px solid #c84d46;
+}
+
+/* Dialog */
+.copy_pl_to_en_overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000c;
+    z-index: 999;
+}
+
+.copy_pl_to_en_dialog {
+    position: fixed;
+    background: white;
+    width: 500px;
+    height: 180px;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid #00676a;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.copy_pl_to_en_dialog span {
+    color: #fff;
+    padding: 4px 10px 10px;
+    transition: border-color .2s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    width: 100px;
+    margin: 0 10px;
+}
+
+.copy_pl_to_en_dialog span.dialog_reject {
+    border-top: 4px solid #f37e77;
+    background-color: #f37e77;
+}
+
+.copy_pl_to_en_dialog span.dialog_reject:hover {
+    border-top: 4px solid #c84d46;
+}
+
+
+.copy_pl_to_en_dialog span.dialog_accept {
+    border-top: 4px solid #00676a;
+    background-color: #00676a;
+}
+
+.copy_pl_to_en_dialog span.dialog_accept:hover {
+    border-top: 4px solid #003f41;
+}
+
+.modal-content .link-types {
+  display: none;
+}
+
+.object.stream-field fieldset{
+    padding-top: 20px;
+}
+
+.object.hyper_form_field{
+    padding-right: 20px;
+}

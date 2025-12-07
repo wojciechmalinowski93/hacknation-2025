@@ -1,0 +1,75 @@
+{% load i18n %}
+{# spaceless tag is required if this should be rendered as markdown #}
+{% spaceless %}
+    <p>{% trans 'The "q" param is for search. For a better understanding of how it works, see the examples below.' %}</p>
+
+    <h4>{% trans "Searching in specific fields" %}</h4>
+    {% trans "The query can run against one or multiple fields." %}<br/>
+    {% trans "Example:" %}<br/>
+    <code>
+        https://api.dane.gov.pl/resources/8162/data?q=col3:Nowak AND col1:Mazowieckie<br/>
+        https://api.dane.gov.pl/resources/8162/data?q=(col3:Nowak OR col3:Kowalski) AND col1:Mazowieckie
+    </code>
+    <h4>{% trans "Searching in all fields" %}</h4>
+    The query can also run against all text-based fields.
+    {% trans "Example:" %}<br/>
+    <code>
+        https://api.dane.gov.pl/resources/8162/data?q=Kowalski AND Mazowieckie
+    </code>
+
+    <h4>{% trans "Wildcards" %}</h4>
+    <p>Wildcard searches can be run on individual terms, using ? to replace a single character, and * to replace zero or
+        more characters.</p>
+
+    <p>{% trans "Example:" %}</p>
+    <code>
+        https://api.dane.gov.pl/resources/8162/data?q=n?wa*
+        https://api.dane.gov.pl/resources/8162/data?q=col1:dolno*
+    </code>
+
+    <h4>{% trans "Regular expressions" %}</h4>
+    <p>Regular expression patterns can be embedded in the query string by wrapping them in forward-slashes ("/").</p>
+    <p>{% trans "Example:" %}</p>
+    <code>
+    https://api.dane.gov.pl/resources/8162/data?q=/kow[eai]lski/
+    </code>
+    <h4>{% trans "Fuzziness" %}</h4>
+    <p>We can search for terms that are similar to, but not exactly like our search terms, using the “fuzzy”
+        operator.</p>
+    <p>{% trans "Example:" %}</p>
+    <code>
+        https://api.dane.gov.pl/resources/8162/data?q=nowk~
+        https://api.dane.gov.pl/resources/8162/data??q=nawakoki~
+    </code>
+    <p>This uses the Damerau-Levenshtein distance to find all terms with a maximum of two changes,
+        where a change is the insertion, deletion or substitution of a single character,
+        or transposition of two adjacent characters.</p>
+
+    <p>The default edit distance is 2, but an edit distance of 1 should be sufficient to catch 80%
+        of all human misspellings. It can be specified as in following example:</p>
+    <code>
+        https://api.dane.gov.pl/resources/8162/data?q=nowakoki~1
+    </code>
+
+    <h4>{% trans "Proximity searches" %}</h4>
+    <p>Proximity query allows the specified words to be further apart or in a different order.</p>
+    <p>In the same way that fuzzy queries can specify a maximum edit distance for characters in a word,
+        a proximity search allows us to specify a maximum edit distance of words in a phrase.</p>
+    <code>
+        https://api.dane.gov.pl/resources/7010/data?q="beskidzki dworzec"~5
+    </code>
+
+    <h4>{% trans "Ranges" %}</h4>
+    <p>Ranges can be specified for date, numeric or string fields.
+        Inclusive ranges are specified with square brackets [min TO max] and exclusive ranges with
+        curly brackets {min TO max}</p>
+    <p>{% trans "Example:" %}</p>
+
+    <h4>{% trans "Boosting" %}</h4>
+
+    <h4>{% trans "Boolean operators" %}</h4>
+
+    <h4>{% trans "Grouping" %}</h4>
+
+    <h4>{% trans "Reserved characters" %}</h4>
+{% endspaceless %}

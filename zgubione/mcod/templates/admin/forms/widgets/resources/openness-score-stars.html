@@ -1,0 +1,16 @@
+{# Renders a set of stars for the current Resource #}
+<span class="star-rating-{{ openness_score_value }}" aria-label="{{ openness_score_value }}">
+    <span class="star-rating-stars" aria-hidden="true">
+      {% for is_filled in stars_list %}
+          {% if is_filled %}
+              <span>&#x2605;</span>
+          {% else %}
+              <span>&#x2606;</span>
+          {% endif %}
+      {% endfor %}
+        {% if openness_score_value == 0 %}
+            {# 0 stars looks awfully like 5 stars, so be explicit #}
+            <span> ({{ openness_score_value }} / {{ max_stars }})</span>
+        {% endif %}
+    </span>
+</span>

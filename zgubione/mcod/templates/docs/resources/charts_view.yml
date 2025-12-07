@@ -1,0 +1,19 @@
+{% load i18n %}
+---
+tags:
+  - API Endpoints
+summary: Returns list of resource's charts
+description: |
+  {% spaceless %}
+      <p>Gives the ability to browse charts related to specified resource.</p>
+      {% include "docs/resources/chart_description.html" %}
+  {% endspaceless %}
+parameters:
+  schema: ChartApiSearchRequest
+responses:
+  200:
+    description: valid response in jsonapi format
+    content:
+      application/vnd.api+json:
+        schema:
+          $ref: '#/components/schemas/Charts'

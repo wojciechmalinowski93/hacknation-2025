@@ -1,0 +1,75 @@
+{% load static i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Zgłoszenie propozycji wykorzystania danych w zakładce PoCoTo</title>
+   </head>
+   <body>
+		<div style="width:650px; margin:auto;">
+               <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+                    <tr style="max-width:580px;padding-top:10px;padding-bottom:10px;">
+                        <td width="580" style="width:100%;overflow:hidden;float:left;">
+                            <img src="{{ host }}{% static "mails/logo-otwarte-dane.png" %}" alt="{% trans 'Download images' %}" style="height:2cm;">
+                        </td>
+                    </tr>
+                    <tr style="max-width:580px;padding-top:10px;padding-bottom:10px;">
+                        <td width="580" align="left" style="padding-top:10px;padding-bottom:10px;max-width:580px;border-collapse:collapse;text-align:left;vertical-align:middle;">
+                            <div style="text-align:left;font-size:28px;font-family: Open Sans Light, Arial, Helvetica, sans-serif;text-decoration:none solid black;color:black;">
+                                Zgłoszenie propozycji wykorzystania danych w zakładce PoCoTo
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+                        <td width="580" align="left" style="padding-top:10px;padding-bottom:10px;max-width:580px;overflow:hidden;">
+                            <img src="{{ host }}{% static "mails/kreska-mail.png" %}" alt="{% trans 'Download images' %}">
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;max-width:580px;table-layout:fixed;clear:both;">
+                    {% include 'mails/proposal-row-label.html' with val='Kategoria:' %}
+                    {% include 'mails/proposal-row-value.html' with val=obj.category_name %}
+                    {% include 'mails/proposal-row-label.html' with val='Nazwa propozycji wykorzystania danych:' %}
+                    {% include 'mails/proposal-row-value.html' with val=obj.title %}
+                    {% include 'mails/proposal-row-label.html' with val='Adres URL do rozwiązania wykorzystującego dane:' %}
+                    {% include 'mails/proposal-row-value.html' with val=obj.url|urlize %}
+                    {% if obj.is_app %}
+                        {% include 'mails/proposal-row-label.html' with val='iOS - link do aplikacji mobilnej:' %}
+                        {% include 'mails/proposal-row-value.html' with val=obj.mobile_apple_url|urlize %}
+                        {% include 'mails/proposal-row-label.html' with val='Android - link do aplikacji mobilnej:' %}
+                        {% include 'mails/proposal-row-value.html' with val=obj.mobile_google_url|urlize %}
+                        {% include 'mails/proposal-row-label.html' with val='Windows - link do aplikacji desktopowej:' %}
+                        {% include 'mails/proposal-row-value.html' with val=obj.desktop_windows_url|urlize %}
+                        {% include 'mails/proposal-row-label.html' with val='Linux - link do aplikacji desktopowej:' %}
+                        {% include 'mails/proposal-row-value.html' with val=obj.desktop_linux_url|urlize %}
+                        {% include 'mails/proposal-row-label.html' with val='MacOS - link do aplikacji desktopowej:' %}
+                        {% include 'mails/proposal-row-value.html' with val=obj.desktop_macos_url|urlize %}
+                    {% endif %}
+                    {% if not obj.is_other %}
+                        {% include 'mails/proposal-row-label.html' with val='Rodzaj licencji:' %}
+                        {% include 'mails/proposal-row-value.html' with val=obj.get_license_type_display %}
+                    {% endif %}
+                    {% include 'mails/proposal-row-label.html' with val='Opis rozwiązania ponownego wykorzystania otwartych danych:' %}
+                    {% include 'mails/proposal-row-value.html' with val=obj.notes|linebreaksbr %}
+                    {% include 'mails/proposal-row-label.html' with val='Słowa kluczowe (opcjonalne):' %}
+                    {% include 'mails/proposal-row-value.html' with val=obj.keywords|join:", " %}
+                    {% include 'mails/proposal-row-label.html' with val='Autor:' %}
+                    {% include 'mails/proposal-row-value.html' with val=obj.author %}
+                    {% include 'mails/proposal-row-label.html' with val='Logo (opcjonalne, ale zalecane):' %}
+                    {% include 'mails/proposal-image.html' with image_src=obj.image_absolute_url %}
+                    {% include 'mails/proposal-row-label.html' with val='Grafika ilustracyjna (opcjonalne):' %}
+                    {% include 'mails/proposal-image.html' with image_src=obj.illustrative_graphics_url %}
+                    {% include 'mails/proposal-row-label.html' with val='Lista zbiorów z portalu dane.gov.pl wykorzystanych w propozycji (opcjonalne):' %}
+                    {% include 'mails/proposal-row-value.html' with val=obj.datasets_links|safe %}
+                    {% include 'mails/proposal-row-label.html' with val='Lista zbiorów danych zewnętrznych wykorzystanych w propozycji (opcjonalne):' %}
+                    {% include 'mails/proposal-row-value.html' with val=obj.external_datasets_links|safe %}
+                    {% include 'mails/proposal-row-label.html' with val='E-mail zgłaszającego:' %}
+                    {% include 'mails/proposal-row-value.html' with val=obj.applicant_email|urlize %}
+                </table>
+                <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;clear:both;">
+                    {% trans 'Wiadomość została wygenerowana automatycznie przez oprogramowanie portalu na podstawie złożonego przez użytkownika Zgłoszenia propozycji wykorzystania danych.<br>Prosimy nie używać funkcji Odpowiedz nadawcy.<br><br>Kontakt z Zespołem portalu Dane.gov.pl: <a href="mailto:kontakt@dane.gov.pl" target="_blank">kontakt@dane.gov.pl</a>' as footer_txt %}
+                  {% include 'mails/_footer.html' with signature=False footer_txt=footer_txt font_color='black' %}
+                </table>
+		</div>
+   </body>
+</html>

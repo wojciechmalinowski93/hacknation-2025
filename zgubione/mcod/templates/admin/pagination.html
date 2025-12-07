@@ -1,0 +1,37 @@
+{% load suit_list i18n harvester_tags %}
+
+{% if cl.formset and cl.result_count %}
+    <input type="submit" name="_save" class="default btn btn-info pull-right changelist-save" value="{% trans 'Save' %}"/>
+{% endif %}
+
+<div class="pagination-block">
+
+  {% if pagination_required %}
+    <div class="pagination">
+      <ul>
+        {% for i in page_range %}
+          {% paginator_number cl i %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <div class="pagination-info muted">
+    {% paginator_info cl %}
+    &nbsp; / &nbsp;
+    {{ cl.result_count }}
+    {% ifequal cl.result_count 1 %}{{ cl.opts.verbose_name }}{% else %}
+      {{ cl.opts.verbose_name_plural }}{% endifequal %}
+    {% if show_all_url %}&nbsp;&nbsp;
+      <a href="{{ show_all_url }}" class="showall">{% trans 'Show all' %}</a>{% endif %}
+  </div>
+</div>
+<script>
+  (function($) {
+    $("a.showall").off('click').click(function() {
+        let anchor = $(window.location).attr('hash');
+        let newHref = $(this).attr('href') + anchor;
+        $(this).attr('href', newHref);
+    });
+  })(django.jQuery);
+</script>

@@ -1,0 +1,60 @@
+{% load i18n core_tags %}
+{# spaceless tag is required if this should be rendered as markdown #}
+{% spaceless %}
+{% block field_description %}
+        <p>{% trans 'Filter instances by' %} {{ doc_field_name }}.<br/></p>
+{% endblock %}
+{% block filters_description %}
+        <p>{% trans 'This field provides following filters:' %}</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Filter</th>
+                <th>Description</th>
+                <th>Examples</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>term</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'matches to the provided value.' %}<br/>
+                    <i>{% trans 'Note, that this is default filter for this field.' %}</i></td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}=abcd">{{ doc_base_url }}/?{{ name }}=abcd</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[term]=abcd">{{ doc_base_url }}/?{{ name }}[term]=abcd</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>terms</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'matches to any of the provided values.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[terms]=ab,cd">{{ doc_base_url }}/?{{ name }}[terms]=ab,cd</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[terms]=ab&{{ name }}[terms]=cd">{{ doc_base_url }}/?{{ name }}[terms]=ab&{{ name }}[terms]=cd</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>startswith</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'starts with the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[startswith]=ab">{{ doc_base_url }}/?{{ name }}[startswith]=ab</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>endswith</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'endswith the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[endswith]=xyz">{{ doc_base_url }}/?{{ name }}[endswith]=xyz</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>contains</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'contains the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[contains]=fgh">{{ doc_base_url }}/?{{ name }}[contains]=fgh</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+{% endblock %}
+{% endspaceless %}

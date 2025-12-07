@@ -1,0 +1,5 @@
+{% load i18n %}
+
+{% blocktrans %}Resource demand reported{% endblocktrans %}:
+
+{% blocktrans %}Description{% endblocktrans %}: {{ notes }}

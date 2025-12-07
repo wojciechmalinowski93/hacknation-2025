@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns="urn:otwarte-dane:harvester:1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:otwarte-dane:harvester:1.2" elementFormDefault="unqualified">
+    <xs:complexType name="datasetType">
+        <xs:all>
+            <xs:element name="extIdent" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Identyfikator zbioru danych w systemie dostawcy.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="36"></xs:maxLength>
+                        <xs:minLength value="1"></xs:minLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="intIdent" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Identyfikator systemowy zbioru danych.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger"></xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="title" type="titleType" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Tytuł zbioru danych.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="description" type="descriptionType" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Opis zbioru danych.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="url" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Źródłowy adres url zbioru danych.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="1000"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="updateFrequency" maxOccurs="1" minOccurs="1" default="notApplicable">
+                <xs:annotation>
+                    <xs:documentation>
+                        Częstotliwość, z jaką zbiór danych jest
+                        aktualizowany.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="notApplicable">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Nie dotyczy.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="yearly">
+                            <xs:annotation>
+                                <xs:documentation>Co rok.</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="everyHalfYear">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Co pół roku.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="quarterly">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Co kwartał.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="monthly">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Co miesiąc.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="weekly">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Co tydzień.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="daily">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Codziennie.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="categories" maxOccurs="1" minOccurs="1">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Lista kategorii zbioru.</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence maxOccurs="unbounded" minOccurs="1">
+                        <xs:element name="category" type="categoryType"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conditions" type="conditionsType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="resources" maxOccurs="1" minOccurs="1">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Lista zasobów udostępnianych przez dany zbiór.</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence maxOccurs="unbounded" minOccurs="1">
+                        <xs:element name="resource" type="resourceType"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="tags" type="tagsType" maxOccurs="1" minOccurs="1" />
+            <xs:element name="lastUpdateDate" maxOccurs="1" minOccurs="0" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>Data i czas ostatniej aktualizacji zbioru danych. Domyślną wartością jest dzień importu danych.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+        </xs:all>
+        <xs:attribute name="status" default="published">
+            <xs:annotation>
+                <xs:documentation>Określa status publikacji zbioru. Domyślną wartością jest "published".</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="published">
+                        <xs:annotation>
+                            <xs:documentation>
+                                    Zbiór jest opublikowany (widoczny
+                                    dla użytkowników dane.gov.pl).
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="draft">
+                        <xs:annotation>
+                            <xs:documentation>
+                                    Zbiór nie jest opublikowany (nie
+                                    jest widoczny dla użytkowników
+                                    dane.gov.pl).
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="resourceType">
+        <xs:all>
+            <xs:element name="extIdent" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Identyfikator zbioru danych w systemie dostawcy.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="36"></xs:maxLength>
+                        <xs:minLength value="1"></xs:minLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="intIdent" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Identyfikator systemowy zasobu.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger"></xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="url" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Adres URL zasobu (pliku, API, strony WWW).</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="2000"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="title" type="titleType" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Tytuł zasobu.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="description" type="descriptionType" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Opis zasobu.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="availability" maxOccurs="1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        W przypadku zasobów plikowych określa, czy zasób
+                        ma być udostępniany z repozytorium dane.gov.pl,
+                        czy ze źródła zdalnego. Dozwolone są dwie
+                        wartości: local i remote. Local - plik zasobu
+                        zostanie ściągnięty do repozytorium dane.gov.pl
+                        i z niego będzie udostępniany użytkownikom -
+                        remote - plik będzie udostępniany użytownikom
+                        przez zewnętrzne źródło o adresie takim jak w
+                        polu "link".
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="local"></xs:enumeration>
+                        <xs:enumeration value="remote"></xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="dataDate" maxOccurs="1" minOccurs="0" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>Dzień, na który przypada aktualność danych w zasobie. Domyślną wartością jest dzień importu danych.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="lastUpdateDate" maxOccurs="1" minOccurs="0" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>Data i czas ostatniej aktualizacji zasobu. Domyślną wartością jest dzień importu danych.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+        <xs:attribute name="status" default="published">
+            <xs:annotation>
+                <xs:documentation>Status publikacji zasobu. Domyślną wartością jest "published".</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="published">
+                        <xs:annotation>
+                            <xs:documentation>
+                            Zasób jest opublikowany (widoczny dla użytkowników dane.gov.pl).
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="draft">
+                        <xs:annotation>
+                            <xs:documentation>
+                            Zasób nie jest opublikowany (nie jest widoczny dla użytkowników dane.gov.pl).
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tagsType">
+        <xs:annotation>
+            <xs:documentation>Lista słów kluczowych (tagów).</xs:documentation>
+        </xs:annotation>
+        <xs:sequence maxOccurs="unbounded" minOccurs="1">
+            <xs:element name="tag">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="lang" use="required">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="pl"></xs:enumeration>
+                                        <xs:enumeration value="en"></xs:enumeration>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:simpleType name="categoryType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AGRI">
+                <xs:annotation>
+                    <xs:documentation>Rolnictwo, rybołówstwo, leśnictwo i żywność</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EDUC">
+                <xs:annotation>
+                    <xs:documentation>Edukacja, kultura i sport</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ENVI">
+                <xs:annotation>
+                    <xs:documentation>Środowisko</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ENER">
+                <xs:annotation>
+                    <xs:documentation>Energia</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TRAN">
+                <xs:annotation>
+                    <xs:documentation>Transport</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TECH">
+                <xs:annotation>
+                    <xs:documentation>Nauka i technologia</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ECON">
+                <xs:annotation>
+                    <xs:documentation>Gospodarka i finanse</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SOCI">
+                <xs:annotation>
+                    <xs:documentation>Ludność i społeczeństwo</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="HEAL">
+                <xs:annotation>
+                    <xs:documentation>Zdrowie</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GOVE">
+                <xs:annotation>
+                    <xs:documentation>Rząd i sektor publiczny</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="REGI">
+                <xs:annotation>
+                    <xs:documentation>Regiony i miasta</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="JUST">
+                <xs:annotation>
+                    <xs:documentation>Sprawiedliwość, ustrój sądów i bezpieczeństwo publiczne</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="INTR">
+                <xs:annotation>
+                    <xs:documentation>Kwestie międzynarodowe</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="conditionsType">
+        <xs:all>
+            <xs:element name="source" type="xs:boolean" maxOccurs="1" minOccurs="0" default="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        Czy odbiorca powinien poinformować o źródle,
+                        czasie wytworzenia i pozyskania informacji od
+                        podmiotu zobowiązanego?
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="modification" type="xs:boolean" maxOccurs="1" minOccurs="0" default="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        Czy odbiorca powinien poinformować o
+                        przetworzeniu informacji,
+                        gdy ją jakkolwiek modyfikuje?
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="responsibilities" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Zakres odpowiedzialności dostawcy za
+                        przekazywane informacje.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="4000"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="dbOrCopyrighted" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Warunki wykorzystywania informacji sektora
+                        publicznego spełniających cechy utworu lub
+                        stanowiących bazę danych (art. 13 ust. 2 ustawy
+                        o ponownym wykorzystywaniu informacji sektora
+                        publicznego).
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="4000"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="dbOrCopyrightedLicenseChosen" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Licencja wybrana w ramach
+                        warunków wykorzystywania informacji sektora
+                        publicznego spełniających cechy utworu lub
+                        stanowiących bazę danych (art. 13 ust. 2 ustawy
+                        o ponownym wykorzystywaniu informacji sektora
+                        publicznego).
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="CC0 1.0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    https://creativecommons.org/publicdomain/zero/1.0/legalcode.pl
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="CC BY 4.0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    https://creativecommons.org/licenses/by/4.0/legalcode.pl
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="CC BY-SA 4.0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    https://creativecommons.org/licenses/by-sa/4.0/legalcode.pl
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="CC BY-NC 4.0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    https://creativecommons.org/licenses/by-nc/4.0/legalcode.pl
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="CC BY-NC-SA 4.0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.pl
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="CC BY-ND 4.0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    https://creativecommons.org/licenses/by-nd/4.0/legalcode.pl
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="CC BY-NC-ND 4.0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.pl
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="personalData" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Warunki wykorzystywania informacji sektora
+                        publicznego zawierającej dane osobowe (art. 14
+                        ust. 1 pkt 4 ustawy o ponownym wykorzystywaniu
+                        informacji sektora publicznego).
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="4000"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="titleType">
+        <xs:all>
+            <xs:element name="polish" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Tytuł w języku polskim.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"></xs:minLength>
+                        <xs:maxLength value="300"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="english" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Tytuł w języku angielskim.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"></xs:minLength>
+                        <xs:maxLength value="300"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="descriptionType">
+        <xs:all>
+            <xs:element name="polish" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Opis w języku polskim.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"></xs:minLength>
+                        <xs:maxLength value="1000"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="english" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Opis w języku angielskim.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"></xs:minLength>
+                        <xs:maxLength value="1000"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:element name="datasets">
+        <xs:complexType>
+            <xs:annotation>
+                <xs:documentation>Lista zbiorów danych.</xs:documentation>
+            </xs:annotation>
+            <xs:sequence maxOccurs="unbounded" minOccurs="1">
+                <xs:element name="dataset" type="datasetType"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

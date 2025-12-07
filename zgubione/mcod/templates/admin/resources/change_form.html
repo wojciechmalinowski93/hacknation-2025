@@ -1,0 +1,453 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static admin_modify suit_tags core_tags admin_urls %}
+{% load url from suit_compat %}
+{% block extrahead %}{{ block.super }}
+    {% url 'admin:jsi18n' as jsi18nurl %}
+    <script type="text/javascript" src="{{ jsi18nurl|default:'../../../jsi18n/' }}"></script>
+
+    {{ media }}
+
+{% endblock %}
+
+{% block extrajs %}
+    {{ block.super }}
+
+    {% if 'CONFIRM_UNSAVED_CHANGES'|suit_conf %}
+        <!-- Warn on leaving unsaved form -->
+        <script src="{% static 'suit/js/suit-form-confirm.js' %}"></script>
+        <script type="text/javascript">
+            confirmExitIfModified('{% firstof opts.model_name opts.module_name %}_form', '{% trans "You have unsaved changes" %}.');
+        </script>
+    {% endif %}
+
+    {% if suit_form_tabs %}
+        <script type="text/javascript">
+            (function ($) {
+                $(function () {
+                    $('#suit_form_tabs').suit_form_tabs();
+                });
+            }(Suit.$))
+        </script>
+    {% endif %}
+
+    <script>
+        (function ($) {
+            $(function () {
+                $("#{% firstof opts.model_name opts.module_name %}_form").suit_form_debounce();
+            });
+        }(Suit.$))
+    </script>
+
+    <script>
+
+        function disable_auto_data_date_fields(){
+            $(".field-is_auto_data_date, .field-automatic_data_date_start, .field-data_date_update_period, .field-automatic_data_date_end, .field-endless_data_date_update").hide();
+        };
+
+        function enable_auto_data_date_fields(){
+            $(".field-is_auto_data_date, .field-automatic_data_date_start, .field-data_date_update_period, .field-automatic_data_date_end, .field-endless_data_date_update").show();
+        };
+
+        function reformat_auto_data_date_fields($isAutoDataDateInput, $dataDateInput, dataDateDivSpan){
+            var $newDiv = $('<div/>', { class: 'tmp-is-manual-data-date-update' });
+            $(".field-automatic_data_date_start .control-label label").insertAfter($(".field-automatic_data_date_start .controls span.datetimeshortcuts"));
+            $(".field-automatic_data_date_end .control-label label").insertAfter($(".field-automatic_data_date_end .controls span.datetimeshortcuts"));
+            $newDiv.insertAfter(dataDateDivSpan);
+            $("div.field-is_auto_data_date div.control-label label").appendTo($newDiv);
+            $isAutoDataDateInput.appendTo($newDiv);
+            if($isAutoDataDateInput[0].checked){
+                $dataDateInput.attr('disabled', 'disabled');
+                $("div.field-data_date span.datetimeshortcuts").hide();
+            }
+            else{
+                disable_auto_data_date_fields();
+            }
+        };
+
+        (function ($) {
+            $(document).ready(function ($) {
+                $('body').trigger('form-ready', [$('#{% firstof opts.model_name opts.module_name %}_form')]);
+                $('input[name="has_high_value_data"]').click(function(){
+                  $('input[name="has_high_value_data"]').prop('checked', false);
+                  $(this).prop('checked', true);
+                });
+                $('input[name="has_high_value_data_from_ec_list"]').click(function(){
+                  $('input[name="has_high_value_data_from_ec_list"]').prop('checked', false);
+                  $(this).prop('checked', true);
+                });
+                $('input[name="has_dynamic_data"]').click(function(){
+                  $('input[name="has_dynamic_data"]').prop('checked', false);
+                  $(this).prop('checked', true);
+                });
+                $('input[name="has_research_data"]').click(function(){
+                  $('input[name="has_research_data"]').prop('checked', false);
+                  $(this).prop('checked', true);
+                });
+                $('input[name="contains_protected_data"]').click(function(){
+                  $('input[name="contains_protected_data"]').prop('checked', false);
+                  $(this).prop('checked', true);
+                });
+                var $dataDateField = $("div.field-data_date div .controls span.datetimeshortcuts");
+                var $dataDateInput = $("div.field-data_date div.controls input");
+                var $isAutoDataDateLabel = $("div.field-is_auto_data_date div.control-label label");
+                var $isAutoDataDateInput = $("div.field-is_auto_data_date div.controls input");
+                var $AutoDataDateStartInput = $("div.field-automatic_data_date_start div.controls input");
+                if($isAutoDataDateInput.length){
+                    $(".field-is_auto_data_date div.controls").html("<span class='conf-label'>Okres obowiązywania</span>");
+                    $(".field-data_date_update_period .control-label label").insertAfter($(".field-data_date_update_period .controls select"));
+                    $(".field-endless_data_date_update .control-label label").insertAfter($(".field-endless_data_date_update .controls input"));
+                    if($dataDateField.length){
+                        reformat_auto_data_date_fields($isAutoDataDateInput, $dataDateInput, $dataDateField);
+                    }
+                    else{
+                        const targetNode = document.getElementById('id_data_date').parentNode;
+                        const config = { childList: true};
+
+                        const callback = function(mutationList, observer) {
+                            for(const mutation of mutationList) {
+                                if (mutation.type === 'childList' && mutation.addedNodes[0].classList.contains('datetimeshortcuts')) {
+                                    reformat_auto_data_date_fields($isAutoDataDateInput, $dataDateInput, mutation.addedNodes[0]);
+                                }
+                            }
+                        };
+                        const observer = new MutationObserver(callback);
+                        observer.observe(targetNode, config);
+                    }
+
+
+                    $(".field-automatic_data_date_start .controls input").on("change paste focus",function(){
+                        $(".field-data_date .controls input").val($(this).val());
+                    });
+                    $isAutoDataDateInput.change(function(){
+                        if(this.checked){
+                            enable_auto_data_date_fields();
+                            let initial_val = $AutoDataDateStartInput.val();
+                            if(initial_val){
+                                $dataDateInput.val(initial_val);
+                            }
+                            $dataDateInput.attr('disabled', 'disabled');
+                            $("div.field-data_date span.datetimeshortcuts").hide();
+                        }
+                        else{
+                            disable_auto_data_date_fields();
+                            $dataDateInput.removeAttr('disabled');
+                            $("div.field-data_date span.datetimeshortcuts").show();
+                        }
+                    });
+
+                    $('#resource_form').submit(function(){
+                        $("input#id_data_date:disabled").removeAttr('disabled');
+                        return;
+                    });
+                }
+
+                $(document).on('change', '#id_dataset', function() {
+                    $("#id_related_resource").val('').trigger('change');
+                {% if add %}
+                  var dataset_id = $(this).val();
+                  if (dataset_id){
+                      $.ajax({
+                          url:  '{{ SETTINGS.ADMIN_URL }}/datasets/dataset/' + dataset_id + '/details/',
+                          dataType: 'json',
+                          success: function (data) {
+                              if ('has_high_value_data' in data) {
+                                  if (data.has_high_value_data == true){
+                                      $('#id_has_high_value_data_0').prop('checked', true);
+                                      $('#id_has_high_value_data_1').prop('checked', false);
+                                  } else if (data.has_high_value_data == false) {
+                                      $('#id_has_high_value_data_0').prop('checked', false);
+                                      $('#id_has_high_value_data_1').prop('checked', true);
+                                  }
+                              }
+                              if ('has_high_value_data_from_ec_list' in data) {
+                                  if (data.has_high_value_data_from_ec_list == true){
+                                      $('#id_has_high_value_data_from_ec_list_0').prop('checked', true);
+                                      $('#id_has_high_value_data_from_ec_list_1').prop('checked', false);
+                                  } else if (data.has_high_value_data_from_ec_list == false) {
+                                      $('#id_has_high_value_data_from_ec_list_0').prop('checked', false);
+                                      $('#id_has_high_value_data_from_ec_list_1').prop('checked', true);
+                                  }
+                              }
+                              if ('has_dynamic_data' in data) {
+                                  if (data.has_dynamic_data == true){
+                                      $('#id_has_dynamic_data_0').prop('checked', true);
+                                      $('#id_has_dynamic_data_1').prop('checked', false);
+                                  } else if (data.has_dynamic_data == false) {
+                                      $('#id_has_dynamic_data_0').prop('checked', false);
+                                      $('#id_has_dynamic_data_1').prop('checked', true);
+                                  }
+                              }
+                              if ('has_research_data' in data) {
+                                  if (data.has_research_data == true){
+                                      $('#id_has_research_data_0').prop('checked', true);
+                                      $('#id_has_research_data_1').prop('checked', false);
+                                  } else if (data.has_research_data == false) {
+                                      $('#id_has_research_data_0').prop('checked', false);
+                                      $('#id_has_research_data_1').prop('checked', true);
+                                  }
+                              }
+                              if ('contains_protected_data' in data) {
+                                  if (data.contains_protected_data == true){
+                                      $('#id_contains_protected_data_0').prop('checked', true);
+                                      $('#id_contains_protected_data_1').prop('checked', false);
+                                  } else if (data.contains_protected_data == false) {
+                                      $('#contains_protected_data_0').prop('checked', false);
+                                      $('#contains_protected_data_1').prop('checked', true);
+                                  }
+                              }
+                          }
+                      });
+                  }
+                {% endif %}
+                });
+            });
+
+        }(django.jQuery));
+
+    </script>
+
+{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content_title_value %}
+    {% trans 'Add' %} {{ opts.verbose_name }}
+{% endblock %}
+
+{% block coltype %}{% if ordered_objects %}colMS{% else %}colM{% endif %}{% endblock %}
+
+{% block bodyclass %}{{ opts.app_label }}-{{ opts.object_name.lower }} change-form{% endblock %}
+
+{% if not is_popup %}
+    {% block breadcrumbs %}
+        <ul class="breadcrumb">
+            <li>
+                <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+                <span class="divider">&raquo;</span>
+            </li>
+            <li>
+                <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{% firstof opts.app_config.verbose_name app_label|capfirst|escape %}</a>
+                <span class="divider">&raquo;</span>
+            </li>
+            <li>
+                {% if has_change_permission %}
+                    <a href="{% url opts|admin_urlname:'changelist' %}">
+                        {{ opts.verbose_name_plural|capfirst }}</a>{% else %}
+                    {{ opts.verbose_name_plural|capfirst }}{% endif %}
+                <span class="divider">&raquo;</span>
+            </li>
+            <li class="active">
+                {% if add %}{% trans 'Add' %} {{ opts.verbose_name }}{% else %}
+                    {{ original|truncatewords:"18" }}{% endif %}
+            </li>
+        </ul>
+    {% endblock %}
+{% endif %}
+
+{% block content %}
+    <div id="content-main" class="inner-two-columns">
+
+        <form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post"
+              id="{% firstof opts.model_name opts.module_name %}_form" class="form-horizontal" novalidate>
+
+            <div class="inner-right-column">
+
+                <div class="box save-box">
+
+                    {% block submit_buttons_bottom %}
+                        {% submit_row %}
+                        {% if not 'resourcetrash' in request.path %}
+                            {% if object_id and not original.is_imported %}
+                                <div class="submit-row clearfix">
+                                    <a href="/resources/resource/add/?from_id={{ object_id }}" class="btn btn-high"
+                                       id="duplicate_button">
+                                        {% blocktrans %}Copy to new <br>resource{% endblocktrans %}
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                            {% if object_id and not original.is_imported %}
+                                <div>
+                                    <a href="/resources/resource/{{ object_id }}/revalidate/" class="btn extra-btn"
+                                       id="revalidate_button">
+                                        {% trans "Revalidate" %}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endblock %}
+
+                </div>
+
+                {% block object-tools %}
+                    {% if change %}{% if not is_popup %}
+                        <h4 class="italic-title">{% trans 'tools'|capfirst %}</h4>
+                        <ul class="box menu-box">
+                            {% block object-tools-items %}
+                            <li>
+                                {% include "admin/includes/history_button.html" %}
+                            </li>
+                                {% if not original.is_imported %}
+                                {% if has_absolute_url %}
+                                    <li>
+                                        <a href="{{ absolute_url }}" class="viewsitelink"><i
+                                                class="icon-eye-open icon-alpha75"></i>{% trans "View on site" %}</a>
+                                    </li>
+                                {% endif %}
+
+                                {% if has_add_permission %}
+                                    <li>
+                                        <a href="{% url opts|admin_urlname:'add' %}">
+                                            <i class="icon-plus-sign icon-alpha75"></i>
+                                            {% blocktrans with opts.verbose_name as name %}Add
+                                                {{ name }}{% endblocktrans %}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% endif %}
+                            {% endblock %}
+                        </ul>
+                    {% endif %}{% endif %}
+
+                {% endblock %}
+
+                {% block sidebar %}{% endblock %}
+
+            </div>
+            <div class="inner-center-column">
+                {% csrf_token %}{% block form_top %}{% endblock %}
+                {% block suit_form_tabs %}
+                    {% if suit_form_tabs %}
+                        <ul id="suit_form_tabs" class="nav nav-tabs nav-tabs-suit" data-tab-prefix="suit-tab" role="tablist">
+                            {% for tab in suit_form_tabs %}
+                                <li {% if tab.2 == 'disabled' %}
+                                    class="disabled disabledTab"
+                                    title="{% blocktrans %}unavailable tab - the resource does not have a tabular view{% endblocktrans %}"
+                                {% endif %}
+                                >
+                                    <a {% if tab.2 == 'disabled' %} class="disabledTab" {% endif %} href="#{{ tab.0 }}" role="tab">
+                                        {{ tab.1 }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endblock %}
+                <div class="{% if adminform.model_admin.suit_form_tabs or suit_form_tabs %} tab-content tab-content-main {% endif %}" role="tabpanel">
+                    {% if is_popup %}
+                        <input type="hidden" name="_popup" value="1"/>{% endif %}
+                    {% if errors %}
+                        <div class="alert alert-error">
+                            {% blocktrans count counter=errors|length %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+                            {% if debug %}
+                                {{ adminform.form.errors }}
+                            {% else %}
+                                {{ adminform.form.non_field_errors }}
+                            {% endif %}
+
+                        </div>
+                    {% endif %}
+
+                    {# render suit_form_includes at top position #}
+                    {% include 'suit/includes/change_form_includes.html' with position='top' %}
+
+                    {% block field_sets %}
+                        {% for fieldset in adminform %}
+                            {% include "admin/includes/fieldset.html" %}
+                        {% endfor %}
+                    {% endblock %}
+
+                    {% block after_field_sets %}{% endblock %}
+
+                    {# render suit_form_includes at middle position #}
+                    {% include 'suit/includes/change_form_includes.html' with position='middle' %}
+
+                    {% block inline_field_sets %}
+                        {% for inline_admin_formset in inline_admin_formsets %}
+                            {% include inline_admin_formset.opts.template %}
+                        {% endfor %}
+                    {% endblock %}
+
+                </div>
+
+                {% block after_related_objects %}{% endblock %}
+
+                {# render suit_form_includes at last position #}
+                {% include 'suit/includes/change_form_includes.html' with position='bottom' %}
+
+                {% block admin_change_form_document_ready %}
+                    <script type="text/javascript">
+                        (function ($) {
+                            $(document).ready(function () {
+                                $("label[for=id_special_signs]").removeAttr('for');
+                                $('.add-another').click(function (e) {
+                                    e.preventDefault();
+                                    showAddAnotherPopup(this);
+                                });
+                                $('.related-lookup').click(function (e) {
+                                    e.preventDefault();
+                                    showRelatedObjectLookupPopup(this);
+                                });
+                                {% if adminform and add %}
+                                    $('form#{% firstof opts.model_name opts.module_name %}_form :input[type!=button][type!=submit]:visible:enabled:first').focus()
+                                {% endif %}
+                            });
+                        })(django.jQuery);
+                    </script>
+                {% endblock %}
+
+                {# JavaScript for prepopulated fields #}
+                {% prepopulated_fields_js %}
+
+            </div>
+            <div id="tab_actions">
+            </div>
+        </form>
+    </div>
+
+
+
+    {% if verification_results %}
+        <!-- The Modal -->
+        <div id="verification_results" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Results of validation</p>
+            </div>
+
+        </div>
+
+        <script>
+
+            var modal = document.getElementById("verification_results");
+
+            var span = document.getElementsByClassName("close")[0];
+
+
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    {% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+
+
+
+
+{% endblock %}
+{# Empty centered sidebar as now we use sidebar in content block#}
+{% block sidebar_content %}{% endblock %}

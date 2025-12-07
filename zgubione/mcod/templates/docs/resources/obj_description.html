@@ -1,0 +1,20 @@
+{% load i18n %}
+{% spaceless %}
+    <p>A resource is an object that contains the following fields:</p>
+    <ul>
+        <li>title (string) - title of the resource</li>
+        <li>description (string) - short description of the resource</li>
+        <li>category (string) - category of the resource</li>
+        <li>openness_score (integer) - openness score of the resource (from 1 to 5)</li>
+        <li>format (string) - resource format (applies when the resource is a file)</li>
+        <li>media_type (string) - type of resource; possible values are: file, website, api</li>
+        <li>file_url (string) - url to the file (applies if the resource is a file)</li>
+        <li>file_size (integer) - file size in bytes (applies if the resource is a file)</li>
+        <li>link (string) - url to the resource</li>
+        <li>views_count (integer) - number of resource views</li>
+        <li>downloads_count (integer) - number of resource downloads</li>
+        <li>created (string) - date of creation of the resource</li>
+        <li>modified (string) - date of last modification</li>
+    </ul>
+
+{% endspaceless %}

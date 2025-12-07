@@ -1,0 +1,10 @@
+{% extends 'painless/base.painless'%}
+{% load is_keyword %}
+{% block content %}
+{{col}} = {{col}}.toString();
+if ({{col}} ==~ /\d{9}|\d{14}/) {
+    return false
+} else {
+    return true
+}
+{% endblock %}

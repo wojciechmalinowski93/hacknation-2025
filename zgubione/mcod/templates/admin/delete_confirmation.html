@@ -1,0 +1,69 @@
+{% extends "admin/delete_confirmation.html" %}
+
+{% load admin_urls i18n %}
+
+
+{% block title %}
+    {% if title == _('Are you sure?') %}
+        {% trans 'Warning!' %}
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block content_title %}
+    {% if title == _('Are you sure?') %}
+        <h2 class="content-title">{% trans 'Warning!' %}</h2>
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div id="delete_confirmation" class="alert alert-block alert-error">
+    {% if perms_lacking %}
+        <p class="lead">{% blocktrans with escaped_object=object %}Deleting the {{ object_name }} '{{ escaped_object }}' would result
+            in deleting related objects, but your account doesn't have permission to delete the following types of
+            objects:{% endblocktrans %}</p>
+        <ul>
+            {% for obj in perms_lacking %}
+                <li>{{ obj }}</li>
+            {% endfor %}
+        </ul>
+    {% elif protected %}
+        <p class="lead">{% blocktrans with escaped_object=object %}Deleting the {{ object_name }} '{{ escaped_object }}' would
+            require deleting the following protected related objects:{% endblocktrans %}</p>
+        <ul>
+            {% for obj in protected %}
+                <li>{{ obj }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {% block delete_info %}
+            <p class="lead">{% blocktrans with escaped_object=object|truncatewords:"18" object_name=object_name|capfirst %}Are you sure you want to delete the ({{ object_name }}): <b>"{{ escaped_object }}"</b>?{% endblocktrans %}</p>
+        {% endblock %}
+            {% if not object.trash_class or object.is_trash %}
+                <p class="irreversible-deletion-warning">{% trans "Removing an object is an irreversible operation." %}</p>
+            {% endif %}
+            {% if object.is_dga %}
+                <p>{% trans "You are deleting the current list of protected data. Once deleted, the data in this list will be removed from the main list of protected data." %}</p>
+            {% elif object.dga_resources_titles %}
+                {% for title in object.dga_resources_titles %}
+                    <p>{% trans "The collection contains the current list of protected data. When the collection is deleted, the data from this resource will be removed from the main list of protected data." %}</p>
+                {% endfor %}
+            {% endif %}
+        <form method="post">{% csrf_token %}
+            <div>
+                <input type="hidden" name="post" value="yes">
+                {% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1">{% endif %}
+                {% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}">{% endif %}
+                {% block delete_buttons %}
+                    <br>
+                    <input type="submit" value="{% blocktrans with name=opts.verbose_name|lower %}Yes, delete {{ name }}{% endblocktrans %}" class="btn btn-danger">
+                    <a href="#" onclick="window.history.back()" class="btn btn-success cancel-link">{% trans "No, stop the operation" %}</a>
+                {% endblock %}
+            </div>
+        </form>
+    {% endif %}
+    </div>
+{% endblock %}

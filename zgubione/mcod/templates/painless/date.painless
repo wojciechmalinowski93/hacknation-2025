@@ -1,0 +1,14 @@
+{% extends 'painless/base.painless'%}
+{% block content %}
+
+{{col}} = {{col}}.toString();
+if ({{col}} instanceof String) {
+    if ({{col}} ==~ /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])(T00:00:00\.000Z)?)/) {
+        return false
+    } else {
+        return true
+    }
+} else {
+    return true
+}
+{% endblock %}

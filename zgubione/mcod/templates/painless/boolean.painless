@@ -1,0 +1,16 @@
+{% extends 'painless/base.painless'%}
+{% block content %}
+
+if ( {{col}} instanceof boolean ) {
+  return false
+} else {
+    if ( {{col}} instanceof String) {
+        if ( {{col}} == "True" || {{col}} == "False" ) {
+            return false
+        } else {
+            return true
+        }
+    }
+    return true
+}
+{% endblock %}

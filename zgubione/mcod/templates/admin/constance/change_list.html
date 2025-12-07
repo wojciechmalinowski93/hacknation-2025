@@ -1,0 +1,135 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static admin_modify suit_tags core_tags admin_urls %}
+{% load url from suit_compat %}
+
+
+{% block extrahead %}{{ block.super }}
+  {% url 'admin:jsi18n' as jsi18nurl %}
+  <script type="text/javascript" src="{{ jsi18nurl|default:"../../../jsi18n/" }}"></script>
+
+  {{ media }}
+
+{% endblock %}
+
+
+{% block extrajs %}
+  {{ block.super }}
+
+  {% if 'CONFIRM_UNSAVED_CHANGES'|suit_conf %}
+    <!-- Warn on leaving unsaved form -->
+    <script src="{% static 'suit/js/suit-form-confirm.js' %}"></script>
+    <script type="text/javascript">
+      confirmExitIfModified('{% firstof opts.model_name opts.module_name %}_form', '{% trans 'You have unsaved changes' %}.');
+    </script>
+  {% endif %}
+
+  <script>
+    (function ($) {
+      $(function () {
+        $("#{% firstof opts.model_name opts.module_name %}_form").suit_form_debounce();
+      });
+    }(Suit.$))
+  </script>
+{% endblock %}
+
+{% block content_title_value %}
+  {{ opts.verbose_name|capfirst }}
+{% endblock %}
+
+{% block bodyclass %}change-form{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb">
+  <li>
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    <span class="divider">&raquo;</span>
+  </li>
+  <li class="active">
+      {{ opts.verbose_name_plural|capfirst }}
+  </li>
+</ul>
+{% endblock %}
+
+{% block content_title %}
+    <h2 class="content-title">{% trans "Configuration" %}</h2>
+{% endblock %}
+
+{% block content %}
+  <div id="content-main" class="inner-two-columns">
+
+    <form action="{{ form_url }}" method="post" id="{% firstof opts.model_name opts.module_name %}_form" class="form-horizontal">
+
+      <div class="inner-right-column">
+
+        <div class="box save-box">
+          <div class="submit-row clearfix">
+            <button type="submit" class="btn btn-high btn-success" name="_save">{% trans 'Save' %}</button>
+          </div>
+        </div>
+
+        {% block object-tools %}{% endblock %}
+
+        {% block sidebar %}{% endblock %}
+      </div>
+
+      <div class="inner-center-column">
+        {% csrf_token %}{% block form_top %}{% endblock %}
+        {% for field in form.hidden_fields %}{{ field }}{% endfor %}
+
+        <div>
+          {% if form.errors %}
+            <div class="alert alert-error">
+              {% blocktrans count counter=form.errors|length %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+              {{ form.non_field_errors }}
+              <ul class="errorlist nonfield">
+              {% for field in form.hidden_fields %}{% for error in field.errors %}
+                <li>{{ error }}</li>
+              {% endfor %}{% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          <fieldset class="module aligned first"></fieldset>
+          {% for fieldset in fieldsets %}
+          <fieldset class="module aligned {{ fieldset.classes }}">
+            {% if fieldset.title %}
+            <h2 class="legend">{{ fieldset.title }}
+            {% if fieldset.description %}
+            <span class="description">{{ fieldset.description|safe }}</span>
+            {% endif %}
+            </h2>
+            {% endif %}
+          {% with config_values=fieldset.config_values %}
+          {% for item in config_values %}
+            <div class="control-group form-row{% if item.form_field.errors %} error errors{% endif %} field-{{ item.name }}">
+              <div>
+                 <div class="control-label">
+                     <label for="id_{{ item.name }}">{{ item.name }}:</label>
+                     <p class="help-constance">{{ item.help_text|linebreaksbr }}</p>
+                     <span class="default-constance">{% if item.modified %}(default: {{ item.default }}){% endif %}</span>
+                 </div>
+                 <div class="controls">
+                  {% if item.form_field.errors %}
+                    <div class="inline error errors">
+                      {{ item.form_field }}
+                      <span class="help-inline">{{ item.form_field.errors }}</span>
+                    </div>
+                  {% else %}
+                    {{ item.form_field }}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          {% endwith %}
+          </fieldset>
+          {% endfor %}
+          {# For closing line #}
+          {% if 'plugin-holder' in fieldset.classes %}
+            <hr class="plugin-holder-separator">
+          {% endif %}
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}

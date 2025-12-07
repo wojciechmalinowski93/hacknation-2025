@@ -1,0 +1,5 @@
+#changelist-search .select2-container {
+    min-width: 16.5em;
+    max-width: 100%;
+    vertical-align: bottom;
+}

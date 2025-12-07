@@ -1,0 +1,25 @@
+{% load i18n %}
+
+<div class="actions">
+    {% for field in action_form %}
+        {% if field.label %}
+            <label><span class="action-label">{{ field.label }}</span>
+        {% endif %}
+        {{ field }}
+        {% if field.label %}
+            </label>
+        {% endif %}
+    {% endfor %}
+    {% block actions_button %}<button type="submit" class="btn" title="{% trans "Run the selected action" %}" name="index" value="{{ action_index|default:0 }}">{% trans "Go" %}</button>{% endblock %}
+    {% if actions_selection_counter %}
+        <span class="action-counter" data-actions-icnt="{{ cl.result_list|length|default:"0" }}">{{ selection_note }}</span>
+        {% if cl.result_count != cl.result_list|length %}
+            <span class="all">{{ selection_note_all }}</span>
+            <span class="question">
+            <a href="javascript:;" title="{% trans "Click here to select the objects across all pages" %}">
+                {% blocktrans with total_count=cl.result_count lowercase_module_name=module_name|lower %}Select all {{ total_count }} {{ lowercase_module_name }}{% endblocktrans %}</a>
+        </span>
+            <span class="clear"><a href="javascript:;">{% trans "Clear selection" %}</a></span>
+        {% endif %}
+    {% endif %}
+</div>

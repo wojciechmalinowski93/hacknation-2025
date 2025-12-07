@@ -1,0 +1,19 @@
+{% load i18n core_tags %}
+---
+tags:
+  - API Endpoints
+summary: Search
+description: |
+  {% spaceless %}
+      <p>Gives the ability to filter and search objects of various types: articles, datasets, institutions, resources, showcases.</p>
+      {% include "docs/search/search_view_description.html" %}
+  {% endspaceless %}
+parameters:
+  schema: ApiSearchRequest
+responses:
+  200:
+    description: valid response in jsonapi format
+    content:
+      application/vnd.api+json:
+        schema:
+          $ref: '#/components/schemas/Search'

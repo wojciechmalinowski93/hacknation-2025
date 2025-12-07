@@ -1,0 +1,8 @@
+{% extends "admin/change_list.html" %}
+{% load i18n %}
+{% block object-tools-items %}
+    {{ block.super }}
+    {% if SETTINGS.SHOW_GENERATE_RAPORT_BUTTOON and 'summarydailyreport' in request.path %}
+        <a href="{% url 'admin:reports-generate-dailyreport' %}">{% blocktrans %}Generate report{% endblocktrans %}</a>
+    {% endif %}
+{% endblock %}

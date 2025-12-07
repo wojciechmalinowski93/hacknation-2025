@@ -1,0 +1,54 @@
+{% load i18n core_tags %}
+{# spaceless tag is required if this should be rendered as markdown #}
+{% spaceless %}
+{% block field_description %}
+        <p>{% trans 'Search instances by' %} {{ doc_field_name }}.<br/></p>
+{% endblock %}
+    {% block filters_description %}
+        <p>{% trans 'This field provides the following queries:' %}</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Query</th>
+                <th>Description</th>
+                <th>Examples</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>match</strong></td>
+                <td>{% trans 'searches for instances in which' %} {{ doc_field_name }} {% trans 'matches the provided value.' %}<br/>
+                    <i>{% trans 'Note, that this is default filter for this field.' %}</i></td>
+                <td>
+                    {% block filter_match_examples %}
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{name}}=lorem">{{ doc_base_url }}/?{{name}}=lorem</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{name}}[match]=lorem">{{ doc_base_url }}/?{{name}}[match]=lorem</a>
+                    {% endblock %}
+                </td>
+            </tr>
+            <tr>
+                <td><strong>phrase</strong></td>
+                <td>{% trans 'searches for instances in which ' %} {{ doc_field_name }} {% trans 'matches the provided phrase.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{name}}[phrase]=lorem ipsum">{{ doc_base_url }}/?{{name}}[phrase]=lorem ipsum</a><br/>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>prefix</strong></td>
+                <td>{% trans 'searches for instances in which ' %} {{ doc_field_name }} {% trans 'starts with the  provided phrase.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{name}}[prefix]=lorem ips">{{ doc_base_url }}/?{{name}}[prefix]=lorem ips</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>query</strong></td>
+                <td>{% trans 'searches for instances that matches the provided query string.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{name}}[query]=*rem* AND ipsum">{{ doc_base_url }}/?{{name}}[query]=*rem* AND ipsum</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{name}}[query]=lorem OR ipsum">{{ doc_base_url }}/?{{name}}[query]=lorem OR ipsum</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+{% endblock %}
+{% endspaceless %}

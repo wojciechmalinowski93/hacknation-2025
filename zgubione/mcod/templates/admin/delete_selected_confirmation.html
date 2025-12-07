@@ -1,0 +1,76 @@
+{% extends "admin/delete_selected_confirmation.html" %}
+
+{% load admin_urls i18n l10n %}
+
+{% block title %}
+    {% if title == _('Are you sure?') %}
+        {% trans 'Warning!' %}
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block content_title %}
+    {% if title == _('Are you sure?') %}
+        <h2 class="content-title">{% trans 'Warning!' %}</h2>
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div id="delete_confirmation" class="alert alert-block alert-error">
+    {% if perms_lacking %}
+        {% block perms_lacking %}
+        <p class="lead">{% blocktrans %}Deleting the selected {{ objects_name }} would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:{% endblocktrans %}</p>
+        <ul>
+            {% for obj in perms_lacking %}
+                <li>{{ obj }}</li>
+            {% endfor %}
+        </ul>
+        {% endblock perms_lacking %}
+    {% elif protected %}
+        <p class="lead">{% blocktrans %}Deleting the selected {{ objects_name }} would require deleting the following protected related objects:{% endblocktrans %}</p>
+        <ul>
+            {% for obj in protected %}
+                <li>{{ obj }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="lead">{% blocktrans with items=objects_name|lower %}Are you sure you want to delete the {{ items }}?{% endblocktrans %}</p>
+        <ul>
+            {% for obj in queryset %}
+                <li>{% if obj.title %}{{ obj.title|truncatewords:"18" }}{% elif obj.email %}{{ obj.email }}{% else %}{{ obj|truncatewords:"18" }}{% endif %}</li>
+                {% if obj.datasource_datasets %}
+                    <li class="small">({% trans 'All existing datasets and resources imported from this source will be deleted also.' %})</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        {% if not queryset.model.trash_class or queryset.model.is_trash %}
+            <p class="irreversible-deletion-warning">{% trans "Removing an object is an irreversible operation." %}</p>
+        {% endif %}
+
+        <form method="post">{% csrf_token %}
+            <div>
+                {% for obj in queryset %}
+                    <!-- when obj is Resource -->
+                    {% if obj.is_dga %}
+                        <p>{% blocktrans with resource_title=obj.title %}{{ resource_title }} is the current list of protected data. If you delete it, the data from this resource will be removed from the main list of protected data.{% endblocktrans %}</p>
+                    {% endif %}
+                    <!-- when obj is Dataset -->
+                    {% for title in obj.dga_resources_titles %}
+                        <p>{% blocktrans with dataset_title=obj.title %}The {{ dataset_title }} dataset contains the current list of protected data. When you delete the collection, the data in this resource will be removed from the main list of protected data.{% endblocktrans %}</p>
+                    {% endfor %}
+                <input type="hidden" name="{{ action_checkbox_name }}" value="{{ obj.pk|unlocalize }}">
+                {% endfor %}
+                <input type="hidden" name="action" value="delete_selected">
+                <input type="hidden" name="post" value="yes">
+                <br>
+                <input type="submit" value="{% blocktrans with name=opts.verbose_name_plural|lower %}Yes, delete {{ name }}{% endblocktrans %}" class="btn btn-danger">
+                <a href="#" onclick="window.history.back()" class="btn btn-success cancel-link">{% trans "No, stop the operation" %}</a>
+            </div>
+        </form>
+    {% endif %}
+    </div>
+{% endblock %}

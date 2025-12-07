@@ -1,0 +1,12 @@
+{% extends 'painless/base.painless'%}
+{% block content %}
+if ({{col}} instanceof String) {
+    if ({{col}} ==~ /(\d{5}[;\|]\d{6,7}[;\|]\d{7}[;\|]\d{7}[;\|]\d{5}[;\|]\d+([.]\d+)?[;\|]\d+([.]\d+)?[;\|]\d+[a-zA-Z]?[;\|])/) {
+        return false
+    } else {
+        return true
+    }
+} else {
+    return true
+}
+{% endblock %}

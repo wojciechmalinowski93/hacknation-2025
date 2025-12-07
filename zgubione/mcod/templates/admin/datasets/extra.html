@@ -1,0 +1,105 @@
+<script type="text/javascript">
+
+    var initPrepopulatedFields = function (row) {
+        row.find('.prepopulated_field').each(function () {
+            var field = $(this);
+            var input = field.find('input, select, textarea');
+            var dependency_list = input.data('dependency_list') || [];
+            var dependencies = [];
+            $.each(dependency_list, function (i, field_name) {
+                dependencies.push('#' + row.find('.form-row .field-' + field_name).find('input, select, textarea').attr('id'));
+            });
+            if (dependencies.length) {
+                input.prepopulate(dependencies, input.attr('maxlength'));
+            }
+        });
+    };
+
+    var reinitDateTimeShortCuts = function () {
+        // Reinitialize the calendar and clock widgets by force, yuck.
+        if (typeof DateTimeShortcuts != "undefined") {
+            $(".datetimeshortcuts").remove();
+            DateTimeShortcuts.init();
+        }
+    };
+
+    var reinitFrequencyFields = function (row) {
+        var $updateNotificationRecipientEmailControlGroup = row.find("div.control-group.form-row.field-update_notification_recipient_email");
+        var $updateNotificationRecipientEmailHelpInline = $updateNotificationRecipientEmailControlGroup.find('span.help-inline');
+
+
+        var $updateFrequency = row.find("div.field-update_frequency");
+        var $updateFrequencySelect = $updateFrequency.find('select');
+        var frequencyNotifications = {
+            weekly: {value: 1, text: 'dzień'},
+            monthly: {value: 3, text: 'dni'},
+            quarterly: {value: 7, text: 'dni'},
+            everyHalfYear: {value: 7, text: 'dni'},
+            yearly: {value: 7, text: 'dni'}
+        };
+        var $updateNotificationRecipientEmailInput = $updateNotificationRecipientEmailControlGroup.find("input");
+
+        {% if user.is_superuser %}
+            var $updateNotificationFrequencyInput = row.find("div.control-group.form-row.field-update_notification_frequency div.controls input");
+            var $isUpdateNotificationEnabledControlGroup = row.find("div.control-group.form-row.field-is_update_notification_enabled");
+            var $updateNotificationFrequencyControlGroup = row.find("div.control-group.form-row.field-update_notification_frequency");
+
+            function toggleFrequencyFields(updateFrequency, initial = false) {
+                var frequencyNotification = frequencyNotifications[updateFrequency];
+                if (frequencyNotification === undefined) {
+                    $isUpdateNotificationEnabledControlGroup.css('display', 'none');
+                    $updateNotificationFrequencyControlGroup.css('display', 'none');
+                    if (!initial) {
+                        $updateNotificationFrequencyInput.val('');
+                    }
+                } else {
+                    $isUpdateNotificationEnabledControlGroup.css('display', 'inline');
+                    $updateNotificationFrequencyControlGroup.css('display', 'inline');
+                    if (!initial || $updateNotificationFrequencyInput.val() === '') {
+                        $updateNotificationFrequencyInput.val(frequencyNotification.value);
+                    }
+                }
+            }
+
+            toggleFrequencyFields($updateFrequencySelect.val(), true);
+            if ($updateNotificationRecipientEmailInput.val() === "") {
+                $updateNotificationRecipientEmailInput.val("{{ user.email }}");
+            }
+
+            $updateFrequencySelect.change(function () {
+                toggleFrequencyFields($(this).val());
+            });
+
+            function showEmailHelpInline() {
+                $updateNotificationRecipientEmailHelpInline.css('display', 'block');
+            }
+
+            $updateNotificationRecipientEmailInput.change(showEmailHelpInline).keyup(showEmailHelpInline);
+
+        {% else %}
+            $updateNotificationRecipientEmailInput.val("{{ user.email }}");
+            $updateNotificationRecipientEmailInput.prop('readonly', true);
+            if ($updateFrequency.find('.help-inline').length === 0) {
+                $updateFrequency.find('.controls').append('<span class="help-inline" style="margin-top: 5px;"></span>');
+            }
+            var $updateFrequencyHelp = $updateFrequency.find('.help-inline');
+
+            function updateUpdateFrequencyHelp(updateFrequency) {
+                var frequencyNotification = frequencyNotifications[updateFrequency];
+                var alertText = "";
+                if (frequencyNotification !== undefined) {
+                    var daysText = `${frequencyNotification.value} ${frequencyNotification.text}`;
+                    alertText = `Powiadomienie o zbliżającym się terminie aktualizacji danych zostanie wysłane ${daysText} przed datą aktualizacji, jeżeli chcesz zmienić dzień wysyłki powiadomienia skontaktuj się z administratorem`;
+                }
+                $updateFrequencyHelp.text(alertText);
+            }
+
+            updateUpdateFrequencyHelp($updateFrequencySelect.val());
+
+            $updateFrequencySelect.off('change').on('change', function () {
+                updateUpdateFrequencyHelp($(this).val());
+            });
+        {% endif %}
+
+    }
+</script>

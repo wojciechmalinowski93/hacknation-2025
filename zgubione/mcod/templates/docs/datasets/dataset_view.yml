@@ -1,0 +1,19 @@
+{% load i18n %}
+---
+tags:
+   - {% trans "API Endpoints" %}
+summary: {% trans "Get single dataset" %}
+description: |
+  {% spaceless %}
+      <p>Returns dataset with given ID.</p>
+      {% include "docs/datasets/obj_description.html" %}
+  {% endspaceless %}
+parameters:
+    schema: DatasetApiRequest
+responses:
+    200:
+        description: valid response in jsonapi format
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/Dataset'

@@ -1,0 +1,13 @@
+{% extends "admin/change_form.html" %}
+{% load static core_tags %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/dataset_change_form.css' %}" media="all">
+{% endblock extrastyle %}
+
+{% block extrajs %}
+    {{ block.super }}
+    {% include 'admin/datasets/licenses/licenses_script.html' %}
+    {% include 'admin/datasets/extra.html' %}
+{% endblock extrajs %}

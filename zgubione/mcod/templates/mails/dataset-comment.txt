@@ -1,0 +1,4 @@
+{% load i18n %}
+{% if test %}{% trans 'recipients' %}: {{ dataset.comment_mail_recipients|join:", " }}{% endif %}
+{{ message }}
+{{ comment }}

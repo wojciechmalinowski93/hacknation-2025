@@ -1,0 +1,28 @@
+/* LOGIN FORM */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 7px;
+    font-size: 14px;
+    width: 340px;
+    padding-top: 15px
+}
+.separator::before,.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+.submit-row {
+    background-color: #fff !important;
+    border-top: none !important;
+}
+.control-group {
+    margin-bottom: 10px !important;
+}

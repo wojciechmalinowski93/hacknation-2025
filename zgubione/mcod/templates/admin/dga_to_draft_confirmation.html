@@ -1,0 +1,14 @@
+{% extends "admin/base_save_confirmation.html" %}
+
+{% load admin_urls i18n %}
+
+{% block confirmation_warning %}
+    <p class="lead">{% trans "Are you sure you want to change the status of the resource from \"Published\" to \"Draft\"?" %}</p>
+    <p>{% trans "The data from this resource will be removed from the master list of protected data." %}</p>
+{% endblock %}
+
+{% block confirmation_buttons %}
+    <br>
+    <input type="submit" value="{% blocktrans %}Confirm{% endblocktrans %}" class="btn btn-danger">
+    <a href="#" onclick="window.history.back()" class="btn btn-success cancel-link">{% trans "Go back" %}</a>
+{% endblock %}

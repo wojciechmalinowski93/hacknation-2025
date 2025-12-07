@@ -1,0 +1,122 @@
+[
+{
+    "model": "special_signs.specialsign",
+    "pk": 1,
+    "fields": {
+        "created": "2020-12-15T14:51:29.031Z",
+        "modified": "2020-12-18T14:36:50.229Z",
+        "status": "published",
+        "status_changed": "2020-12-18T14:36:50.229Z",
+        "is_removed": false,
+        "slug": "hash",
+        "uuid": "cc6f993b-f7af-46cf-a475-1d04e63786cb",
+        "removed_at": "2020-12-15T14:51:29.031Z",
+        "published_at": "2020-12-18T14:36:50.229Z",
+        "views_count": 0,
+        "symbol": "-",
+        "name": "Kreska",
+        "description": "Zjawisko nie wyst\u0105pi\u0142o.",
+        "created_by": null,
+        "modified_by": null,
+        "i18n": {
+            "description_en": ""
+        }
+    }
+},
+{
+    "model": "special_signs.specialsign",
+    "pk": 4,
+    "fields": {
+        "created": "2020-12-18T14:38:21.583Z",
+        "modified": "2020-12-18T14:38:21.584Z",
+        "status": "published",
+        "status_changed": "2020-12-18T14:38:21.583Z",
+        "is_removed": false,
+        "slug": "kropka",
+        "uuid": "372ae1ec-4133-4c7d-9aaa-d65b91cfefb1",
+        "removed_at": "2020-12-18T14:38:21.583Z",
+        "published_at": "2020-12-18T14:38:21.583Z",
+        "views_count": 0,
+        "symbol": ".",
+        "name": "Kropka",
+        "description": "Zupe\u0142ny brak informacji albo brak informacji wiarygodnych.",
+        "created_by": null,
+        "modified_by": null,
+        "i18n": {
+            "description_en": ""
+        }
+    }
+},
+{
+    "model": "special_signs.specialsign",
+    "pk": 5,
+    "fields": {
+        "created": "2020-12-18T14:38:52.414Z",
+        "modified": "2020-12-18T14:38:52.416Z",
+        "status": "published",
+        "status_changed": "2020-12-18T14:38:52.414Z",
+        "is_removed": false,
+        "slug": "iks",
+        "uuid": "4a81a39e-c28d-41e3-abdf-a1b464210feb",
+        "removed_at": "2020-12-18T14:38:52.414Z",
+        "published_at": "2020-12-18T14:38:52.414Z",
+        "views_count": 0,
+        "symbol": "X",
+        "name": "Iks",
+        "description": "Wype\u0142nienie pozycji jest niemo\u017cliwe lub niecelowe.",
+        "created_by": null,
+        "modified_by": null,
+        "i18n": {
+            "description_en": ""
+        }
+    }
+},
+{
+    "model": "special_signs.specialsign",
+    "pk": 6,
+    "fields": {
+        "created": "2020-12-18T14:39:36.014Z",
+        "modified": "2020-12-18T14:39:36.015Z",
+        "status": "published",
+        "status_changed": "2020-12-18T14:39:36.014Z",
+        "is_removed": false,
+        "slug": "hash",
+        "uuid": "cd552b78-62a2-428d-a238-e257e96fe7ce",
+        "removed_at": "2020-12-18T14:39:36.014Z",
+        "published_at": "2020-12-18T14:39:36.014Z",
+        "views_count": 0,
+        "symbol": "#",
+        "name": "Hash",
+        "description": "Dane nie mog\u0105\u00a0by\u00a0opublikowane ze wzgl\u0119du na konieczno\u015b\u0107 zachowania tajemnicy statystycznej w rozumieniu ustawy o statystyce publicznej.",
+        "created_by": null,
+        "modified_by": null,
+        "i18n": {
+            "description_en": ""
+        }
+    }
+},
+{
+    "model": "special_signs.specialsign",
+    "pk": 7,
+    "fields": {
+        "created": "2020-12-18T14:40:02.584Z",
+        "modified": "2020-12-18T15:40:46.914Z",
+        "status": "published",
+        "status_changed": "2020-12-18T14:40:02.584Z",
+        "is_removed": false,
+        "slug": "dwukropek",
+        "uuid": "afc6b03c-814b-46b4-8c11-0a115d4b5058",
+        "removed_at": "2020-12-18T14:40:02.584Z",
+        "published_at": "2020-12-18T14:40:02.584Z",
+        "views_count": 0,
+        "symbol": ":",
+        "name": "Dwukropek",
+        "description": "Zupe\u0142ny brak informacji albo brak informacji wiarygodnych (Eurostat).",
+        "created_by": null,
+        "modified_by": null,
+        "i18n": {
+            "description_en": ""
+        }
+    }
+}
+]

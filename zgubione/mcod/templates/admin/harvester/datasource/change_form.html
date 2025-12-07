@@ -1,0 +1,149 @@
+{% extends "admin/change_form.html" %}
+
+{% load static i18n %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'harvester/css/datasource_change_form.css' %}" media="all">
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+  <script src="{% static 'harvester/axios/axios.min.js' %}"></script>
+  <script src="{% static 'celery_progress/celery_progress.js' %}"></script>
+{% endblock %}
+
+{% block extrajs %}
+{{ block.super }}
+<script type="text/javascript">
+  function onError(progressBarElement, progressBarMessageElement) {
+    progressBarElement.style.backgroundColor = '#dc4f63';
+    progressBarMessageElement.innerHTML = '{% trans "XML validation was unsuccessful!" %}';
+  }
+
+  function onProgress(progressBarElement, progressBarMessageElement, progress) {
+      progressBarElement.style.backgroundColor = '#68a9ef';
+      progressBarElement.style.width = progress.percent + "%";
+      var description = progress.description || "";
+      if(progress.current){
+          progressBarMessageElement.innerHTML = '{% trans "Step" %} ' + progress.current + ' ' + '{% trans "of" %}' + ' ' + progress.total + ': ' + description;
+      }else{
+          progressBarMessageElement.innerHTML = '{% trans "Awaiting..." %}';
+      }
+  }
+
+  function onSuccess(progressBarElement, progressBarMessageElement) {
+      CeleryProgressBar.onSuccessDefault(progressBarElement, progressBarMessageElement);
+      progressBarMessageElement.innerHTML = '{% trans "XML Validation successful!" %}';
+      $('button[type="submit"]').attr('disabled', false);
+      $('.validate-xml-btn').attr('disabled', true);
+  }
+
+  function onResult(resultElement, result) {
+    if (resultElement) {
+      if('source_hash' in result){
+        $('#id_source_hash').val(result['source_hash']);
+      }
+      if('exception' in result){
+        resultElement.innerHTML = result['exception'];
+      }
+    }
+  }
+
+(function ($) {
+  'use strict';
+  $(document).on('toggle-form-fields', function(){
+    var source_type = $('#id_source_type').val();
+    if (source_type === 'ckan'){
+        $('.field-source_hash, .field-xml_url, .field-organization, .field-sparql_query').hide();
+        $('.field-portal_url, .field-api_url, .field-license_condition_db_or_copyrighted, .field-category, .field-categories, .field-institution_type').show();
+        $('#id_xml_url, #id_organization').val('');
+        $('button[type="submit"]').attr('disabled', false);
+    } else if (source_type === 'xml'){
+        $('.field-portal_url, .field-api_url, .field-license_condition_db_or_copyrighted, .field-category, .field-categories, .field-institution_type, .field-sparql_query').hide();
+        $('.field-source_hash, .field-xml_url, .field-organization').show();
+        $('#id_portal_url, #id_api_url, #id_license_condition_db_or_copyrighted, #id_category, #id_categories').val('');
+        $('#id_institution_type').val('other'); // default.
+        $('#id_xml_url').focus();
+{% if add and not adminform.form.xml_url.value %}
+        $('button[type="submit"]').attr('disabled', true);
+{% endif %}
+    } else if (source_type === 'dcat'){
+        $('.field-source_hash, .field-xml_url, .field-portal_url, .field-api_url, .field-license_condition_db_or_copyrighted, .field-category, .field-categories, .field-institution_type').hide();
+        $('.field-api_url, .field-sparql_query, .field-organization').show();
+        $('#id_institution_type').val('other');
+        $('button[type="submit"]').attr('disabled', false);
+    } else {
+        $('.field-source_hash, .field-xml_url, .field-portal_url, .field-api_url, .field-organization, .field-license_condition_db_or_copyrighted, .field-category, .field-categories, .field-institution_type, .field-sparql_query, .field-query_limit').hide();
+        $('#id_portal_url, #id_api_url, #id_xml_url, #id_organization, #id_license_condition_db_or_copyrighted, #id_category, #id_categories').val('');
+        $('#id_institution_type').val('other'); // default.
+        $('button[type="submit"]').attr('disabled', false);
+    }
+  });
+
+  $(document).ready(function ($) {
+    $('body').trigger('form-ready', [$('#datasource_form')]);
+        $(document).trigger('toggle-form-fields');
+  });
+
+  $(document).on('change', '#id_source_type', function(){
+    $(document).trigger('toggle-form-fields');
+  });
+
+  $(document).on('keyup', '#id_xml_url', function () {
+    $('button[type="submit"]').attr('disabled', true);
+    if (/^(http|https|ftp):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,13}(:[0-9]{1,5})?(\/.*)?$/i.test($(this).val())) {
+      $('.validate-xml-btn').attr('disabled', false);
+    } else {
+      $('.validate-xml-btn').attr('disabled', true);
+    }
+  });
+  $(document).on('click', '.validate-xml-btn', function (e) {
+    e.preventDefault();
+    $('#myModal').modal({
+      keyboard: false,
+      show: true,
+      backdrop: 'static',
+    }).on('hidden', function(){
+      $('#celery-result').html('');
+      $('#progress-bar-message').html('{% trans "Awaiting..." %}');
+      $('#progress-bar').css({'width': 0});
+    });
+    var formData = new FormData();
+    formData.append('csrfmiddlewaretoken', $('input[name="csrfmiddlewaretoken"]').val());
+    formData.append("xml_url", $('#id_xml_url').val());
+    axios({
+      method: 'post',
+      url: '/harvester/datasource/validate_xml/',
+      data: formData,
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
+    }).then(function (response) {
+      if ('progress_url' in response.data) {
+        CeleryProgressBar.initProgressBar(response.data['progress_url'], {
+          onError: onError,
+          onProgress: onProgress,
+          onResult: onResult,
+          onSuccess: onSuccess,
+        });
+      }
+    }).catch(function (data) {
+      console.log('FAILURE!!', data);
+    });
+  });
+  $(document).on('click', '#myModalCloseBtn', function(){
+    $('#myModal').modal('hide');
+  });
+})(django.jQuery);
+</script>
+{% endblock %}
+
+{% block suit_form_tabs %}
+    {% if suit_form_tabs %}
+        <ul id="suit_form_tabs" class="nav nav-tabs nav-tabs-suit" data-tab-prefix="suit-tab">
+            {% for tab in suit_form_tabs %}
+                <li><a href="#{{ tab.0 }}">{{ tab.1 }}</a></li>{% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

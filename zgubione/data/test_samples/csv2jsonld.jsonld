@@ -1,0 +1,149 @@
+{
+  "@context": {
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@graph": [
+    {
+      "@id": "_:N8d982d41931b449eb2d4cefe4fb77117",
+      "@type": "csvw:TableGroup",
+      "csvw:table": {
+        "@id": "_:Naeca3a432e9649ff9bcb1373c578021b"
+      }
+    },
+    {
+      "@id": "_:Naeca3a432e9649ff9bcb1373c578021b",
+      "@type": "csvw:Table",
+      "csvw:row": [
+        {
+          "@id": "_:Nb4cd4e45cf51432595677fc6c5646b6d"
+        },
+        {
+          "@id": "_:N21bbd0c2207f472797bc20e3ed62edab"
+        },
+        {
+          "@id": "_:N7125c98b2541436a9fcd33f8e0777717"
+        },
+        {
+          "@id": "_:N4f8c1ea8e63649529496237dbab87ab3"
+        },
+        {
+          "@id": "_:Ncd74779a0565447c867391f0f766b8c1"
+        },
+        {
+          "@id": "_:N60a1ba6eb3744490ba49bf3c9d846d29"
+        }
+      ],
+      "csvw:url": {
+        "@id": "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv"
+      }
+    },
+    {
+      "@id": "_:Nb4cd4e45cf51432595677fc6c5646b6d",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:N92e0d1a905eb4b2198ac5cc6a32eb201"
+      },
+      "csvw:rownum": 5,
+      "csvw:url": {
+        "@id": "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#row=6"
+      }
+    },
+    {
+      "@id": "_:N92e0d1a905eb4b2198ac5cc6a32eb201",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#a": "7",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#b": "8",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#c": "9",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#d": "0"
+    },
+    {
+      "@id": "_:N21bbd0c2207f472797bc20e3ed62edab",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:Nfa3445f376f74e86b4f17b4fa0d683aa"
+      },
+      "csvw:rownum": 4,
+      "csvw:url": {
+        "@id": "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#row=5"
+      }
+    },
+    {
+      "@id": "_:Nfa3445f376f74e86b4f17b4fa0d683aa",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#a": "3",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#b": "4",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#c": "5",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#d": "6"
+    },
+    {
+      "@id": "_:N7125c98b2541436a9fcd33f8e0777717",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:N05f600e76b57488581a2a132c51c939d"
+      },
+      "csvw:rownum": 6,
+      "csvw:url": {
+        "@id": "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#row=7"
+      }
+    },
+    {
+      "@id": "_:N05f600e76b57488581a2a132c51c939d",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#a": "1",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#b": "2",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#c": "0",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#d": "4"
+    },
+    {
+      "@id": "_:N4f8c1ea8e63649529496237dbab87ab3",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:N2459a6589a4e4e968ea0afd407876fd7"
+      },
+      "csvw:rownum": 3,
+      "csvw:url": {
+        "@id": "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#row=4"
+      }
+    },
+    {
+      "@id": "_:N2459a6589a4e4e968ea0afd407876fd7",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#a": "9",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#b": "0",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#c": "1",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#d": "2"
+    },
+    {
+      "@id": "_:Ncd74779a0565447c867391f0f766b8c1",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:N94b2f827e3c1400ea09cae9cd65b808f"
+      },
+      "csvw:rownum": 2,
+      "csvw:url": {
+        "@id": "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#row=3"
+      }
+    },
+    {
+      "@id": "_:N94b2f827e3c1400ea09cae9cd65b808f",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#a": "5",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#b": "6",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#c": "7",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#d": "8"
+    },
+    {
+      "@id": "_:N60a1ba6eb3744490ba49bf3c9d846d29",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:N92e7f68d29bb43a0b9f3bcb0227196ad"
+      },
+      "csvw:rownum": 1,
+      "csvw:url": {
+        "@id": "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#row=2"
+      }
+    },
+    {
+      "@id": "_:N92e7f68d29bb43a0b9f3bcb0227196ad",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#a": "1",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#b": "2",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#c": "3",
+      "http://api.test.mcod/media/resources/20210702/csv2jsonld.csv#d": "4"
+    }
+  ]
+}

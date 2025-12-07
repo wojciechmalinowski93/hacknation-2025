@@ -1,0 +1,50 @@
+select {
+    width: 180px;
+}
+
+.resource-widget td, .resource-widget th {
+    max-width: 180px;
+    max-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tab-button {
+    margin-right: 2px;
+}
+
+/*#map_save {*/
+/*    width: 160px*/
+/*}*/
+
+/*#map_preview {*/
+/*    width: 100px;*/
+/*    margin-left: 161px;*/
+/*}*/
+
+/*#chart_preview {*/
+/*    margin-left: 288px;*/
+/*}*/
+
+alert-info li {
+    margin-left: 20px;
+}
+#id_is_chart_creation_blocked {
+    margin: auto;
+}
+#resource_form .field-is_chart_creation_blocked div {
+    display: flex;
+}
+#resource_form .field-is_chart_creation_blocked .control-label {
+    width: auto;
+    background: inherit;
+    order: 2;
+}
+#resource_form .field-is_chart_creation_blocked .controls {
+    width: auto;
+    order: 1;
+}
+#resource_form .field-is_chart_creation_blocked .controls img {
+    vertical-align: bottom;
+}

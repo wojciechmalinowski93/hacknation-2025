@@ -1,0 +1,40 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <style>
+        div.control-group.form-row.field-publication_finished_comment {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block extrajs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        var $publicationFinishedComment = $("div.field-publication_finished_comment");
+        var isPublicationFishedCommentReadonly = $publicationFinishedComment.find('.readonly-control-label').length;
+        var $statusSelectParent = $("div.field-status select").parent();
+
+
+        var $status = $("select#id_status");
+
+        function toggle_publication_finished_comment(status) {
+            if (status === 'publication_finished') {
+                $publicationFinishedComment.css('display', 'inline');
+            } else {
+                $publicationFinishedComment.css('display', 'none');
+            }
+        }
+
+        if(isPublicationFishedCommentReadonly) {
+            $publicationFinishedComment.css('display', 'inline');
+            $statusSelectParent.append('<span class="help-inline">Zmiana statusu w polu stan spowoduje usunięcie komentarza z pola "Opisz sposób rozwiązania sprawy"</span>')
+        } else {
+            toggle_publication_finished_comment($status.val());
+            $status.change(function(){
+                toggle_publication_finished_comment($(this).val());
+            });
+        }
+    </script>
+{% endblock %}

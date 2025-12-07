@@ -1,0 +1,23 @@
+{% load i18n %}
+<table class="listing">
+    <col width="50%"/>
+    <col width="50%"/>
+    <thead>
+        <tr>
+            <th class="title">{% trans "Tytuł ankiety" %}</th>
+            <th class="type">{% trans "Liczba odpowiedzi" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fp in form_pages %}
+            <tr>
+                <td class="title">
+                    <div class="title-wrapper"><a href="{% url 'cms_forms_list_submissions' fp.id %}">{{ fp|capfirst }}</a></div>
+                </td>
+                <td class="type">
+                    {{fp.specific.formpagesubmission_set.count}}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

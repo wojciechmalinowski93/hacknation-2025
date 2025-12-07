@@ -1,0 +1,17 @@
+{% extends 'admin/inline-list.html' %}
+
+{% load i18n core_tags %}
+
+{% block delete_checkbox %}
+    <input type="checkbox" name="_selected_action" class="action-select" value="{{ inline_admin_form.original.id }}" />
+{% endblock %}
+
+{% block list_actions %}
+    {% with cl=inline_admin_formset.formset.cl actions_selection_counter=True module_name=inline_admin_formset.opts.verbose_name_plural %}
+        {% blocktrans asvar selection_note with cnt=cl.result_list|length %}0 of {{ cnt }} selected{% endblocktrans %}
+        {% blocktrans asvar selection_note_all count total_count=cl.result_count %}{{ total_count }} selected{% plural %}All {{ total_count }} selected{% endblocktrans %}
+        {% if action_form and cl.result_count %}
+            {% resources_actions %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}

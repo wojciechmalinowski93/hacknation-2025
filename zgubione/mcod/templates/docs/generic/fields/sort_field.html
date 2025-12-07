@@ -1,0 +1,29 @@
+{% load i18n core_tags %}
+{# spaceless tag is required if this should be rendered as markdown #}
+{% spaceless %}
+{% block field_description %}
+        <p>{% trans 'Sort instances by following fields in ascending or descending direction' %}.<br/></p>
+{% endblock %}
+    {% block filters_description %}
+        <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sort_field in sort_fields %}
+        <tr>
+            <td>{{ sort_field }}</td>
+            <td>
+                <a href="{{ settings.API_URL }}{{ doc_base_url }}/?sort={{ sort_field }}">{{ doc_base_url }}/?sort={{ sort_field }}</a><br/>
+                <a href="{{ settings.API_URL }}{{ doc_base_url }}/?sort=-{{ sort_field }}">{{ doc_base_url }}/?sort=-{{ sort_field }}</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+        </table>
+    {% endblock %}
+{% endspaceless %}

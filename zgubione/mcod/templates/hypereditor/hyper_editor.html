@@ -1,0 +1,732 @@
+{% load static  core_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HyperEditor</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'hypereditor/hyper_editor.css' %}" />
+
+    {% for st in user_stylesheets %}
+        <link rel="stylesheet" href="{% static st %}" />
+    {% endfor %}
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link rel="stylesheet" href="{% static 'cms/css/hyper_editor_extensions.css' %}" />
+</head>
+<body>
+    <script type="text/javascript">
+        const UiTooltip = Quill.import('ui/tooltip');
+        const SnowTheme = Quill.import('themes/snow');
+        const LinkBlot = Quill.import('formats/link');
+        const ListBlot = Quill.import('formats/list');
+        const icons = Quill.import('ui/icons');
+        const LINK_FOOTER_CLASS = 'page-footer__list-item';
+
+        function jsonTryParse(value) {
+            try {
+                return JSON.parse(value);
+            } catch (e) {
+                return value;
+            }
+        }
+
+        function getLinkAriaLabel(innerText, title, openInNewTab) {
+            let result = "";
+            if (openInNewTab && innerText) {
+                result += `${innerText}. `;
+                if (title) {
+                    result += `${title}. `;
+                }
+                result += "Otwiera się w nowym oknie";
+            }
+            return result;
+        }
+
+        function isInsideFooter() {
+            // optional chaining (?.) is too new to use it
+            let field = window.frameElement.parentElement.querySelector("div.hyper_form_field");
+            return field && field.getAttribute("data-contentpath") === "footer_nav";
+        }
+
+        var footer_nav_div = parent.document.getElementsByName('footer_nav');
+        class CustomLinkBlot extends LinkBlot {
+            static create(value) {
+                const node = super.create();
+                let newValue = jsonTryParse(value);
+                if (typeof(newValue) !== 'string') {
+                    if (newValue.target === '_blank' && !newValue.ariaLabel) {
+                        let linkAriaLabel = getLinkAriaLabel(newValue.innerText, newValue.title, true);
+                        if (linkAriaLabel) {
+                            newValue.ariaLabel = linkAriaLabel;
+                        }
+                    }
+                    if (newValue.ariaLabel) {
+                        node.setAttribute("aria-label", newValue.ariaLabel);
+                    }
+
+                    node.setAttribute('href', newValue.href);
+                    if(newValue.title == null){
+                        node.setAttribute('title', '');
+                    }
+                    else{
+                        node.setAttribute('title', newValue.title);
+                    }
+                    if(isInsideFooter()){
+                        if(!newValue.css_classes.includes(LINK_FOOTER_CLASS)){
+                            newValue.css_classes += ` ${LINK_FOOTER_CLASS}`;
+                            newValue.css_classes = newValue.css_classes.trim();
+                        }
+                    }
+                    if (newValue.css_classes) {
+                        node.setAttribute('class', newValue.css_classes);
+                    } else if (node.hasAttribute('class')) {
+                        node.removeAttribute('class');
+                    }
+
+                    if(newValue.target === false){
+                        node.setAttribute('target', '_self');
+                    }
+                    else if(typeof(newValue.target) === 'string'){
+                        node.setAttribute('target', newValue.target);
+                    }
+                    if(newValue.is_menu === false && node.hasAttribute('role')){
+                        node.removeAttribute('role');
+                    }
+                    else if(newValue.is_menu === true || typeof(newValue.is_menu) === 'string'){
+                        node.setAttribute('role', 'menuitem');
+                    }
+                    return node;
+                }
+                node.setAttribute('href', newValue);
+                return node;
+            }
+            static formats(domNode) {
+                let classes = '';
+                if(domNode.hasAttribute('class')){
+                    classes = domNode.getAttribute('class');
+                }
+                return JSON.stringify({
+                    innerText: domNode.innerText,
+                    href: domNode.getAttribute('href'),
+                    title: domNode.getAttribute('title'),
+                    target: domNode.getAttribute('target'),
+                    is_menu: domNode.getAttribute('role'),
+                    ariaLabel: domNode.getAttribute('aria-label'),
+                    css_classes: classes
+                });
+            }
+            format(name, value){
+                if (name !== this.statics.blotName || !value) {
+                    return super.format(name, value);
+                }
+                let newValue = jsonTryParse(value);
+                if (typeof(newValue) !== 'string') {
+                    if (newValue.ariaLabel) {
+                        this.domNode.setAttribute("aria-label", newValue.ariaLabel);
+                    } else if(this.domNode.hasAttribute("aria-label")) {
+                        this.domNode.removeAttribute('aria-label');
+                    }
+
+                    this.domNode.setAttribute('href', newValue.href);
+                    this.domNode.setAttribute('title', newValue.title);
+
+                    if (newValue.css_classes) {
+                        this.domNode.setAttribute('class', newValue.css_classes);
+                    } else if (node.hasAttribute('class')) {
+                        this.domNode.removeAttribute('class');
+                    }
+
+                    if(newValue.is_menu === false && this.domNode.hasAttribute('role')){
+                        this.domNode.removeAttribute('role');
+                    }
+                    else if(newValue.is_menu === true){
+                        this.domNode.setAttribute('role', 'menuitem');
+                    }
+                    if(newValue.target === false){
+                        this.domNode.setAttribute('target', '_self');
+                    }
+                    else if(newValue.target === true){
+                        this.domNode.setAttribute('target', '_blank');
+                    }
+                }
+                else {
+                    this.domNode.setAttribute('href', newValue);
+                }
+            }
+        }
+        class CustomListBlot extends ListBlot {
+            static create(value) {
+                let tagName = value === 'ordered' ? 'OL' : 'UL';
+                let node = super.create(tagName);
+                if (value === 'checked' || value === 'unchecked') {
+                  node.setAttribute('data-checked', value === 'checked');
+                }
+                node.setAttribute('role', 'menu');
+                return node;
+              }
+        }
+        CustomListBlot.blotName = 'menuList';
+        Quill.register(CustomListBlot);
+        Quill.register(CustomLinkBlot);
+
+        class Range {
+            constructor(index, length = 0) {
+                this.index = index;
+                this.length = length;
+            }
+        }
+
+        class CustomTooltip extends UiTooltip {
+            constructor(quill, boundsContainer) {
+                super(quill, boundsContainer);
+                this.textbox = this.root.querySelector('input[type="text"]');
+                this.title_textbox = this.root.querySelector('input[type="text"]#url-title');
+                this.classes_textbox = this.root.querySelector('input[type="text"]#url-css-classes');
+                this.target_checkbox = this.root.querySelector('input[type="checkbox"]#url-target');
+                this.role_checkbox = this.root.querySelector('input[type="checkbox"]#url-is-menu');
+                this.listen();
+                this.preview = this.root.querySelector('a.ql-preview');
+            }
+
+            listen() {
+                this.textbox.addEventListener('keydown', event => {
+                    if (event.key === 'Enter') {
+                        this.save();
+                        event.preventDefault();
+                    }
+                    else if (event.key === 'Escape') {
+                        this.cancel();
+                        event.preventDefault();
+                    }
+                });
+                this.title_textbox.addEventListener('keydown', event => {
+                    if (event.key === 'Enter') {
+                        this.save();
+                        event.preventDefault();
+                    }
+                    else if (event.key === 'Escape') {
+                        this.cancel();
+                        event.preventDefault();
+                    }
+                });
+                this.root.querySelector('a.ql-action').addEventListener('click', event => {
+                    if (this.root.classList.contains('ql-editing')) {
+                        this.save();
+                    }
+                    else {
+                        let classes = this.preview.className;
+                        let added_classes = classes.replace("ql-preview", "").trim();
+                        this.edit('link', JSON.stringify({'href': this.preview.textContent, 'title': this.preview.title, 'target': this.preview.target, 'is_menu': this.preview.getAttribute('role'), 'css_classes': added_classes}));
+                    }
+                    event.preventDefault();
+                });
+                this.root.querySelector('a.ql-remove').addEventListener('click', event => {
+                    if (this.linkRange != null) {
+                        const range = this.linkRange;
+                        this.restoreFocus();
+                        this.quill.formatText(range, 'link', false, 'user');
+                        delete this.linkRange;
+                    }
+                    event.preventDefault();
+                    this.hide();
+                });
+                this.quill.on(
+                    'selection-change',
+                    (range, oldRange, source) => {
+                        if (range == null) return;
+                        if (range.length === 0 && source === 'user') {
+                            const [link, offset] = this.quill.scroll.descendant(
+                                CustomLinkBlot,
+                                range.index,
+                            );
+                            if (link != null) {
+                                this.linkRange = new Range(range.index - offset, link.length());
+                                const preview = JSON.parse(CustomLinkBlot.formats(link.domNode));
+                                this.preview.textContent = preview['href'];
+                                this.preview.setAttribute('title', preview['title']);
+                                this.preview.setAttribute('target', preview['target']);
+                                if(preview['is_menu'] != null){
+                                    this.preview.setAttribute('role', preview['is_menu']);
+                                }
+                                if(this.preview.hasAttribute('class')){
+                                    this.preview.className = `ql-preview ${preview['css_classes']}`;
+                                }
+                                this.show();
+                                this.position(this.quill.getBounds(this.linkRange));
+                                return;
+                            }
+                        }
+                        else {
+                            delete this.linkRange;
+                        }
+                        this.hide();
+                    },
+               );
+            }
+
+            cancel() {
+                this.hide();
+            }
+
+            edit(mode = 'link', preview = null) {
+                let newPreview = jsonTryParse(preview);
+                this.root.classList.remove('ql-hidden');
+                this.root.classList.add('ql-editing');
+                this.linkInnerText = "";
+                if (newPreview != null) {
+                    if(typeof(newPreview) !== 'string'){
+                        if (this.linkRange) {
+                            this.linkInnerText = this.quill.getText(this.linkRange);
+                        }
+
+                        this.textbox.value = newPreview.href;
+                        if(newPreview.target === '_self' || newPreview.target === ''){
+                            this.target_checkbox.checked = false;
+                        }
+                        else{
+                            this.target_checkbox.checked = true;
+                        }
+                        if(newPreview.is_menu === 'menuitem'){
+                            this.role_checkbox.checked = true;
+                        }
+                        else{
+                            this.role_checkbox.checked = false;
+                        }
+                        if(newPreview.title){
+                            this.title_textbox.value = newPreview['title'];
+                        } else {
+                            this.title_textbox.value = '';
+                        }
+                        if(newPreview.css_classes){
+                            this.classes_textbox.value = newPreview['css_classes'];
+                        } else {
+                            this.classes_textbox.value = '';
+                        }
+                    }
+                    else{
+                        this.linkInnerText = newPreview;
+                        this.textbox.value = newPreview;
+                        this.title_textbox.value = '';
+                        this.target_checkbox.checked = true;
+                        this.role_checkbox.checked = false;
+                        this.classes_textbox.value = '';
+                    }
+                }
+                else if (mode !== this.root.getAttribute('data-mode')) {
+                    this.textbox.value = '';
+                    this.title_textbox.value = '';
+                    this.target_checkbox.checked = true;
+                    this.role_checkbox.checked = false;
+                    this.classes_textbox.value = '';
+
+                }
+                this.position(this.quill.getBounds(this.quill.selection.savedRange));
+                this.textbox.select();
+                this.textbox.setAttribute(
+                    'placeholder',
+                    this.textbox.getAttribute(`data-${mode}`) || '',
+                );
+                this.root.setAttribute('data-mode', mode);
+            }
+
+            restoreFocus() {
+                const { scrollTop } = this.quill.scrollingContainer;
+                this.quill.focus();
+                this.quill.scrollingContainer.scrollTop = scrollTop;
+            }
+
+            save() {
+                let { value } = this.textbox;
+                let title_value = this.title_textbox.value;
+                let target_value = this.target_checkbox.checked;
+                let role_value = this.role_checkbox.checked;
+                let css_classes = this.classes_textbox.value.trim();
+
+                if (isInsideFooter() && !css_classes.includes(LINK_FOOTER_CLASS)) {
+                    css_classes += ` ${LINK_FOOTER_CLASS}`;
+                    css_classes = css_classes.trim();
+                }
+
+                let linkData = {'href': value, 'title': title_value, 'target': target_value, 'is_menu': role_value, 'css_classes': css_classes};
+
+                let linkAriaLabel = getLinkAriaLabel(this.linkInnerText, title_value, target_value);
+                if (linkAriaLabel) {
+                    linkData.ariaLabel = linkAriaLabel;
+                }
+
+                switch (this.root.getAttribute('data-mode')) {
+                    case 'link': {
+                        const { scrollTop } = this.quill.root;
+                        if (this.linkRange) {
+                            this.quill.formatText(
+                                this.linkRange,
+                                'link',
+                                JSON.stringify(linkData),
+                                'user',
+                            );
+                            delete this.linkRange;
+                        }
+                        else {
+                            this.restoreFocus();
+                            this.quill.format('link', JSON.stringify(linkData), 'user');
+                        }
+                        this.preview.className = 'ql-preview';
+                        this.quill.root.scrollTop = scrollTop;
+                        break;
+                    }
+                    case 'video': {
+                        value = extractVideoUrl(value);
+                    } // eslint-disable-next-line no-fallthrough
+                    case 'formula': {
+                        if (!value) break;
+                        const range = this.quill.getSelection(true);
+                        if (range != null) {
+                            const index = range.index + range.length;
+                            this.quill.insertEmbed(
+                                index,
+                                this.root.getAttribute('data-mode'),
+                                value,
+                                'user',
+                            );
+                            if (this.root.getAttribute('data-mode') === 'formula') {
+                                this.quill.insertText(index + 1, ' ', 'user');
+                            }
+                            this.quill.setSelection(index + 2, 'user');
+                        }
+                        break;
+                    }
+                    default:
+                }
+                this.title_textbox.value = '';
+                this.textbox.value = '';
+                this.target_checkbox.checked = true;
+                this.role_checkbox.checked = false;
+                this.classes_textbox.value = '';
+                this.hide();
+            }
+
+            show() {
+                super.show();
+                    this.root.removeAttribute('data-mode');
+                }
+            }
+
+            function extractVideoUrl(url) {
+                let match =
+                    url.match(
+                    /^(?:(https?):\/\/)?(?:(?:www|m)\.)?youtube\.com\/watch.*v=([a-zA-Z0-9_-]+)/,
+                    ) ||
+                    url.match(/^(?:(https?):\/\/)?(?:(?:www|m)\.)?youtu\.be\/([a-zA-Z0-9_-]+)/);
+                if (match) {
+                    return `${match[1] || 'https'}://www.youtube.com/embed/${
+                        match[2]
+                    }?showinfo=0`;
+                }
+                // eslint-disable-next-line no-cond-assign
+                if ((match = url.match(/^(?:(https?):\/\/)?(?:www\.)?vimeo\.com\/(\d+)/))) {
+                    return `${match[1] || 'https'}://player.vimeo.com/video/${match[2]}/`;
+                }
+                return url;
+            }
+
+            function fillSelect(select, values, defaultValue = false) {
+                values.forEach(value => {
+                    const option = document.createElement('option');
+                    if (value === defaultValue) {
+                    option.setAttribute('selected', 'selected');
+                    }
+                    else {
+                        option.setAttribute('value', value);
+                    }
+                    select.appendChild(option);
+                });
+            }
+
+        CustomTooltip.TEMPLATE = [
+            '<a class="ql-preview" rel="noopener noreferrer" target="_blank" href="about:blank" title=""></a>',
+            '<input type="text" data-formula="e=mc^2" data-link="https://example.com" data-video="Embed URL">',
+            '<label for="url-title">Podpowiedź po najechaniu na odnośnik:</label><input id="url-title" type="text">',
+            '<label for="url-target" id="target-label">Otwórz odnośnik w nowej karcie:</label><input id="url-target" type="checkbox" checked="checked">',
+            '<label for="url-css-classes">Dodatkowe klasy css:</label><input id="url-css-classes" type="text">',
+            '<label for="url-is-menu" id="is-menu-label">Odnośnik jest elementem menu:</label><input id="url-is-menu" type="checkbox">',
+            '<a class="ql-action"></a>',
+            '<a class="ql-remove"></a>',
+        ].join('');
+
+        var tmpOptions = {
+            container: [
+                [{header: [1, 2, 3, false]}],
+                ['bold', 'italic', 'underline', 'link'],
+                [{list: 'ordered'}, {list: 'bullet'}],
+                [{language: ['pl', 'en', false]}],
+                [{fontSize: [16, 18, 20, 22, 24, 26, 28, 30, false]}],
+                [{fontColor: ["blue", "black", "grey", "grey-light", "red", "yellow", "green", "white", false]}],
+                ['clean']
+            ]
+        };
+        if(isInsideFooter()){
+            tmpOptions = {
+                container: [
+                    ['link'],
+                    [{list: 'bullet'}, {menuList: 'bullet'}],
+                ]
+            };
+        }
+
+        const toolbarOptions = tmpOptions;
+        class CustomTheme extends SnowTheme {
+
+            extendToolbar(toolbar) {
+                toolbar.container.classList.add('ql-snow');
+                this.buildButtons([].slice.call(toolbar.container.querySelectorAll('button')), icons);
+                this.buildPickers([].slice.call(toolbar.container.querySelectorAll('select')), icons);
+                this.tooltip = new CustomTooltip(this.quill, this.options.bounds);
+                if (toolbar.container.querySelector('.ql-link')) {
+                    this.quill.keyboard.addBinding({ key: 'K', shortKey: true }, function (range, context) {
+                        toolbar.handlers.link.call(toolbar, !context.format.link);
+                    });
+                }
+            }
+        }
+        CustomTheme.DEFAULTS['modules']['toolbar']['handlers']['link'] = function link(value){
+            if (value) {
+                const range = this.quill.getSelection();
+                if (range == null || range.length === 0) return;
+                let preview = this.quill.getText(range);
+                let content_preview = this.quill.getContents(range);
+                let format_preview = this.quill.getFormat(range);
+                if (
+                    /^\S+@\S+\.\S+$/.test(preview) &&
+                    preview.indexOf('mailto:') !== 0
+                ) {
+                    preview = `mailto:${preview}`;
+                }
+                const { tooltip } = this.quill.theme;
+                tooltip.edit('link', preview);
+            }
+            else {
+                this.quill.format('link', false);
+            }
+        };
+        const InlineBlot = Quill.import('blots/inline');
+        class LanguageBlot extends InlineBlot {
+            static create(value) {
+                let node = super.create(value);
+                node.setAttribute('dir', 'ltr');
+                node.setAttribute('lang', value);
+                return node
+            }
+
+            static formats(domNode) {
+                return domNode.getAttribute('lang');
+            }
+        }
+        LanguageBlot.blotName = 'language';
+        LanguageBlot.tagName = 'SPAN';
+        Quill.register(LanguageBlot);
+
+
+        class FontSizeBlot extends InlineBlot {
+            static create(value) {
+                let node = super.create(value);
+                node.setAttribute('class', 'cms-text-size cms-text-size-' + value);
+                return node
+            }
+
+            static formats(domNode) {
+                const regex = /cms-text-size-(\d+)/;
+                const match = domNode.getAttribute('class').match(regex);
+                return parseInt(match[1]);
+            }
+        }
+        FontSizeBlot.blotName = 'fontSize';
+        FontSizeBlot.className = 'cms-text-size';
+        Quill.register(FontSizeBlot);
+
+
+        class FontColorBlot extends InlineBlot {
+            static create(value) {
+                let node = super.create(value);
+                node.setAttribute('class', 'cms-text cms-text-' + value);
+                return node
+            }
+
+            static formats(domNode) {
+                const regex = /cms-text-([\w-]+)/;
+                const match = domNode.getAttribute('class').match(regex);
+                return match[1];
+            }
+        }
+        FontColorBlot.blotName = 'fontColor';
+        FontColorBlot.className = 'cms-text';
+        Quill.register(FontColorBlot);
+
+        Quill.register('themes/customTheme', CustomTheme, true);
+
+
+
+        const OriginalQuill = Quill;
+        Quill = function (container) {
+            let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            options['modules'] = {
+                toolbar: toolbarOptions
+            };
+            options['theme'] = 'customTheme';
+            return new OriginalQuill(container, options);
+        };
+    </script>
+
+
+    <!-- Hyper Editor Loads here -->
+    <div id="hyperEditor"></div>
+
+    <script type="text/javascript" src="{% static 'hypereditor/hyper_editor.js' %}"></script>
+
+    <script type="text/javascript">
+
+        /**
+         * Helper function to get value by key from cookie
+         * @param name: string
+         * @returns any
+         */
+        function get_cookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        /**
+         * Helper function to parse query params from string
+         * @param query: str
+         * @returns str
+         */
+        function parse_query_string(query) {
+            var vars = query.split("&");
+            var query_string = {};
+            for (var i = 0; i < vars.length; i++) {
+              var pair = vars[i].split("=");
+              var key = decodeURIComponent(pair[0]);
+              var value = decodeURIComponent(pair[1]);
+              // If first entry with this name
+              if (typeof query_string[key] === "undefined") {
+                query_string[key] = decodeURIComponent(value);
+                // If second entry with this name
+              } else if (typeof query_string[key] === "string") {
+                var arr = [query_string[key], decodeURIComponent(value)];
+                query_string[key] = arr;
+                // If third or later entry with this name
+              } else {
+                query_string[key].push(decodeURIComponent(value));
+              }
+            }
+            return query_string;
+        }
+
+        /**
+         * Renders preview for a block. Global for all blocks.
+         * @param value: obj - block value
+         * @param callback: a function to send back response to caller
+         */
+        function async_preview(value, callback) {
+            fetch('{% url "hypereditor:preview" %}', {
+                credentials: "same-origin",
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'X-CSRFToken': get_cookie('csrftoken'),
+                    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+                },
+                body: JSON.stringify(value)
+            }).then(response => response.text())
+            .then(data => {
+                callback(data)
+            })
+        }
+
+
+        //JavaScript Variables Provided by Registered Blocks
+        {{ js_variables|safe }}
+
+
+        var urlParams = parse_query_string(window.location.href.split('?')[1])
+
+        // if origin not set then set it. otherwise iframe messaging might not trusted by browser
+        if (!window.location.origin) {
+            window.location.origin = window.location.protocol + "//"
+                + window.location.hostname
+                + (window.location.port ? ':' + window.location.port : '');
+        }
+
+
+        // create an instance of hyper editor
+        hyperEditor = new HyperEditor('#hyperEditor', {
+            imageSearchApi: {% if image_api_url %}"{{ image_api_url }}"{% else %} "#" {% endif %},
+            preview: async_preview {% if block_settings %}, blocks: JSON.parse('{{ block_settings|safe }}') {% endif %}
+        })
+    </script>
+
+    <!-- Load JS Block files if any -->
+    {% for js_plugin in js_plugins %}
+    <script src="{% static js_plugin %}"></script>
+    {% endfor %}
+
+    <!- generate simpler blocks -->
+    <script type="text/javascript" src="{% url 'hypereditor:blocks' %}"></script>
+
+    <script type="text/javascript">
+
+        function bindEvent(element, eventName, eventHandler) {
+            if (element.addEventListener) {
+                element.addEventListener(eventName, eventHandler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent('on' + eventName, eventHandler);
+            }
+        }
+
+        bindEvent(window, 'message', function (e) {
+            if (e.data && e.data.id == urlParams.id) {
+                try {
+                    var data_to_init = JSON.parse(e.data.state)
+                    init_hyper_editor(JSON.parse(e.data.state))
+                } catch(err) {
+                    init_hyper_editor([])
+                }
+            }
+        });
+
+        init_hyper_editor = function (state = []) {
+            if (!state && !(state instanceof Array)) state = []
+
+            initial_state = state
+            hyperEditor.initialize(initial_state)
+            hyperEditor.pm.registry['link']['settings_schema']['fields'][0]['label'] = 'Wprowadź adres odnośnika:'
+            hyperEditor.pm.registry['link']['settings_schema']['fields'].push({
+                'inputType': 'text',
+                'label': 'Podpowiedź po najechaniu na odnośnik:',
+                'model': 'title',
+                'type': 'input'
+            })
+            hyperEditor.addStateChangeListener(function (state) {
+                window.parent.postMessage({
+                    id: urlParams.id,
+                    state: JSON.stringify(state)
+                }, window.location.origin)
+            })
+
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{% load i18n %}
+{% if form_pages %}
+    {% include "wagtailadmin/forms/list_forms.html" %}
+
+    {% include "wagtailadmin/shared/pagination_nav.html" with items=page_obj linkurl="cms_forms_index" %}
+{% else %}
+    <p>{% trans "Nie zostały jeszcze utworzone żadne ankiety." %}</p>
+{% endif %}

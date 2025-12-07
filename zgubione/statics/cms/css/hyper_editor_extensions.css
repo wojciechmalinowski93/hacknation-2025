@@ -1,0 +1,336 @@
+/* fontSize BLOT */
+.ql-snow .ql-picker.ql-fontSize {
+    width: 116px;
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-label::before {
+    content: 'Wielkość tekstu';
+    font-size: 12px;
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item::before {
+    content: 'Brak';
+    font-size: 12px;
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item {
+    display: none;
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item[data-value] {
+    display: block;
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-label[data-value="16"]::before,
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item[data-value="16"]::before {
+    content: '16 px';
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-label[data-value="18"]::before,
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item[data-value="18"]::before {
+    content: '18 px';
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-label[data-value="20"]::before,
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item[data-value="20"]::before {
+    content: '20 px';
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-label[data-value="22"]::before,
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item[data-value="22"]::before {
+    content: '22 px';
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-label[data-value="24"]::before,
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item[data-value="24"]::before {
+    content: '24 px';
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-label[data-value="26"]::before,
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item[data-value="26"]::before {
+    content: '26 px';
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-label[data-value="28"]::before,
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item[data-value="28"]::before {
+    content: '28 px';
+}
+
+.ql-snow .ql-picker.ql-fontSize .ql-picker-label[data-value="30"]::before,
+.ql-snow .ql-picker.ql-fontSize .ql-picker-item[data-value="30"]::before {
+    content: '30 px';
+}
+
+.cms-text-size-16 {
+    font-size: 1rem;
+}
+
+.cms-text-size-18 {
+    font-size: 1.125rem;
+}
+
+.cms-text-size-20 {
+    font-size: 1.25rem;
+}
+
+.cms-text-size-22 {
+    font-size: 1.375rem;
+}
+
+.cms-text-size-24 {
+    font-size: 1.5rem;
+}
+
+.cms-text-size-26 {
+    font-size: 1.625rem;
+}
+
+.cms-text-size-28 {
+    font-size: 1.75rem;
+}
+
+.cms-text-size-30 {
+    font-size: 1.875rem;
+}
+
+/* fontColor BLOT */
+.ql-snow .ql-picker.ql-fontColor {
+    width: 100px;
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label::after {
+    content: 'Kolor tekstu';
+    font-size: 12px;
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item::before {
+    content: '';
+    padding: 0 5px;
+    border: 1px solid black;
+    margin-right: 10px;
+    font-size: 9px;
+    vertical-align: middle;
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item::after {
+    content: 'Brak';
+    font-size: 12px;
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item {
+    display: none;
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value] {
+    display: block;
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="blue"]::before,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="blue"]::before {
+    background-color: #0f2648;
+}
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="blue"]::after,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="blue"]::after {
+    content: 'Granatowy';
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="black"]::before,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="black"]::before {
+    background-color: #000;
+}
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="black"]::after,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="black"]::after {
+    content: 'Czarny';
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="grey"]::before,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="grey"]::before {
+    background-color: #333;
+}
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="grey"]::after,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="grey"]::after {
+    content: 'Szary';
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="grey-light"]::before,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="grey-light"]::before {
+    background-color: #555;
+}
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="grey-light"]::after,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="grey-light"]::after {
+    content: 'Jasno szary';
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="red"]::before,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="red"]::before {
+    background-color: #ff0018;
+}
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="red"]::after,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="red"]::after {
+    content: 'Czerwony';
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="yellow"]::before,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="yellow"]::before {
+    background-color: #ffc605;
+}
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="yellow"]::after,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="yellow"]::after {
+    content: 'Żółty';
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="green"]::before,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="green"]::before {
+    background-color: #28a745;
+}
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="green"]::after,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="green"]::after {
+    content: 'Zielony';
+}
+
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="white"]::before,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="white"]::before {
+    background-color: #fff;
+}
+.ql-snow .ql-picker.ql-fontColor .ql-picker-label[data-value="white"]::after,
+.ql-snow .ql-picker.ql-fontColor .ql-picker-item[data-value="white"]::after {
+    content: 'Biały';
+}
+
+.cms-text-black {
+    color: #000;
+}
+
+.cms-text-white {
+    color: #fff;
+}
+
+.cms-text-grey {
+    color: #333;
+}
+
+.cms-text-grey-light {
+    color: #555;
+}
+
+.cms-text-blue {
+    color: #0f2648;
+}
+
+.cms-text-red {
+    color: #ff0018;
+}
+
+.cms-text-yellow {
+    color: #ffc605;
+}
+
+.cms-text-green {
+    color: #28a745;
+}
+
+/* language BLOT */
+.ql-snow .ql-picker.ql-language {
+    width: 88px;
+}
+
+.ql-snow .ql-formats .ql-menuList::before{
+    content: 'Lista menu';
+    font-size: 10px;
+    line-height:initial;
+}
+.ql-snow .ql-formats .ql-menuList{
+    line-height:0px;
+}
+
+.ql-snow .ql-picker.ql-language .ql-picker-label::before {
+    content: 'Język';
+}
+
+.ql-snow .ql-picker.ql-language .ql-picker-item::before {
+    content: 'Brak';
+}
+
+.ql-snow .ql-picker.ql-language .ql-picker-label[data-value="pl"]::before,
+.ql-snow .ql-picker.ql-language .ql-picker-item[data-value="pl"]::before {
+    content: 'Polski';
+}
+
+.ql-snow .ql-picker.ql-language .ql-picker-label[data-value="en"]::before,
+.ql-snow .ql-picker.ql-language .ql-picker-item[data-value="en"]::before {
+    content: 'Angielski';
+}
+
+span[lang] {
+    font-style: italic;
+}
+
+/* OTHER */
+
+.ql-editor {
+    min-height: 250px;
+}
+
+.ql-snow .ql-tooltip input[type="checkbox"] {
+    display: none;
+    border: 1px solid #ccc;
+    margin: 0px;
+    padding: 3px 5px;
+}
+
+.ql-snow .ql-tooltip label {
+    display: none;
+    margin: 0px;
+    padding: 3px 5px;
+}
+
+.ql-snow .ql-tooltip.ql-editing label {
+    display: block;
+}
+
+.ql-snow .ql-tooltip.ql-editing label#target-label, .ql-snow .ql-tooltip.ql-editing label#is-menu-label {
+    display: inline-block;
+}
+
+.ql-snow .ql-tooltip.ql-editing input[type="checkbox"] {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.ql-snow .ql-tooltip.ql-editing input[type="text"] {
+    display: block;
+}
+
+.ql-snow .ql-tooltip {
+    position: unset;
+}
+
+.ql-editing .ql-action {
+    display: block;
+    border: 1px solid #ccc;
+    max-width: 73px;
+}
+
+.ql-tooltip {
+    overflow: scroll;
+}
+
+.ql-snow .ql-tooltip::before {
+    content: "Wprowadzony adres:";
+}
+
+.ql-snow .ql-tooltip[data-mode="link"]::before {
+    content: "Wprowadź adres odnośnika:";
+}
+
+.ql-snow .ql-tooltip a.ql-action::after {
+    content: "Edytuj";
+}
+
+.ql-snow .ql-tooltip.ql-editing a.ql-action::after {
+    content: "Zapisz";
+}
+
+.ql-snow .ql-tooltip a.ql-remove::before {
+    content: "Usuń odnośnik";
+}

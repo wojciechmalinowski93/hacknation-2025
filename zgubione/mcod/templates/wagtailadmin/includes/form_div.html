@@ -1,0 +1,14 @@
+{% load wagtailadmin_tags %}
+<div class="nice-padding">
+    {% include 'wagtailadmin/chooser/_link_types.html' with current=link_type_label %}
+
+    <form action="{% url action_url %}{% querystring %}" method="post" novalidate>
+        {% csrf_token %}
+        <ul class="fields">
+            {% for field in form %}
+                {% include "wagtailadmin/shared/field_as_li.html" %}
+            {% endfor %}
+            <li><input type="submit" value="{{ submit_text }}"  class="button" /></li>
+        </ul>
+    </form>
+</div>

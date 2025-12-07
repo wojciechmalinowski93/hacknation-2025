@@ -1,0 +1,20 @@
+{%load i18n %}
+---
+tags:
+ - {% trans "API Endpoints" %}
+summary: {% trans "Returns datasets's resources" %}
+description: |
+  {% spaceless%}
+      <p>Gives the ability to browse, filter and search for resources of given dataset.</p>
+  {% endspaceless %}
+security: []
+
+parameters:
+    schema: ResourceApiSearchRequest
+responses:
+    200:
+        description: {% trans "Valid response in JSONAPI format" %}
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/Resources'

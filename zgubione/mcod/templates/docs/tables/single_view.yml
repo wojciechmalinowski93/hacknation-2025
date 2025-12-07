@@ -1,0 +1,16 @@
+{%load i18n %}
+---
+tags:
+    - {% trans "API Endpoints" %}
+summary: {% trans "Returns sigle row" %}
+security: []
+
+parameters:
+    schema: TableApiRequest
+responses:
+    200:
+        description: {% trans "Valid response in JSONAPI format" %}
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/Row'

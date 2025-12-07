@@ -1,0 +1,11 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"/>
+    <soap:Body>
+        <saml2p:ArtifactResponse xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol">
+            <saml2p:Status>
+                <saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Requester"/>
+                <saml2p:StatusMessage>Some message.</saml2p:StatusMessage>
+            </saml2p:Status>
+        </saml2p:ArtifactResponse>
+    </soap:Body>
+</soap:Envelope>

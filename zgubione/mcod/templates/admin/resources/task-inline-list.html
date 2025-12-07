@@ -1,0 +1,41 @@
+{% load i18n static admin_modify suit_tags admin_urls core_tags %}
+<div class="inline-group {{ inline_admin_formset.opts.suit_classes }}" id="{{ inline_admin_formset.formset.prefix }}-group">
+  <div class="tabular inline-related {% if forloop.last %}last-related{% endif %}">
+{{ inline_admin_formset.formset.management_form }}
+<fieldset class="module">
+   <h2>{% trans 'Tasks list' %}</h2>
+   {{ inline_admin_formset.formset.non_form_errors }}
+   <table class="table table-bordered table-condensed table-striped">
+     <thead><tr>
+     {% for field in inline_admin_formset.fields %}
+         <th>{% trans 'status' %}</th>
+         <th>{% trans 'date done' %}</th>
+         <th>{% trans 'message' %}</th>
+         <th>{% trans 'recommendation' %}</th>
+     {% endfor %}
+     </tr></thead>
+
+     <tbody>
+     {% for inline_admin_form in inline_admin_formset %}
+         {%  if inline_admin_form.form.instance.taskresult %}
+             {% for message_line in inline_admin_form.form.instance.taskresult.message %}
+                <tr>
+                 {% if forloop.counter == 1 %}
+                     <td rowspan="{{ inline_admin_form.form.instance.taskresult.message|length }}" class="field-status_label"><span class="{{ inline_admin_form.form.instance.taskresult.status | inline_task_status_class }}">{% trans inline_admin_form.form.instance.taskresult.status %}</span></td>
+                     <td rowspan="{{ inline_admin_form.form.instance.taskresult.message|length }}" class="field-date_done">{{ inline_admin_form.form.instance.taskresult.date_done }}</td>
+                 {% endif %}
+                 {% for recommend_line in inline_admin_form.form.instance.taskresult.recommendation %}
+                    {% if forloop.counter == forloop.parentloop.counter %}
+                        <td>{{message_line}}</td><td>{{ recommend_line|linebreaks }}</td>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+            {% endfor %}
+         {% endif %}
+     {% endfor %}
+     </tbody>
+   </table>
+</fieldset>
+  {{ defaults }}
+  </div>
+</div>

@@ -1,0 +1,108 @@
+{% load core_tags %}
+{% if 'agent_organizations' in adminform.form.fields %}
+<script type="text/javascript">
+    function toggle_is_agent_opts() {
+        if ($('input[name=is_agent_opts]:checked').val() == 'new') {
+            $('div.field-from_agent').hide();
+            $('div.field-agent_organizations, div.field-agent_organization_main').show();
+        } else if ($('input[name=is_agent_opts]:checked').val() == 'from_agent') {
+            $('div.field-agent_organizations, div.field-agent_organization_main').hide();
+            $('div.field-from_agent').show();
+        }
+        if ($('#id_is_agent').prop('checked') === false) {
+            $('div.field-agent_organizations, div.field-agent_organization_main, div.field-from_agent').hide();
+        }
+    }
+
+    function toggle_is_editor_checkbox() {
+        if($('#id_is_superuser:checked,#id_is_academy_admin:checked,#id_is_labs_admin:checked').length > 0) {
+            $('#id_is_staff').prop('checked', true).prop('disabled', true).trigger('change');
+        } else {
+            $('#id_is_staff').prop('disabled', false).trigger('change');
+        }
+    }
+
+    $(document).ready(function () {
+        {% if not adminform.form.agent_organizations.errors %}
+        if($('#id_is_agent').prop('checked') === false) {
+            $('div.field-is_agent_opts, div.field-from_agent, div.field-agent_organizations, div.field-agent_organization_main, div.field-extra_agents_list').hide();
+        }
+        {% endif %}
+        if($('#id_is_agent').prop('checked') === true) {
+            $('div.field-extra_agent_of').hide();
+            toggle_is_agent_opts();
+        }
+        {% if not adminform.form.organizations.errors %}
+        if($('#id_is_staff').prop('checked') === false) {
+            $('div.field-organizations').hide();
+        }
+        {% endif %}
+
+        {% if adminform.form.from_agent.errors %}
+        $('div.field-from_agent').show();
+        {% endif %}
+
+    $('#id_is_staff').change(function(){
+        if($(this).is(":checked")) {
+            $('div.field-organizations').show();
+        } else {
+            $('div.field-organizations').hide();
+        }
+    });
+
+    toggle_is_editor_checkbox();
+    $('#id_is_superuser,#id_is_academy_admin,#id_is_labs_admin').change(function(){
+        toggle_is_editor_checkbox();
+    });
+
+    $('#id_is_agent').change(function(){
+        if($(this).is(":checked")) {
+            $('div.field-is_agent_opts, div.field-from_agent, div.field-agent_organizations, div.field-agent_organization_main, div.field-extra_agents_list').show();
+            $('div.field-extra_agent_of').hide();
+        } else {
+            $('div.field-is_agent_opts, div.field-from_agent, div.field-agent_organizations, div.field-agent_organization_main, div.field-extra_agents_list').hide();
+            $('div.field-extra_agent_of').show();
+        }
+        toggle_is_agent_opts();
+    });
+    $('input[type=radio][name=is_agent_opts]').change(function() {
+        toggle_is_agent_opts();
+    });
+    SelectBoxCustom.init('id_agent_organizations');
+    $('#id_agent_organization_main').data('prevOrganizationId', $('#id_agent_organization_main').val());
+    $('#id_agent_organization_main').data('prevOrganizationText', $('#id_agent_organization_main').text());
+    $('#id_agent_organization_main').change(function() {
+        var prevOrganizationId = $(this).data('prevOrganizationId');
+        var prevOrganizationText = $(this).data('prevOrganizationText');
+        var aom = $('#id_agent_organization_main').select2('data')[0];
+        var organizations = [];
+        $('#id_agent_organizations option').each(function(){
+            organizations.push($(this).val());
+        });
+        if (prevOrganizationId && prevOrganizationText) {
+            $('#id_agent_organizations').find('option[value=' + prevOrganizationId + ']').remove();
+            if (SelectBoxCustom.cache_contains('id_agent_organizations', prevOrganizationId, 'to')) {
+                SelectBoxCustom.add_to_cache('id_agent_organizations', {
+                    value: prevOrganizationId,
+                    text: prevOrganizationText,
+                    displayed: 1
+                }, 'prev');
+                SelectBoxCustom.delete_from_cache('id_agent_organizations', prevOrganizationId, 'to');
+                SelectBoxCustom.redisplay('id_agent_organizations');
+            }
+        }
+        if (aom.id && organizations.indexOf(aom.id) == -1) {
+            var $newOption = $('<option selected="selected"></option>').val(aom.id).text(aom.text)
+            $('#id_agent_organizations').append($newOption).trigger('change');
+            if (SelectBoxCustom.cache_contains('id_agent_organizations', aom.id, 'prev')) {
+                SelectBoxCustom.add_to_cache('id_agent_organizations', {value: aom.id, text: aom.text, displayed: 1}, 'to');
+                SelectBoxCustom.delete_from_cache('id_agent_organizations', aom.id, 'prev');
+                SelectBoxCustom.redisplay('id_agent_organizations');
+            }
+            $(this).data('prevOrganizationId', aom.id);
+            $(this).data('prevOrganizationText', aom.text);
+        }
+    });
+});
+</script>
+{% endif %}

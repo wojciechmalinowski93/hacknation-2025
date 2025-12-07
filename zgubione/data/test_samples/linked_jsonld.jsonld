@@ -1,0 +1,959 @@
+{
+  "id": "VAR-202106-1202",
+  "affected_products": {
+    "sources": [
+      {
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      },
+      {
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      }
+    ],
+    "data": [
+      {
+        "trust": 1.4,
+        "vendor": "advantech",
+        "scope": null,
+        "model": "webaccess/hmi designer",
+        "version": null
+      },
+      {
+        "trust": 1.0,
+        "vendor": "advantech",
+        "scope": "lte",
+        "model": "webaccess\\/hmi designer",
+        "version": "2.1.9.95"
+      },
+      {
+        "trust": 0.8,
+        "vendor": "アドバンテック株式会社",
+        "scope": "eq",
+        "model": "webaccess/hmi",
+        "version": null
+      },
+      {
+        "trust": 0.8,
+        "vendor": "アドバンテック株式会社",
+        "scope": "lt",
+        "model": "webaccess/hmi",
+        "version": "designer v2.1.11.0  earlier  s"
+      }
+    ],
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/affected_products#",
+      "data": {
+        "@container": "@list"
+      },
+      "sources": {
+        "@id": "https://www.variotdbs.pl/ref/sources",
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "configurations": {
+    "sources": [
+      {
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      }
+    ],
+    "data": [
+      {
+        "nodes": [
+          {
+            "cpe_match": [
+              {
+                "vulnerable": true,
+                "cpe23Uri": "cpe:2.3:a:advantech:webaccess\\/hmi_designer:*:*:*:*:*:*:*:*",
+                "cpe_name": [],
+                "versionEndIncluding": "2.1.9.95"
+              }
+            ],
+            "children": [],
+            "operator": "OR"
+          }
+        ],
+        "CVE_data_version": "4.0"
+      }
+    ],
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/configurations#",
+      "data": {
+        "@container": "@list"
+      },
+      "nodes": {
+        "@container": "@list"
+      },
+      "cpe_match": {
+        "@container": "@list"
+      },
+      "children": {
+        "@container": "@list"
+      }
+    }
+  },
+  "credits": {
+    "trust": 1.4,
+    "sources": [
+      {
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      }
+    ],
+    "data": "kimiya",
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/credits#",
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "cvss": {
+    "sources": [
+      {
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "VULMON"
+      },
+      {
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      },
+      {
+        "id": "CNNVD-202104-975",
+        "db": "CNNVD"
+      },
+      {
+        "id": "CNNVD-202106-1537",
+        "db": "CNNVD"
+      }
+    ],
+    "data": [
+      {
+        "severity": [
+          {
+            "trust": 1.0,
+            "author": "NVD",
+            "id": "CVE-2021-33000",
+            "value": "HIGH"
+          },
+          {
+            "trust": 0.8,
+            "author": "OTHER",
+            "id": "JVNDB-2021-001390",
+            "value": "High"
+          },
+          {
+            "trust": 0.7,
+            "author": "ZDI",
+            "id": "CVE-2021-33000",
+            "value": "HIGH"
+          },
+          {
+            "trust": 0.7,
+            "author": "ZDI",
+            "id": "ZDI-21-490",
+            "value": "HIGH"
+          },
+          {
+            "trust": 0.6,
+            "author": "CNNVD",
+            "id": "CNNVD-202104-975",
+            "value": "MEDIUM"
+          },
+          {
+            "trust": 0.6,
+            "author": "CNNVD",
+            "id": "CNNVD-202106-1537",
+            "value": "HIGH"
+          },
+          {
+            "trust": 0.1,
+            "author": "VULMON",
+            "id": "CVE-2021-33000",
+            "value": "MEDIUM"
+          }
+        ],
+        "cvssV3": [
+          {
+            "trust": 1.0,
+            "exploitabilityScore": 1.8,
+            "author": "NVD",
+            "availabilityImpact": "HIGH",
+            "privilegesRequired": "NONE",
+            "baseScore": 7.8,
+            "version": "3.1",
+            "userInteraction": "REQUIRED",
+            "baseSeverity": "HIGH",
+            "confidentialityImpact": "HIGH",
+            "attackComplexity": "LOW",
+            "scope": "UNCHANGED",
+            "attackVector": "LOCAL",
+            "integrityImpact": "HIGH",
+            "id": "CVE-2021-33000",
+            "impactScore": 5.9,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+          },
+          {
+            "trust": 0.8,
+            "exploitabilityScore": null,
+            "author": "OTHER",
+            "availabilityImpact": "High",
+            "privilegesRequired": "None",
+            "baseScore": 7.8,
+            "version": "3.0",
+            "userInteraction": "Required",
+            "baseSeverity": "High",
+            "confidentialityImpact": "High",
+            "attackComplexity": "Low",
+            "scope": "Unchanged",
+            "attackVector": "Local",
+            "integrityImpact": "High",
+            "id": "JVNDB-2021-001390",
+            "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "impactScore": null
+          },
+          {
+            "trust": 0.7,
+            "exploitabilityScore": 1.8,
+            "author": "ZDI",
+            "availabilityImpact": "HIGH",
+            "privilegesRequired": "NONE",
+            "baseScore": 7.8,
+            "version": "3.0",
+            "userInteraction": "REQUIRED",
+            "baseSeverity": "HIGH",
+            "confidentialityImpact": "HIGH",
+            "attackComplexity": "LOW",
+            "scope": "UNCHANGED",
+            "attackVector": "LOCAL",
+            "integrityImpact": "HIGH",
+            "id": "CVE-2021-33000",
+            "vectorString": "AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "impactScore": 5.9
+          },
+          {
+            "trust": 0.7,
+            "exploitabilityScore": 1.8,
+            "author": "ZDI",
+            "availabilityImpact": "HIGH",
+            "privilegesRequired": "NONE",
+            "baseScore": 7.8,
+            "version": "3.0",
+            "userInteraction": "REQUIRED",
+            "baseSeverity": "HIGH",
+            "confidentialityImpact": "HIGH",
+            "attackComplexity": "LOW",
+            "scope": "UNCHANGED",
+            "attackVector": "LOCAL",
+            "integrityImpact": "HIGH",
+            "id": "ZDI-21-490",
+            "vectorString": "AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "impactScore": 5.9
+          }
+        ],
+        "cvssV2": [
+          {
+            "severity": "MEDIUM",
+            "trust": 1.1,
+            "exploitabilityScore": 8.6,
+            "author": "VULMON",
+            "availabilityImpact": "PARTIAL",
+            "obtainOtherPrivilege": null,
+            "baseScore": 6.8,
+            "acInsufInfo": null,
+            "version": "2.0",
+            "obtainUserPrivilege": null,
+            "accessComplexity": "MEDIUM",
+            "confidentialityImpact": "PARTIAL",
+            "obtainAllPrivilege": null,
+            "userInteractionRequired": null,
+            "integrityImpact": "PARTIAL",
+            "id": "CVE-2021-33000",
+            "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+            "impactScore": 6.4,
+            "accessVector": "NETWORK",
+            "authentication": "NONE"
+          }
+        ]
+      }
+    ],
+    "@context": {
+      "cvssV3": {
+        "@id": "https://www.variotdbs.pl/ref/cvssV3/",
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/cvssV3#"
+        }
+      },
+      "cvssV2": {
+        "@id": "https://www.variotdbs.pl/ref/cvssV2",
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/cvssV2#"
+        }
+      },
+      "severity": {
+        "@id": "https://www.variotdbs.pl/ref/severity",
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/severity#"
+        }
+      },
+      "sources": {
+        "@id": "https://www.variotdbs.pl/ref/sources",
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "description": {
+    "trust": 3.51,
+    "sources": [
+      {
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      },
+      {
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      },
+      {
+        "id": "CNNVD-202104-975",
+        "db": "CNNVD"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "VULMON"
+      }
+    ],
+    "data": "Parsing a maliciously crafted project file may cause a heap-based buffer overflow, which may allow an attacker to perform arbitrary code execution. User interaction is required on the WebAccess HMI Designer (versions 2.1.9.95 and prior). Advantech Provided by the company WebAccess/HMI Designer Is Human Machine Interface (HMI) Design software. WebAccess/HMI Designer The following multiple vulnerabilities exist in. * Heap-based buffer overflow (CWE-122) - CVE-2021-33000 ‥ * Out-of-bounds writing (CWE-787) - CVE-2021-33002 ‥ * Buffer error (CWE-119) - CVE-2021-33004 ‥ * Use of freed memory (Use-after-free) (CWE-416) - CVE-2021-42706 ‥ * Cross-site scripting (CWE-79) - CVE-2021-42703The expected impact depends on each vulnerability, but it may be affected as follows. - CVE-2021-42703. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Advantech WebAccess/HMI Designer. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.The specific flaw exists within the parsing of PM3 files. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length heap-based buffer. An attacker can leverage this vulnerability to execute code in the context of the current process. Pillow is a Python-based image processing library. \nThere is currently no information about this vulnerability, please feel free to follow CNNVD or manufacturer announcements",
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/description#",
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "external_ids": {
+    "sources": [
+      {
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "VULMON"
+      },
+      {
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      },
+      {
+        "id": "CNNVD-202104-975",
+        "db": "CNNVD"
+      },
+      {
+        "id": "CNNVD-202106-1537",
+        "db": "CNNVD"
+      }
+    ],
+    "data": [
+      {
+        "trust": 3.2,
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      },
+      {
+        "trust": 2.5,
+        "id": "ICSA-21-173-01",
+        "db": "ICS CERT"
+      },
+      {
+        "trust": 1.5,
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "trust": 1.5,
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      },
+      {
+        "trust": 0.8,
+        "id": "JVNVU98262671",
+        "db": "JVN"
+      },
+      {
+        "trust": 0.8,
+        "id": "ZDI-21-442",
+        "db": "ZDI"
+      },
+      {
+        "trust": 0.8,
+        "id": "ZDI-21-489",
+        "db": "ZDI"
+      },
+      {
+        "trust": 0.8,
+        "id": "ZDI-21-488",
+        "db": "ZDI"
+      },
+      {
+        "trust": 0.8,
+        "id": "ZDI-21-441",
+        "db": "ZDI"
+      },
+      {
+        "trust": 0.8,
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "trust": 0.7,
+        "id": "ZDI-CAN-12099",
+        "db": "ZDI_CAN"
+      },
+      {
+        "trust": 0.7,
+        "id": "ZDI-CAN-12276",
+        "db": "ZDI_CAN"
+      },
+      {
+        "trust": 0.6,
+        "id": "SB2021041363",
+        "db": "CS-HELP"
+      },
+      {
+        "trust": 0.6,
+        "id": "CNNVD-202104-975",
+        "db": "CNNVD"
+      },
+      {
+        "trust": 0.6,
+        "id": "SB2021062305",
+        "db": "CS-HELP"
+      },
+      {
+        "trust": 0.6,
+        "id": "ESB-2021.2214",
+        "db": "AUSCERT"
+      },
+      {
+        "trust": 0.6,
+        "id": "CNNVD-202106-1537",
+        "db": "CNNVD"
+      },
+      {
+        "trust": 0.1,
+        "id": "CVE-2021-33000",
+        "db": "VULMON"
+      }
+    ],
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/external_ids#",
+      "data": {
+        "@container": "@list"
+      },
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "iot": {
+    "trust": 0.6355219,
+    "sources": [
+      {
+        "id": null,
+        "db": "VARIoT devices database"
+      }
+    ],
+    "data": true,
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/iot#",
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "patch": {
+    "sources": [
+      {
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "id": "CNNVD-202106-1537",
+        "db": "CNNVD"
+      }
+    ],
+    "data": [
+      {
+        "trust": 0.8,
+        "title": "Contact Us Advantech",
+        "url": "https://www.advantech.com/contact"
+      },
+      {
+        "trust": 0.6,
+        "title": "Advantech WebAccess HMI Designer Buffer error vulnerability fix",
+        "url": "http://www.cnnvd.org.cn/web/xxk/bdxqbyid.tag?id=155767"
+      }
+    ],
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/patch#",
+      "data": {
+        "@container": "@list"
+      },
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "sources": {
+    "data": [
+      {
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "VULMON"
+      },
+      {
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      },
+      {
+        "id": "CNNVD-202104-975",
+        "db": "CNNVD"
+      },
+      {
+        "id": "CNNVD-202106-1537",
+        "db": "CNNVD"
+      }
+    ],
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/sources#",
+      "data": {
+        "@container": "@list"
+      }
+    }
+  },
+  "problemtype_data": {
+    "sources": [
+      {
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      }
+    ],
+    "data": [
+      {
+        "trust": 1.0,
+        "problemtype": "CWE-787"
+      },
+      {
+        "trust": 0.8,
+        "problemtype": "Heap-based buffer overflow (CWE-122) [ Other ]"
+      },
+      {
+        "trust": 0.8,
+        "problemtype": " Out-of-bounds writing (CWE-787) [ Other ]"
+      },
+      {
+        "trust": 0.8,
+        "problemtype": " Buffer error (CWE-119) [ Other ]"
+      },
+      {
+        "trust": 0.8,
+        "problemtype": " Use of freed memory (CWE-416) [ Other ]"
+      },
+      {
+        "trust": 0.8,
+        "problemtype": " Cross-site scripting (CWE-79) [ Other ]"
+      }
+    ],
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/problemtype_data#",
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "references": {
+    "sources": [
+      {
+        "id": "CVE-2021-33000",
+        "db": "VULMON"
+      },
+      {
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      },
+      {
+        "id": "CNNVD-202104-975",
+        "db": "CNNVD"
+      },
+      {
+        "id": "CNNVD-202106-1537",
+        "db": "CNNVD"
+      }
+    ],
+    "data": [
+      {
+        "trust": 3.1,
+        "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-173-01"
+      },
+      {
+        "trust": 0.8,
+        "url": "http://jvn.jp/cert/jvnvu98262671"
+      },
+      {
+        "trust": 0.8,
+        "url": "https://www.zerodayinitiative.com/advisories/zdi-21-441/"
+      },
+      {
+        "trust": 0.8,
+        "url": "https://www.zerodayinitiative.com/advisories/zdi-21-442/"
+      },
+      {
+        "trust": 0.8,
+        "url": "https://www.zerodayinitiative.com/advisories/zdi-21-487/"
+      },
+      {
+        "trust": 0.8,
+        "url": "https://www.zerodayinitiative.com/advisories/zdi-21-488/"
+      },
+      {
+        "trust": 0.8,
+        "url": "https://www.zerodayinitiative.com/advisories/zdi-21-489/"
+      },
+      {
+        "trust": 0.8,
+        "url": "https://www.zerodayinitiative.com/advisories/zdi-21-490/"
+      },
+      {
+        "trust": 0.6,
+        "url": "https://www.cybersecurity-help.cz/vdb/sb2021041363"
+      },
+      {
+        "trust": 0.6,
+        "url": "https://www.auscert.org.au/bulletins/esb-2021.2214"
+      },
+      {
+        "trust": 0.6,
+        "url": "https://www.cybersecurity-help.cz/vdb/sb2021062305"
+      },
+      {
+        "trust": 0.1,
+        "url": "https://cwe.mitre.org/data/definitions/787.html"
+      },
+      {
+        "trust": 0.1,
+        "url": "https://nvd.nist.gov"
+      }
+    ],
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/references#",
+      "data": {
+        "@container": "@list"
+      },
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "sources_update_date": {
+    "data": [
+      {
+        "date": "2021-06-24T00:00:00",
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "date": "2021-04-28T00:00:00",
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      },
+      {
+        "date": "2021-07-01T00:00:00",
+        "id": "CVE-2021-33000",
+        "db": "VULMON"
+      },
+      {
+        "date": "2021-11-12T05:12:00",
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "date": "2021-07-01T14:23:00",
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      },
+      {
+        "date": "2021-04-14T00:00:00",
+        "id": "CNNVD-202104-975",
+        "db": "CNNVD"
+      },
+      {
+        "date": "2021-07-02T00:00:00",
+        "id": "CNNVD-202106-1537",
+        "db": "CNNVD"
+      }
+    ],
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/sources_update_date#",
+      "data": {
+        "@container": "@list"
+      }
+    }
+  },
+  "sources_release_date": {
+    "data": [
+      {
+        "date": "2021-06-24T00:00:00",
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "date": "2021-04-28T00:00:00",
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      },
+      {
+        "date": "2021-06-24T00:00:00",
+        "id": "CVE-2021-33000",
+        "db": "VULMON"
+      },
+      {
+        "date": "2021-05-13T00:00:00",
+        "id": "JVNDB-2021-001390",
+        "db": "JVNDB"
+      },
+      {
+        "date": "2021-06-24T18:15:00",
+        "id": "CVE-2021-33000",
+        "db": "NVD"
+      },
+      {
+        "date": "2021-04-13T00:00:00",
+        "id": "CNNVD-202104-975",
+        "db": "CNNVD"
+      },
+      {
+        "date": "2021-06-22T00:00:00",
+        "id": "CNNVD-202106-1537",
+        "db": "CNNVD"
+      }
+    ],
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/sources_release_date#",
+      "data": {
+        "@container": "@list"
+      }
+    }
+  },
+  "threat_type": {
+    "trust": 0.6,
+    "sources": [
+      {
+        "id": "CNNVD-202106-1537",
+        "db": "CNNVD"
+      }
+    ],
+    "data": "local",
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/threat_type#",
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "title": {
+    "trust": 1.4,
+    "sources": [
+      {
+        "id": "ZDI-21-487",
+        "db": "ZDI"
+      },
+      {
+        "id": "ZDI-21-490",
+        "db": "ZDI"
+      }
+    ],
+    "data": "(0Day) Advantech WebAccess/HMI Designer PM3 File Parsing Heap-based Buffer Overflow Remote Code Execution Vulnerability",
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/title#",
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "vuln_type": {
+    "trust": 0.6,
+    "sources": [
+      {
+        "id": "CNNVD-202104-975",
+        "db": "CNNVD"
+      }
+    ],
+    "data": "other",
+    "@context": {
+      "@vocab": "https://www.variotdbs.pl/ref/type#",
+      "sources": {
+        "@container": "@list",
+        "@context": {
+          "@vocab": "https://www.variotdbs.pl/ref/sources#"
+        }
+      }
+    }
+  },
+  "cve": "CVE-2021-33000",
+  "last_update_date": "2022-03-28T11:36:16.126000Z",
+  "@id": "https://www.variotdbs.pl/vuln/VAR-202106-1202",
+  "@context": {
+    "@vocab": "https://www.variotdbs.pl/ref/VARIoTentry#",
+    "sources": {
+      "@id": "https://www.variotdbs.pl/ref/sources/"
+    },
+    "affected_products": {
+      "@id": "https://www.variotdbs.pl/ref/affected_products"
+    },
+    "references": {
+      "@id": "https://www.variotdbs.pl/ref/references/"
+    },
+    "configurations": {
+      "@id": "https://www.variotdbs.pl/ref/configurations"
+    },
+    "problemtype_data": {
+      "@id": "https://www.variotdbs.pl/ref/problemtype_data/"
+    },
+    "description": {
+      "@id": "https://www.variotdbs.pl/ref/description/"
+    },
+    "title": {
+      "@id": "https://www.variotdbs.pl/ref/title/"
+    },
+    "type": {
+      "@id": "https://www.variotdbs.pl/ref/type/"
+    },
+    "external_ids": {
+      "@id": "https://www.variotdbs.pl/ref/external_ids/"
+    },
+    "exploit_availability": {
+      "@id": "https://www.variotdbs.pl/ref/exploit_availability/"
+    },
+    "iot": {
+      "@id": "https://www.variotdbs.pl/ref/iot/"
+    },
+    "patch": {
+      "@id": "https://www.variotdbs.pl/ref/patch/"
+    },
+    "sources_update_date": {
+      "@id": "https://www.variotdbs.pl/ref/sources_update_date/"
+    },
+    "credits": {
+      "@id": "https://www.variotdbs.pl/ref/credits"
+    },
+    "threat_type": {
+      "@id": "https://www.variotdbs.pl/ref/threat_type/"
+    },
+    "cvss": {
+      "@id": "https://www.variotdbs.pl/ref/cvss/"
+    },
+    "sources_release_date": {
+      "@id": "https://www.variotdbs.pl/ref/sources_release_date/"
+    },
+    "iot_taxonomy": {
+      "@id": "https://www.variotdbs.pl/ref/iot_taxonomy/"
+    }
+  }
+}

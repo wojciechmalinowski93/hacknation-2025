@@ -1,0 +1,17 @@
+{% load static i18n %}
+{% trans "Report of activity of observed objects on the dane.gov.pl portal" %}.
+{% trans "Changes made on the date:" %} {{ date_from|date:"d-m-Y" }}
+
+{% regroup notifications by subscription.watcher as notifications_lst %}
+
+{% for item in notifications_lst %}
+- {{ item.grouper.get_object_name_display }}: {{ item.list.0.subscription.get_subscribed_obj_title_display }}
+    {% for notification in item.list %}
+    * {{ notification.created|date:"H:i" }} {{ notification.get_notification_type_display }}
+    {% endfor %}
+{% endfor %}
+
+{% trans 'If you wish to unsubscribe from receiving e-mail notifications, please use the "Disable e-mail notifications" button. This function is available on the data.gov.pl portal in the "My account" section, "Observed" tab.' %}
+
+{% trans "The message was generated automatically." %}
+{% trans "Please do not reply to it." %}

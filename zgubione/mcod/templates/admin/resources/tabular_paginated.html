@@ -1,0 +1,12 @@
+{% load i18n suit_list %}
+
+{% include 'admin/inline-list.html' %}
+
+
+    <div class="suit-tab suit-tab-relations">
+        {% with inline_admin_formset.formset.cl as cl %}
+            {% if cl.paginator %}
+                {% pagination cl %}
+            {% endif %}
+        {% endwith %}
+    </div>

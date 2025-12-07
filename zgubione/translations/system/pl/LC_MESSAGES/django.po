@@ -1,0 +1,5677 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-29 15:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+msgid "Sessions"
+msgstr "Sesje"
+
+msgid "End date"
+msgstr "Data zakończenia"
+
+msgid "Number of sessions"
+msgstr "Liczba sesji"
+
+msgid "Start date"
+msgstr "Data rozpoczęcia"
+
+msgid "State"
+msgstr "Stan"
+
+msgid "Title of course"
+msgstr "Tytuł kursu"
+
+msgid "Course venue"
+msgstr "Miejsce kursu"
+
+msgid "Delete selected courses"
+msgstr "Usuń wybrane kursy"
+
+msgid "General"
+msgstr "Ogólne"
+
+msgid "Open Data Academy"
+msgstr "Akademia Otwarte Dane"
+
+#, python-format
+msgid "Invalid choice! Valid are: %(choices)s."
+msgstr "Niepoprawny wybór! Poprawne są: %(choices)s."
+
+msgid "Duplicate values for \"Start date\" are not allowed."
+msgstr "Zduplikowane wartości \"Daty rozpoczęcia\" nie są dozwolone."
+
+msgid "Dates of sessions cannot overlap!"
+msgstr "Daty sesji nie mogą na siebie nachodzić!"
+
+#, python-format
+msgid "Course must contain %d or fewer sessions."
+msgid_plural "Course must contain %d or fewer sessions."
+msgstr[0] "Kurs musi zawierać %d lub mniej sesji."
+msgstr[1] "Kurs musi zawierać %d lub mniej sesji."
+msgstr[2] "Kurs musi zawierać %d lub mniej sesji."
+msgstr[3] "Kurs musi zawierać %d lub mniej sesji."
+
+#, python-format
+msgid "Course must contain at least %d session."
+msgid_plural "Course must contain at least %d session."
+msgstr[0] "Kurs musi zawierać przynajmniej %d sesję."
+msgstr[1] "Kurs musi zawierać przynajmniej %d sesję."
+msgstr[2] "Kurs musi zawierać przynajmniej %d sesję."
+msgstr[3] "Kurs musi zawierać przynajmniej %d sesję."
+
+msgid "title"
+msgstr "nazwa"
+
+msgid "description"
+msgstr "opis"
+
+msgid "venue"
+msgstr "miejsce"
+
+msgid "number of participants"
+msgstr "liczba uczestników"
+
+msgid "schedule file"
+msgstr "plik harmonogram"
+
+msgid "materials file"
+msgstr "plik materiały"
+
+msgid "course"
+msgstr "kurs"
+
+msgid "courses"
+msgstr "kursy"
+
+msgid "Trash (Courses)"
+msgstr "Kosz (Kursy)"
+
+msgctxt "General"
+msgid "academy course module type"
+msgstr "Ogólny"
+
+msgid "Technical"
+msgstr "Techniczny"
+
+msgid "Law"
+msgstr "Prawny"
+
+msgid "Law/Technical"
+msgstr "Prawny/Techniczny"
+
+msgid "Extra"
+msgstr "Dodatkowy"
+
+msgid "Exam"
+msgstr "Egzamin"
+
+msgid "module type"
+msgstr "rodzaj modułu"
+
+msgid "start date"
+msgstr "data rozpoczęcia"
+
+msgid "end date"
+msgstr "data zakończenia"
+
+msgid "number of days"
+msgstr "liczba dni"
+
+msgid "course module"
+msgstr "moduł kursu"
+
+msgid "course modules"
+msgstr "moduły kursu"
+
+msgid "Display"
+msgstr "Wyświetlanie"
+
+msgid "Start date cannot be greater than finish date."
+msgstr "Data rozpoczęcia nie może być większa od daty zakończenia."
+
+msgid "Given text contains illegal character. Please revalidate provided data."
+msgstr "Podany tekst zawiera niedozwolony znak. Prosimy o weryfikację wprowadzonych danych."
+
+msgid "Finish date cannot be in the past."
+msgstr "Data zakończenia nie może być w przeszłości."
+
+msgid "Alerts"
+msgstr "Komunikaty"
+
+msgid "Active"
+msgstr "Aktywny"
+
+msgid "Draft"
+msgstr "Szkic"
+
+msgid "Ongoing"
+msgstr "W trakcie"
+
+msgid "Not applicable"
+msgstr "Nie dotyczy"
+
+msgid "Finished"
+msgstr "Zakończony"
+
+msgid "Waiting"
+msgstr "Oczekujący"
+
+msgid "Title"
+msgstr "Tytuł"
+
+msgid "Title of the alert (300 characters max.)"
+msgstr "Tytuł komunikatu (maksymalnie 300 znaków)."
+
+msgid "Description"
+msgstr "Opis"
+
+msgid "Description of the alert"
+msgstr "Treść komunikatu"
+
+msgid "Date and time from which the message should be displayed"
+msgstr "Data i czas rozpoczęcia wyświetlania komunikatu."
+
+msgid "Finish date"
+msgstr "Data zakończenia"
+
+msgid "Date and time until which the message should be displayed"
+msgstr "Data i czas zakończenia wyświetlania kominikatu."
+
+msgid "Created by"
+msgstr "Utworzone przez"
+
+msgid "Modified by"
+msgstr "Zmodyfikowane przez"
+
+msgid "acc: Alert"
+msgstr "komunikat"
+
+msgid "Alert"
+msgstr "Komunikat"
+
+msgid "Applications"
+msgstr "Aplikacje"
+
+msgid "First"
+msgstr "Pierwsza"
+
+msgid "Second"
+msgstr "Druga"
+
+msgid "Third"
+msgstr "Trzecia"
+
+msgid "Fourth"
+msgstr "Czwarta"
+
+msgid "Notes"
+msgstr "Opis"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "App URL"
+msgstr "Adres URL aplikacji"
+
+msgid "external datasets"
+msgstr "zewnętrzne zbiory danych"
+
+msgid "Proposal accepted"
+msgstr "Propozycja przyjęta"
+
+msgid "Proposal rejected"
+msgstr "Propozycja odrzucona"
+
+msgid "applicant email"
+msgstr "e-mail zgłaszającego"
+
+msgid "image URL"
+msgstr "adres URL obrazu"
+
+msgid "illustrative graphics"
+msgstr "grafika ilustracyjna"
+
+msgid "datasets"
+msgstr "zbiory"
+
+msgid "keywords"
+msgstr "słowa kluczowe"
+
+msgid "report date"
+msgstr "data zgłoszenia"
+
+msgid "decision"
+msgstr "decyzja"
+
+msgid "decision date"
+msgstr "data decyzji"
+
+msgid "comment"
+msgstr "komentarz"
+
+msgid "application"
+msgstr "aplikacja"
+
+msgid "created by"
+msgstr "utworzone przez"
+
+msgid "modified by"
+msgstr "zmodyfikowane przez"
+
+msgid "Application Proposal"
+msgstr "Propozycja aplikacji"
+
+msgid "Application Proposals"
+msgstr "Propozycje aplikacji"
+
+msgid "acc: Application proposal"
+msgstr "propozycję aplikacji"
+
+msgid "Application Proposal Trash"
+msgstr "Propozycja aplikacji - Kosz"
+
+msgid "Application Proposals Trash"
+msgstr "Propozycje aplikacji - Kosz"
+
+msgid "Image URL"
+msgstr "Adres URL obrazu"
+
+msgid "illustrative graphics alternative text"
+msgstr "Tekst zastępczy grafiki ilustracyjnej"
+
+msgid "Alternative text"
+msgstr "Tekst zastępczy"
+
+msgid "Datasets"
+msgstr "Zbiory danych"
+
+msgid "Tag"
+msgstr "Słowo kluczowe"
+
+msgid "Positioning on the main page"
+msgstr "Kolejność na stronie głównej"
+
+msgid "acc: Application"
+msgstr "aplikację"
+
+msgid "Application"
+msgstr "Aplikacja"
+
+msgid "Trash"
+msgstr "Kosz"
+
+msgid "Articles"
+msgstr "Baza wiedzy"
+
+msgid "Article"
+msgstr "Artykuł"
+
+msgid "Knowledge base"
+msgstr ""
+
+msgid "Not listed"
+msgstr ""
+
+msgid "name"
+msgstr "nazwa"
+
+msgid "type"
+msgstr "typ"
+
+msgid "Article Category"
+msgstr "Kategoria artykułu"
+
+msgid "Article Categories"
+msgstr "Kategorie artykyłu"
+
+msgid "License ID"
+msgstr "Identyfikator licencji"
+
+msgid "Category"
+msgstr "Kategoria"
+
+msgid "Tags"
+msgstr "Słowa kluczowe"
+
+msgid "acc: Article"
+msgstr "artykuł"
+
+msgid "Categories"
+msgstr "Kategorie"
+
+msgid "Code"
+msgstr "Kod"
+
+msgid "Color"
+msgstr "Kolor"
+
+msgid "acc: Category"
+msgstr "kategorię"
+
+msgid "Unprocessable entity"
+msgstr "Podmiot niemożliwy do przetworzenia"
+
+msgid "Date from"
+msgstr "Data początku"
+
+msgid "Date to"
+msgstr "Data końca"
+
+msgid "Link title"
+msgstr "Tytuł linku"
+
+msgid "Email address"
+msgstr "Adres email"
+
+msgid "Link text"
+msgstr "Tekst linku"
+
+msgid "Phone number"
+msgstr "Nr telefonu"
+
+msgid "The page title as you'd like it to be seen by the public"
+msgstr ""
+
+msgid "page title"
+msgstr "tytuł strony"
+
+msgid ""
+"Optional. 'Search Engine Friendly' title. This will appear at the top of the "
+"browser window."
+msgstr ""
+
+#, fuzzy
+#| msgid "error description"
+msgid "search description"
+msgstr "opis błędu"
+
+msgid ""
+"Alternative text should be as descriptive and short as possible (max 150 "
+"chars)."
+msgstr ""
+"Tekst zastępczy powinien być tak opisowy i krótki jak to możliwe (do 150 "
+"znaków)."
+
+msgid "image"
+msgstr ""
+
+msgid "images"
+msgstr ""
+
+msgid "Tytuł"
+msgstr ""
+
+msgid "default value"
+msgstr "stare wartości"
+
+msgid "Default value. Comma separated values supported for checkboxes."
+msgstr ""
+
+msgid "help text"
+msgstr ""
+
+#, fuzzy
+#| msgid "Format"
+msgid "Form data"
+msgstr "Format"
+
+msgid "Submit time"
+msgstr ""
+
+#, fuzzy
+#| msgid "submission"
+msgid "form submission"
+msgstr "potwierdzenie wysyłki"
+
+#, fuzzy
+#| msgid "submissions"
+msgid "form submissions"
+msgstr "potwierdzenia wysyłki"
+
+#, fuzzy
+#| msgid "address"
+msgid "to address"
+msgstr "adres"
+
+msgid ""
+"Optional - form submissions will be emailed to these addresses. Separate "
+"multiple addresses by comma."
+msgstr ""
+
+#, fuzzy
+#| msgid "address"
+msgid "from address"
+msgstr "adres"
+
+msgid "subject"
+msgstr ""
+
+#, python-format
+msgid "One submission has been deleted."
+msgid_plural "%(count)d submissions have been deleted."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "Ankiety"
+msgstr ""
+
+msgid "Edit"
+msgstr "Edytuj"
+
+#, python-format
+msgid "Edit '%(title)s'"
+msgstr ""
+
+msgid "View draft"
+msgstr ""
+
+#, python-format
+msgid "Preview draft version of '%(title)s'"
+msgstr ""
+
+msgid "View live"
+msgstr "Zobacz na stronie"
+
+#, python-format
+msgid "View live version of '%(title)s'"
+msgstr ""
+
+msgid "Add child page"
+msgstr ""
+
+#, python-format
+msgid "Add a child page to '%(title)s' "
+msgstr ""
+
+msgid "More"
+msgstr ""
+
+#, python-format
+msgid "View more options for '%(title)s'"
+msgstr ""
+
+msgid "Polish"
+msgstr "Polski"
+
+msgid "English"
+msgstr "Angielski"
+
+msgid "table name"
+msgstr "nazwa tabeli"
+
+msgid "action"
+msgstr "akcja"
+
+msgid "user"
+msgstr "użytkownik"
+
+msgid "Differences"
+msgstr "Różnice"
+
+msgid "Change timestamp"
+msgstr "Data zmiany"
+
+msgid "row id"
+msgstr "identyfikator wiersza"
+
+msgid "message"
+msgstr "komunikat"
+
+msgid "Missing data for required field."
+msgstr "Brak danych w wymaganym polu."
+
+msgid "Field may not be null."
+msgstr "Pole nie może być puste."
+
+msgid "Invalid value."
+msgstr "Niepoprawna wartość."
+
+msgid "Invalid type."
+msgstr "Niepoprawny typ."
+
+msgid "Not a valid list."
+msgstr "Nieprawidłowa lista."
+
+msgid "Not a valid mapping type."
+msgstr "Niepoprawny typ mapowania"
+
+msgid "Not a valid string."
+msgstr "Niepoprawny string."
+
+msgid "Not a valid utf-8 string."
+msgstr "Niepoprawny utf-8 string."
+
+msgid "Multiple values are not allowed."
+msgstr "Wiele wartości nie jest dozwolonych"
+
+msgid "Not a valid UUID."
+msgstr "Niepoprawny UUID."
+
+msgid "Not a valid URL."
+msgstr "Niepoprawny adres URL."
+
+msgid "Not a valid email address."
+msgstr "Nieważny adres email."
+
+msgid "Not a valid integer."
+msgstr "Niepoprawna liczba całkowita."
+
+msgid "Special numeric values (nan or infinity) are not permitted."
+msgstr ""
+"Specjalne wartości numeryczne (jak nan czy nieskończoność) są niedozwolone."
+
+msgid "Not a valid boolean."
+msgstr "Niepoprawna wartość logiczna."
+
+msgid "Not a valid time."
+msgstr "Niepoprawna wartość czasu."
+
+#, python-brace-format
+msgid "\"{input}\" cannot be formatted as a time."
+msgstr "\"{input}\" nie może być sformatowana jako czas."
+
+msgid "Not a valid date."
+msgstr "Niepoprawna wartość daty."
+
+#, python-brace-format
+msgid "\"{input}\" cannot be formatted as a date."
+msgstr "\"{input}\" nie może być sformatowana jako data."
+
+#, python-brace-format
+msgid "Not a valid {obj_type}."
+msgstr "Nieprawidłowy {obj_type}."
+
+#, python-brace-format
+msgid "\"{input}\" cannot be formatted as a {obj_type}."
+msgstr "\"{input}\" nie może być sformatowana jako {obj_type}."
+
+msgid "Not a valid period of time."
+msgstr "Niepoprawny okres czasu."
+
+msgid "{input!r} cannot be formatted as a timedelta."
+msgstr "{input!r} nie może być sformatowana jako delta czasu."
+
+msgid "not specified"
+msgstr "nie sprecyzowano"
+
+msgid "YES"
+msgstr "TAK"
+
+msgid "NO"
+msgstr "NIE"
+
+msgid "malformed query string"
+msgstr "źle sformułowane zapytanie"
+
+msgid "Additional permissions are required!"
+msgstr "Wymagane są dodatkowe uprawnienia!"
+
+#, python-format
+msgid ""
+"<b>Your account activation link has expired.</b><br>If you want to receive a "
+"new activation link, please contact us: <a href=\"mailto:%(email)s\">"
+"%(email)s</a>"
+msgstr ""
+"<b>Twój link do aktywacji konta wygasł.</b><br>Jeżeli chcesz otrzymać nowy "
+"link aktywacyjny, skontaktuj się z nami: <a href=\"mailto:%(email)s\">"
+"%(email)s</a>"
+
+#, python-format
+msgid ""
+"<b>Your account has not been activated.</b><br>We sent an email to the e-"
+"mail address you used during registration with a link to activate your "
+"account.<br>If you have not received an e-mail from us, or the activation "
+"link has expired, please contact us: <a href=\"mailto:%(email)s\">%(email)s</"
+"a>"
+msgstr ""
+"<b>Twoje konto nie zostało aktywowane.</b><br>Na adres e-mail, którego "
+"użyłeś podczas rejestracji, wysłaliśmy wiadomość z linkiem aktywującym konto."
+"<br>Jeżeli nie otrzymałeś od nas wiadomości e-mail, bądź link aktywacyjny "
+"stracił ważność, skontaktuj się z nami: <a href=\"mailto:%(email)s\">"
+"%(email)s</a>"
+
+msgid "Missing token"
+msgstr "Brakujący token"
+
+msgid "Missing authorization header"
+msgstr "Brak Nagłówka Autoryzacji"
+
+msgid "Invalid token"
+msgstr "Niepoprawny token!"
+
+msgid "Invalid authorization header"
+msgstr "Niepoprawny Nagłówek Autoryzacji"
+
+msgid "Incorrect login data"
+msgstr "Niepoprawne dane logowania"
+
+msgid "Cannot login"
+msgstr "Nie można się zalogować"
+
+msgid "Account is blocked"
+msgstr "Konto jest zablokowane"
+
+msgid "Referer checking failed - no Referer."
+msgstr "Nagłówek Referer nie został wysłany."
+
+#, python-format
+msgid "Referer checking failed - %s does not match any trusted origins."
+msgstr "Wartość nagłówka Referer %s nie pasuje do żadnej z zaufanych."
+
+msgid "Referer checking failed - Referer is malformed."
+msgstr "Wartość nagłówka Referer jest źle sformułowana."
+
+msgid "Referer checking failed - Referer is insecure while host is secure."
+msgstr "Referer jest niebezpieczny, gdy host jest bezpieczny."
+
+msgid "CSRF token missing or incorrect."
+msgstr "Token CSRF nie został poprawnie wprowadzony."
+
+msgid "'{}' profile is not supported"
+msgstr "profil '{}' nie jest wspierany"
+
+msgid "Invalid page number"
+msgstr "Niepoprawny numer strony"
+
+msgid "Invalid page size"
+msgstr "Niepoprawny rozmiar strony."
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Save and continue editing"
+msgstr "Zapisz i kontynuuj edycję"
+
+msgid "Save and add another"
+msgstr "Zapisz i dodaj kolejny"
+
+msgid "Save as new"
+msgstr "Zapisz jako nowy"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "Published"
+msgstr "Opublikowany"
+
+msgid "{} - trash"
+msgstr "{} - kosz"
+
+msgid "Resources list"
+msgstr "Zasoby"
+
+msgid "Tabular data validation status"
+msgstr "Status walidacji danych"
+
+msgid "File validation status"
+msgstr "Status walidacji pliku"
+
+msgid "Link validation status"
+msgstr "Status walidacji linku"
+
+msgid "Promoted datasets"
+msgstr "Promowane zbiory danych"
+
+msgid "Filter by institution name"
+msgstr "Filtruj według nazwy instytucji"
+
+msgid "Conditions"
+msgstr "Warunki"
+
+msgid "Resources"
+msgstr "Zasoby"
+
+msgid "Supplements"
+msgstr "Dokumenty uzupełniające"
+
+msgid "dynamic data"
+msgstr "Zawiera dane dynamiczne"
+
+msgid "has high value data"
+msgstr "zawiera dane o wysokiej wartości"
+
+msgid "has high value data from the EC list"
+msgstr "zawiera dane o wysokiej wartości z wykazu KE"
+
+msgid "has research data"
+msgstr "zawiera dane badawcze"
+
+msgid "Update frequency"
+msgstr "Częstotliwość aktualizacji"
+
+msgid "Delete chosen elements"
+msgstr "Usuń wybrane elementy"
+
+msgid "Logo"
+msgstr ""
+
+msgid "Available categories"
+msgstr "Dostępne kategorie"
+
+msgid "Selected categories"
+msgstr "Wybrane kategorie"
+
+msgid "Add document"
+msgstr "Dodaj dokument"
+
+msgid "document"
+msgstr "dokument"
+
+msgid ""
+"Couldn't restore following datasets, because their related organizations are "
+"still removed: {}"
+msgstr ""
+"Nie można przywrócić następujących zbiorów danych, ponieważ organizacje, do "
+"których przynależą wciąż pozostają usunięte: {}"
+
+msgid "Comment must be at least 3 characters long"
+msgstr "Komentarz musi mieć przynajmniej 3 znaki"
+
+msgid "e.g. the name of the data set"
+msgstr "na przykład nazwa zestawu danych"
+
+msgid "Some information about the data being added"
+msgstr "Niektóre informacje o dodawanych danych"
+
+msgid "Source"
+msgstr "Źródło"
+
+msgid "Customfields"
+msgstr "Pola niestandardowe"
+
+msgid ""
+"If you select a draft, the status of all published resources belonging to "
+"that set will be changed to a draft"
+msgstr ""
+"Jeśli wybierzesz szkic, status wszystkich opubilkowanych zasobów należących "
+"do tego zbioru zostanie zmieniony na szkic"
+
+msgid "Yes"
+msgstr "Tak"
+
+msgid "No"
+msgstr "Nie"
+
+msgid ""
+"Allowed file extensions: jpg, gif, png. For better readability, we "
+"recommend .png files with a transparent background"
+msgstr ""
+"Dopuszczalne typy plików: jpg, gif, png. Ze względu na lepszą czytelność "
+"zalecamy plik .png z przezroczystym tłem"
+
+#, python-format
+msgid ""
+"By checking the checkbox, the item will be promoted on the list of datasets. "
+"You can promote a maximum of %(limit)s datasets."
+msgstr ""
+"Zaznaczenie checkboxa spowoduje, że zbiór będzie promowany na liście zbiorów "
+"danych. Możesz promować maksymalnie %(limit)s zbiorów danych."
+
+msgid "Availability date"
+msgstr "Data udostępnienia"
+
+msgid "Modification date"
+msgstr "Data modyfikacji"
+
+msgid "Update date"
+msgstr "Data aktualizacji"
+
+msgid "Archived resources files"
+msgstr "Zarchiwizowane pliki zasobów"
+
+msgid "Text area is filled, license must be selected"
+msgstr "Uzupełniono pole tekstowe, należy wybrać licencję"
+
+msgid ""
+"You can't enter custom license responsibilities and select default CC BY 4.0 "
+"license responsibilities at the same time. Please choose one."
+msgstr ""
+"Nie można wprowadzać jednocześnie indywidualnych warunków licencji dot. "
+"odpowiedzialności i równocześnie wybrać domyślne warunki licencji CC BY 4.0 "
+"dot. odpowiedzialności. Proszę uzupełnić tylko 1 pole."
+
+#, python-format
+msgid ""
+"Currently %(limit)s datasets have already been marked as promoted. If you "
+"want to select this dataset, you have to uncheck another one."
+msgstr ""
+"Obecnie zostało już zaznaczone %(limit)s zbiorów danych jako promowane. "
+"Jeżeli chcesz zaznaczyć ten zbiór musisz odznaczyć inny."
+
+msgid "Only published dataset can be assigned as promoted!"
+msgstr "Tylko opublikowany zbiór danych może być oznaczony jako promowany!"
+
+msgid ""
+"Chosen conditions for re-use mean that they contain personal data. Please "
+"contact the administrator at kontakt@dane.gov.pl."
+msgstr ""
+"Wybrane warunki ponownego wykorzystania danych oznaczają, że zawierają one "
+"dane osobowe. Skontaktuj się z administratorem portalu kontakt@dane.gov.pl"
+
+msgid ""
+"You can't publish this dataset, because his organization has the status of a "
+"draft Please set status to draft or set status to publish for organization: "
+msgstr ""
+"Nie można opublikować zbioru, ponieważ organizacja do której należy ma "
+"status szkic. Ustaw status szkic lub zmień opublikuj organizację: "
+
+#, python-format
+msgid ""
+"Currently %(limit)s datasets have already been marked as promoted. If you "
+"want to promote another one, you need to uncheck any of them."
+msgstr ""
+"Obecnie zostało już zaznaczone %(limit)s zbiorów danych jako promowane. "
+"Jeżeli chcesz promować kolejny, musisz odznaczyć któryś z nich."
+
+msgid ""
+"You can't restore this dataset, because it's organization is still removed. "
+"Please first restore organization: "
+msgstr ""
+"Nie można przywrócić tego zbioru, ponieważ organizacja do której przynależy "
+"jest nadal w koszu. Przywróć najpierw organizację: "
+
+msgid "Yearly"
+msgstr "Rocznie"
+
+msgid "Every half year"
+msgstr "Co pół roku"
+
+msgid "Quarterly"
+msgstr "Kwartalnie"
+
+msgid "monthly"
+msgstr "miesięcznie"
+
+msgid "Monthly"
+msgstr "Miesięcznie"
+
+msgid "weekly"
+msgstr "co tydzień"
+
+msgid "Weekly"
+msgstr "Co tydzień"
+
+msgid "daily"
+msgstr "codziennie"
+
+msgid "Daily"
+msgstr "Codziennie"
+
+msgid "Irregular"
+msgstr "Nieregularnie"
+
+msgid "Not planned"
+msgstr "Jednorazowe udostępnienie"
+
+msgid "dataset"
+msgstr "zbiór danych"
+
+msgid "Id dataset"
+msgstr "Id zbioru"
+
+msgid "article"
+msgstr "artykuł"
+
+msgid ""
+"The user should inform about the source, time of creation and obtaining "
+"private data from the entity providing the data (supplier)"
+msgstr ""
+"Użytkownik powinien poinformować o źródle, czasie wytworzenia i pozyskania "
+"danych prywatnych od podmiotu udostępniającego dane (dostawcy)"
+
+msgid ""
+"The user should inform about the processing of the used private data (if he "
+"modifies it in any way)"
+msgstr ""
+"Użytkownik powinien poinformować o przetworzeniu wykorzystywanych danych "
+"prywatnych (gdy je jakkolwiek modyfikuje)"
+
+msgid ""
+"The scope of the responsibility of the entity providing private data "
+"(suppliers) for the provided data"
+msgstr ""
+"Zakres odpowiedzialności podmiotu udostępniającego dane prywatne (dostawcy) "
+"za  udostępniane dane"
+
+msgid ""
+"Conditions for the use of private data with the features of a work or "
+"subject of related rights within the meaning of the Act of February 4, 1994 "
+"on copyright and related rights or constituting a database within the "
+"meaning of the Act of July 27, 2001 on the protection of databases, or "
+"covered by plant variety rights within the meaning of the Act of 26 June "
+"2003 on the legal protection of plant varieties, to which the entity "
+"providing private data (suppliers) has rights (Article 36 (2) (1) of the Act "
+"of 11 August 2021 on open data and re-use of public sector information)"
+msgstr ""
+"Warunki wykorzystywania danych prywatnych mających cechy utworu lub "
+"przedmiotu praw pokrewnych w rozumieniu przepisów ustawy z dnia 4 lutego "
+"1994 r. o prawie autorskim i prawach pokrewnych lub stanowiących bazę danych "
+"w rozumieniu przepisów ustawy z dnia 27 lipca 2001 r. o ochronie baz danych, "
+"lub objętych prawami do odmian roślin w rozumieniu przepisów ustawy z dnia "
+"26 czerwca 2003 r. o ochronie prawnej odmian roślin, do których podmiotowi "
+"udostępniającemu dane prywatne (dostawcy) przysługują prawa (art. 36 ust. 2 "
+"pkt 1 ustawy z dnia 11 sierpnia 2021 r. o otwartych danych i ponownym "
+"wykorzystywaniu informacji sektora publicznego)"
+
+msgid ""
+"The user should inform about the source, time of creation and obtaining "
+"private data from the entity providing the data (supplier) <br><br> The user "
+"should inform about the processing of the used private data (if he modifies "
+"it in any way) <br><br> The scope of the responsibility of the entity "
+"providing private data (suppliers) for the provided data"
+msgstr ""
+"Użytkownik powinien poinformować o źródle, czasie wytworzenia i pozyskania "
+"danych prywatnych od podmiotu udostępniającego dane (dostawcy) <br><br> "
+"Użytkownik powinien poinformować o przetworzeniu wykorzystywanych danych "
+"prywatnych (gdy je jakkolwiek modyfikuje) <br><br> Zakres odpowiedzialności "
+"podmiotu udostępniającego dane prywatne (dostawcy) za  udostępniane dane"
+
+msgid ""
+"The user should inform about the source, time of creation and obtaining "
+"public sector information from the obliged entity (supplier)"
+msgstr ""
+"Użytkownik powinien poinformować o źródle, czasie wytworzenia i pozyskania "
+"informacji sektora publicznego od podmiotu zobowiązanego (dostawcy)"
+
+msgid ""
+"The user should inform about the processing of public sector information to "
+"re-use (when modifying it in any way)"
+msgstr ""
+"Użytkownik powinien poinformować o przetworzeniu informacji sektora "
+"publicznego ponownie wykorzystywanych (gdy je jakkolwiek modyfikuje)"
+
+msgid ""
+"The scope of the responsibility of the obliged entity (supplier) for shared "
+"public sector information"
+msgstr ""
+"Zakres odpowiedzialności podmiotu zobowiązanego (dostawcy) za udostępniane "
+"informacje sektora publicznego"
+
+msgid ""
+"Conditions for the re-use of public sector information with the features of "
+"a work or subject of related rights within the meaning of the provisions of "
+"the Act of February 4, 1994 on copyright and related rights or constituting "
+"a database within the meaning of the provisions of the Act of July 27, 2001 "
+"on the protection of databases or covered by plant variety rights within the "
+"meaning of the Act of 26 June 2003 on the legal protection of plant "
+"varieties to which the obligated entity (suppliers) has rights (14 (2) of "
+"the Act of 11 August 2021 on open data and re-use public sector information)"
+msgstr ""
+"Warunki ponownego wykorzystywania informacji sektora publicznego mających "
+"cechy utworu lub przedmiotu praw pokrewnych w rozumieniu przepisów ustawy z "
+"dnia 4 lutego 1994 r. o prawie autorskim i prawach pokrewnych lub "
+"stanowiących bazę danych w rozumieniu przepisów ustawy z dnia 27 lipca 2001 "
+"r. o ochronie baz danych lub objętych prawami do odmian roślin w rozumieniu "
+"przepisów ustawy z dnia 26 czerwca 2003 r. o ochronie prawnej odmian roślin, "
+"do których podmiotowi zobowiązanemu (dostawcy) przysługują prawa (14 ust. 2 "
+"ustawy z dnia 11 sierpnia 2021 r. o otwartych danych i ponownym "
+"wykorzystywaniu informacji sektora publicznego)."
+
+msgid ""
+"Conditions for the re-use of public sector information constituting or "
+"containing personal data (Article 15 (1) (4) of the Act of 11 August 2021 on "
+"open data and re-use of public sector information)"
+msgstr ""
+"Warunki ponownego wykorzystywania informacji sektora publicznego "
+"stanowiących lub zawierających dane osobowe ( art. 15 ust. 1 pkt 4 ustawy z "
+"dnia 11 sierpnia 2021 r. o otwartych danych i ponownym wykorzystywaniu "
+"informacji sektora publicznego)"
+
+msgid ""
+"The user should inform about the source, time of creation and obtaining "
+"public sector information from the obliged entity (supplier) <br><br> The "
+"user should inform about the processing of public sector information to re-"
+"use (when modifying it in any way) <br><br> The scope of the responsibility "
+"of the obliged entity (supplier) for shared public sector information"
+msgstr ""
+"Użytkownik powinien poinformować o źródle, czasie wytworzenia i pozyskania "
+"informacji sektora publicznego od podmiotu zobowiązanego (dostawcy) <br><br> "
+"Użytkownik powinien poinformować o przetworzeniu informacji sektora "
+"publicznego ponownie wykorzystywanych (gdy je jakkolwiek modyfikuje) "
+"<br><br> Zakres odpowiedzialności podmiotu zobowiązanego (dostawcy) za "
+"udostępniane informacje sektora publicznego"
+
+msgid ""
+"The scope of the responsibility of the entity providing private data "
+"(suppliers) for the shared data in accordance with the terms of the CC BY "
+"4.0 license"
+msgstr ""
+"Zakres odpowiedzialności podmiotu udostępniającego dane prywatne (dostawcy) "
+"za udostępniane dane zgodny z warunkami licencji CC BY 4.0"
+
+msgid ""
+"The scope of the responsibility of the obliged entity (supplier) providing "
+"public sector information in accordance with the terms of the CC BY 4.0 "
+"license"
+msgstr ""
+"Zakres odpowiedzialności podmiotu udostępniającego informacje sektora "
+"publicznego (dostawcy) za  udostępniane dane zgodny z warunkami licencji CC "
+"BY 4.0"
+
+msgid "external identifier"
+msgstr "zewnętrzny identyfikator"
+
+msgid "external identifier of dataset taken during import process (optional)"
+msgstr ""
+"zewnętrzny identyfikator zbioru pobrany podczas procesu importu (opcjonalny)"
+
+msgid "Version"
+msgstr "Wersja"
+
+msgid "Url"
+msgstr "Url"
+
+msgid "Condition for data with features of work with copy rights or database"
+msgstr "Warunki licencji dla danych posiadających cechy utworu lub bazy danych"
+
+msgid "Condition for data containing personal data"
+msgstr "Warunki licencji dla danych zawierających dane osobowe"
+
+msgid "Condition for possible processing of data"
+msgstr "Warunki licencji dla możliwych sposobów przetwarzania danych"
+
+msgid "Condition for scope of responsibilities for data"
+msgstr "Warunki licencji w zakresie odpowiedzialności za dane"
+
+msgid "Condition for informing about the source of data"
+msgstr "Warunki licencji dotyczące informowania o źródle danych"
+
+msgid "Institution"
+msgstr "Instytucja"
+
+msgid "turn on notification"
+msgstr "włącz powiadomienie"
+
+msgid "set notifications frequency"
+msgstr "ustaw częstotliwość powiadomień"
+
+msgid "the person who is the notifications recipient"
+msgstr "osoba, do której będą wysyłane powiadomienia"
+
+msgid "source"
+msgstr "źródło"
+
+msgid "download counter"
+msgstr "licznik pobrań"
+
+msgid "Controlled Vocabularies"
+msgstr ""
+
+msgid "Custom CC BY 40 conditions"
+msgstr "Indywidualne warunki licencji w ramach zakresu"
+
+msgid "promoting the dataset"
+msgstr "promowanie zbioru danych"
+
+msgid "modified"
+msgstr "zmodyfikowany"
+
+msgid "acc: Dataset"
+msgstr "zbiór danych"
+
+#, python-format
+msgid "The value must be between %(min)s and %(max)s"
+msgstr "Wartość musi być pomiędzy %(min)s a %(max)s"
+
+#, python-format
+msgid " (version %(version)s)"
+msgstr " (wersja %(version)s)"
+
+#, python-format
+msgid "On the data set %(title)s%(version)s [%(url)s] was posted a comment:"
+msgstr "Do zbioru %(title)s%(version)s [%(url)s] została zgłoszona uwaga:"
+
+#, python-format
+msgid "A comment was posted on the data set %(title)s%(version)s"
+msgstr "Zgłoszono uwagę do zbioru %(title)s%(version)s"
+
+msgid "This dataset can be used under following conditions: "
+msgstr ""
+"Ten zbiór danych może być ponownie wykorzystywany pod poniższymi warunkami: "
+
+msgid "Dataset"
+msgstr "Zbiór danych"
+
+msgid "language"
+msgstr "język"
+
+msgid "order"
+msgstr "kolejność"
+
+msgid "supplement"
+msgstr "dokument uzupełniający"
+
+msgid "supplements"
+msgstr "dokumenty uzupełniające"
+
+msgid "file"
+msgstr "plik"
+
+msgid "id"
+msgstr ""
+
+msgid "uuid"
+msgstr ""
+
+msgid "notes"
+msgstr "opis"
+
+msgid "url"
+msgstr ""
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Conditions for re-use"
+msgstr "Warunki ponownego użycia"
+
+msgid "created_by"
+msgstr "utworzony przez"
+
+msgid "created"
+msgstr "utworzony"
+
+msgid "modified_by"
+msgstr "zmodyfikowany przez"
+
+msgid "The number of followers"
+msgstr "Liczba obserwujących"
+
+msgid "Dataset has high value data"
+msgstr "Zbiór zawiera dane o wysokiej wartości"
+
+msgid "Dataset has high value data from the EC list"
+msgstr "Zbiór zawiera dane o wysokiej wartości z wykazu KE"
+
+msgid "Dataset has dynamic data"
+msgstr "Zbiór zawiera dane dynamiczne"
+
+msgid "Dataset has research data"
+msgstr "Zbiór zawiera dane badawcze"
+
+msgid "Dataset URL"
+msgstr "URL zbioru"
+
+msgid "Dataset created"
+msgstr "Data udostępnienia zbioru"
+
+msgid "Dataset verified"
+msgstr "Data aktualizacji zbioru"
+
+msgid "Dataset views count"
+msgstr "Liczba wyświetleń zbioru"
+
+msgid "Dataset downloads count"
+msgstr "Liczba pobrań zbioru"
+
+msgid "Number of data"
+msgstr "Liczba danych"
+
+msgid "Terms of use"
+msgstr "Warunki wykorzystywania"
+
+msgid "License"
+msgstr "Licencja"
+
+msgid "Dataset regions"
+msgstr "Lokalizacje zbiorów danych"
+
+msgid "Dataset supplements (name, language, url, file size)"
+msgstr "Dokumenty uzupełniające zbioru (nazwa, język, url, rozmiar pliku)"
+
+msgid "last import timestamp"
+msgstr "data ostatniego importu"
+
+msgid "Discourse Integration"
+msgstr "Integracja Discourse"
+
+msgid "Only administrators and agents have access to forum"
+msgstr "Tylko administratorzy i pełnomocnicy mają dostęp do forum"
+
+msgid "creation date"
+msgstr "data utworzenia"
+
+msgctxt "masculine"
+msgid "created by"
+msgstr "utworzony przez"
+
+msgid "Add next element"
+msgstr "Dodaj kolejny element"
+
+msgid "communique"
+msgstr "komunikat"
+
+msgid "Delete selected elements"
+msgstr "Usuń zaznaczone elementy"
+
+msgid "Portal guide"
+msgstr "Przewodnik po portalu"
+
+msgid "Name of course (PL)"
+msgstr "Nazwa kursu (PL)"
+
+msgid "Name of course (EN)"
+msgstr "Nazwa kursu (EN)"
+
+msgid "Title (PL)"
+msgstr "Tytuł (PL)"
+
+msgid "Title (EN)"
+msgstr "Tytuł (EN)"
+
+msgid "Content"
+msgstr "Treść"
+
+msgid "Display at"
+msgstr "Wyświetlanie wg elementu"
+
+msgid "guide"
+msgstr "kurs"
+
+msgid "guides"
+msgstr "kursy"
+
+msgid "Trash (Guides)"
+msgstr "Kosz (Kursy)"
+
+msgid "top"
+msgstr "góra"
+
+msgid "bottom"
+msgstr "dół"
+
+msgid "left"
+msgstr "lewo"
+
+msgid "right"
+msgstr "prawo"
+
+msgid "content"
+msgstr "treść"
+
+msgid "route"
+msgstr "ścieżka"
+
+msgid "css selector"
+msgstr "znacznik css"
+
+msgid "position"
+msgstr "pozycja"
+
+msgid "optional communique"
+msgstr "komunikat opcjonalny"
+
+msgid "clicking is required"
+msgstr "wymagane kliknięcie"
+
+msgid "element is expandable"
+msgstr "element jest rozwijalny"
+
+msgid "guide item"
+msgstr "pozycja przewodnika"
+
+msgid "guide items"
+msgstr "pozycje przewodnika"
+
+#, python-brace-format
+msgid ""
+"A column in the header row is should be provided.\n"
+"\n"
+" How it could be resolved:\n"
+" - Add the missing column name to the first row of the data source.\n"
+" - If the first row starts with, or ends with a comma, remove it.\n"
+" - If this error should be ignored disable `blank-header` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid "Header in column {column_number} is blank"
+msgstr "Puste pole nagłówka kolumny {column_number} (Blank Header)."
+
+msgid "Blank Header"
+msgstr "Pusty nagłówek"
+
+#, python-brace-format
+msgid ""
+"This row is empty. A row should contain at least one value.\n"
+"\n"
+" How it could be resolved:\n"
+" - Delete the row.\n"
+" - If this error should be ignored disable `blank-row` check in {validator}."
+msgstr ""
+
+#, python-brace-format
+msgid "Row {row_number} is completely blank"
+msgstr "Wiersz {row_number} jest całkowicie pusty"
+
+msgid "Blank Row"
+msgstr "Pusty wiersz"
+
+#, python-brace-format
+msgid ""
+"Two columns in the header row have the same value. Column names should be "
+"unique.\n"
+"\n"
+" How it could be resolved:\n"
+" - Add the missing column name to the first row of the data.\n"
+" - If the first row starts with, or ends with a comma, remove it.\n"
+" - If this error should be ignored disable `duplicate-header` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Header in column {column_number} is duplicated to header in column(s) "
+"{column_numbers}"
+msgstr ""
+"Nagłówek w kolumnie {column_number} jest zduplikowany z nagłówkami w "
+"kolumnach {column_numbers} (Duplicate Header)."
+
+msgid "Duplicate Header"
+msgstr "Zduplikowany Nagłówek"
+
+#, python-brace-format
+msgid ""
+"The exact same data has been seen in another row.\n"
+"\n"
+" How it could be resolved:\n"
+" - If some of the data is incorrect, correct it.\n"
+" - If the whole row is an incorrect duplicate, remove it.\n"
+" - If this error should be ignored disable `duplicate-row` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid "Row {row_number} is duplicated to row(s) {row_numbers}"
+msgstr "Wiersz {row_number} jest zduplikowany z wierszami {row_numbers}"
+
+msgid "Duplicate Row"
+msgstr "Zduplikowany wiersz"
+
+#, python-brace-format
+msgid ""
+"Data reading error because of an encoding problem.\n"
+"\n"
+" How it could be resolved:\n"
+" - Fix data source if it's broken.\n"
+" - Set correct encoding in {validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The data source could not be successfully decoded with {encoding} encoding"
+msgstr ""
+"Źródło danych nie mogło zostać pomyślnie zdekodowane za pomocą kodowania "
+"{encoding} (Encoding Error)."
+
+msgid "Encoding Error"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"This field value should be equal to one of the values in the enumeration "
+"constraint.\n"
+"\n"
+" How it could be resolved:\n"
+" - If this value is not correct, update the value.\n"
+" - If value is correct, then remove or refine the `enum` constraint in the "
+"schema.\n"
+" - If this error should be ignored disable `enumerable-constraint` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The value {value} in row {row_number} and column {column_number} does not "
+"conform to the given enumeration: {constraint}"
+msgstr ""
+"Wartość {value} w wierszu {row_number} i kolumnie {column_number} nie jest "
+"zgodna z podaną enumeracją: {constraint} (Enumerable Constraint)."
+
+msgid "Enumerable Constraint"
+msgstr "Ograniczenia wartości"
+
+#, python-brace-format
+msgid ""
+"The first row of the data source contains header that doesn't exist in the "
+"schema.\n"
+"\n"
+" How it could be resolved:\n"
+" - Remove the extra column from the data source or add the missing field to "
+"the schema\n"
+" - If this error should be ignored disable `extra-header` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid "There is an extra header in column {column_number}"
+msgstr ""
+"W kolumnie {column_number} w porównaniu ze schematem znajduje się dodatkowy "
+"nagłówek (Extra Header)."
+
+msgid "Extra Header"
+msgstr "Dodatkowy nagłówek"
+
+#, python-brace-format
+msgid ""
+"This row has more values compared to the header row (the first row in the "
+"data source). A key concept is that all the rows in tabular data must have "
+"the same number of columns.\n"
+"\n"
+" How it could be resolved:\n"
+" - Check data has an extra comma between the values in this row.\n"
+" - If this error should be ignored disable `extra-value` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid "Row {row_number} has an extra value in column {column_number}"
+msgstr ""
+"Wskazany wiersz ma więcej wartości w porównaniu z wierszem nagłówka "
+"(pierwszy wiersz w źródle danych). Wiersz {row_number} ma dodatkową wartość "
+"w kolumnie {column_number} (Extra Value)."
+
+msgid "Extra Value"
+msgstr "Dodatkowa Wartość"
+
+#, python-brace-format
+msgid ""
+"Data reading error because of incorrect format.\n"
+"\n"
+" How it could be resolved:\n"
+" - Fix data format (e.g. change file extension from `txt` to `csv`).\n"
+" - Set correct format in {validator}."
+msgstr ""
+
+msgid ""
+"The data source is in an unknown format; no tabular data can be extracted"
+msgstr ""
+"Źródło danych ma niewłaściwy format i nie można wyodrębnić danych "
+"tabelarycznych - serwer deklaruje inną zawartość pliku, niż podany format "
+"pliku (Format Error)."
+
+msgid "Format Error"
+msgstr "Błąd Formatu"
+
+msgid ""
+"Data reading error because of HTTP error.\n"
+"\n"
+" How it could be resolved:\n"
+" - Fix url link if it's not correct."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The data source returned an HTTP error with a status code of {status_code}"
+msgstr ""
+"Błąd odczytu danych z powodu błędu komunikacji HTTP (HTTP Error "
+"{status_code})."
+
+msgid "HTTP Error"
+msgstr "Błąd HTTP"
+
+msgid ""
+"Data reading error because of IO error.\n"
+"\n"
+" How it could be resolved:\n"
+" - Fix path if it's not correct."
+msgstr ""
+
+#, python-brace-format
+msgid "The data source returned an IO Error of type {error_type}"
+msgstr "Błąd dostępu do pliku (błąd IO typu {error_type})"
+
+msgid "IO Error"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"This field value should be less or equal than constraint value.\n"
+"\n"
+" How it could be resolved:\n"
+" - If this value is not correct, update the value.\n"
+" - If value is correct, then remove or refine the `maximum` constraint in "
+"the schema.\n"
+" - If this error should be ignored disable `maximum-constraint` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The value {value} in row {row_number} and column {column_number} does not "
+"conform to the maximum constraint of {constraint}"
+msgstr ""
+"Wartość {value} w wierszu {row_number} i kolumnie {column_number} nie jest "
+"zgodna z określonym w schemacie wymaganiem wartość maksymalna {constraint} "
+"(Maximum Constraint)."
+
+msgid "Maximum Constraint"
+msgstr "Ograniczenie maksimum"
+
+#, python-brace-format
+msgid ""
+"A length of this field value should be less or equal than schema constraint "
+"value.\n"
+"\n"
+" How it could be resolved:\n"
+" - If this value is not correct, update the value.\n"
+" - If value is correct, then remove or refine the `maximumLength` constraint "
+"in the schema.\n"
+" - If this error should be ignored disable `maximum-length-constraint` check "
+"in {validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The value {value} in row {row_number} and column {column_number} does not "
+"conform to the maximum length constraint of {constraint}"
+msgstr ""
+"Wartość {value} w wierszu {row_number} i kolumnie {column_number} nie jest "
+"zgodna z określonym w schemacie wymaganiem długość maksymalna {constraint} "
+"(Maximum Length Constraint)."
+
+msgid "Maximum Length Constraint"
+msgstr "Ograniczenia maksymalnej długości"
+
+#, python-brace-format
+msgid ""
+"This field value should be greater or equal than constraint value.\n"
+"\n"
+" How it could be resolved:\n"
+" - If this value is not correct, update the value.\n"
+" - If value is correct, then remove or refine the `minimum` constraint in "
+"the schema.\n"
+" - If this error should be ignored disable `minimum-constraint` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The value {value} in row {row_number} and column {column_number} does not "
+"conform to the minimum constraint of {constraint}"
+msgstr ""
+"Wartość {value} w wierszu {row_number} i kolumnie {column_number} nie jest "
+"zgodna z określonym w schemacie wymaganiem wartość minimalna {constraint} "
+"(Minimum Constraint)."
+
+msgid "Minimum Constraint"
+msgstr "Ograniczenie minimum"
+
+#, python-brace-format
+msgid ""
+"A length of this field value should be greater or equal than schema "
+"constraint value.\n"
+"\n"
+" How it could be resolved:\n"
+" - If this value is not correct, update the value.\n"
+" - If value is correct, then remove or refine the `minimumLength` constraint "
+"in the schema.\n"
+" - If this error should be ignored disable `minimum-length-constraint` check "
+"in {validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The value {value} in row {row_number} and column {column_number} does not "
+"conform to the minimum length constraint of {constraint}"
+msgstr ""
+"Wartość {value} w wierszu {row_number} i kolumnie {column_number} nie jest "
+"zgodna z określonym w schemacie wymaganiem długość minimalna {constraint} "
+"(Minimum Length Constraint)."
+
+msgid "Minimum Length Constraint"
+msgstr "Ograniczenia minimalnej długości"
+
+#, python-brace-format
+msgid ""
+"Based on the schema there should be a header that is missing in the first "
+"row of the data source.\n"
+"\n"
+" How it could be resolved:\n"
+" - Add the missing column to the data source or remove the extra field from "
+"the schema\n"
+" - If this error should be ignored disable `missing-header` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid "There is a missing header in column {column_number}"
+msgstr ""
+"W pierwszym wierszu źródła danych brakuje nagłówka kolumny {column_number}, "
+"który istnieje w schemacie (Missing Header)."
+
+msgid "Missing Header"
+msgstr "Brak Nagłówka"
+
+#, python-brace-format
+msgid ""
+"This row has less values compared to the header row (the first row in the "
+"data source). A key concept is that all the rows in tabular data must have "
+"the same number of columns.\n"
+"\n"
+" How it could be resolved:\n"
+" - Check data is not missing a comma between the values in this row.\n"
+" - If this error should be ignored disable `missing-value` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid "Row {row_number} has a missing value in column {column_number}"
+msgstr ""
+"Wiersz {row_number} ma brakującą wartość w kolumnie {column_number} (Missing "
+"Value)."
+
+msgid "Missing Value"
+msgstr "Brakująca wartość"
+
+#, python-brace-format
+msgid ""
+"One of the data source headers doesn't match the field name defined in the "
+"schema.\n"
+"\n"
+" How it could be resolved:\n"
+" - Rename header in the data source or field in the schema\n"
+" - If this error should be ignored disable `non-matching-header` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Header in column {column_number} doesn't match field name {field_name} in "
+"the schema"
+msgstr ""
+"Nagłówek w kolumnie {column_number} nie pasuje do nazwy pola {field_name} w "
+"schemacie (Non-Matching Header)"
+
+msgid "Non-Matching Header"
+msgstr "Niewłaściwy nagłówek"
+
+#, python-brace-format
+msgid ""
+"This field value should conform to constraint pattern.\n"
+"\n"
+" How it could be resolved:\n"
+" - If this value is not correct, update the value.\n"
+" - If value is correct, then remove or refine the `pattern` constraint in "
+"the schema.\n"
+" - If this error should be ignored disable `pattern-constraint` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The value {value} in row {row_number} and column {column_number} does not "
+"conform to the pattern constraint of {constraint}"
+msgstr ""
+"Wartość {value} w wierszu {row_number} i kolumnie {column_number} nie jest "
+"zgodna ze wzorcem {constraint} (Pattern Constraint)."
+
+msgid "Pattern Constraint"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"This field is a required field, but it contains no value.\n"
+"\n"
+" How it could be resolved:\n"
+" - If this value is not correct, update the value.\n"
+" - If value is correct, then remove the `required` constraint from the "
+"schema.\n"
+" - If this error should be ignored disable `required-constraint` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Column {column_number} is a required field, but row {row_number} has no value"
+msgstr ""
+"Kolumna {column_number} jest polem wymaganym, ale w wierszu {row_number} nie "
+"ma wartości (Required Constraint)."
+
+msgid "Required Constraint"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Provided schema is not valid.\n"
+"\n"
+" How it could be resolved:\n"
+" - Update schema descriptor to be a valid descriptor\n"
+" - If this error should be ignored disable schema checks in {validator}."
+msgstr ""
+
+#, python-brace-format
+msgid "Table Schema error: {error_message}"
+msgstr "Błąd schematu tabeli: {error_message} (Table Schema Error)."
+
+msgid "Table Schema Error"
+msgstr "Błąd schematu tabeli"
+
+#, python-brace-format
+msgid ""
+"Data reading error because of incorrect scheme.\n"
+"\n"
+" How it could be resolved:\n"
+" - Fix data scheme (e.g. change scheme from `ftp` to `http`).\n"
+" - Set correct scheme in {validator}."
+msgstr ""
+
+msgid ""
+"The data source is in an unknown scheme; no tabular data can be extracted"
+msgstr "Brak możliwości określenia struktury dokumentu (Scheme Error)."
+
+msgid "Scheme Error"
+msgstr "Błąd schemy"
+
+#, python-brace-format
+msgid ""
+"Data reading error because of not supported or inconsistent contents.\n"
+"\n"
+" How it could be resolved:\n"
+" - Fix data contents (e.g. change JSON data to array or arrays/objects).\n"
+" - Set correct source settings in {validator}."
+msgstr ""
+
+msgid ""
+"The data source has not supported or has inconsistent contents; no tabular "
+"data can be extracted"
+msgstr ""
+"Plik danych ma nieczytelną zawartość i nie można wyodrębnić danych "
+"tabelarycznych (Source Error)."
+
+msgid "Source Error"
+msgstr "Błąd Źródła"
+
+#, python-brace-format
+msgid ""
+"The value does not match the schema type and format for this field.\n"
+"\n"
+" How it could be resolved:\n"
+" - If this value is not correct, update the value.\n"
+" - If this value is correct, adjust the type and/or format.\n"
+" - To ignore the error, disable the `type-or-format-error` check in "
+"{validator}. In this case all schema checks for row values will be ignored."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The value {value} in row {row_number} and column {column_number} is not type "
+"{field_type} and format {field_format}"
+msgstr ""
+"Wartość {value} w wierszu {row_number} i kolumnie {column_number} nie jest "
+"typem {field_type} lub formatem {field_format} (Type or Format Error)."
+
+msgid "Type or Format Error"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"This field is a unique field but it contains a value that has been used in "
+"another row.\n"
+"\n"
+" How it could be resolved:\n"
+" - If this value is not correct, update the value.\n"
+" - If value is correct, then the values in this column are not unique. "
+"Remove the `unique` constraint from the schema.\n"
+" - If this error should be ignored disable `unique-constraint` check in "
+"{validator}."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Rows {row_numbers} has unique constraint violation in column {column_number}"
+msgstr ""
+"Wiersze {row_numbers} mają naruszone wymagania unikalności w kolumnie "
+"{column_number} (Unique Constraint) – wskazane elementy zgodnie ze schematem "
+"powinny być unikalne."
+
+msgid "Unique Constraint"
+msgstr "Unikalne ograniczenie"
+
+msgid "More than year"
+msgstr "Ponad rok"
+
+msgid "Error description"
+msgstr "Opis błędu"
+
+msgid "Start"
+msgstr ""
+
+msgid "Result"
+msgstr "Wynik"
+
+#, python-brace-format
+msgid "The data source \"{obj}\" was added successfully."
+msgstr "Źródło danych \"{obj}\" zostało pomyślnie dodane."
+
+#, python-brace-format
+msgid ""
+"The data source \"{obj}\" was added successfully. You may add another data "
+"source below."
+msgstr ""
+"Żródło danych \"{obj}\" zostało pomyślnie dodane. Możesz dodać kolejne "
+"źródło danych poniżej."
+
+#, python-brace-format
+msgid "The data source \"{obj}\" was changed successfully."
+msgstr "Żródło danych \"{obj}\" zostało pomyślnie zmienione."
+
+#, python-brace-format
+msgid ""
+"The data source \"{obj}\" was changed successfully. You may edit it again "
+"below."
+msgstr ""
+"Źródło danych \"{obj}\" zostało pomyślnie zmienione. Możesz edytować je "
+"ponownie poniżej."
+
+#, python-brace-format
+msgid ""
+"The data source \"{obj}\" was added successfully. You may edit it again "
+"below."
+msgstr ""
+"Źródło danych \"{obj}\" zostało pomyślnie dodane. Możesz edytować je "
+"ponownie poniżej."
+
+#, python-brace-format
+msgid ""
+"The data source \"{obj}\" was changed successfully. You may add another "
+"{name} below."
+msgstr ""
+"Żródło danych \"{obj}\" zostało pomyślnie zmienione. Możesz dodać kolejne "
+"{name} poniżej."
+
+msgid "Delete selected data sources"
+msgstr "Usuń wybrane źródła danych"
+
+msgid "Imports"
+msgstr "Importy"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Last import"
+msgstr "Ostatni import"
+
+msgid "Import data task was launched!"
+msgstr "Zadanie importu danych zostało uruchomione!"
+
+msgid "Data Sources"
+msgstr "Źródła danych"
+
+msgid "Description (PL)"
+msgstr "Opis (PL)"
+
+msgid "List of emails separated by a comma"
+msgstr "Lista maili rozdzielonych przecinkiem"
+
+msgid "This field is required."
+msgstr "To pole jest obowiązkowe."
+
+msgid "This field is required!"
+msgstr "To pole jest obowiązkowe!"
+
+msgid "every day"
+msgstr "codziennie"
+
+msgid "every week"
+msgstr "co tydzień"
+
+msgid "every month"
+msgstr "co miesiąc"
+
+msgid "every quarter"
+msgstr "co kwartał"
+
+msgid "OK - partial import"
+msgstr "OK - import częściowy"
+
+msgid "Error"
+msgstr "Błąd"
+
+msgid "active"
+msgstr "aktywny"
+
+msgid "inactive"
+msgstr "nieaktywny"
+
+msgid "frequency"
+msgstr "częstotliwość"
+
+msgid "status"
+msgstr ""
+
+msgid "data use rules"
+msgstr "warunki ponownego wykorzystania danych"
+
+msgid "Default type for newly created institutions"
+msgstr "Domyślny typ dla nowych instytucji"
+
+msgid "source type"
+msgstr "typ źródła"
+
+msgid "e-mail"
+msgstr ""
+
+msgid "last activation date"
+msgstr "data ostatniej aktywacji"
+
+msgid "category"
+msgstr "kategoria"
+
+msgid "last import status"
+msgstr "status ostatniego importu"
+
+msgid "portal url"
+msgstr "URL (adres portalu)"
+
+msgid "api url"
+msgstr "API (adres API)"
+
+msgid "XML url"
+msgstr ""
+
+msgid "source hash"
+msgstr "hash źródła"
+
+msgid "Sparql query"
+msgstr "Zapytanie SPARQL"
+
+msgid "data source"
+msgstr "źródło danych"
+
+msgid "data sources"
+msgstr "źródła danych"
+
+msgid "Inaccessible API!"
+msgstr "Niedostępne API!"
+
+msgid "Data source for this institution already exists!"
+msgstr "Źródło danych dla tej instytucji już istnieje!"
+
+msgid "Trash (Data Sources)"
+msgstr "Kosz (źródła danych)"
+
+msgid "start"
+msgstr "początek"
+
+msgid "end"
+msgstr "koniec"
+
+msgid "error description"
+msgstr "opis błędu"
+
+msgid "number of rejected datasets"
+msgstr "liczba odrzuconych zbiorów danych"
+
+msgid "number of imported datasets"
+msgstr "liczba zaimportowanych zbiorów danych"
+
+msgid "number of created datasets"
+msgstr "liczba utworzonych zbiorów danych"
+
+msgid "number of updated datasets"
+msgstr "liczba zmodyfikowanych zbiorów danych"
+
+msgid "number of deleted datasets"
+msgstr "liczba usuniętych zbiorów danych"
+
+msgid "number of imported resources"
+msgstr "liczba zaimportowanych zasobów"
+
+msgid "number of created resources"
+msgstr "liczba utworzonych zasobów"
+
+msgid "number of updated resources"
+msgstr "liczba zmodyfikowanych zasobów"
+
+msgid "number of deleted resources"
+msgstr "liczba usuniętych zasobów"
+
+msgid "Is report email sent?"
+msgstr "Czy wysłano raport mailowy?"
+
+msgid "data source import"
+msgstr "import źródła danych"
+
+msgid "data source imports"
+msgstr "importy źródła danych"
+
+msgid "Required scheme is https://"
+msgstr "Wymagany format protokołu to https://"
+
+msgid "Invalid file format"
+msgstr "Niepoprawny format pliku"
+
+#, python-format
+msgid "Unsupported format: %(format)s."
+msgstr "Nieobsługiwany format: %(format)s."
+
+msgid "intIdent value for related dataset is also required!"
+msgstr "Wartość intIdent dla powiązanego zbioru jest także wymagana!"
+
+#, python-format
+msgid ""
+"Resource with id: %(r_id)s, dataset's id: %(d_id)s and institution \"%(ins)s"
+"\" was not found."
+msgstr ""
+"Zasób z id: %(r_id)s, id zbioru: %(d_id)s i instytucji \"%(ins)s\" nie "
+"został znaleziony."
+
+#, python-brace-format
+msgid "Exception occurred for resource with id {ext_ident}: {err}"
+msgstr "Wystąpił błąd podczas importu zasobu o id {ext_ident}: {err}"
+
+#, python-brace-format
+msgid "Resource with id {ext_ident} has assigned unknown TERYT codes:"
+msgstr "Zasób o id {ext_ident} ma przypisane nieznane kody TERYT:"
+
+#, python-format
+msgid "Dataset with id: %(d_id)s and institution: \"%(ins)s\" was not found."
+msgstr ""
+"Zbiór z id: %(d_id)s dla instytucji: \"%(ins)s\" nie został znaleziony."
+
+msgid ""
+"Field 'dbOrCopyrightedLicenseChosen' is required if field 'dbOrCopyrighted' "
+"is provided."
+msgstr ""
+"Pole 'dbOrCopyrightedLicenseChosen' jest wymagane jeżeli pole "
+"'dbOrCopyrighted' jest wypełnione."
+
+msgid ""
+"Field 'dbOrCopyrighted' is required if field 'dbOrCopyrightedLicenseChosen' "
+"is provided."
+msgstr ""
+"Pole 'dbOrCopyrighted' jest wymagane jeżeli pole "
+"'dbOrCopyrightedLicenseChosen' jest wypełnione."
+
+msgid "Checking of file name"
+msgstr "Sprawdzanie nazwy pliku"
+
+msgid "Fetching of HTTP headers"
+msgstr "Pobieranie nagłówków HTTP"
+
+msgid "Checking of content type"
+msgstr "Sprawdzanie typu zawartości"
+
+msgid "Checking of MD5 file"
+msgstr "Sprawdzanie pliku MD5"
+
+msgid "Downloading of xml file"
+msgstr "Pobieranie pliku xml"
+
+msgid "Validation of MD5"
+msgstr "Walidacja MD5"
+
+msgid "Validation of xml file"
+msgstr "Walidacja pliku xml"
+
+#, python-format
+msgid "%(url)s: invalid response code: %(code)s (%(reason)s)"
+msgstr "%(url)s: niewłaściwy kod odpowiedzi: %(code)s (%(reason)s)"
+
+#, python-format
+msgid "\"%(value)s\" is not valid MD5 hash!"
+msgstr "\"%(value)s\" nie jest poprawnym skrótem MD5!"
+
+msgid "External resource is not available!"
+msgstr "Zewnętrzny zasób jest niedostępny!"
+
+#, python-format
+msgid ""
+"Invalid Content-Type header: '%(content_type)s'. Content-Type must contain "
+"'text/xml' or 'application/xml'!"
+msgstr ""
+"Niepoprawny nagłówek Content-Type: '%(content_type)s'. Content-Type musi "
+"zawierać 'text/xml' lub 'application/xml'!"
+
+#, python-format
+msgid "Invalid file name: %(filename)s!"
+msgstr "Niepoprawna nazwa pliku: %(filename)s!"
+
+msgid "Remote MD5 hash is not valid!"
+msgstr "Zdalny skrót MD5 nie jest poprawny!"
+
+msgid "Histories"
+msgstr "Historie"
+
+msgid "old value"
+msgstr "stare wartości"
+
+msgid "new value"
+msgstr "nowe wartości"
+
+msgid "User"
+msgstr "Użytkownik"
+
+msgid "History"
+msgstr "Historia"
+
+msgid "You don't have permission to view history for this object."
+msgstr "Nie masz uprawnień do przeglądania historii tego obiektu."
+
+msgid "acc: History"
+msgstr "historię"
+
+msgid "Analysis can have only one report assigned"
+msgstr "Analiza może mieć załączony tylko jeden raport"
+
+msgid "Laboratory"
+msgstr "Laboratorium"
+
+msgid "Analysis"
+msgstr "Analiza"
+
+msgid "Research"
+msgstr "Badanie"
+
+msgid "Event type"
+msgstr "Rodzaj obiektu"
+
+msgid "Execution date"
+msgstr "Data wykonania"
+
+msgid "acc: Event"
+msgstr "obiekt"
+
+msgid "Event"
+msgstr "Obiekt"
+
+msgid "Events"
+msgstr "Obiekty"
+
+msgid "Report Link"
+msgstr "Link do raportu"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Report"
+msgstr "Raport"
+
+msgid "Reports"
+msgstr "Raporty"
+
+#, python-format
+msgid "Select %s"
+msgstr "Wybierz %s"
+
+#, python-format
+msgid "Select %s to change"
+msgstr "Wybierz %s do zmiany"
+
+#, python-format
+msgid "Select %s to view"
+msgstr "Wybierz %s do obejrzenia"
+
+msgid "Decision taken"
+msgstr "Decyzja podjęta"
+
+msgid "Decision not taken"
+msgstr "Decyzja niepodjęta"
+
+msgid "Task for CSV generation queued"
+msgstr "Tworzenie pliku CSV dodane do kolejki zadań"
+
+msgid "Export selected to CSV"
+msgstr "Eksportuj zaznaczone do CSV"
+
+msgid "Export last import to CSV"
+msgstr "Eksportuj ostatni import do CSV"
+
+#, python-brace-format
+msgid "The {name} \"{obj}\" was added successfully."
+msgstr "{name} \"{obj}\" został pomyślnie dodany."
+
+msgctxt "The {name} \"{obj}\" was added successfully."
+msgid "feminine"
+msgstr "{name} \"{obj}\" została pomyślnie dodana."
+
+msgctxt "The {name} \"{obj}\" was added successfully."
+msgid "neuter"
+msgstr "{name} \"{obj}\" zostało pomyślnie dodane."
+
+#, python-brace-format
+msgid ""
+"The {name} \"{obj}\" was added successfully. You may add another {name} "
+"below."
+msgstr ""
+"{name} \"{obj}\" został pomyślnie dodany. Możesz dodać kolejny {name} "
+"poniżej."
+
+msgctxt ""
+"The {name} \"{obj}\" was added successfully. You may add another {name} "
+"below."
+msgid "feminine"
+msgstr ""
+"{name} \"{obj}\" została pomyślnie dodana. Możesz dodać kolejną {name} "
+"poniżej."
+
+msgctxt ""
+"The {name} \"{obj}\" was added successfully. You may add another {name} "
+"below."
+msgid "neuter"
+msgstr ""
+"{name} \"{obj}\" zostało pomyślnie dodane. Możesz dodać kolejne {name} "
+"poniżej."
+
+#, python-brace-format
+msgid "The {name} \"{obj}\" was changed successfully."
+msgstr "{name} \"{obj}\" został pomyślnie zmieniony."
+
+msgctxt "The {name} \"{obj}\" was changed successfully."
+msgid "feminine"
+msgstr "{name} \"{obj}\" została pomyślnie zmieniona."
+
+msgctxt "The {name} \"{obj}\" was changed successfully."
+msgid "neuter"
+msgstr "{name} \"{obj}\" zostało pomyślnie zmienione."
+
+#, python-brace-format
+msgid ""
+"The {name} \"{obj}\" was changed successfully. You may edit it again below."
+msgstr ""
+"{name} \"{obj}\" został pomyślnie zmieniony. Możesz edytować go ponownie "
+"poniżej."
+
+msgctxt ""
+"The {name} \"{obj}\" was changed successfully. You may edit it again below."
+msgid "feminine"
+msgstr ""
+"{name} \"{obj}\" została pomyślnie zmieniona. Możesz edytować ją ponownie "
+"poniżej."
+
+msgctxt ""
+"The {name} \"{obj}\" was changed successfully. You may edit it again below."
+msgid "neuter"
+msgstr ""
+"{name} \"{obj}\" zostało pomyślnie zmienione. Możesz edytować je ponownie "
+"poniżej."
+
+#, python-brace-format
+msgid ""
+"The {name} \"{obj}\" was added successfully. You may edit it again below."
+msgstr ""
+"{name} \"{obj}\" został pomyślnie dodany. Możesz edytować go ponownie "
+"poniżej."
+
+msgctxt ""
+"The {name} \"{obj}\" was added successfully. You may edit it again below."
+msgid "feminine"
+msgstr ""
+"{name} \"{obj}\" została pomyślnie dodana. Możesz edytować ją ponownie "
+"poniżej."
+
+msgctxt ""
+"The {name} \"{obj}\" was added successfully. You may edit it again below."
+msgid "neuter"
+msgstr ""
+"{name} \"{obj}\" zostało pomyślnie dodane. Możesz edytować je ponownie "
+"poniżej."
+
+#, python-brace-format
+msgid ""
+"The {name} \"{obj}\" was changed successfully. You may add another {name} "
+"below."
+msgstr ""
+"{name} \"{obj}\" został pomyślnie zmieniony. Możesz dodać kolejny {name} "
+"poniżej."
+
+msgctxt ""
+"The {name} \"{obj}\" was changed successfully. You may add another {name} "
+"below."
+msgid "feminine"
+msgstr ""
+"{name} \"{obj}\" została pomyślnie zmieniona. Możesz dodać kolejną {name} "
+"poniżej."
+
+msgctxt ""
+"The {name} \"{obj}\" was changed successfully. You may add another {name} "
+"below."
+msgid "neuter"
+msgstr ""
+"{name} \"{obj}\" zostało pomyślnie zmienione. Możesz dodać kolejne {name} "
+"poniżej."
+
+#, python-format
+msgid "The %(name)s \"%(obj)s\" was deleted successfully."
+msgstr "%(name)s \"%(obj)s\" usunięty pomyślnie."
+
+msgctxt "The %(name)s \"%(obj)s\" was deleted successfully."
+msgid "feminine"
+msgstr "%(name)s \"%(obj)s\" usunięta pomyślnie."
+
+msgctxt "The %(name)s \"%(obj)s\" was deleted successfully."
+msgid "neuter"
+msgstr "%(name)s \"%(obj)s\" usunięte pomyślnie."
+
+msgid "You may edit it again below."
+msgstr "Poniżej możesz ponownie edytować."
+
+#, python-format
+msgid "Add %s"
+msgstr "Dodaj %s"
+
+#, python-format
+msgid "Change %s"
+msgstr "Zmień %s"
+
+#, python-format
+msgid "View %s"
+msgstr "Obejrzyj %s"
+
+msgid "Correct Validation"
+msgstr "Poprawna walidacja"
+
+msgid "Validation in progress"
+msgstr "Walidacja w toku"
+
+msgid "Validation failed"
+msgstr "Błąd walidacji"
+
+msgid "No validation"
+msgstr "Brak walidacji"
+
+msgid "Translation ({lang_code.upper()})"
+msgstr "Tłumaczenie ({lang_code.upper()})"
+
+msgid "Delete selected objects"
+msgstr "Usuń wybrane obiekty"
+
+msgid ""
+"Couldn't restore following objects, because their related objects are still "
+"removed: {}"
+msgstr ""
+"Nie można przywrócić następujących obiektów, ponieważ powiązane z nimi "
+"obiekty wciąż pozostają usunięte: {}"
+
+msgid "Successfully restored objects: {}"
+msgstr "Pomyślnie przywróconych elementów: {}"
+
+msgid "Restore selected objects"
+msgstr "Przywróć wybrane elementy"
+
+#, python-format
+msgid "Add %s - trash"
+msgstr "Dodaj %s - kosz"
+
+#, python-format
+msgid "Change %s - trash"
+msgstr "Zmień %s - kosz"
+
+#, python-format
+msgid "View %s - trash"
+msgstr "Obejrzyj %s - kosz"
+
+msgid "Removed:"
+msgstr "Usunięte:"
+
+#, python-format
+msgid "Change history: %s"
+msgstr "Historia zmian: %s"
+
+msgid "The requested resource could not be found"
+msgstr ""
+
+msgid "Field value error"
+msgstr "Błąd wartości pola"
+
+msgid "Field error"
+msgstr "Błąd pola"
+
+msgid "Internal number cannot be given without the main number"
+msgstr "Numer wewnętrzny może być podany wyłącznie z numerem głównym"
+
+msgid "algorithm"
+msgstr "algorytm"
+
+msgid "iterations"
+msgstr "iteracje"
+
+msgid "salt"
+msgstr "sól"
+
+msgid "hash"
+msgstr ""
+
+msgid "Missing Authorization Header"
+msgstr "Brak Nagłówka Autoryzacji"
+
+msgid "Invalid Authorization Header"
+msgstr "Niepoprawny Nagłówek Autoryzacji"
+
+msgid "Invalid Authorization Header: Token Missing"
+msgstr "Niepoprawny Nagłówek Autoryzacji: brak Tokenu"
+
+msgid "Invalid Authorization Header: Contains extra content"
+msgstr "Niepoprawny Nagłówek Autoryzacji: Nadmiarowa zawartość"
+
+msgid ""
+"Your account data is incomplete. Full name and phone number must be given"
+msgstr ""
+"Dane konta są niekompletne. Nazwisko i numer telefonu muszą być podane."
+
+msgid "Password must contain at least one digit."
+msgstr "Hasło musi zawierać przynajmniej jedną cyfrę."
+
+msgid "Password must contain at least one upper and one lower letter."
+msgstr "Hasło musi zawierać przynajmniej jedną dużą i jedną mała literę."
+
+msgid "Password must contain at least one special character."
+msgstr "Hasło musi zawierać przynajmniej jeden znak specjalny."
+
+msgid ""
+"Your password must contain at least: one digit, one special char, one upper "
+"and one lower letter"
+msgstr ""
+"Twoje hasło musi zawierać przynajmniej: jedną cyfrę, jeden znak specjalny, "
+"jedną dużą i jedną małą literę"
+
+msgid "Page must be greater then 1"
+msgstr "Strona musi być większa niż 1"
+
+msgid "Page size mus be greater then 0"
+msgstr "Wielkość strony musi być większa niż 0"
+
+msgid "Max page size is 100"
+msgstr "Maksymalny rozmiar strony to 100"
+
+msgid "Licenses"
+msgstr "Licencje"
+
+msgid "Name"
+msgstr "Nazwa"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "acc: License"
+msgstr "licencję"
+
+msgid "Delete selected newsletters"
+msgstr "Usuń wybrane newslettery"
+
+msgid "Title of newsletter"
+msgstr "Tytuł newslettera"
+
+msgid "No active subscriptions."
+msgstr "Brak aktywnych subskrypcji."
+
+msgid "Select only unsent newsletters."
+msgstr "Zaznacz tylko niewysłane newslettery."
+
+msgid "Selected newsletters were successfully sent."
+msgstr "Zaznaczone newslettery zostały pomyślnie wysłane."
+
+msgid "Send newsletter now"
+msgstr "Wyślij newsletter teraz"
+
+msgid "Delete selected subscriptions"
+msgstr "Usuń wybrane subskrypcje"
+
+msgid "Newsletter"
+msgstr ""
+
+msgid "E-mail address you entered is not valid"
+msgstr "Niepoprawny adres poczty elektronicznej"
+
+msgid "This field is required"
+msgstr "To pole jest obowiązkowe"
+
+msgid "polish"
+msgstr "polski"
+
+msgid "english"
+msgstr "angielski"
+
+msgid "email"
+msgstr ""
+
+msgid "activation code"
+msgstr "kod aktywacyjny"
+
+msgid "is active?"
+msgstr "czy aktywna?"
+
+msgid "is personal data processing accepted?"
+msgstr "czy zakceptowane przetwarzanie danych osobowych?"
+
+msgid "is personal data gathering accepted?"
+msgstr "czy potwierdzona znajomość informacji o przetwarzaniu danych?"
+
+msgid "subscribe date"
+msgstr "data włączenia subskrypcji"
+
+msgid "subscription"
+msgstr "subskrypcja"
+
+msgid "subscriptions"
+msgstr "subskrypcje"
+
+msgid "The newsletter subscription is active."
+msgstr "Subskrypcja newslettera jest aktywna."
+
+#, python-format
+msgid ""
+"You will receive an activation link to the e-mail address \"%(email)s\"."
+msgstr "Na podany adres e-mail \"%(email)s\" otrzymasz link aktywacyjny."
+
+msgid "Activating the newsletter of dane.gov.pl portal"
+msgstr "Aktywacja newslettera portalu dane.gov.pl"
+
+msgid "Awaits"
+msgstr "Oczekuje"
+
+msgid "Sent"
+msgstr "Wysłano"
+
+msgid "language version"
+msgstr "wersja językowa"
+
+msgid "planned sending date"
+msgstr "planowany termin rozesłania"
+
+msgid "sending date"
+msgstr "data i godzina rozesłania"
+
+msgid "newsletter"
+msgstr ""
+
+msgid "newsletters"
+msgstr "newslettery"
+
+msgid "Planned sending date must be in future!"
+msgstr "Planowana data wysłania musi dotyczyć przyszłości!"
+
+msgid "This date must be in future!"
+msgstr "Ta data musi dotyczyć przyszłości!"
+
+msgid "This is not html file!"
+msgstr "To nie jest plik html!"
+
+msgid "Resignation link in html is required <a href=\"#\">Resign</a>!"
+msgstr ""
+"Link rezygnacyjny w pliku html jest wymagany: <a href=\"#\">Rezygnacja</a>!"
+
+msgid "submission"
+msgstr "potwierdzenie wysyłki"
+
+msgid "submissions"
+msgstr "potwierdzenia wysyłki"
+
+msgid "Your email address was removed from our mailing list"
+msgstr "Twój adres email został usunięty z naszej listy mailingowej"
+
+msgid "Dear Sir or Madam,"
+msgstr "Szanowni Państwo,"
+
+msgid ""
+"Thank you for your interest in the newsletter of dane.gov.pl. To confirm the "
+"subscription, click the link:"
+msgstr ""
+"dziękujemy za zainteresowanie newsletterem portalu dane.gov.pl. Aby "
+"potwierdzić zamówienie newslettera kliknij link:"
+
+msgid "The link above will be active for 24 hours."
+msgstr "Link będzie aktywny przez 24 godziny."
+
+msgid "The message has been generated automatically."
+msgstr "Wiadomość została wygenerowana automatycznie."
+
+msgid "Please do not reply."
+msgstr "Prosimy na nią nie odpowiadać."
+
+msgid "Download images"
+msgstr "Pobierz obrazy"
+
+msgid "The message has been generated automatically. Please do not reply."
+msgstr ""
+"Wiadomość została wygenerowana automatycznie. Prosimy na nią nie odpowiadać."
+
+msgid "Invalid action!"
+msgstr "Błędna akcja!"
+
+msgid "Email address already exists"
+msgstr "Adres poczty elektronicznej już istnieje"
+
+msgid "Your newsletter subsciption awaits for confirmation"
+msgstr "Twoja subskrypcja newslettera oczekuje na potwierdzenie"
+
+msgid "Link is out of date"
+msgstr "Link jest nieaktualny"
+
+msgid "The activation link has expired"
+msgstr "Link aktywacyjny wygasł"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Users"
+msgstr "Użytkownicy"
+
+msgid "Contact details"
+msgstr "Kontakt"
+
+msgid "Institutions"
+msgstr "Instytucje"
+
+msgid "Some information about the institution"
+msgstr "Niektóre informacje o instytucji"
+
+msgid "Fax number"
+msgstr "Numer faksu"
+
+msgid "int."
+msgstr "wew."
+
+msgid "Postal code"
+msgstr "Kod pocztowy"
+
+msgid "Website"
+msgstr "Strona internetowa"
+
+msgid ""
+"If you select a draft, the status of all published datasets belonging to "
+"this institution will be changed to a draft.Also all resources of those "
+"datasets will be change to a draft"
+msgstr ""
+"Jeśli wybierzesz szkic, status wszystkich opublikowanych zbiorów danych "
+"należących do tej instytucji zostanie zmieniony na szkic. Również wszystkie "
+"zasoby tych zbiorów zostaną zmienione na szkic"
+
+msgid "Local government"
+msgstr "Administracja samorządowa"
+
+msgid "Public government"
+msgstr "Administracja rządowa"
+
+msgid "Private entities"
+msgstr "Podmioty prywatne"
+
+msgid "Other"
+msgstr "Inne"
+
+msgid "Developers"
+msgstr "Deweloperzy"
+
+msgid "City"
+msgstr "Miasto"
+
+msgid "Street type"
+msgstr "Rodzaj ulicy"
+
+msgid "Street"
+msgstr "Ulica"
+
+msgid "Street number"
+msgstr "Numer ulicy"
+
+msgid "Flat number"
+msgstr "Numer mieszkania"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "EPUAP"
+msgstr "EPUAP"
+
+msgid "Fax"
+msgstr "Faks"
+
+msgid "Institution type"
+msgstr "Rodzaj instytucji"
+
+msgid "Id Institution"
+msgstr "Id Instytucji"
+
+msgid "REGON"
+msgstr "REGON"
+
+msgid "Address for electronic delivery"
+msgstr "Adres do doręczeń elektronicznych"
+
+msgid "Given address does not match electronic delivery address pattern."
+msgstr "Podany adres nie jest zgodny z formatem adresu do doręczeń elektronicznych."
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Abbreviation"
+msgstr "Skrót"
+
+msgid "acc: Institution"
+msgstr "instytucję"
+
+msgid " int. "
+msgstr " wew. "
+
+msgid "The number of datasets"
+msgstr "Liczba zbiorów danych"
+
+msgid "Organization URL"
+msgstr "URL dostawcy"
+
+msgid "Organization created"
+msgstr "Data utworzenia dostawcy"
+
+msgid "Organization modified"
+msgstr "Data aktualizacji dostawcy"
+
+msgid "Number of datasets"
+msgstr "Liczba zbiorów danych"
+
+msgid "Number of organization resources"
+msgstr "Liczba zasobów dostawcy"
+
+msgid "Hide table"
+msgstr "Ukryj tabelę"
+
+msgid "View table"
+msgstr "Pokaż tabelę"
+
+msgid "Number"
+msgstr "Liczba"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Zoom"
+msgstr "Przybliż/Oddal"
+
+msgid "Reset"
+msgstr "Przywróć domyślny widok"
+
+msgid "Hover"
+msgstr "Pokaż szczegóły"
+
+msgid "Period"
+msgstr "Okres"
+
+msgid "**Add to dashboard:**"
+msgstr "**Dodaj do pulpitu:**"
+
+msgid "Entry"
+msgstr "Pozycja"
+
+msgid "None"
+msgstr "Brak"
+
+msgid "Percent"
+msgstr "Procent"
+
+msgid "Type of data"
+msgstr "Typ danych"
+
+msgid "No data type was selected"
+msgstr "Nie wybrano żadnego typu danych"
+
+#, python-brace-format
+msgid "{0} of {1} data types"
+msgstr "{0} z {1} typów danych"
+
+msgid "Month"
+msgstr "Miesiąc"
+
+msgid "Quarter"
+msgstr "Kwartał"
+
+msgid "Year"
+msgstr "Rok"
+
+msgid "Visualization type"
+msgstr "Rodzaj wizualizacji"
+
+msgid "No type of visualization has been selected"
+msgstr "Nie wybrano żadnego rodzaju wizualizacji"
+
+#, python-brace-format
+msgid "{0} of {1} visualization types"
+msgstr "{0} z {1} rodzajów wizualizacji"
+
+msgid "Table"
+msgstr "Tabela"
+
+msgid "Map"
+msgstr "Mapa"
+
+msgid "Chart"
+msgstr "Wykres"
+
+msgid "No visualization"
+msgstr "Brak wizualizacji"
+
+msgid "Way of presentation"
+msgstr "Sposób prezentacji"
+
+msgid "Web Site"
+msgstr "Strona internetowa"
+
+msgid "Percent od data"
+msgstr "Procent danych"
+
+msgid "Downloads"
+msgstr "Liczba pobrań"
+
+msgid "Views"
+msgstr "Liczba wyświetleń"
+
+msgid "Openness level"
+msgstr "Stopień otwartości"
+
+msgid "Level {}"
+msgstr "Stopień {}"
+
+msgid "File format"
+msgstr "Format pliku"
+
+msgid "Category name"
+msgstr "Nazwa kategorii"
+
+msgid "Number of uses"
+msgstr "Liczba użyć"
+
+msgid "Searched keyword"
+msgstr "Wyszukiwana fraza"
+
+msgid "Number of searches"
+msgstr "Liczba wyszukiwań"
+
+msgid "Number of datasets added"
+msgstr "Liczba nowych zbiorów danych"
+
+msgid "Most downloaded datasets"
+msgstr "Zbiory danych z największą liczbą pobrań"
+
+msgid "Most viewed datasets"
+msgstr "Najbardziej popularne zbiory danych"
+
+msgid "Datasets openess rating"
+msgstr "Liczba danych w podziale na stopień otwartości"
+
+msgid "Top file formats"
+msgstr "Najbardziej popularne formaty"
+
+msgid "Top themes"
+msgstr "Najczęściej używane kategorie"
+
+msgid "Top tags"
+msgstr "Najczęściej używane słowa kluczowe"
+
+msgid "Top keywords"
+msgstr "Najczęściej wyszukiwane słowa"
+
+msgid "Views of datasets"
+msgstr "Liczba wyświetleń zbiorów danych"
+
+msgid "Downloads of datasets"
+msgstr "Liczba pobrań zbiorów danych"
+
+msgid "Unauthorized"
+msgstr ""
+
+#, python-brace-format
+msgid "Malformed teryt code: {teryt_id}."
+msgstr "Błędny kod TERYT: {teryt_id}"
+
+msgid "Regions"
+msgstr "Lokalizacja danych"
+
+msgid "locality"
+msgstr "Miejscowość"
+
+msgid "localadmin"
+msgstr "Gmina"
+
+msgid "county"
+msgstr "Powiat"
+
+msgid "region"
+msgstr "Województwo"
+
+msgid "country"
+msgstr "Kraj"
+
+msgid "Hierarchy label"
+msgstr ""
+
+msgid "Boundary box"
+msgstr "Obszar ograniczający"
+
+msgid "Latitude"
+msgstr "Szerokość geograficzna"
+
+msgid "Longitude"
+msgstr "Długość geograficzna"
+
+msgid "Ordered by"
+msgstr "Zlecone przez"
+
+msgid "Generated report file"
+msgstr "Wygenerowany plik raportu"
+
+msgid "File size"
+msgstr "Rozmiar pliku"
+
+msgid "PENDING"
+msgstr "W oczekiwaniu"
+
+msgid ""
+"The task of generating the report has been commissioned. The report may "
+"appear with a delay ..."
+msgstr ""
+"Zadanie wygenerowania raportu zostało zlecone. Raport może pojawić się z "
+"opóźnieniem..."
+
+msgid "Task"
+msgstr "Zadanie"
+
+msgid "File path"
+msgstr "Ścieżka pliku"
+
+msgid "acc: Monitoring report"
+msgstr "zgłoszenia"
+
+msgid "Monitoring"
+msgstr "Zgłoszenia"
+
+msgid "acc: User report"
+msgstr "raport użytkownika"
+
+msgid "User report"
+msgstr "Raport użytkowników"
+
+msgid "User reports"
+msgstr "Raporty użytkowników"
+
+msgid "acc: Resource report"
+msgstr "raport zasobów"
+
+msgid "Reource report"
+msgstr "Raport zasobu"
+
+msgid "Resource reports"
+msgstr "Raporty zasobów"
+
+msgid "acc: Dataset report"
+msgstr "raport zbioru danych"
+
+msgid "Dataset report"
+msgstr "Raport zbioru danych"
+
+msgid "Dataset reports"
+msgstr "Raporty zbiorów danych"
+
+msgid "Data source reports"
+msgstr "Raporty źródeł danych"
+
+msgid "acc: Institution report"
+msgstr "raport instytucji"
+
+msgid "Institution report"
+msgstr "Raport instytucji"
+
+msgid "Institution reports"
+msgstr "Raporty Instytucji"
+
+msgid "acc: Daily report"
+msgstr "zbiorczy raport dzienny"
+
+msgid "acc: Data source imports report"
+msgstr "raport źródeł danych"
+
+msgid "Summary daily report"
+msgstr "Zbiorczy raport dzienny"
+
+msgid "Summary daily reports"
+msgstr "Zbiorcze raporty dzienne"
+
+msgctxt "Metabase Dashboard"
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgctxt "Metabase Dashboards"
+msgid "Dashboards"
+msgstr "Dashboardy"
+
+msgid "Filter by dataset name"
+msgstr "Filtruj według nazwy zbioru"
+
+msgid "Link status"
+msgstr "Status linku"
+
+msgid "File status"
+msgstr "Status pliku"
+
+msgid "TabularView"
+msgstr "Widok tabelaryczny"
+
+#, python-brace-format
+msgid ""
+"During the verification of column \"{colname}\" with the \"{rule}\" rule no "
+"errors detected"
+msgstr ""
+"Podczas weryfikacji kolumny \"{colname}\" regułą \"{rule}\" nie wykryto "
+"błędów"
+
+#, python-brace-format
+msgid "Verification of column \"{colname}\" by the rule \"{rule}\" failed"
+msgstr "Weryfikacja kolumny \"{colname}\" regułą \"{rule}\" nie powiodła się"
+
+msgid "File validation"
+msgstr "Walidacja pliku"
+
+msgid "Link validation"
+msgstr "Walidacja linku"
+
+msgid "Data validation"
+msgstr "Walidacja danych"
+
+msgid "Change of type"
+msgstr "Zmiana typu"
+
+msgid "Quality verification"
+msgstr "Weryfikacja jakości"
+
+msgid "Maps and plots"
+msgstr "Mapy i wykresy"
+
+msgid "data language"
+msgstr "język danych"
+
+msgid "Manual update"
+msgstr "Aktualizacja manualna"
+
+msgid "Special Signs"
+msgstr "Znaki umowne"
+
+msgid "Resource with this id does not exists"
+msgstr "Zasób z tym id nie istnieje"
+
+msgid "Task for resource revalidation queued"
+msgstr "Ponowna walidacja dodana do kolejki zadań"
+
+msgid "Data type changed"
+msgstr "Zmieniono typ danych"
+
+msgid "Map definition saved"
+msgstr "Zapisano definicję mapy"
+
+msgid ""
+"Couldn't restore following resources, because their related datasets are "
+"still removed: {}"
+msgstr ""
+"Nie można przywrócić następujących zasobów, ponieważ ich zbiory danych wciąż "
+"pozostają usunięte: {}"
+
+msgid "Chart creation for this resource is blocked!"
+msgstr "Tworzenie wykresów dla tego zasobu jest zablokowane!"
+
+msgid "No permission to define chart"
+msgstr "Brak uprawnień do definiowania wykresu"
+
+msgid "You cannot change type of chart!"
+msgstr "Zmiana typu wykresu jest niemożliwa!"
+
+msgid "You cannot add another private chart!"
+msgstr "Dodanie kolejnego wykresu prywatnego jest niemożliwe!"
+
+msgid ""
+"You cannot put changes into chart defined by Data Provider. Please provide "
+"new chart name."
+msgstr ""
+"Nie możesz zmienić wykresu zdefiniowanego przez Dostawcę danych. Zmiany na "
+"wykresie zapisz pod nową nazwą."
+
+msgid "latitude"
+msgstr "szerokość geograficzna"
+
+msgid "longitude"
+msgstr "długość geograficzna"
+
+msgid "postal code"
+msgstr "kod pocztowy"
+
+msgid "place"
+msgstr "miejscowość"
+
+msgid "house number"
+msgstr "numer domu"
+
+msgid "universal address"
+msgstr "adres uniwersalny"
+
+msgid "label"
+msgstr "etykieta"
+
+msgid "Selected items {} come from different map data sets."
+msgstr "Wybrane elementy {} pochodzą z różnych zestawów danych mapowych."
+
+msgid " Redefine the map by selecting items from only one map data set."
+msgstr ""
+" Ponów definiowanie mapy wybierając elementy z tylko jednego zestawu danych "
+"mapowych."
+
+msgid "The map data set is incomplete."
+msgstr "Zestaw danych mapowych jest niekompletny"
+
+msgid "Missing elements: {} for the map data set: {}."
+msgstr "Brak elementów: {} dla zestawu danych mapowych: {}."
+
+msgid " Redefine the map by selecting the selected items."
+msgstr " Ponów definiowanie mapy wybierając wskazane elementy."
+
+msgid "Longitude should be a number"
+msgstr "Długość geograficzna powinna być liczbą"
+
+msgid "Latitude should be a number"
+msgstr "Szerokość geograficzna powinna być liczbą"
+
+msgid "special signs"
+msgstr "znaki umowne"
+
+msgid ""
+"You can't set status of this resource to published, because it's dataset is "
+"still a draft. You should first published that dataset: "
+msgstr ""
+"Nie można ustawić status opublikowany dla tego zasobu, ponieważ zbiór do "
+"którego przynależy ma status szkic. Aby zmienić status należy najpierw "
+"opublikować zbiór: "
+
+msgid "Only resource from related dataset resources is valid!"
+msgstr ""
+"Tylko zasób należący do zasobów powiązanego zbioru jest poprawnym wyborem!"
+
+msgid "Do not allow user charts to be created"
+msgstr "Nie zezwalaj na tworzenie wykresów przez użytkownika"
+
+msgid "File as CSV"
+msgstr "Plik jako CSV"
+
+msgid "File as JSON-LD"
+msgstr "Plik jako JSON-LD"
+
+msgid "File info"
+msgstr "Informacje o pliku"
+
+msgid "File encoding"
+msgstr "Kodowanie pliku"
+
+msgid "Data source"
+msgstr "Źródło danych"
+
+msgid "Data date"
+msgstr "Dane na dzień"
+
+#, python-format
+msgid "Invalid file extension: %(ext)s."
+msgstr "Niepoprawne rozszerzenie pliku: %(ext)s."
+
+msgid "Format unknown."
+msgstr "Format pliku nieznany."
+
+msgid "Password protected archives are not allowed."
+msgstr "Pliki archiwum zabezpieczone hasłem nie są dozwolone."
+
+msgid ""
+"You can't restore this resource, because it's dataset is still removed. "
+"Please first restore dataset: "
+msgstr ""
+"Nie możesz przywrócić tego zasobu, ponieważ zbiór do którego przynależy "
+"nadal jest w koszu. Przywróć najpierw zbiór: "
+
+msgid "Add file"
+msgstr "Dodaj plik"
+
+msgid "Document name"
+msgstr "Nazwa dokumentu"
+
+msgid "The wrong document format was selected!"
+msgstr "Dokonano wyboru niewłaściwego formatu dokumentu!"
+
+msgid "File does not exist"
+msgstr "Plik nie istnieje"
+
+msgid "Invalid file type"
+msgstr "Niepoprawny typ pliku."
+
+#, python-format
+msgid "File %s does not exist, please upload it again"
+msgstr "Plik %s nie istnieje, proszę załaduj go ponownie"
+
+msgid "API"
+msgstr "API"
+
+msgid "API - change"
+msgstr "API - zmiana"
+
+msgid "File - change"
+msgstr "Plik - zmiana"
+
+msgid "external identifier of resource taken during import process (optional)"
+msgstr ""
+"zewnętrzny identyfikator zasobu pobrany podczas procesu importu (opcjonalny)"
+
+msgid "availability"
+msgstr "dostępność"
+
+msgid "Packed file"
+msgstr "Spakowany plik"
+
+msgid "File mimetype"
+msgstr "Typ MIME pliku"
+
+msgid "Resource Link"
+msgstr "Link do zasobu"
+
+msgid "Position"
+msgstr "Pozycja"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Mark resource as API"
+msgstr "Oznacz zasób jako API"
+
+msgid "Mark resource as file"
+msgstr "Oznacz zasób jako plik"
+
+msgid "Download Tasks"
+msgstr ""
+
+msgid "link tasks last status"
+msgstr "ostatni status walidacji linku"
+
+msgid "file tasks last status"
+msgstr "ostatni status walidacji pliku"
+
+msgid "data tasks last status"
+msgstr "ostatni status walidacji danych tabelarycznych"
+
+msgid "Data type"
+msgstr "Typ danych"
+
+msgid "Tabular view"
+msgstr "Widok tabelaryczny"
+
+msgid "has chart?"
+msgstr "ma wykres?"
+
+msgid "has map?"
+msgstr "ma mapę?"
+
+msgid "has table?"
+msgstr "ma tabelę?"
+
+msgid "is chart creation blocked?"
+msgstr "tworzenie wykresu zablokowane?"
+
+msgid "language version of the data"
+msgstr "wersja językowa danych"
+
+msgid "related data"
+msgstr "powiązane dane"
+
+msgid "Automatic update"
+msgstr "Aktualizacja automatyczna"
+
+msgid "Data date update period"
+msgstr "powtarzać co"
+
+msgid "Data date start date update"
+msgstr "Data rozpoczęcia aktualizacji"
+
+msgid "Data date end date update"
+msgstr "Data zakończenia aktualizacji"
+
+msgid "Endless data date update"
+msgstr "Bez daty zakończenia"
+
+msgid "Contains protected data list"
+msgstr "Zawiera wykaz chronionych danych"
+
+msgid "The resource marked below as a list of protected data can be in xls, xlsx or csv format."
+msgstr "Zasób oznaczony poniżej jako wykaz chronionych danych może mieć format xls, xlsx lub csv."
+
+msgid "The resource marked below as a list of protected data must have a file attached."
+msgstr "Zasób oznaczony poniżej jako wykaz chronionych danych musi posiadać załączony plik."
+
+msgid "There is more than one resource containing protected data."
+msgstr "Istnieje więcej niż jeden zasób zawierający chronione dane."
+
+msgid "Pick a file from disk in xls, xlsx or csv format if you mark the resource below as a list of protected data."
+msgstr "Wybierz plik z dysku w formacie xls, xlsx lub csv, jeśli poniżej oznaczasz zasób jako wykaz chronionych danych."
+
+msgid "The resource has a different type than csv, xls or xlsx format."
+msgstr "Zapisany zasób ma inny typ niż plik w formacie xls, xlsx, csv."
+
+msgid "Cannot find file for resource"
+msgstr "Nie można odnaleźć pliku dla zasobu"
+
+msgid "Cannot read existing file"
+msgstr "Nie można odczytać istniejącego pliku"
+
+msgid "The resource labeled below as a list of protected data can only contain columns named in this order: "
+msgstr "Zasób oznaczony poniżej jako wykaz chronionych danych może zawierać tylko kolumny nazwane w tej kolejności: "
+
+msgid "The saved file has a different structure than that required for the list of protected data."
+msgstr "Zapisany plik ma inną strukturę niż wymagana dla wykazu chronionych danych."
+
+msgid "Select the collection of a government institution or local government if you mark the resource below as a list of protected data."
+msgstr "Wybierz zbiór instytucji rządowej lub samorządowej, jeśli poniżej oznaczasz zasób jako wykaz chronionych danych."
+
+msgid "To select YES here, above select the dataset of a government or local government institution."
+msgstr "Aby tu wybrać TAK, powyżej wybierz zbiór danych instytucji rządowej lub samorządowej."
+
+msgid "To select YES here, select NO in the fields for dynamic, high-value, high-value from the EC list and research data."
+msgstr "Aby tu wybrać TAK, w polach dotyczących danych dynamicznych, o wysokiej wartości, o wysokiej wartości z wykazu KE i badawczych zaznacz NIE."
+
+msgid "Check YES, because high-value data from the EC list is a special subcategory of high-value data."
+msgstr "Zaznacz TAK, ponieważ dane o wysokiej wartości z wykazu KE są szczególną podkategorią danych o wysokiej wartości."
+
+msgid "Data of private or developer institutions are not high-value data from EC list."
+msgstr "Dane instytucji prywatnych lub deweloperskich nie są danymi o wysokiej wartości z wykazu KE."
+
+msgid "deleted"
+msgstr "usunięty"
+
+msgid "acc: Resource"
+msgstr "zasób"
+
+msgid "Resource"
+msgstr "Zasób"
+
+#, python-format
+msgid "A comment was posted on the resource %(title)s"
+msgstr "Zgłoszono uwagę do zasobu %(title)s"
+
+msgid "Please provide specific date or set endless update."
+msgstr ""
+"Należy wprowadzić konkretną datę lub ustawić aktualizację bez daty "
+"zakończenia."
+
+msgid ""
+"Data date end cant be chosen when endless data date update is selected. "
+"Please choose one."
+msgstr ""
+"Nie można jednocześnie wprowadzić daty zakończenia aktualizacji oraz wybrać "
+"opcji bez daty zakończenia.Proszę wybrać tylko jedną z tych opcji."
+
+msgid "Update end date cant be earlier than start date."
+msgstr ""
+"Data zakończenia aktualizacji nie może być wcześniejsza lub taka sama jak "
+"data rozpoczęcia."
+
+msgid "Compressed file format"
+msgstr "Format skompresowanego pliku"
+
+msgid "Compressed file mimetype"
+msgstr "Typ MIME skompresowanego pliku"
+
+msgid "Compressed file encoding"
+msgstr "Kodowanie skompresowanego pliku"
+
+msgid "link"
+msgstr ""
+
+msgid "link_tasks_last_status"
+msgstr ""
+
+msgid "file_tasks_last_status"
+msgstr ""
+
+msgid "data_tasks_last_status"
+msgstr ""
+
+msgid "format"
+msgstr "format"
+
+msgid "formats after conversion"
+msgstr "formaty po konwersji"
+
+msgid "views_count"
+msgstr "licznik odwiedzin"
+
+msgid "downloads_count"
+msgstr "licznik pobrań"
+
+msgid "Resource has high value data"
+msgstr "Zasób zawiera dane o wysokiej wartości"
+
+msgid "Resource has high value data from the EC list"
+msgstr "Zasób zawiera dane o wysokiej wartości z wykazu KE"
+
+#, python-format
+msgid "Dataset field '%(first_field)s' must have value true if field '%(second_field)s' has value true."
+msgstr "Pole zbioru danych '%(first_field)s' musi mieć wartość równą true, jeżeli pole '%(second_field)s' ma wartość true."
+
+#, python-format
+msgid "Resource field '%(first_field)s' must have value true if field '%(second_field)s' has value true."
+msgstr "Pole zasobu '%(first_field)s' musi mieć wartość równą true, jeżeli pole '%(second_field)s' ma wartość true."
+
+#, python-format
+msgid "Institution with type 'private' or 'developer' can not use field '%(field_name)s' with value true for resource."
+msgstr "Instytucja typu 'prywatna' lub 'deweloper' nie może wybrać wartości true w polu '%(field_name)s' zasobu."
+
+#, python-format
+msgid "Institution with type 'private' or 'developer' can not use field '%(field_name)s' with value true for dataset."
+msgstr "Instytucja typu 'prywatna' lub 'deweloper' nie może wybrać wartości true w polu '%(field_name)s' zbioru danych."
+
+msgid ""
+"If the resource has a value of the 'containsProtectedData' field equal to true, then the fields 'hasDynamicData', "
+"'hasResearchData', 'hasHighValueData', 'hasHighValueDataFromEuropeanCommissionList' must be false or not present at all."
+msgstr ""
+"Jeśli zasób ma wartość pola 'containsProtectedData' równą true, to pola 'hasDynamicData', 'hasResearchData', "
+"'hasHighValueData', 'hasHighValueDataFromEuropeanCommissionList', muszą mieć wartość false lub nie występować w ogóle."
+
+msgid "A 'private', 'other' or 'developer' institution cannot use true in the 'containsProtectedData' field of a resource."
+msgstr "Instytucja typu 'prywatna', 'inna' lub 'deweloper' nie może używać wartości true w polu 'containsProtectedData' zasobu."
+
+msgid "An address in the 'url' field of a resource that contains a 'containsProtectedData' field with a value equal to true is not responding."
+msgstr "Adres w polu 'url' zasobu, który zawiera pole 'containsProtectedData' z wartością równą true, nie odpowiada."
+
+msgid ""
+"If the resource has the value of the 'containsProtectedData' field equal to true, it must point to a file in the xls, "
+"xlsx or csv format in the 'url' field."
+msgstr ""
+"Jeśli zasób ma wartość pola 'containsProtectedData' równą true, to musi wskazywać w polu 'url' na plik w formacie "
+"xls, xlsx lub csv."
+
+#, python-format
+msgid ""
+"If the resource has a 'containsProtectedData' value of true, then the resource file must contain exactly "
+"%(col_quantity)s of columns, arranged and named exactly: %(col_names)s."
+msgstr ""
+"Jeśli zasób ma wartość pola 'containsProtectedData' równą true, to plik zasobu musi zawierać dokładnie "
+"%(col_quantity)s kolumn ułożonych następująco i nazwanych dokładnie: %(col_names)s."
+
+#, python-format
+msgid ""
+"There is more than 1 resource in the harvester file containing the '%(field_name)s' field with a value equal to true."
+msgstr ""
+"W pliku harvestera znajduje się więcej niż 1 zasób zawierający pole '%(field_name)s' z wartością równą true."
+
+#, python-format
+msgid ""
+"The provider already has a resource in the portal that contains the '%(field_name)s' "
+"field with a value equal to true. Resource: 'title' = %(title)s, 'id' = %(id)s."
+msgstr ""
+"Dostawca posiada już w portalu zasób, zawierający pole '%(field_name)s' z wartością równą true. "
+"Zasób: 'title' = %(title)s, 'id' = %(id)s."
+
+msgid "Resource has dynamic data"
+msgstr "Zasób zawiera dane dynamiczne"
+
+msgid "Resource has research data"
+msgstr "Zasób zawiera dane badawcze"
+
+msgid "Resource URL"
+msgstr "URL danych"
+
+msgid "Resource title"
+msgstr "Tytuł danych"
+
+msgid "Resource description"
+msgstr "Opis danych"
+
+msgid "Resource created"
+msgstr "Data udostępnienia danych"
+
+msgid "Resource views count"
+msgstr "Liczba wyświetleń danych"
+
+msgid "Resource downloads count"
+msgstr "Liczba pobrań danych"
+
+msgid "Resource regions"
+msgstr "Lokalizacje danych"
+
+msgid "Download URL"
+msgstr "URL pliku (do pobrania)"
+
+msgid "Resource supplements (name, language, url, file size)"
+msgstr "Dokumenty uzupełniające zasobu (nazwa, język, url, rozmiar pliku)"
+
+msgid "symbol"
+msgstr "symbol"
+
+msgid "Numeric"
+msgstr "Pole numeryczne"
+
+#, python-format
+msgid ""
+"During the verification of column \"%(colname)s\" with the rule \"%(rule)s\" "
+"detected errors (max 5)"
+msgstr ""
+"Podczas weryfikacji kolumny \"%(colname)s\" regułą \"%(rule)s\" wykryto "
+"błędy (wyświetlane jest nie więcej niż 5 błędów)"
+
+msgid "Address feature"
+msgstr "Cecha adresu"
+
+msgid "Schedules"
+msgstr "Harmonogramy"
+
+msgid "You cannot set new_end_date if end_date is not set yet!"
+msgstr ""
+"Nie można ustawić nowej daty zakończenia przed ustawieniem daty zakończenia!"
+
+#, python-format
+msgid "Invalid value! Possible values: %(values)s"
+msgstr "Niepoprawna wartość! Możliwe wartości: %(values)s"
+
+msgid ""
+"is_openness_score_increased or is_quality_improved is required if value of "
+"is_new is False!"
+msgstr ""
+"is_openness_score_increased lub is_quality_improved są wymagane jeśli "
+"wartość is_new to False!"
+
+#, python-format
+msgid "Unsupported recommendation state. Supported are: %(states)s"
+msgstr "Nieobsługiwany typ rekomendacji. Obsługiwane są: %(states)s"
+
+#, python-format
+msgid "Unsupported notification type. Supported are: %(types)s"
+msgstr "Nieobsługiwany typ notyfikacji. Obsługiwane są: %(types)s"
+
+msgid "User schedule's readiness state cannot be changed!"
+msgstr "Nie można zmienić statusu gotowości harmonogramu!"
+
+#, python-brace-format
+msgid "{author} new comment "
+msgstr "Nowy komentarz {author}"
+
+msgid "The end of planning date was added/changed"
+msgstr "Data zakończenia planowania została wprowadzona/zmieniona"
+
+msgid "7 days until end of planning"
+msgstr "7 dni do zakończenia planowania"
+
+msgid "The end of planning date has passed"
+msgstr "Minęła data zakończenia planowania"
+
+msgid "The new end of planning date was added/changed"
+msgstr "Nowa data zakończenia planowania została wprowadzona/zmieniona"
+
+msgid "The new end of planning date has passed"
+msgstr "Minęła nowa data zakończenia planowania"
+
+msgid "Planned"
+msgstr "Planowanie"
+
+msgid "Implemented"
+msgstr "Realizacja"
+
+msgid "Archived"
+msgstr "Archiwum"
+
+msgid "period name"
+msgstr "nazwa okresu"
+
+msgid "new end date"
+msgstr "nowa data zakończenia"
+
+msgid "schedule link"
+msgstr "link do harmonogramu"
+
+msgid "is blocked?"
+msgstr "zablokowany?"
+
+msgid "schedule"
+msgstr "harmonogram"
+
+msgid "schedules"
+msgstr "harmonogramy"
+
+#, python-format
+msgid "No recommendation for \"%(email)s\""
+msgstr "Brak rekomendacji dla \"%(email)s\""
+
+#, python-format
+msgid "Data sharing schedule on %(period)s"
+msgstr "Harmonogram otwierania danych na %(period)s"
+
+msgid "is ready?"
+msgstr "gotowy?"
+
+msgid "assign schedule as ready"
+msgstr "oznacz harmonogram jako gotowy"
+
+msgid "user schedule"
+msgstr "harmonogram użytkownika"
+
+msgid "user schedules"
+msgstr "harmonogramy użytkownika"
+
+msgid "WMS service"
+msgstr "usługa WMS"
+
+msgid "awaits"
+msgstr "oczekuje na rekomendację"
+
+msgid "recommended"
+msgstr "rekomendowane"
+
+msgid "not recommended"
+msgstr "nierekomendowane"
+
+msgid "institution"
+msgstr "instytucja"
+
+msgid "institution unit"
+msgstr "jednostka podległa/nadzorowana"
+
+msgid "dataset title"
+msgstr "zasoby danych"
+
+msgid "is new?"
+msgstr "nowy zasób?"
+
+msgid "is openness score increased?"
+msgstr "wyższy poziom otwartości?"
+
+msgid "is quality improved?"
+msgstr "poprawiona jakość?"
+
+msgid "recommendation state"
+msgstr "stan rekomendacji"
+
+msgid "recommendation notes"
+msgstr "opis rekomendacji"
+
+msgid "is resource added?"
+msgstr "czy zasób dodany?"
+
+msgid "is resource added notes"
+msgstr "czy zasób dodany - komentarz"
+
+msgid "resource link"
+msgstr "link do zasobu"
+
+msgid "user schedule item"
+msgstr "pozycja w harmonogramie użytkownika"
+
+msgid "user schedule items"
+msgstr "pozycje w harmonogramie użytkownika"
+
+msgid "text"
+msgstr "tekst"
+
+msgid "comments"
+msgstr "komentarze"
+
+msgid "Notification was sent"
+msgstr "Powiadomienie zostało wysłane"
+
+#, python-format
+msgid "The entered phrase should be at least %(limit)s characters long"
+msgstr "Wpisana fraza musi zawierać przynajmniej %(limit)s znaki"
+
+#, python-format
+msgid "The entered phrase should be at most %(limit)s characters long"
+msgstr "Wpisana fraza musi zawierać nie więcej niż %(limit)s znaki"
+
+msgid "Advanced option should take one of values: "
+msgstr "Opcja advanced musi przyjmować jedną z wartości: "
+
+#, python-format
+msgid "Unsupported format. Supported are: %(formats)s"
+msgstr "Nieobsługiwany format. Obsługiwane są: %(formats)s."
+
+#, python-format
+msgid "Unsupported SPARQL endpoint value. Supported values are: %(providers)s"
+msgstr "Nieobsługiwana końcówka SPARQL. Obsługiwane są: %(providers)s"
+
+msgid "Invalid suggestion size"
+msgstr "Niepoprawny rozmiar podpowiedzi"
+
+msgid "Invalid maximum list length"
+msgstr ""
+
+#, python-format
+msgid "The entered model - %(model)s, is not supported"
+msgstr "Wprowadzony model - %(model)s, nie jest wspierany"
+
+msgid "advanced option should take one of values: any, all, exact, synonyms"
+msgstr ""
+
+msgid "Bad request"
+msgstr "Błędne zapytanie"
+
+msgid "Search Histories"
+msgstr "Historie Wyszukiwania"
+
+msgid "Search history"
+msgstr "Historie Wyszukiwania"
+
+msgid "Pending"
+msgstr "W oczekiwaniu"
+
+msgid "Blocked"
+msgstr "Zablokowany"
+
+msgid "Open Data - Administration Panel"
+msgstr "Otwarte Dane - Panel Administracyjny"
+
+msgid "PoCoTo"
+msgstr ""
+
+msgid "Data suggestions"
+msgstr "Propozycje nowych danych"
+
+msgid "Users reports"
+msgstr "Raporty użytkowników"
+
+msgid "Daily Reports"
+msgstr "Dzienne Raporty"
+
+msgctxt "Dashboard"
+msgid "Dashboard"
+msgstr "Pulpit"
+
+msgid "Open Data Lab"
+msgstr "Laboratorium Otwarte Dane"
+
+msgid "Configuration"
+msgstr "Konfiguracja"
+
+msgid "Universal address"
+msgstr "Adres uniwersalny"
+
+msgid "PNA code"
+msgstr "Kod PNA"
+
+msgid "Field of logical values"
+msgstr "Pole wartości logicznych"
+
+msgid "Integer"
+msgstr "Liczba całkowita"
+
+msgid "Float"
+msgstr "Liczba zmiennoprzecinkowa"
+
+msgid "String"
+msgstr "Dane tekstowe"
+
+msgid "Logic value (True/False)"
+msgstr "Wartość logiczna (Prawda/Fałsz)"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Time"
+msgstr "Czas"
+
+msgid "DateTime"
+msgstr "DataCzas"
+
+msgid "Any type"
+msgstr "Dowolny typ"
+
+msgid "Label"
+msgstr "Etykieta"
+
+msgid "Describes the presented data. Required item."
+msgstr "Opisuje prezentowane dane. Element wymagany."
+
+msgid "Place"
+msgstr "Miejscowość"
+
+msgid "House number"
+msgstr "Numer domu"
+
+msgid "Illustrative graphics"
+msgstr "Grafika ilustracyjna"
+
+msgid "Preview link"
+msgstr "Link podglądu"
+
+msgid "Application type"
+msgstr "Rodzaj aplikacji"
+
+msgid "Delete selected showcase proposals"
+msgstr "Usuń wybrane propozycje ponownego wykorzystania"
+
+msgid "Datasets being used to build application"
+msgstr "Zbiory danych które zostały wykorzystane do budowy"
+
+msgid "External public data used"
+msgstr "Wykorzystane dane publiczne spoza portalu"
+
+msgid "Showcase creation task was launched!"
+msgstr "Zadanie utworzenia ponownego wykorzystania zostało uruchomione!"
+
+#, python-format
+msgid "Passing at least one of: %(items)s is required!"
+msgstr "Przekazanie co najmniej jednego z: %(items)s jest wymagane!"
+
+msgid "link to the application"
+msgstr "link do aplikacji"
+
+msgid "External datasets"
+msgstr "Zewnętrzne zbiory danych"
+
+msgid "At least one url for mobile app (iOS, Android) is required!"
+msgstr ""
+"Co najmniej jeden link do aplikacji mobilnej (iOS, Android) jest wymagany!"
+
+msgid "At least one url for desktop app (Windows, Linux, MacOS) is required!"
+msgstr ""
+"Co najmniej jeden link do aplikacji desktopowej (Windows, Linux, MacOS) jest "
+"wymagany!"
+
+msgid "Decision made"
+msgstr "Podjęta decyzja"
+
+msgid "Application link / Application info page address"
+msgstr "Link do aplikacji / Adres strony z informacją o aplikacji"
+
+msgid "Mobile Applications"
+msgstr "Aplikacje mobilne"
+
+msgid "Desktop Applications"
+msgstr "Aplikacje desktopowe"
+
+msgctxt "showcase category name"
+msgid "Website"
+msgstr "Serwis WWW"
+
+msgid "Free App"
+msgstr "Darmowa aplikacja"
+
+msgid "Commercial App"
+msgstr "Płatna aplikacja"
+
+msgctxt "license type"
+msgid "Free"
+msgstr "Darmowa"
+
+msgctxt "license type"
+msgid "Commercial"
+msgstr "Płatna"
+
+msgid "is mobile app?"
+msgstr "aplikacja mobilna?"
+
+msgid "is desktop app?"
+msgstr "aplikacja desktopowa?"
+
+msgid "Apple Store URL"
+msgstr "URL do Apple Store"
+
+msgid "Google Store URL"
+msgstr "URL do Google Store"
+
+msgid "Linux App URL"
+msgstr "URL aplikacji Linux"
+
+msgid "MacOS App URL"
+msgstr "URL aplikacji MacOS"
+
+msgid "Windows App URL"
+msgstr "URL aplikacji Windows"
+
+msgid "license type"
+msgstr "rodzaj licencji"
+
+msgid "Mobile Application"
+msgstr "Aplikacja mobilna"
+
+msgid "Desktop Application"
+msgstr "Aplikacja desktopowa"
+
+msgid "showcase"
+msgstr "ponowne wykorzystanie"
+
+msgid "Showcase Proposal"
+msgstr "Propozycja ponownego wykorzystania"
+
+msgid "Showcase Proposals"
+msgstr "Propozycje ponownego wykorzystania"
+
+msgid "acc: showcase proposal"
+msgstr "propozycję ponownego wykorzystania"
+
+msgid "Showcase Proposal Trash"
+msgstr "Propozycja ponownego wykorzystania - Kosz"
+
+msgid "Showcase Proposals Trash"
+msgstr "Propozycje ponownego wykorzystania - Kosz"
+
+msgid "Showcase"
+msgstr "Ponowne wykorzystanie"
+
+msgid "Showcases"
+msgstr "Ponowne wykorzystanie"
+
+msgid "acc: Showcase"
+msgstr "ponowne wykorzystanie danych"
+
+msgid "Showcase Trash"
+msgstr "Ponowne wykorzystanie - Kosz"
+
+msgid "Showcases Trash"
+msgstr "Ponowne wykorzystanie - Kosz"
+
+msgid "Desktop App"
+msgstr "Desktopowa"
+
+msgid "Mobile App"
+msgstr "Mobilna"
+
+msgid "Delete selected special signs"
+msgstr "Usuń wybrane znaki umowne"
+
+msgid "special sign"
+msgstr "znak umowny"
+
+msgid "text of comment"
+msgstr "treść uwagi"
+
+msgid "Data provider"
+msgstr "Dostawca danych"
+
+msgid "Publisher"
+msgstr "Dostawca"
+
+msgid "Cause"
+msgstr "Przyczyna"
+
+msgid "Link to data on the portal"
+msgstr "Link do danych na portalu"
+
+msgid "Data"
+msgstr "Dane"
+
+msgid "Broken link to provider data"
+msgstr "Uszkodzony link do danych dostawcy"
+
+msgid "Broken link"
+msgstr "Uszkodzony link"
+
+msgid "editor e-mail"
+msgstr "e-mail edytora"
+
+msgid "comment reported for dataset"
+msgstr "uwaga zgłoszona do zbioru danych"
+
+msgid "Data description"
+msgstr "Opis danych"
+
+msgid "Create accepted dataset suggestion task was launched!"
+msgstr ""
+"Zadanie utworzenia zaakceptowanej propozycji nowych danych zostało "
+"uruchomione!"
+
+msgid "comment reported for data"
+msgstr "uwaga zgłoszona do danych"
+
+msgid "Suggestions"
+msgstr "Zgłoszenia"
+
+msgid "Name of data responsible institution"
+msgstr "Nazwa instytucji odpowiedzialnej za dane"
+
+msgid ""
+"If you wish to publish accepted dataset submission for all user, this "
+"submission must have \"published\" status"
+msgstr ""
+"Jeżeli chcesz opublikować propozycję nowych danych dla wszystkich "
+"użytkowników to propozycja musi posiadać status \"Opublikowany\""
+
+msgid "Publication finished"
+msgstr "Publikacja zakończona"
+
+msgid "Resource demand reported"
+msgstr "Zgłoszono zapotrzebowanie na zasoby"
+
+msgid "Title, type, domain od propossed data"
+msgstr "Nazwa, rodzaj, dziedzina proponowanych danych"
+
+msgid "Institution name"
+msgstr "Nazwa instytucji"
+
+msgid "Link to data"
+msgstr "Czy znalazłeś te dane w innym miejscu? Jeśli tak, podaj link"
+
+msgid "provide potential data use"
+msgstr "podaj potencjalne możliwości wykorzystania danych"
+
+msgid "Comment"
+msgstr "Komentarz"
+
+msgid "Submission date"
+msgstr "Data zgłoszenia"
+
+msgid "Decision date"
+msgstr "Data decyzji"
+
+msgid "Dataset submission"
+msgstr "Propozycja nowych danych"
+
+msgid "Dataset submissions"
+msgstr "Propozycje nowych danych"
+
+msgid "reported by"
+msgstr "zgłoszone przez"
+
+msgid "accepted dataset submission"
+msgstr "zaakceptowana propozycja nowych danych"
+
+msgid "acc: Dataset submission"
+msgstr "propozycję nowych danych"
+
+msgid "proposal active"
+msgstr "propozycja aktywna"
+
+msgid "publish for all users"
+msgstr "Opublikuj dla wszystkich użytkowników"
+
+msgid "describe how the case was resolved"
+msgstr "Opisz sposób rozwiązania sprawy"
+
+msgid "date of completion of publication"
+msgstr "Data zakończenia publikacji"
+
+msgid "acc: Accepted dataset submission"
+msgstr "zaakceptowaną propozycję nowych danych"
+
+msgid "Accepted dataset submission"
+msgstr "Zaakceptowana propozycja nowych danych"
+
+msgid "Accepted dataset submissions"
+msgstr "Zaakceptowane propozycje nowych danych"
+
+#, python-format
+msgid ""
+"On the accepted dataset submission %(title)s [%(url)s] was posted a comment:"
+msgstr ""
+"Do propozycji nowych danych %(title)s [%(url)s] został zgłoszony komentarz:"
+
+#, python-format
+msgid "A comment was posted on the accepted dataset submission %(title)s"
+msgstr "Został dodany komentarz do propozycji nowych danych %(title)s"
+
+msgid "Dataset submission - Trash"
+msgstr "Propozycja nowych danych - Kosz"
+
+msgid "Dataset submissions - Trash"
+msgstr "Propozycje nowych danych - Kosz"
+
+msgid "Accepted dataset submission - Trash"
+msgstr "Zaakceptowana propozycja nowych danych - Kosz"
+
+msgid "Accepted dataset submissions - Trash"
+msgstr "Zaakceptowane propozycje nowych danych - Kosz"
+
+msgid "Comment accepted"
+msgstr "Uwaga przyjęta"
+
+msgid "Comment rejected"
+msgstr "Uwaga odrzucona"
+
+msgid "data provider error"
+msgstr "błąd dostawcy"
+
+msgid "user error"
+msgstr "błąd użytkownika"
+
+msgid "portal error"
+msgstr "błąd portalu"
+
+msgid "other error"
+msgstr "inne"
+
+msgid "Dataset comment"
+msgstr "Uwaga do zbioru danych"
+
+msgid "Dataset comments"
+msgstr "Uwagi do zbiorów danych"
+
+msgid "acc: Dataset comment"
+msgstr "uwagę do zbioru danych"
+
+msgid "Dataset Comment - Trash"
+msgstr "Uwaga do zbioru danych - Kosz"
+
+msgid "Dataset Comments - Trash"
+msgstr "Uwagi do zbiorów danych - Kosz"
+
+msgid "resource"
+msgstr "zasób"
+
+msgid "Resource comment"
+msgstr "Uwaga do danych"
+
+msgid "Resource comments"
+msgstr "Uwagi do danych"
+
+msgid "acc: Resource comment"
+msgstr "uwagę do danych"
+
+msgid "Resource Comment - Trash"
+msgstr "Uwaga do danych - Kosz"
+
+msgid "Resource Comments - Trash"
+msgstr "Uwagi do danych - Kosz"
+
+msgid "Like"
+msgstr ""
+
+msgid "Dislike"
+msgstr ""
+
+msgid "Feedback"
+msgstr ""
+
+msgid "Valid values are 'plus' and 'minus'"
+msgstr ""
+
+msgid "Tag already exists for specified language."
+msgstr "Tag już istnieje dla wybranego języka."
+
+msgid "acc: Tag"
+msgstr "słowo kluczowe"
+
+msgid "Run the selected action"
+msgstr "Wykonaj wybraną akcję"
+
+msgid "Go"
+msgstr "Wykonaj"
+
+msgid "Click here to select the objects across all pages"
+msgstr "Kliknij by wybrać obiekty na wszystkich stronach"
+
+#, python-format
+msgid "Select all %(total_count)s %(lowercase_module_name)s"
+msgstr "Wybierz wszystkie %(total_count)s %(lowercase_module_name)s"
+
+msgid "Clear selection"
+msgstr "Wyczyść wybór"
+
+msgid "Home"
+msgstr "Strona główna"
+
+#, python-format
+msgid "%(name)s"
+msgstr "%(name)s"
+
+msgid "Welcome,"
+msgstr "Witamy,"
+
+msgid "Documentation"
+msgstr "Dokumentacja"
+
+msgid "Change password"
+msgstr "Zmień hasło"
+
+msgid "Log out"
+msgstr "Wyloguj"
+
+msgid "Django site admin"
+msgstr "Administrator systemu Django"
+
+msgid "Django administration"
+msgstr "Administracja Django"
+
+msgid "Home page"
+msgstr "Strona główna"
+
+msgid "Guide for data providers"
+msgstr "Przewodnik dla dostawców danych"
+
+msgid "Maintened by"
+msgstr "Serwis prowadzony przez"
+
+msgid "Chancellery of the Prime Minister"
+msgstr "Kancelarię Prezesa Rady Ministrów"
+
+msgid "You have unsaved changes"
+msgstr "Masz niezapisane zmiany"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "tools"
+msgstr "narzędzia"
+
+msgid "View on site"
+msgstr "Zobacz na stronie"
+
+#, fuzzy, python-format
+#| msgid ""
+#| "Add\n"
+#| "                                                %(name)s"
+msgid ""
+"\n"
+"                                                %(name)s\n"
+"                                            "
+msgstr ""
+"Dodaj\n"
+" %(name)s"
+
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Proszę, popraw poniższy błąd."
+msgstr[1] "Proszę, popraw poniższy błąd."
+msgstr[2] "Proszę, popraw poniższe błędy."
+msgstr[3] "Proszę, popraw poniższe błędy."
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Nothing found"
+msgstr "Nic nie znaleziono"
+
+msgid "Reset search and filters"
+msgstr "Wyczyść wyszukiwanie i filtry"
+
+#, python-format
+msgid ""
+"%(name_plural)s are not\n"
+"                    created yet"
+msgstr ""
+"%(name_plural)s nie są\n"
+"                    jeszcze utworzone"
+
+#, python-format
+msgid "Add %(name)s"
+msgstr "Dodaj %(name)s"
+
+#, python-format
+msgid ""
+"Deleting the dataset <b>\"%(title)s\"</b> will also delete data associated "
+"with it, that is:"
+msgstr ""
+"Usunięcie zbioru <b>\"%(title)s\"</b> spowoduje również skasowanie danych z "
+"nim powiązanych, to jest:"
+
+#, python-format
+msgid "And %(other_count)s other resources"
+msgstr "Oraz %(other_count)s innych zasobów"
+
+msgid "Datasets list"
+msgstr "Lista zbiorów danych"
+
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr "Dodaj %(verbose_name)s"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Are you sure?"
+msgstr "Jesteś pewien?"
+
+msgid "Warning!"
+msgstr "Ostrzeżenie!"
+
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result\n"
+"            in deleting related objects, but your account doesn't have "
+"permission to delete the following types of\n"
+"            objects:"
+msgstr ""
+"Usunięcie %(object_name)s '%(escaped_object)s' spowoduje skasowanie "
+"obiektów, które są z nim powiązane. Niestety nie posiadasz uprawnień do "
+"usunięcia następujących typów obiektów:"
+
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would\n"
+"            require deleting the following protected related objects:"
+msgstr ""
+
+#, python-format
+msgid ""
+"Are you sure you want to delete the (%(object_name)s): <b>"
+"\"%(escaped_object)s\"</b>?"
+msgstr ""
+"Czy na pewno chcesz usunąć (%(object_name)s): <b>\"%(escaped_object)s\"</b>?"
+
+msgid "Are you sure you want this to be an up-to-date list of protected data?"
+msgstr "Czy na pewno chcesz, aby to był aktualny wykaz chronionych danych?"
+
+msgid ""
+"Are you sure you want to uncheck the metadata \"Contains a list of protected "
+"data\"?"
+msgstr ""
+"Czy na pewno chcesz odznaczyć metadaną \"Zawiera wykaz chronionych danych\"?"
+
+msgid ""
+"After saving, the resource will cease to be the current list of protected "
+"data. The data from this resource will be removed from the master list of "
+"protected data."
+msgstr ""
+"Po zapisaniu zasób przestanie być aktualnym wykazem chronionych danych. Dane "
+"z tego zasobu zostaną usunięte z głównego wykazu chronionych danych."
+
+msgid "After saving, the resource will cease to be the current list of protected data."
+msgstr "Po zapisaniu zasób przestanie być aktualnym wykazem chronionych danych."
+
+msgid ""
+"The data from this resource will be removed from the master list of "
+"protected data."
+msgstr ""
+"Dane z tego zasobu zostaną usunięte z głównego wykazu chronionych danych."
+
+msgid ""
+"Are you sure you want to change the status of the resource from \"Published\" "
+"to \"Draft\"?"
+msgstr ""
+"Czy na pewno chcesz zmienić status zasobu z \"Opublikowany\" na \"Szkic\"?"
+
+msgid "Yes, save resource"
+msgstr "Tak, zapisz zasób"
+
+msgid "Yes, uncheck the metadata"
+msgstr "Tak, odznacz metadaną"
+
+msgid "Confirm"
+msgstr "Potwierdź"
+
+msgid "Go back"
+msgstr "Wróć"
+
+msgid ""
+"You are deleting the current list of protected data. Once deleted, the data in "
+"this list will be removed from the main list of protected data."
+msgstr ""
+"Usuwasz aktualny wykaz chronionych danych. Po usunięciu dane z tego wykazu "
+"zostaną usunięte z głównego wykazu chronionych danych."
+
+msgid ""
+"The collection contains the current list of protected data. When the "
+"collection is deleted, the data from this resource will be removed from the "
+"main list of protected data."
+msgstr ""
+"W zbiorze znajduje się aktualny wykaz chronionych danych. Po usunięciu "
+"zbioru dane z tego zasobu zostaną usunięte z głównego wykazu chronionych "
+"danych."
+
+#, python-format
+msgid ""
+"%(resource_title)s is the current list of protected data. If you delete it, "
+"the data from this resource will be removed from the main list of protected "
+"data."
+msgstr ""
+"%(resource_title)s to aktualny wykaz chronionych danych. Jeżeli go usuniesz, "
+"dane z tego zasobu zostaną usunięte z głównego wykazu chronionych danych."
+
+#, python-format
+msgid ""
+"The %(dataset_title)s dataset contains the current list of protected "
+"data. When you delete the collection, the data in this resource will be "
+"removed from the main list of protected data."
+msgstr ""
+"W zbiorze %(dataset_title)s znajduje się aktualny wykaz chronionych danych. "
+"Po usunięciu zbioru dane z tego zasobu zostaną usunięte z głównego wykazu "
+"chronionych danych."
+
+#, python-format
+msgid ""
+"If so, the data from the resource '%(current_dga_resource_title)s' will be "
+"removed from the master list of protected data. Data from resource "
+"'%(title)s' will be added to the master list of protected data. Only one "
+"published resource can have a designation with protected data."
+msgstr ""
+"Jeżeli tak, dane z zasobu '%(current_dga_resource_title)s' zostaną usunięte "
+"z głównego wykazu chronionych danych. Dane z zasobu '%(title)s' zostaną dodane "
+"do głównego wykazu chronionych danych. Tylko jeden opublikowany zasób może "
+"mieć oznaczenie o chronionych danych."
+
+msgid "Removing an object is an irreversible operation."
+msgstr "Usunięcie obiektu jest operacją nieodwracalną."
+
+#, python-format
+msgid "Yes, delete %(name)s"
+msgstr "Tak, skasuj %(name)s"
+
+msgid "No, stop the operation"
+msgstr "Nie, przerwij operację"
+
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#, python-format
+msgid "Are you sure you want to delete the %(items)s?"
+msgstr "Czy na pewno chcesz usunąć %(items)s?"
+
+msgid ""
+"All existing datasets and resources imported from this source will be "
+"deleted also."
+msgstr ""
+"Wszystkie istniejące zbiory danych i zasoby zaimportowane z tego żródła "
+"zostaną również usunięte."
+
+msgid "Delete?"
+msgstr "Usunąć?"
+
+msgid "Change"
+msgstr "Zmiana"
+
+msgid "View"
+msgstr "Zobacz"
+
+msgid "Check correctness of file"
+msgstr "Sprawdź poprawność pliku"
+
+msgid "File from disk"
+msgstr "Plik z dysku"
+
+msgid "URL address"
+msgstr "Adres URL"
+
+msgid "Select a page item"
+msgstr "Zaznacz element strony"
+
+msgid "XML validation was unsuccessful!"
+msgstr "Walidacja XML zakończona niepowodzeniem!"
+
+msgid "Step"
+msgstr "Krok"
+
+msgid "of"
+msgstr "z"
+
+msgid "Awaiting..."
+msgstr "Oczekiwanie..."
+
+msgid "XML Validation successful!"
+msgstr "Walidacja XML zakończona sukcesem!"
+
+msgid "XML Validation"
+msgstr "Walidacja XML"
+
+msgid "Active alerts"
+msgstr "Komunikaty"
+
+#, python-format
+msgid "Models available in the %(name)s application."
+msgstr "Modele dostepne w aplikacji %(name)s"
+
+msgid "You don't have permission to edit anything."
+msgstr "Nie masz uprawnień do edycji czegokolwiek."
+
+msgid "My Actions"
+msgstr "Moje operacje"
+
+msgid "None available"
+msgstr "Nic nie jest dostępne"
+
+msgid "added"
+msgstr "dodany"
+
+msgid "changed"
+msgstr "zmieniony"
+
+msgid "Unknown content"
+msgstr "Nierozpoznana zawartość"
+
+msgid "Action"
+msgstr "Czynność"
+
+msgid "Date/time"
+msgstr "Data/czas"
+
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+"Ten obiekt nie posiada historii zmian. Prawdopodobnie nie został dodany za "
+"pomocą strony administratora."
+
+msgid "Show all"
+msgstr ""
+
+msgid "Generate report"
+msgstr "Generuj raport"
+
+msgid "Copy to new <br>resource"
+msgstr "Kopiuj do nowego <br>zasobu"
+
+msgid "Revalidate"
+msgstr "Ponowna walidacja"
+
+#, python-format
+msgid ""
+"Add\n"
+"                                                %(name)s"
+msgstr ""
+"Dodaj\n"
+" %(name)s"
+
+msgid "unavailable tab - the resource does not have a tabular view"
+msgstr "zakładka niedostępna – zasób nie posiada widoku tabelarycznego"
+
+#, python-format
+msgid "0 of %(cnt)s selected"
+msgstr ""
+
+#, python-format
+msgid "%(total_count)s selected"
+msgid_plural "All %(total_count)s selected"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "Row number"
+msgstr "Numer wiersza"
+
+msgid "Invalid value"
+msgstr "Błędna wartość"
+
+msgid "Tasks list"
+msgstr "Lista zadań"
+
+msgid "date done"
+msgstr "data wykonania"
+
+msgid "recommendation"
+msgstr "zalecenie"
+
+#, fuzzy
+#| msgid "keywords"
+msgid "keyword"
+msgstr "słowa kluczowe"
+
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#, python-format
+msgid ""
+"The selected convention mark %(obj)s is used in the resources below. A\n"
+"    convention mark can only be removed if it is not used on any resource."
+msgstr ""
+"Wybrany znak umowny %(obj)s jest wykorzystywany w zasobach poniżej. Znak "
+"umowny można usunąć tylko wtedy gdy nie jest wykorzystywany w żadnym zasobie."
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Confirm change"
+msgstr "Potwierdź zmianę"
+
+msgid "Confirm add"
+msgstr "Potwierdź dodanie"
+
+#, python-format
+msgid " By %(filter_title)s "
+msgstr " Przez  %(filter_title)s "
+
+msgid "Open Data - Forum"
+msgstr "Otwarte Dane - Forum"
+
+msgid "Password"
+msgstr "Hasło"
+
+msgid "Forgotten your password or username?"
+msgstr ""
+
+msgid "Log in"
+msgstr "Zaloguj się"
+
+msgid "Filter instances by"
+msgstr ""
+
+msgid "This field provides following filters:"
+msgstr ""
+
+msgid "filters instances in which "
+msgstr ""
+
+msgid "matches to the provided value."
+msgstr ""
+
+msgid "Note, that this is default filter for this field."
+msgstr ""
+
+msgid "matches to any of the provided values."
+msgstr ""
+
+msgid "is is greater than the provided value."
+msgstr ""
+
+msgid "is greater than or equal to the provided value."
+msgstr ""
+
+msgid "is lower than the provided value."
+msgstr ""
+
+msgid "filters instances that have "
+msgstr ""
+
+msgid "that is lower than or equal to the provided value."
+msgstr ""
+
+msgid "Allows searching for the provided value in multiple fields."
+msgstr ""
+
+msgid "Sort instances by following fields in ascending or descending direction"
+msgstr ""
+
+msgid "Search instances by"
+msgstr "Wyszkuj instancje według"
+
+msgid "This field provides the following queries:"
+msgstr ""
+
+msgid "searches for instances in which"
+msgstr ""
+
+msgid "matches the provided value."
+msgstr ""
+
+msgid "searches for instances in which "
+msgstr ""
+
+msgid "matches the provided phrase."
+msgstr ""
+
+msgid "starts with the  provided phrase."
+msgstr ""
+
+msgid "searches for instances that matches the provided query string."
+msgstr ""
+
+msgid "starts with the provided value."
+msgstr ""
+
+msgid "endswith the provided value."
+msgstr ""
+
+msgid "contains the provided value."
+msgstr ""
+
+msgid ""
+"Search resources by dataset's ID (dataset[id]) or title (dataset[title])"
+msgstr ""
+
+msgid "The dataset[id] field provides the following filters:"
+msgstr ""
+
+msgid ""
+"filters instances in which ID of the dataset matches to the provided value."
+msgstr ""
+
+msgid ""
+"filters instances in which ID of the dataset matches to any of the provided "
+"values."
+msgstr ""
+
+msgid ""
+"filters instances in which ID of the dataset is is greater than the provided "
+"value."
+msgstr ""
+
+msgid ""
+"filters instances in which ID of the dataset is greater than or equal to the "
+"provided value."
+msgstr ""
+
+msgid ""
+"filters instances in which ID of the dataset is lower than the provided "
+"value."
+msgstr ""
+
+msgid ""
+"filters instances that have ID of the dataset that is lower than or equal to "
+"the provided value."
+msgstr ""
+
+msgid "The dataset[title] field provides the following queries:"
+msgstr ""
+
+msgid ""
+"searches for instances in which title of the dataset matches the provided "
+"value."
+msgstr ""
+
+msgid ""
+"searches for instances in which title of the dataset matches the provided "
+"phrase."
+msgstr ""
+
+msgid ""
+"searches for instances in which title of the dataset starts with the  "
+"provided phrase."
+msgstr ""
+
+msgid "Specification"
+msgstr "Specyfikacja"
+
+msgid "General info"
+msgstr "Podstawowe informacje"
+
+msgid "Original resource URL"
+msgstr "URL oryginału"
+
+msgid "Created at"
+msgstr "Data utworzenia"
+
+msgid "Modified at"
+msgstr "Data modyfikacji"
+
+msgid "Columns mapping"
+msgstr "Mapowanie kolumn"
+
+msgid "Column name"
+msgstr "Nazwa kolumny"
+
+msgid "Header (in file)"
+msgstr "Nagłówek (w pliku)"
+
+msgid "Dataset description"
+msgstr "Opis zbioru"
+
+msgid "For more more informations go"
+msgstr "W celu uzyskania dalszych informacji udaj się"
+
+msgid "here"
+msgstr "tu"
+
+msgid "This data was provided by the"
+msgstr "Te dane zostały dostarczone przez"
+
+msgid "Address"
+msgstr "Adres"
+
+msgid "Regon"
+msgstr "Regon"
+
+msgid ""
+"The \"q\" param is for search. For a better understanding of how it works, "
+"see the examples below."
+msgstr ""
+
+msgid "Searching in specific fields"
+msgstr ""
+
+msgid "The query can run against one or multiple fields."
+msgstr ""
+
+msgid "Example:"
+msgstr ""
+
+msgid "Searching in all fields"
+msgstr ""
+
+msgid "Wildcards"
+msgstr ""
+
+msgid "Regular expressions"
+msgstr ""
+
+msgid "Fuzziness"
+msgstr ""
+
+msgid "Proximity searches"
+msgstr ""
+
+msgid "Ranges"
+msgstr "Zasięgi"
+
+msgid "Boosting"
+msgstr ""
+
+msgid "Boolean operators"
+msgstr ""
+
+msgid "Grouping"
+msgstr ""
+
+msgid "Reserved characters"
+msgstr ""
+
+msgid "Sincerely,"
+msgstr "Z poważaniem,"
+
+msgid "The Open Data Data Administrators team"
+msgstr "Zespół administratorów portalu Otwarte Dane"
+
+msgid "The message was generated automatically, please do not reply to it."
+msgstr ""
+"Wiadomość została wygenerowana automatycznie, prosimy na nią nie odpowiadać."
+
+msgid "A comment was posted on the accepted dataset submission"
+msgstr "Został dodany komentarz do propozycji nowych danych"
+
+msgid "A COMMENT WAS POSTED ON THE ACCEPTED DATASET SUBMISSION"
+msgstr "ZOSTAŁ DODANY KOMENTARZ DO PROPOZYCJI NOWYCH DANYCH"
+
+msgid "Registration confirmation"
+msgstr "Potwierdzenie rejestracji"
+
+msgid "Dear user of the open data portal (dane.gov.pl)"
+msgstr "Szanowny użytkowniku portalu Otwarte Dane (dane.gov.pl)"
+
+msgid "Thank you for creating an account."
+msgstr "Dziękujemy za założenie konta."
+
+msgid "If you did not create an account, please ignore this message. "
+msgstr "Jeśli to nie Ty założyłeś konto prosimy o zignorowanie tej wiadomości."
+
+msgid ""
+"In order to complete the registration process, click (or copy and paste in "
+"the address field of the web browser) into the link below."
+msgstr ""
+"W celu dokończenia procesu rejestracji kliknij (lub skopiuj i wklej w pole "
+"adres przeglądarki internetowej) poniższy link."
+
+#, python-format
+msgid "The link is valid for %(limit)s hours."
+msgstr "Link jest ważny przez %(limit)s godziny."
+
+msgid "A comment was posted on the data set"
+msgstr "Została zgłoszona uwaga do zbioru"
+
+msgid "A COMMENT WAS POSTED ON THE DATA SET"
+msgstr "ZOSTAŁA ZGŁOSZONA UWAGA DO ZBIORU"
+
+msgid "addresses:"
+msgstr "adresaci:"
+
+msgid ""
+"Wiadomość została wygenerowana automatycznie przez oprogramowanie portalu "
+"Dane.gov.pl w wyniku zgłoszenia przez użytkownika uwagi o treści jak wyżej."
+"<br><br>Kontakt z Zespołem portalu Dane.gov.pl: <a href=\"mailto:"
+"kontakt@dane.gov.pl\" target=\"_blank\">kontakt@dane.gov.pl</a>"
+msgstr ""
+
+msgid "recipients"
+msgstr "adresaci"
+
+msgid "The message was generated automatically."
+msgstr "Wiadomość została wygenerowana automatycznie."
+
+msgid "Reminder about the Data set update"
+msgstr "Przypomnienie o aktualizacji Zbioru danych"
+
+#, python-format
+msgid ""
+"We would like to remind you about the upcoming date of updating the data set "
+"<a href=\"%(url)s\" >%(dataset_title)s</a> on the Dane.gov.pl portal."
+msgstr ""
+"Przypominamy o zbliżającym się terminie aktualizacji zbioru danych <a href="
+"\"%(url)s\" >%(dataset_title)s</a> na portalu Dane.gov.pl."
+
+#, python-format
+msgid ""
+"We would like to remind you about the upcoming date of updating the data set "
+"%(dataset_title)s on the Dane.gov.pl portal."
+msgstr ""
+"Przypominamy o zbliżającym się terminie aktualizacji zbioru danych "
+"%(dataset_title)s na portalu Dane.gov.pl."
+
+msgid "Password reset"
+msgstr "Reset hasła"
+
+msgid "PASSWORD RESET TO THE SERVICE OPEN DATA"
+msgstr "RESET HASŁA DO SERWISU OTWARTE DANE"
+
+msgid ""
+"We have received a request to reset the password for your Account "
+"established on the Portal."
+msgstr ""
+"Otrzymaliśmy żądanie zresetowania hasła do Twojego Konta założonego w "
+"Portalu."
+
+msgid ""
+"Click (or copy and paste in the web browser's address field) the link below "
+"to change yours password."
+msgstr ""
+"Kliknij (lub skopiuj i wklej w pole adres przeglądarki internetowej) link "
+"poniżej by zmienić swoje hasło."
+
+msgid ""
+"If you do not want to reset your password, simply ignore this message - "
+"probably by accident someone has entered your email address."
+msgstr ""
+"Jeśli nie chcesz zresetować hasła, po prostu zignoruj tę wiadomość – "
+"prawdopodobnie ktoś przypadkowo wpisał Twój adres e-mail."
+
+msgid ""
+"The link will expire in 48 hours. The password can be reset at any time. "
+"Just go to the site login on the portal and request a new password reset "
+"link."
+msgstr ""
+"Link wygaśnie w ciągu 48 godzin. Hasło może zostać zresetowane w dowolnej "
+"chwili. Proszę skorzystać z funkcji “Reset hasła” dostępnej na portalu "
+"podczas logowania."
+
+msgid ""
+"Wiadomość została wygenerowana automatycznie przez oprogramowanie portalu na "
+"podstawie złożonej przez użytkownika propozycji aplikacji. Prosimy nie "
+"używać funkcji Odpowiedz nadawcy.<br><br>Kontakt z Zespołem portalu Dane.gov."
+"pl: <a href=\"mailto:kontakt@dane.gov.pl\" target=\"_blank\">kontakt@dane."
+"gov.pl</a>"
+msgstr ""
+
+msgid "A comment was posted on the resource"
+msgstr "Została zgłoszona uwaga do zasobu"
+
+msgid "A COMMENT WAS POSTED ON THE RESOURCE"
+msgstr "ZOSTAŁA ZGŁOSZONA UWAGA DO ZASOBU"
+
+#, python-format
+msgid ""
+"On the resource %(title)s [<a href=\"%(url)s\">%(url)s</a>] from data set "
+"%(dataset_title)s was posted a comment:"
+msgstr ""
+"Do zasobu %(title)s [<a href=\"%(url)s\">%(url)s</a>] ze zbioru "
+"%(dataset_title)s została zgłoszona uwaga:"
+
+msgid ""
+"Wiadomość została wygenerowana automatycznie przez oprogramowanie portalu na "
+"podstawie złożonego przez użytkownika Zgłoszenia propozycji wykorzystania "
+"danych.<br>Prosimy nie używać funkcji Odpowiedz nadawcy.<br><br>Kontakt z "
+"Zespołem portalu Dane.gov.pl: <a href=\"mailto:kontakt@dane.gov.pl\" target="
+"\"_blank\">kontakt@dane.gov.pl</a>"
+msgstr ""
+
+msgid "Report of activity of observed objects on the dane.gov.pl portal"
+msgstr "Raport aktywności obserwowanych obiektów na portalu dane.gov.pl"
+
+msgid "Changes made on the date:"
+msgstr "Zmiany dokonane w dniu:"
+
+msgid "Activity hour"
+msgstr "Godzina aktywności"
+
+msgid "Type of activity"
+msgstr "Rodzaj aktywności"
+
+msgid ""
+"If you wish to unsubscribe from receiving e-mail notifications, please use "
+"the \"Disable e-mail notifications\" button. This function is available on "
+"the data.gov.pl portal in the \"My account\" section, \"Observed\" tab."
+msgstr ""
+"Jeżeli chcesz zrezygnować z otrzymywania powiadomień za pośrednictwem poczty "
+"elektronicznej użyj przycisku \"Wyłącz powiadomienia e-mail\". Funkcja ta "
+"jest dostępna na portalu dane.gov.pl w sekcji \"Moje konto\", w zakładce "
+"\"Obserwowane\". "
+
+msgid "Please do not reply to it."
+msgstr "Prosimy na nią nie odpowiadać."
+
+msgid "Explorer"
+msgstr "Odkrywca"
+
+msgid "Internal link"
+msgstr "Link wewnętrzny"
+
+msgid "External link"
+msgstr "Link zewnętrzny"
+
+msgid "Email link"
+msgstr "Link do e-maila"
+
+msgid "Phone link"
+msgstr "Link do telefonu"
+
+msgid "Anchor link"
+msgstr "Link kotwiczący"
+
+msgid "Add an anchor link"
+msgstr "Dodaj link kotwiczący"
+
+msgid "Insert anchor"
+msgstr "Wklej kotwicę"
+
+msgid "Choose"
+msgstr "Wybierz"
+
+msgid "Choose a page"
+msgstr "Wybierz stronę"
+
+#, python-format
+msgid ""
+"\n"
+"                Only pages of type \"%(type)s\" may be chosen for this "
+"field. Search results will exclude pages of other types.\n"
+"                "
+msgid_plural ""
+"\n"
+"                Only the following page types may be chosen for this field: "
+"%(type)s. Search results will exclude pages of other types.\n"
+"            "
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "Add an email link"
+msgstr "Dodaj link do e-maila"
+
+msgid "Insert link"
+msgstr "Wklej link"
+
+msgid "Add an external link"
+msgstr "Dodaj link zewnętrzny"
+
+msgid "Add a phone link"
+msgstr "Dodaj link do telefonu"
+
+msgid "Lista ankiet"
+msgstr ""
+
+#, python-format
+msgid "Lista odpowiedzi dla ankiety %(form_title)s"
+msgstr ""
+
+#, python-format
+msgid "Odpowiedzi dla ankiety <span>%(form_title)s</span>"
+msgstr ""
+
+msgid "Pobierz wyniki"
+msgstr ""
+
+#, python-format
+msgid "Nie ma żadnych odpowiedzi dla ankiety '%(title)s'."
+msgstr ""
+
+msgid "Tytuł ankiety"
+msgstr ""
+
+msgid "Liczba odpowiedzi"
+msgstr ""
+
+msgid "Nie zostały jeszcze utworzone żadne ankiety."
+msgstr ""
+
+#, python-format
+msgid "Explore subpages of '%(title)s'"
+msgstr "Odkryj podstrony '%(title)s'"
+
+msgid "Explore"
+msgstr "Odkryj"
+
+#, python-format
+msgid "Editing video %(title)s"
+msgstr "Edycja wideo %(title)s"
+
+msgid "Editing"
+msgstr "Edytowanie"
+
+msgid "Saving..."
+msgstr "Zapisywanie..."
+
+msgid "Delete video"
+msgstr "Usuń wideo"
+
+msgid "Thumbnail"
+msgstr "Miniaturka"
+
+msgid "Video thumbnail"
+msgstr "Miniaturka wideo"
+
+msgid "Filesize"
+msgstr "Rozmiar pliku"
+
+msgid "File not found"
+msgstr "Nie znaleziono pliku"
+
+msgid "Duration"
+msgstr "Czas trwania"
+
+msgid "Usage"
+msgstr "Użycie"
+
+#, python-format
+msgid "Used %(usage_count)s time"
+msgid_plural "Used %(usage_count)s times"
+msgstr[0] "Użyto 1 raz"
+msgstr[1] "Użyto %(usage_count)s razy"
+msgstr[2] "Użyto %(usage_count)s razy"
+msgstr[3] "Użyto %(usage_count)s razy"
+
+msgid "Transcodes"
+msgstr "Transkodowania"
+
+msgid ""
+"If you wish to generate HTML5 compliant transcodes use the form below. This "
+"may take a while depending on the length of the video."
+msgstr ""
+"Jeśli chcesz wygenerować pliki po transkodowaniu zgodne z HTML5, skorzystaj "
+"z poniższego formularza. Może to chwilę potrwać w zależności od długości "
+"wideo."
+
+msgid "Available Transcodes"
+msgstr "Dostępne rodzaje transkodowania"
+
+#, python-format
+msgid "%(media_format)s (%(quality)s quality)"
+msgstr ""
+
+msgid "(Processing... hold tight)"
+msgstr "(Trwa przetwarzanie...)"
+
+msgid "ERROR:"
+msgstr "BŁĄÐ:"
+
+msgid "Create transcode"
+msgstr "Utwórz transkodowany plik"
+
+msgid ""
+"Ffmpeg is not found on your server or you have disabled transcodes. Please "
+"install Ffmepg and make sure that transcoding is enabled if you wish to "
+"transcode videos into an HTML5 video compliant format."
+msgstr ""
+"Ffmpeg nie został znaleziony na twoim serwerze lub masz wyłączone "
+"transkodowanie. Zainstaluj Ffmpeg i upewnij się, że transkodowanie jest "
+"włączone, jeśli chcesz transkodować plik wideo do formatu wideo zgodnego z "
+"HTML5."
+
+msgid "Tracks"
+msgstr "Ścieżki tekstowe"
+
+msgid ""
+"You can add/edit subtitles or accessibility captions for this video. For "
+"information about the filetype that should be used see the mozilla docs on "
+"<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API"
+"\">WebVTT</a>"
+msgstr ""
+"Możesz dodać/edytować napisy tego wideo. Aby uzyskać informacje o typie "
+"pliku z napisami, który powinien być używany, zobacz dokumentację Mozilli na "
+"temat <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API"
+"\">WebVTT</a>"
+
+msgid "Add tracks"
+msgstr "Dodaj ścieżkę"
+
+msgid "The data cannot be displayed correctly. Change the data type."
+msgstr "Dane nie mogą być poprawnie wyświetlone. Zmień typ danych."
+
+msgid "Add verification rule"
+msgstr "Dodaj regułę weryfikacji"
+
+msgid "Columns headers"
+msgstr "Nazwa kolumny"
+
+msgid "Verify rules"
+msgstr "Weryfikuj reguły"
+
+msgid "Column number"
+msgstr "Numer kolumny"
+
+msgid "Change type"
+msgstr "Zmień typ"
+
+msgid "Save the map definition"
+msgstr "Zapisz definicję mapy"
+
+msgid "Map preview"
+msgstr "Podgląd mapy"
+
+msgid "Chart definition and preview"
+msgstr "Definiowanie i podgląd wykresu"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "choose roles"
+msgstr "wybierz role"
+
+msgid "Editor"
+msgstr "Edytor"
+
+msgid "Official"
+msgstr "Urzędnik"
+
+msgid "Agent"
+msgstr "Pełnomocnik"
+
+msgid "Admin"
+msgstr "Administrator"
+
+msgid "AOD admin"
+msgstr "Administrator AOD"
+
+msgid "LOD admin"
+msgstr "Administrator LOD"
+
+msgid "Confirm user change"
+msgstr "Potwierdź zmianę użytkownika"
+
+msgid "Available institutions"
+msgstr "Dostępne instytucje"
+
+msgid "Selected institutions"
+msgstr "Wybrane instytucje"
+
+msgid "extra agents"
+msgstr "dodatkowi pełnomocnicy"
+
+msgid "Admin AOD"
+msgstr "Administrator AOD"
+
+msgid "Admin LOD"
+msgstr "Administrator LOD"
+
+msgid "Personal info"
+msgstr "Informacje personalne"
+
+msgid "Linked with WK"
+msgstr "Powiązanie z WK"
+
+msgid "Form"
+msgstr "Formularz"
+
+msgid "Last logged method"
+msgstr "Sposób ostatniego logowania"
+
+msgid "Permissions"
+msgstr "Uprawnienia"
+
+msgid "WK logging"
+msgstr "Logowanie przez WK"
+
+msgid "Add files"
+msgstr "Dodaj pliki"
+
+msgid "Delete selected meetings"
+msgstr "Usuń wybrane spotkania"
+
+msgid "meeting name"
+msgstr "nazwa spotkania"
+
+msgid "meeting venue"
+msgstr "miejsce spotkania"
+
+msgid "duration hours"
+msgstr "godziny trwania"
+
+msgid "Add meeting members"
+msgstr "Dodaj osoby do spotkania"
+
+msgid "members"
+msgstr "osoby"
+
+msgid "Agents list"
+msgstr "Lista pełnomocników"
+
+msgid "Agents added to meeting"
+msgstr "Dodani pełnomocnicy do spotkania"
+
+msgid "Passwords not match"
+msgstr "Hasła nie pasują"
+
+msgid "Meeting name"
+msgstr "Nazwa spotkania"
+
+msgid "New permissions"
+msgstr "Nowe uprawnienia"
+
+msgid "Copy from agent"
+msgstr "Kopiuj pełnomocnika"
+
+msgid "(Select of agent is required)"
+msgstr "(Wybór pełnomocnika jest wymagany)"
+
+msgid "(Select of institution is required)"
+msgstr "(Wybór instytucji jest wymagany)"
+
+msgid ""
+"(Select of institution is not required. Lack of choice makes possible to "
+"login to admin panel also.)"
+msgstr ""
+"(Wybór instytucji nie jest wymagany. Brak wyboru instytucji oznacza jedynie "
+"dostęp do panelu administracyjnego)"
+
+msgid "Organization selection for an agent is obligatory!"
+msgstr "Wybór organizacji dla pełnomocnika jest obligatoryjny!"
+
+msgid "Selected institution must be on selected institutions list!"
+msgstr "Wybrana instytucja musi być na liście Wybranych instytucji!"
+
+msgid "The two password fields didn't match."
+msgstr "Hasła nie pasują"
+
+msgid "Password confirmation"
+msgstr "Potwierdzenie hasła"
+
+msgid "Enter the same password as above, for verification."
+msgstr "Wprowadź identyczne hasło jak powyżej w celu weryfikacji."
+
+msgid "Account for this email already exist"
+msgstr "Konto powiązane z tym adresem email już istnieje"
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"../password/"
+"\">this form</a>."
+msgstr ""
+"Nie przechowujemy surowych haseł, więc nie da się zobaczyć hasła tego "
+"użytkownika. Możesz jednak zmienić to hasło używając <a href=\"../password/"
+"\">tego formularza</a>."
+
+msgid "Resend the account activation link"
+msgstr "Wyślij ponownie link do aktywacji konta"
+
+msgid "You should confirm your email before logging in."
+msgstr "Musisz najpierw potwierdzić swój adres email."
+
+msgid "This user is blocked, please contact the administrators."
+msgstr "Ten użytkownik jest zablokowany, skontaktuj się z administracją."
+
+msgid "Email validation token"
+msgstr "Token walidacyjny emaila"
+
+msgid "Password reset token"
+msgstr "Token resetu hasła"
+
+#, fuzzy
+#| msgid "Password reset token"
+msgid "Charts preview token"
+msgstr "Token resetu hasła"
+
+msgid "Full name"
+msgstr "Imię i nazwisko"
+
+msgid "Admin status"
+msgstr "Status administratora"
+
+msgid ""
+"Designates that this user has all permissions without explicitly assigning "
+"them."
+msgstr ""
+"Wyznacza, że ten użytkownik ma wszystkie uprawnienia bez jawnego "
+"przypisywania ich."
+
+msgid "agent"
+msgstr "pełnomocnik"
+
+msgid "Email confirmation date"
+msgstr "Data potwierdzenia adresu e-mail"
+
+msgid "Organizations"
+msgstr "Organizacje"
+
+msgid "main organization of agent"
+msgstr "główna instytucja pełnomocnika"
+
+msgid "extra agent of"
+msgstr "dodatkowy pełnomocnik dla"
+
+msgid "Followed datasets"
+msgstr "Obserwowane zbiory danych"
+
+msgid "Enable daily email report of changes in subscribed objects"
+msgstr ""
+
+msgid "RODO & privacy policy accepted"
+msgstr ""
+
+msgid "User language"
+msgstr "język"
+
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+msgid "Favorite charts"
+msgstr ""
+
+msgid "acc: User"
+msgstr "użytkownika"
+
+msgid "Token"
+msgstr "Token"
+
+msgid "Token type"
+msgstr "Typ tokenu"
+
+msgid "Expiration date"
+msgstr "Data ważności"
+
+msgid "Tokens"
+msgstr "Tokeny"
+
+msgctxt "Planned"
+msgid "meeting state"
+msgstr "Planowane"
+
+msgctxt "Finished"
+msgid "meeting state"
+msgstr "Zakończone"
+
+msgid "agenda"
+msgstr ""
+
+msgid "meeting date"
+msgstr "data spotkania"
+
+msgid "start time"
+msgstr "godzina rozpoczęcia"
+
+msgid "end time"
+msgstr "godzina zakończenia"
+
+msgid "meeting"
+msgstr "spotkanie pełnomocników"
+
+msgid "meetings"
+msgstr "spotkania pełnomocników"
+
+msgid "meeting file"
+msgstr "plik"
+
+msgid "meeting files"
+msgstr "pliki"
+
+msgid "Trash (Meeting)"
+msgstr "Kosz (Spotkanie pełnomocników)"
+
+msgid "Trash (Meetings)"
+msgstr "Kosz (Spotkania pełnomocników)"
+
+msgid "Official phone"
+msgstr "telefon służbowy"
+
+msgid "Role"
+msgstr "Rola"
+
+msgid "Institution1"
+msgstr "Instytucja1"
+
+msgid "Institution2"
+msgstr "Instytucja2"
+
+msgid "Extra agent"
+msgstr "Dodatkowy pełnomocnik"
+
+msgid "Last login date"
+msgstr "Data ostatniego logowania"
+
+msgid "Invalid email or password"
+msgstr "Niepoprawny email lub hasło"
+
+msgid "Account is not available"
+msgstr "Konto nie jest dostępne"
+
+msgid "This e-mail is already used"
+msgstr "Podany e-mail jest już zarejestrowany w systemie"
+
+msgid "Email cannot be sent"
+msgstr "Email nie może być wysłany"
+
+msgid "Account not found"
+msgstr "Nie znaleziono konta"
+
+msgid "Expired token"
+msgstr "Przeterminowany token"
+
+msgid "Wrong password"
+msgstr "Niepoprawne hasło"
+
+msgid "Unsupported object name"
+msgstr "Nieobsługiwany typ obiektu"
+
+msgid "Invalid url address"
+msgstr "Niepoprawny adres url"
+
+msgid "Invalid notification type"
+msgstr "Niepoprawny typ notyfikacji"
+
+msgid "Invalid notification status"
+msgstr "Niepoprawny status notyfikacji"
+
+msgid "Canceled"
+msgstr "Skasowany"
+
+msgid "Object republished"
+msgstr "Obiekt opublikowany ponownie"
+
+msgid "Object withdrawaled"
+msgstr "Obiekt został wycofany z publikacji"
+
+msgid "Object updated"
+msgstr "Obiekt został zmieniony"
+
+msgid "Related object publicated"
+msgstr "Obiekt został opublikowany"
+
+msgid "Related object updated"
+msgstr "Obiekt zależny został zmieniony"
+
+msgid "Related object republished"
+msgstr "Obiekt zależny został ponownie zaktualizowany"
+
+msgid "Related object withdrawaled"
+msgstr "Obiekt zależny został wycofany z publikacji"
+
+msgid "Results incresed"
+msgstr "Liczba wyników wzrosła"
+
+msgid "Results decresed"
+msgstr "Liczba wyników zmalała"
+
+msgid "Cannot read the file"
+msgstr "Nie można odczytać pliku"
+
+msgid "No data was found for the report according to the specified criteria"
+msgstr "Nie znaleziono danych do raportu wg wskazanych kryteriów"
+
+msgid "Last activation date"
+msgstr "Data ostatniej aktywacji"
+
+msgid "Datasource - id"
+msgstr "Źródło danych - id"
+
+msgid "Import - id"
+msgstr "Import - id"
+
+msgid "Import - start"
+msgstr "Import - start"
+
+msgid "Import - end"
+msgstr "Import - koniec"
+
+msgid "Import - result"
+msgstr "Import - wynik"
+
+msgid "Import - error description"
+msgstr "Import - opis błędu"
+
+msgid "Import - number of rejected datasets"
+msgstr "Import - liczba odrzuconych zbiorów danych"
+
+msgid "Import - number of imported datasets"
+msgstr "Import - liczba zaimportowanych zbiorów danych"
+
+msgid "Import - number of created datasets"
+msgstr "Import - liczba utworzonych zbiorów danych"
+
+msgid "Import - number of updated datasets"
+msgstr "Import - liczba zmodyfikowanych zbiorów danych"
+
+msgid "Import - number of deleted datasets"
+msgstr "Import - liczba usuniętych zbiorów danych"
+
+msgid "Import - number of imported resources"
+msgstr "Import - liczba zaimportowanych zasobów"
+
+msgid "Import - number of created resources"
+msgstr "Import - liczba utworzonych zasobów"
+
+msgid "Import - number of updated resources"
+msgstr "Import - liczba zmodyfikowanych zasobów"
+
+msgid "Import - number of deleted resources"
+msgstr "Import - liczba usuniętych zasobów"
+
+msgid "Dataset - id"
+msgstr "Zbiór danych - id"
+
+msgid "Dataset - title"
+msgstr "Zbiór danych - tytuł"
+
+msgid "Dataset - modified"
+msgstr "Zbiór danych - zmodyfikowany"
+
+msgid "Dataset - institution"
+msgstr "Zbiór danych - instytucja"
+
+msgid "Method of sharing"
+msgstr "Sposób udostępnienia"
+
+msgid "Manually"
+msgstr "Manualnie"
+
+msgid "Openness score"
+msgstr "Poziom otwartości danych"
+
+msgid "openness_score"
+msgstr "poziom otwartości danych"
+
+msgid "The 'Not Applicable' value is no longer supported by the portal. Change it to another one."
+msgstr "Wartość 'Nie dotyczy' nie jest już obsługiwana przez portal. Zmień ją na inną."
+
+msgid "An unexpected error occurred. Please try again later."
+msgstr "Wystąpił nieoczekiwany błąd. Proszę, spróbuj później."
+
+msgid "portal_data_link"
+msgstr "Podgląd danych na portalu"

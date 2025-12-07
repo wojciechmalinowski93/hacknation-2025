@@ -1,0 +1,282 @@
+{% load static suit_tags core_tags %}
+{% load url from suit_compat %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% block title %}{{ title }} | {{ 'ADMIN_NAME'|suit_conf }}{% endblock %}</title>
+  {% block before_suit_styles %}{% endblock %}
+  <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% endblock %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'suit/bootstrap/css/bootstrap.min.css' %}" media="all"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'suit/css/suit.css' %}" media="all">
+  {% block extrastyle %}{% endblock %}
+  {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}"/>{% endif %}
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/css/od2021.css' %}" media="all">
+  <script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
+  {% block suit_jquery %}
+      {% if '1.9'|django_version_gte %}
+          <script src="{% static 'suit/js/jquery-3.5.0.min.js' %}"></script>
+      {% else %}
+        <script src="{% static 'suit/js/jquery-1.8.3.min.js' %}"></script>
+      {% endif %}
+  {% endblock %}
+  <script src="https://unpkg.com/@elastic/apm-rum/dist/bundles/elastic-apm-rum.umd.min.js" crossorigin></script>
+  <script type="text/javascript">var Suit = { $: $.noConflict() }; if (!$) $ = Suit.$; </script>
+  <script src="{% static 'suit/bootstrap/js/bootstrap.min.js' %}"></script>
+  {% if 'SHOW_REQUIRED_ASTERISK'|suit_conf %}
+  <style type="text/css">.required:after { content: '*'; margin: 0 0 0 5px; position: absolute; color: #ccc;}</style>
+  {% endif %}
+  {% block extrahead %}{% endblock %}
+  {% block blockbots %}
+    <meta name="robots" content="NONE,NOARCHIVE"/>{% endblock %}
+  {% if SETTINGS.MATOMO_URL and SETTINGS.MATOMO_SITE_ID %}{% include 'admin/matomo.html' %}{% endif %}
+</head>
+{% load i18n %}
+
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %} od2021">
+<!-- Sticky footer wrap -->
+<div id="wrap">
+
+  <!-- Container -->
+  {% block container %}
+    <div id="container">
+
+      {% block header %}
+        {% if not is_popup %}
+          <!-- Header -->
+          <div id="header" class="header" role="banner">
+
+            <div id="branding">
+              {% block branding %}
+              <a href="{% url 'admin:index' %}"><h1 id="site-name">{{ 'ADMIN_NAME'|suit_conf }}</h1></a>
+              {% endblock %}
+            </div>
+
+
+            {% block header_time %}
+            <div class="header-content header-content-first">
+              <div class="header-column icon">
+                <i class="icon-time"></i>
+              </div>
+              <div class="header-column">
+                <span class="date"> {% suit_date %}</span><br>
+                <span class="time" id="clock">{% suit_time %}</span>
+              </div>
+            </div>
+            {% endblock %}
+
+            {% block header_content %}
+              <!--<div class="header-content">
+                <div class="header-column icon">
+                  <i class="icon-comment"></i>
+                </div>
+                <div class="header-column">
+                  <a href="" class="grey"><b>2</b> new messages</a>
+                </div>
+              </div>-->
+            {% endblock %}
+
+            {% if user.is_active and user.is_staff %}
+              <div id="user-tools" style="padding: 0 20px 0 0">
+                <div id="user-gov-list-container" onclick="showList()">
+
+                  {% block welcome-msg %}
+                    {% trans 'Welcome,' %}
+                    <strong>
+                      {% filter force_escape %}
+                        {% firstof user.first_name user.username user.fullname user.email %}
+                      {% endfilter %}
+                    </strong>
+                    {% if request.user.connected_gov_users_for_admin_page %}
+                    <img id="switch-image" src="{% static 'admin/img/up.svg' %}" alt="" class="user-gov-list__image rotate"/>
+                    {% endif %}
+                  {% endblock %}
+
+                  {% if request.user.connected_gov_users_for_admin_page %}
+                  {% url 'switch' as switch_url %}
+                    <div id="user-gov-list">
+                      <div class="user-gov-list__item user-gov-list__switch">Przełącz konto</div>
+                      {% for user in request.user.connected_gov_users_for_admin_page %}
+                        <div class="user-gov-list__item">
+                          <a href="{{ switch_url }}?portal=admin&email={{user.email}}">{{user.email}}</a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+
+                </div>
+
+                <div id="user-links">
+                  <span class="user-links">
+                    {% block userlinks %}
+                    {% url 'django-admindocs-docroot' as docsroot %}
+
+                    {% if docsroot %}
+                      <a href="{{ docsroot }}">{% trans 'Documentation' %}</a>
+                      <span class="separator">|</span>
+                    {% endif %}
+                    <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a>
+                    <span class="separator">|</span>
+                    <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
+                  {% endblock %}
+                  </span>
+                </div>
+
+              </div>
+            {% endif %}
+            {% block nav-global %}{% endblock %}
+          </div>
+        {% endif %}
+        <!-- END Header -->
+      {% endblock %}
+
+
+      <div class="suit-columns {{ is_popup|yesno:'one-column,two-columns' }}">
+
+        {% block content-left %}
+          {% if not is_popup %}
+            <div id="suit-left" class="suit-column">
+              {% block quick-search %}
+                {% with 'SEARCH_URL'|suit_conf as search_url %}
+                  {% if search_url %}
+                    <form class="form-search nav-quick-search" autocomplete="off" action="{% if '/' in search_url %}{{ search_url }}{% else %}{% url search_url %}{% endif %}" method="GET">
+                      <input type="text" name="q" class="input-medium search-query" id="quick-search">
+                      <i class="input-icon icon-search"></i>
+                      <input type="submit" class="submit" value="">
+                    </form>
+                  {% endif %}
+                {% endwith %}
+              {% endblock %}
+
+              {% include 'admin/menu.html' %}
+
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block content-center %}
+          <div id="suit-center" class="suit-column" role="main">
+
+            {% if not is_popup %}
+              {% block breadcrumbs %}
+                <ul class="breadcrumb">
+                  <li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+                    {% if title %}
+                      <span class="divider">&raquo;</span>
+                      </li>
+                      <li class="active">
+                      {{ title }}
+                    {% endif %}
+                    </li>
+                </ul>
+              {% endblock %}
+            {% endif %}
+
+            {% block messages %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-{% firstof message.tags 'info' %}">
+                    <button class="close" data-dismiss="alert">×</button>
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endblock messages %}
+
+            <!-- Content -->
+            <div id="content" class="{% block coltype %}colM{% endblock %} row-fluid">
+              {% block pretitle %}{% endblock %}
+              {% block content_title %}{% if title %}
+                <h2 class="content-title">{{ title }}</h2>
+              {% endif %}{% endblock %}
+              {% block content %}
+                {% block object-tools %}{% endblock %}
+                {{ content }}
+              {% endblock %}
+              {% block sidebar_content %}
+                {% block sidebar %}{% endblock %}
+              {% endblock %}
+            </div>
+            <!-- END Content -->
+          </div>
+        {% endblock %}
+
+      </div>
+    </div>
+  {% endblock %}
+
+  {% if not is_popup %}
+  <!-- Sticky footer push -->
+  <div id="push"></div>
+  {% endif %}
+
+</div>
+
+{% block footer %}
+  {% if not is_popup %}
+  <div id="footer" class="footer" role="contentinfo">
+    <div class="content">
+      <div class="tools">
+        {% block footer_links %}
+          <a href="http://djangosuit.com/support/" target="_blank" class="icon"><i class="icon-question-sign"></i>Support</a>
+          <a href="http://djangosuit.com/pricing/" target="_blank" class="icon"><i class="icon-bookmark"></i>Licence</a>
+          <a href="http://github.com/darklow/django-suit/issues" target="_blank" class="icon"><i class="icon-comment"></i>Report a bug</a>
+        {% endblock %}
+      </div>
+
+      <div class="copyright">
+        {% block copyright %}
+          Copyright &copy; 2013 DjangoSuit.com<br>Developed by <a href="http://djangosuit.com" target="_blank">DjangoSuit.com</a>
+        {% endblock %}
+      </div>
+
+      <div class="branding">{% block footer_branding %}
+        {% with 'ADMIN_NAME'|suit_conf as admin_name %}
+          {{ admin_name }}
+          {% if admin_name == 'Django Suit' %}
+            v{{ 'VERSION'|suit_conf }}
+          {% endif %}
+        {% endwith %}
+      {% endblock %}</div>
+    </div>
+  </div>
+  {% endif %}
+{% endblock %}
+
+  <script src="{% static 'suit/js/suit.js' %}"></script>
+  {% if apm %}
+
+    <script>
+    elasticApm.init({
+        serverUrl: "{{ SETTINGS.APM_SERVER_URL }}",
+        distributedTracingOrigins: ['{{ SETTINGS.ADMIN_URL }}','{{ SETTINGS.CMS_URL }}', '{{ SETTINGS.API_URL }}'],
+        serviceName: "{{ SETTINGS.APM_SERVICE_NAME }}",
+        pageLoadTransactionName: "{{ admin_amp_transaction_name }}",
+        pageLoadTraceId: "{{ apm.trace_id }}",
+        pageLoadSpanId: "{{ apm.span_id }}",
+        pageLoadSampled: "{{ apm.is_sampled_js }}"
+    });
+    </script>
+  {% endif %}
+  {% block extrajs %}{% endblock %}
+<script>
+      function showList(){
+        const userList = document.getElementById("user-gov-list")
+        const image = document.getElementById("switch-image")
+        if (image.classList.contains("rotate")) {
+          image.classList.remove("rotate")
+        } else {
+          image.classList.add("rotate")
+        }
+        if (userList.style.display === "flex"){
+          userList.style.display = "none"
+        }
+        else{
+          userList.style.display = "flex";
+          userList.style.flexDirection = "column"
+        }
+    }
+</script>
+<script src="{% static 'admin/js/od2021.js' %}"></script>
+</body>
+</html>

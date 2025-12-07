@@ -1,0 +1,142 @@
+{% load i18n static admin_urls suit_tags suit_list %}
+<div class="inline-group {{ inline_admin_formset.opts.suit_classes }}" id="{{ inline_admin_formset.formset.prefix }}-group">
+{{ inline_admin_formset.formset.management_form }}
+{{ inline_admin_formset.formset.non_form_errors }}
+
+{% for inline_admin_form in inline_admin_formset %}<div class="inline-related{% if forloop.last %} empty-form last-related{% endif %}" id="{{ inline_admin_formset.formset.prefix }}-{% if not forloop.last %}{{ forloop.counter0 }}{% else %}empty{% endif %}">
+  <h3><b>{{ inline_admin_formset.opts.verbose_name|title }}:</b>&nbsp;<span class="inline_label">{% if inline_admin_form.original %}
+    {% if '1.8'|django_version_gte and inline_admin_form.model_admin.show_change_link and inline_admin_form.model_admin.has_registered_model %} <a href="{% url inline_admin_form.model_admin.opts|admin_urlname:'change' inline_admin_form.original.pk|admin_urlquote %}" class="inlinechangelink">{{ inline_admin_form.original }}</a>
+    {% else %}
+      {{ inline_admin_form.original }}
+    {% endif %}
+    {% else %}{% if not forloop.first and forloop.last %}#{{ forloop.counter }}{% endif %}{% endif %}</span>
+    {% if inline_admin_form.show_url %}<a href="../../../r/{{ inline_admin_form.original_content_type_id }}/{{ inline_admin_form.original.id }}/">{% trans "View on site" %}</a>{% endif %}
+    {% if inline_admin_formset.formset.can_delete and inline_admin_form.original %}<span class="delete">{{ inline_admin_form.deletion_field.field }} {{ inline_admin_form.deletion_field.label_tag }}</span>{% endif %}
+  </h3>
+  {% if inline_admin_form.form.non_field_errors %}{{ inline_admin_form.form.non_field_errors }}{% endif %}
+  {% for fieldset in inline_admin_form %}
+    {% include "admin/includes/fieldset.html" %}
+  {% endfor %}
+  {% if inline_admin_form.has_auto_field or inline_admin_form.needs_explicit_pk_field %}{{ inline_admin_form.pk_field.field }}{% endif %}
+  {{ inline_admin_form.fk_field.field }}
+</div>{% endfor %}
+</div>
+
+<script type="text/javascript">
+(function($) {
+    $(document).ready(function() {
+        $('input[name$="-has_dynamic_data"]').click(function(){
+            $(this).closest('ul').find('input[name$="-has_dynamic_data"]').prop('checked', false);
+            $(this).prop('checked', true);
+        });
+        $('input[name$="-has_high_value_data"]').click(function(){
+            $(this).closest('ul').find('input[name$="-has_high_value_data"]').prop('checked', false);
+            $(this).prop('checked', true);
+        });
+        $('input[name$="-has_high_value_data_from_ec_list"]').click(function(){
+            $(this).closest('ul').find('input[name$="-has_high_value_data_from_ec_list"]').prop('checked', false);
+            $(this).prop('checked', true);
+        });
+        $('input[name$="-has_research_data"]').click(function(){
+            $(this).closest('ul').find('input[name$="-has_research_data"]').prop('checked', false);
+            $(this).prop('checked', true);
+        });
+
+        var rows = "#{{ inline_admin_formset.formset.prefix }}-group .inline-related";
+        var updateInlineLabel = function(row) {
+            $(rows).find(".inline_label").each(function(i) {
+                var count = i + 1;
+                $(this).html($(this).html().replace(/(#\d+)/g, "#" + count));
+            });
+        };
+        var reinitDateTimeShortCuts = function() {
+            // Reinitialize the calendar and clock widgets by force, yuck.
+            if (typeof DateTimeShortcuts != "undefined") {
+                $(".datetimeshortcuts").remove();
+                DateTimeShortcuts.init();
+            }
+        };
+        var updateSelectFilter = function() {
+            // If any SelectFilter widgets were added, instantiate a new instance.
+            if (typeof SelectFilter != "undefined"){
+                $(".selectfilter").each(function(index, value){
+                  var namearr = value.name.split('-');
+                  var fieldname = $(this).data('fieldName') || namearr[namearr.length-1];
+                  SelectFilter.init(value.id, fieldname, false, "{% static "admin/" %}");
+                });
+                $(".selectfilterstacked").each(function(index, value){
+                  var namearr = value.name.split('-');
+                  var fieldname = $(this).data('fieldName') || namearr[namearr.length-1];
+                  SelectFilter.init(value.id, fieldname, true, "{% static "admin/" %}");
+                });
+            }
+        };
+        var initPrepopulatedFields = function(row) {
+            row.find('.prepopulated_field').each(function() {
+                var field = $(this);
+                var input = field.find('input, select, textarea');
+                var dependency_list = input.data('dependency_list') || [];
+                var dependencies = [];
+                $.each(dependency_list, function(i, field_name) {
+                  dependencies.push('#' + row.find('.form-row .field-' + field_name).find('input, select, textarea').attr('id'));
+                });
+                if (dependencies.length) {
+                    input.prepopulate(dependencies, input.attr('maxlength'));
+                }
+            });
+        };
+        var reinitCheckboxes = function(row) {
+            row.find('input[id$="-has_dynamic_data_0"]').prop('checked', $('#id_has_dynamic_data_0').prop('checked'));
+            row.find('input[id$="-has_dynamic_data_1"]').prop('checked', $('#id_has_dynamic_data_1').prop('checked'));
+            row.find('input[id$="-has_high_value_data_0"]').prop('checked', $('#id_has_high_value_data_0').prop('checked'));
+            row.find('input[id$="-has_high_value_data_1"]').prop('checked', $('#id_has_high_value_data_1').prop('checked'));
+            row.find('input[id$="-has_high_value_data_from_ec_list_0"]').prop('checked', $('#id_has_high_value_data_from_ec_list_0').prop('checked'));
+            row.find('input[id$="-has_high_value_data_from_ec_list_1"]').prop('checked', $('#id_has_high_value_data_from_ec_list_1').prop('checked'));
+            row.find('input[id$="-has_research_data_0"]').prop('checked', $('#id_has_research_data_0').prop('checked'));
+            row.find('input[id$="-has_research_data_1"]').prop('checked', $('#id_has_research_data_1').prop('checked'));
+            var hasDynamicDataCheckboxes = row.find('input[name$="-has_dynamic_data"]');
+            var hasHighValueDataCheckboxes = row.find('input[name$="-has_high_value_data"]');
+            var hasHighValueDataFromECListCheckboxes = row.find('input[name$="-has_high_value_data_from_ec_list"]');
+            var hasResearchDataCheckboxes = row.find('input[name$="-has_research_data"]');
+            hasDynamicDataCheckboxes.click(function(){
+                hasDynamicDataCheckboxes.prop('checked', false);
+                $(this).prop('checked', true);
+            });
+            hasHighValueDataCheckboxes.click(function(){
+                hasHighValueDataCheckboxes.prop('checked', false);
+                $(this).prop('checked', true);
+            });
+            hasHighValueDataFromECListCheckboxes.click(function(){
+                hasHighValueDataFromECListCheckboxes.prop('checked', false);
+                $(this).prop('checked', true);
+            });
+            hasResearchDataCheckboxes.click(function(){
+                hasResearchDataCheckboxes.prop('checked', false);
+                $(this).prop('checked', true);
+            });
+        };
+
+        $(rows).formset({
+            prefix: "{{ inline_admin_formset.formset.prefix }}",
+            addText: "{% blocktrans with verbose_name=inline_admin_formset.opts.verbose_name|title %}Add another {{ verbose_name }}{% endblocktrans %}",
+            formCssClass: "dynamic-{{ inline_admin_formset.formset.prefix }}",
+            deleteCssClass: "inline-deletelink",
+            deleteText: "{% trans "Remove" %}",
+            emptyCssClass: "empty-form",
+            removed: updateInlineLabel,
+            added: (function(row) {
+                initPrepopulatedFields(row);
+                reinitDateTimeShortCuts();
+                updateSelectFilter();
+                updateInlineLabel(row);
+                reinitCheckboxes(row);
+                Suit.after_inline.run("{{ inline_admin_formset.formset.prefix }}", row);
+                $('body').trigger('form-ready', [row]);
+            })
+        });
+        $(rows).each(function(){
+            $('body').trigger('form-ready', [$(this)]);
+        });
+    });
+})(django.jQuery);
+</script>

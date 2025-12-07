@@ -1,0 +1,199 @@
+{% load core_tags %}
+
+<script>
+    const institutionTypePrivate = 'private';
+    const privateDescriptionHeader = 'Warunki ponownego wykorzystywania danych prywatnych w tym zbiorze.';
+    const privateDescriptionCC0 = 'Dane prywatne są udostępniane w celu ich wykorzystywania bez warunków (licencja CC0).';
+    const privateConditionsDescription = 'Istnieją od tej zasady wymienione poniżej wyjątki, jednak zachęcamy, aby ich nie stosować. Jeżeli masz istotne uzasadnienie i musisz określić warunki wykorzystywania, to mogą być one następujące:';
+    const publicDescriptionHeader = 'Warunki ponownego wykorzystywania informacji sektora publicznego w tym zbiorze.';
+    const publicDescriptionCC0 = 'Informacje sektora publicznego są udostępniane w celu ich ponownego wykorzystywania bez warunków (licencja CC0).';
+    const publicConditionsDescription = 'Istnieją od tej zasady wymienione poniżej wyjątki, jednak zachęcamy, aby ich nie stosować. Jeżeli masz istotne uzasadnienie i musisz określić warunki ponownego wykorzystywania, to mogą być one następujące:';
+
+    const hasAccessToPublicInstitutions = {{ user.has_access_to_public_institutions|yesno:"true,false" }};
+    const hasAccessToPrivateInstitutions = {{ user.has_access_to_private_institutions|yesno:"true,false" }};
+    {% with organization_id=adminform.form.instance.organization_id %}
+        const organizationId = {% if organization_id  %}{{ organization_id }}{% else %}null{% endif %};
+    {% endwith %}
+    const $institutionTypeSelect = $("#id_institution_type");
+    const institutionTypeSelectExists = $institutionTypeSelect.length;  // change form inside organization form
+    const hasDynamicLicensesTab = (hasAccessToPublicInstitutions && hasAccessToPrivateInstitutions) || institutionTypeSelectExists;
+    const $organizationSelect = $("#id_organization");
+    const organizationSelectExists = $organizationSelect.length;
+    const organizationIdSelected = $organizationSelect.val();
+    const organizationIdComputed = organizationIdSelected || organizationId;
+
+    const $licenseTabButton = $("#suit_form_tabs > li > a[href='#licenses']");
+    const $licenseTab = $licenseTabButton.parent();
+
+    const licenseConditionDbOrCopyrightedPattern = /^id_(datasets-2-\d-)?license_condition_db_or_copyrighted$/;
+    const licenseConditionCustomDescriptionPattern = /^id_(datasets-2-\d-)?license_condition_custom_description$/;
+    const inlineSubstring = 'datasets';
+
+
+    function disableLicensesTab() {
+        $licenseTabButton.addClass('disabledTab');
+        $licenseTab.addClass('disabled');
+        $licenseTab.attr('title', 'Zakładka zostanie odblokowana po wybraniu instytucji. Reguła blokowania zakładki: instytucja niewypełniona - zakładka zablokowana, instytucja wypełniona - zakładka odblokowana');
+    }
+
+    function enableLicensesTab() {
+        $licenseTabButton.removeClass('disabledTab');
+        $licenseTab.removeClass('disabled');
+        $licenseTab.removeAttr('title');
+    }
+
+    function initializeLicensesTab(institutionType){
+        $.ajax({
+            type: "GET",
+            url: "{% url 'dataset-license-labels' %}",
+            data: {organization_type: institutionType},
+            success: function (data) {
+                let condition_labels = data.condition_labels;
+                for (var label in condition_labels){
+                    let label_selector = "div.field-license_condition_"+label+" .control-label label";
+                    $(label_selector).html(condition_labels[label]);
+                }
+                $("a#license-condition-link").attr("href", data.article_url);
+                if(institutionType === institutionTypePrivate) {
+                    $("h3#conditions-header").text(privateDescriptionHeader);
+                    $("p#description-cc0").text(privateDescriptionCC0);
+                    $("p#conditions-header").text(privateConditionsDescription);
+                    $("div.field-license_condition_personal_data").removeClass('show').addClass('hide');
+                } else {
+                    $("div.field-license_condition_personal_data").removeClass('hide').addClass('show');
+                    $("h3#conditions-header").text(publicDescriptionHeader);
+                    $("p#description-cc0").text(publicDescriptionCC0);
+                    $("p#conditions-header").text(publicConditionsDescription);
+                }
+            },
+        });
+
+    }
+
+    function updateLicensesTab(organizationId) {
+        if (!organizationId) {
+            disableLicensesTab();
+            return;
+        }
+        $.ajax({
+            type: "GET",
+            url: "{% url 'organization-type' %}",
+            data: {organization_id: organizationId},
+            success: function (data) {
+                initializeLicensesTab(data.institution_type);
+                enableLicensesTab();
+            },
+            error: function (data) {
+                disableLicensesTab();
+            }
+        });
+    }
+
+    if (hasDynamicLicensesTab) {
+        if (institutionTypeSelectExists) {
+            initializeLicensesTab($institutionTypeSelect.val());
+            $institutionTypeSelect.change(function () {
+                initializeLicensesTab($(this).val());
+            });
+
+        } else if (organizationSelectExists) {
+            $organizationSelect.change(function () {
+                updateLicensesTab($(this).val());
+            });
+        } else {
+            if (organizationIdComputed) {
+                updateLicensesTab(organizationIdComputed);
+            } else {
+                disableLicensesTab();
+            }
+        }
+    } else if (hasAccessToPrivateInstitutions) {
+        initializeLicensesTab(institutionTypePrivate);
+    }
+
+    var $licenseConditionDbOrCopyrighted = $("div.control-group.field-license_condition_db_or_copyrighted");
+    var isLicenseReadonly = $licenseConditionDbOrCopyrighted.find("span.readonly").length;
+    if (isLicenseReadonly) {
+        var $licenseChosen = $("div.control-group.field-license_chosen");
+        var $licenseChosenContent = $licenseChosen.find("span.readonly");
+        $licenseChosenContent.css('display', 'block').removeClass('readonly');
+        $licenseConditionDbOrCopyrighted.find("span.readonly").prepend($licenseChosenContent);
+        let resp_content = $(".control-group.field-license_condition_custom_description").find("span.readonly");
+        let def_resp_content = $(".control-group.field-license_condition_default_cc40").find("span.readonly");
+        $(".control-group.field-license_condition_default_cc40").css("display", "none");
+        resp_content.html(def_resp_content.html())
+        $licenseChosen.hide();
+    } else {
+        $licenseConditionDbOrCopyrighted.find("div.controls").prepend("<strong>W przypadku wybrania tej opcji należy zaznaczyć licencje poniżej.</strong>");
+        $(".control-group.field-license_condition_db_or_copyrighted .control-label").css("border-bottom", "none");
+        $(".control-group.field-license_condition_responsibilities .control-label").css("border-bottom", "none");
+        $(".control-group.field-license_condition_default_cc40 .control-label").css("border-bottom", "none");
+    }
+
+    function refresh_license_choices(text, prefix) {
+        var enable = text !== '';
+        var $radios = $(`#id_${prefix}license_chosen input[type=radio]`);
+        var $firstRadio = $radios.first();
+        if (enable) {
+            $radios.removeAttr('disabled');
+        } else {
+            $radios.attr('disabled', 'disabled');
+            $radios.prop('checked', false);
+            $firstRadio.removeAttr('disabled');
+            $firstRadio.prop('checked', true);
+        }
+    }
+
+    if (window.CKEDITOR) {
+        CKEDITOR.on('instanceCreated', function (event) {
+            var editor = event.editor;
+            var editor_name = editor.name
+            var match = editor_name.match(licenseConditionDbOrCopyrightedPattern);
+            var customDescriptionMatch = editor_name.match(licenseConditionCustomDescriptionPattern);
+            if (match) {
+                var prefix = match[1] || '';
+                refresh_license_choices(editor.getData(), prefix);
+                editor.on('change', function () {
+                    refresh_license_choices(editor.getData(), prefix);
+                });
+            }
+            if (customDescriptionMatch){
+                var by40CheckboxId = 'id_license_condition_default_cc40'
+                if(editor_name.indexOf(inlineSubstring) !== -1){
+                    let split_name = editor_name.split('-');
+                    let prefix = split_name.slice(0, 3).join('-');
+                    by40CheckboxId = prefix+'-'+'license_condition_default_cc40';
+                }
+                let $by40Checkbox = $('input#'+by40CheckboxId);
+                editor.on('change', function(){
+                    if(editor.getData() !== '' && !$by40Checkbox.prop('checked')){
+                        $by40Checkbox.prop('checked', true);
+                    }
+                });
+            }
+        });
+    }
+
+    $("a.accordion-expander").click(function () {
+        var $relatedBlock = $(this).parent().next();
+        if ($(this).hasClass("collapsed")) {
+            $(this).removeClass("collapsed");
+            $relatedBlock.slideDown();
+        } else {
+            $(this).addClass("collapsed");
+            $relatedBlock.slideUp();
+        }
+    });
+
+    function get_ckeditor_id(responsibilities_checkbox){
+        let field_name = 'license_condition_responsibilities';
+        let ckeditor_id = 'id_'+field_name;
+        let name = responsibilities_checkbox.getAttribute('name');
+        if(name.indexOf(inlineSubstring) !== -1){
+            let split_name = name.split('-');
+            let prefix = split_name.slice(0, 3).join('-');
+            ckeditor_id = 'id_'+prefix+'-'+field_name;
+        }
+        return ckeditor_id
+    }
+</script>

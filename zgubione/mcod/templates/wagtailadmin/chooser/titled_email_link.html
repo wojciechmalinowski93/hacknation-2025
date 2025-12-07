@@ -1,0 +1,5 @@
+{% load i18n wagtailadmin_tags %}
+{% trans "Add an email link" as email_str %}
+{% trans 'Insert link' as link_submit %}
+{% include "wagtailadmin/shared/header.html" with title=email_str %}
+{% include "wagtailadmin/includes/form_div.html" with link_type_label='email' action_url='wagtailadmin_choose_page_titled_email_link' submit_text=link_submit %}

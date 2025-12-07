@@ -1,0 +1,19 @@
+{% load i18n %}
+---
+tags:
+  - API Endpoints
+summary: Returns list of datasets related to specified showcase
+description: |
+  {% spaceless %}
+      <p>Gives the ability to browse, filter and search datasets related to specified showcase.</p>
+      {% include "docs/datasets/obj_description.html" %}
+  {% endspaceless %}
+parameters:
+  schema: DatasetApiSearchRequest
+responses:
+  200:
+    description: valid response in jsonapi format
+    content:
+      application/vnd.api+json:
+        schema:
+          $ref: '#/components/schemas/Datasets'

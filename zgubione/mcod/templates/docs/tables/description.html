@@ -1,0 +1,88 @@
+{% load i18n %}
+
+{# spaceless tag is required if this should be rendered as markdown #}
+{% spaceless %}
+    <p>{{ resource.description | safe }}</p>
+    <h2>{% trans "Specification" %}</h2>
+    <h4>{% trans "General info" %}</h4>
+    <ul>
+        <li><strong>{% trans "Title" %}: </strong>{{ resource.title | title }}</li>
+        <li><strong>{% trans "Dataset" %}: </strong>{{ resource.dataset.title | title }}</li>
+        <li><strong>{% trans "Category" %}: </strong>{{ resource.dataset.category.title_i18n }}</li>
+        {% if resource.dataset.url %}
+            <li><strong>{% trans "Dataset URL" %}: </strong><a href="{{ resource.dataset.url }}"
+                                                               target="_blank">{{ resource.dataset.url }}</a></li>
+        {% endif %}
+        {% if resource.dataset.tags_list %}
+            <li><strong>{% trans "Tags" %}: </strong>{{ resource.dataset.tags_list|join:", " }}</li>
+        {% endif %}
+        {% if resource.link %}
+            <li><strong>{% trans "Original resource URL" %}: </strong><a href="{{ resource.link }}"
+                                                                         target="_blank">{{ resource.link }}</a></li>
+        {% endif %}
+        <li><strong>{% trans "Created at" %}: </strong>{{ resource.created }}</li>
+        <li><strong>{% trans "Modified at" %}: </strong>{{ resource.modified }}</li>
+    </ul>
+
+    <h4>{% trans "File info" %}</h4>
+    <ul>
+        <li><strong>{% trans "File format" %}: </strong>{{ resource.format }}</li>
+        <li><strong>{% trans "File size" %}: </strong>{{ resource.file_size_human_readable|default:"n/a" }}</li>
+        <li><strong>{% trans "File encoding" %}: </strong>{{ resource.file_encoding }}</li>
+        <li><strong>{% trans "Download URL" %}: </strong><a href="{{ resource.file_url }}"
+                                                            target="_blank">{{ resource.file_url }}</a>
+    </ul>
+
+    <h4>{% trans "Columns mapping" %}</h4>
+
+    <table class="pure-table pure-table-horizontal">
+        <thead>
+        <tr>
+            <th>{% trans "Column name" %}</th>
+            <th>{% trans "Header (in file)" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for header, column in resource.data.headers_map.items %}
+            <tr>
+                <td>{{ column }}</td>
+                <td><p>{{ header }}</p></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if resource.dataset.notes %}
+        <h4>{% trans "Dataset description" %}</h4>
+        <p>{{ resource.dataset.notes | safe }}</p>
+        {% if resource.dataset.url %}
+            <p>{% trans "For more more informations go" %}
+            <a href="{{ resource.dataset.url }}" target="_blank">{% trans "here" %}</a>.
+        {% endif %}
+    {% endif %}
+
+    <h2>{% trans "Data provider" %}</h2>
+    <p>{% trans "This data was provided by the" %} <strong>{{ resource.dataset.organization.title | title }}</strong>:
+    </p>
+
+    <ul>
+        {% if resource.dataset.organization.website %}
+            <li><strong>{% trans "Website" %}: </strong>
+                <a href="{{ resource.dataset.organization.website }}"
+                   target="_blank">{{ resource.dataset.organization.website }}</a>
+            </li>{% endif %}
+        {% if resource.dataset.organization.email %}
+            <li><strong>{% trans "Email" %}: </strong><a
+                    href="mailto:{{ resource.dataset.organization.email }}">{{ resource.dataset.organization.email }}</a>
+            </li>{% endif %}
+        {% if resource.dataset.organization.address_display %}
+            <li><strong>{% trans "Address" %}: </strong>{{ resource.dataset.organization.address_display }}</li>{% endif %}
+        {% if resource.dataset.organization.phone_display %}
+            <li><strong>{% trans "Phone" %}: </strong>{{ resource.dataset.organization.phone_display }}</li>{% endif %}
+        {% if resource.dataset.organization.fax_display %}
+            <li><strong>{% trans "Fax" %}: </strong>{{ resource.dataset.organization.fax_display }}</li>{% endif %}
+        {% if resource.dataset.organization.regon %}
+            <li><strong>{% trans "Regon" %}: </strong>{{ resource.dataset.organization.regon }}</li>{% endif %}
+
+    </ul>
+{% endspaceless %}

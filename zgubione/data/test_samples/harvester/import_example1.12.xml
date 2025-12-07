@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns2:datasets xmlns:ns2="urn:otwarte-dane:harvester:1.12" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataset status="published">
+		<extIdent>dataset_extId_ver1.11</extIdent>
+		<title>
+			<polish>Zbiór danych - z nową metadaną z zbiorem zawierającym containsProtectedData</polish>
+			<english>Dataset with resource with new metadata containsProtectedData</english>
+		</title>
+		<description>
+			<polish>Opis zbioru danych</polish>
+			<english>Description of dataset</english>
+		</description>
+		<url>https://www.youtube.com/</url>
+		<updateFrequency>monthly</updateFrequency>
+        <hasDynamicData>false</hasDynamicData>
+        <hasHighValueData>false</hasHighValueData>
+        <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
+        <hasResearchData>false</hasResearchData>
+		<categories>
+			<category>TRAN</category>
+			<category>ECON</category>
+		</categories>
+		<conditions>
+			<source></source>
+			<modification></modification>
+			<responsibilities></responsibilities>
+			<dbOrCopyrighted>Warunek wymagany</dbOrCopyrighted>
+			<dbOrCopyrightedLicenseChosen>CC0 1.0</dbOrCopyrightedLicenseChosen>
+		</conditions>
+		<resources>
+			<resource status="published">
+				<extIdent>dataset_extId_ver1.11_res_1</extIdent>
+				<url>https://mock-resource.com.pl/remote-dga.xls</url>
+				<title>
+					<polish>zasób 1</polish>
+					<english>resource 1</english>
+				</title>
+				<description>
+					<polish>Opis zasobu opublikowane z XMLA - aktualizacja</polish>
+					<english>English description of first resource</english>
+				</description>
+				<availability>remote</availability>
+				<dataDate>2021-10-10</dataDate>
+				<lastUpdateDate>2020-12-08T00:00:00.000Z</lastUpdateDate>
+                <specialSigns>
+                    <specialSign>-</specialSign>
+                </specialSigns>
+                <hasDynamicData>false</hasDynamicData>
+                <hasHighValueData>false</hasHighValueData>
+                <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
+                <hasResearchData>false</hasResearchData>
+                <containsProtectedData>true</containsProtectedData>
+                <supplements>
+                    <supplement>
+                        <url>https://mock-resource.com.pl/example.txt</url>
+                        <name>
+                            <polish>Dokument 1</polish>
+                            <english>Document 1</english>
+                        </name>
+                        <language>pl</language>
+                    </supplement>
+                </supplements>
+				<regions>
+                    <terytIdent>0918123</terytIdent>
+                </regions>
+			</resource>
+			<resource status="published">
+				<extIdent>dataset_extId_ver1.11_res_2</extIdent>
+				<url>https://mock-resource.com.pl/simple.csv</url>
+				<title>
+					<polish>zasób 2</polish>
+					<english>resource 2</english>
+				</title>
+				<description>
+					<polish>Opis zasobu opublikowane z XMLA</polish>
+					<english>English description of second resource</english>
+				</description>
+				<availability>local</availability>
+				<dataDate>2020-10-10</dataDate>
+				<lastUpdateDate>2020-01-01T00:00:00.000Z</lastUpdateDate>
+                <specialSigns>
+                    <specialSign>-</specialSign>
+                </specialSigns>
+			</resource>
+			<resource status="published">
+				<extIdent>dataset_extId_ver1.11_res_3</extIdent>
+				<url>https://mock-resource.com.pl/json-api</url>
+				<title>
+					<polish>zasób 3</polish>
+					<english>resource 3</english>
+				</title>
+				<description>
+					<polish>Opis zasobu opublikowane z XMLA - aktualizacja</polish>
+					<english>English description of first resource</english>
+				</description>
+				<availability>remote</availability>
+				<dataDate>2021-10-10</dataDate>
+				<lastUpdateDate>2020-12-08T00:00:00.000Z</lastUpdateDate>
+                <hasDynamicData>false</hasDynamicData>
+                <hasHighValueData>false</hasHighValueData>
+                <hasResearchData>true</hasResearchData>
+				<isAutoDataDate>true</isAutoDataDate>
+				<endlessDataDateUpdate>true</endlessDataDateUpdate>
+				<dataDateUpdatePeriod>weekly</dataDateUpdatePeriod>
+				<autoDataDateStart>2021-10-10</autoDataDateStart>
+			</resource>
+			<resource status="published">
+				<extIdent>dataset_extId_ver1.11_res_4</extIdent>
+				<url>https://mock-resource.com.pl/simple.csv</url>
+				<title>
+					<polish>zasób 4</polish>
+					<english>resource 4</english>
+				</title>
+				<description>
+					<polish>Opis zasobu opublikowane z XMLA - aktualizacja</polish>
+					<english>English description of first resource</english>
+				</description>
+				<availability>remote</availability>
+				<dataDate>2021-10-10</dataDate>
+				<lastUpdateDate>2020-12-08T00:00:00.000Z</lastUpdateDate>
+                <hasDynamicData>false</hasDynamicData>
+                <hasHighValueData>false</hasHighValueData>
+                <hasResearchData>false</hasResearchData>
+				<isAutoDataDate>true</isAutoDataDate>
+				<autoDataDateEnd>2021-12-10</autoDataDateEnd>
+				<dataDateUpdatePeriod>monthly</dataDateUpdatePeriod>
+				<autoDataDateStart>2021-10-10</autoDataDateStart>
+			</resource>
+		</resources>
+        <supplements>
+            <supplement>
+                <url>https://mock-resource.com.pl/example.txt</url>
+                <name>
+                    <polish>Dokument 1</polish>
+                    <english>Document 1</english>
+                </name>
+                <language>en</language>
+            </supplement>
+        </supplements>
+		<tags>
+			<tag lang="pl">2028_tagPL</tag>
+		</tags>
+		<lastUpdateDate>2021-01-01T00:00:00.000Z</lastUpdateDate>
+	</dataset>
+</ns2:datasets>

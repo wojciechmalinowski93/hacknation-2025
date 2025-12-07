@@ -1,0 +1,6 @@
+{% load i18n %}
+{% blocktrans %}Reminder about the Data set update{% endblocktrans %}
+
+{% blocktrans %}We would like to remind you about the upcoming date of updating the data set {{dataset_title}} on the Dane.gov.pl portal.{% endblocktrans %}
+
+{% include 'mails/_footer.txt' %}

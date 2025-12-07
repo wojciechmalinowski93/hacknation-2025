@@ -1,0 +1,11 @@
+{% load i18n %}
+{% blocktrans %}Dear user of the open data portal (dane.gov.pl){% endblocktrans %}
+
+{% blocktrans %}Thank you for creating an account.{% endblocktrans %}
+{% blocktrans %}If you did not create an account, please ignore this message. {% endblocktrans %}
+{% blocktrans %}In order to complete the registration process, click (or copy and paste in the address field of the web browser) into the link below.{% endblocktrans %}
+
+{{ link }}
+
+{% if limit %}{% blocktrans %}The link is valid for {{ limit }} hours.{% endblocktrans %}{% endif %}
+{% include 'mails/_footer.txt' %}

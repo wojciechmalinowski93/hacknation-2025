@@ -1,0 +1,23 @@
+<table id="{{table_id}}" class="table table-sm table-hover {% if paginate %} paginated {% endif %}" {% if paginate %}data-pagination="true" data-pagination-parts="['pageList']" {% endif %}>
+    <thead>
+      <tr>
+      {% if show_table_index %}<th scope="col">{{ df.index.name }}</th>{% endif %}
+      {% for header in df.columns.values %}
+        <th scope="col">{{header}}</th>
+      {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+    {% for index, row in df.iterrows %}
+      <tr>
+        {% if show_table_index %}<th scope="row">{{index}}</th>{% endif %}
+        {% for val in row %}
+          <td>{{ val }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% if paginate %}
+<script>$('#{{table_id}}').bootstrapTable({locale: 'pl-PL'});</script>
+{% endif %}

@@ -1,0 +1,15 @@
+{% load i18n %}
+---
+tags:
+   - {% trans "API Endpoints" %}
+summary: {% trans "Download broken links report file." %}
+description: |
+  {% spaceless %}
+      <p>Downloads last generated Brokenlinks report.</p>
+  {% endspaceless %}
+
+parameters:
+    schema: PublicBrokenLinksReportDownloadApiRequest
+responses:
+    302:
+        description: redirect to public file url

@@ -1,0 +1,42 @@
+{% extends "admin/change_list.html" %}
+{% load i18n static admin_list admin_urls suit_list suit_tags  core_tags %}
+{% block extrajs %}
+    {{ block.super }}
+    <script>
+        /*
+        This script functionality:
+        - enable hide/show toggle datepicker controls for `ExportHarvestersCsvActionForm`
+        - enable add custom placeholders for `date_from` and `date_to` controls.
+
+        This script is only attached for Django Panel Admin template file only when list of datasources is displayed.
+        */
+
+        document.addEventListener("DOMContentLoaded", function (){
+            const actionSelect = document.querySelector("select[name='action']");
+            const dateFieldFrom = document.querySelector("input[name='date_from']") ?
+                document.querySelector("input[name='date_from']"): undefined;
+            const dateFieldTo = document.querySelector("input[name='date_to']") ?
+                document.querySelector("input[name='date_to']"): undefined;
+
+            function toggleDateFormFields(){
+                if (actionSelect && actionSelect.value === 'export_imports_to_csv'){
+                    dateFieldFrom.setAttribute("placeholder", "Od daty");
+                    dateFieldFrom.setAttribute("onfocus", "this.type='date'");
+                    dateFieldFrom.setAttribute("onblur", "this.type='text'");
+                    dateFieldTo.setAttribute("placeholder", "Do daty");
+                    dateFieldTo.setAttribute("onfocus", "this.type='date'");
+                    dateFieldTo.setAttribute("onblur", "this.type='text'");
+
+                    dateFieldFrom.style.display = "inline";
+                    dateFieldTo.style.display = "inline";
+                } else if (dateFieldFrom && dateFieldTo) {
+                    dateFieldFrom.style.display = "none";
+                    dateFieldTo.style.display = "none";
+                }
+            }
+
+            actionSelect.addEventListener("change", toggleDateFormFields);
+            toggleDateFormFields();
+        })
+    </script>
+{% endblock %}

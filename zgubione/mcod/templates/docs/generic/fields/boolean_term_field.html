@@ -1,0 +1,31 @@
+{% load i18n core_tags %}
+{# spaceless tag is required if this should be rendered as markdown #}
+{% spaceless %}
+{% block field_description %}
+        <p>{% trans 'Filter instances by' %} {{ doc_field_name }}.<br/></p>
+{% endblock %}
+{% block filters_description %}
+        <p>{% trans 'This field provides following filters:' %}</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Filter</th>
+                <th>Description</th>
+                <th>Examples</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>term</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'matches to the provided value.' %}<br/>
+                    <i>{% trans 'Note, that this is default filter for this field.' %}</i></td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}=true">{{ doc_base_url }}/?{{ name }}=true</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[term]=true">{{ doc_base_url }}/?{{ name }}[term]=true</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+{% endblock %}
+{% endspaceless %}

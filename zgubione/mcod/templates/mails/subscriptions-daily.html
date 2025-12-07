@@ -1,0 +1,94 @@
+{% load static i18n %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% trans "Report of activity of observed objects on the dane.gov.pl portal" %}.</title>
+</head>
+<body>
+<div style="width:650px; margin:auto;">
+
+    {% regroup notifications by subscription.watcher as notifications_lst %}
+    <table border="0" cellspacing="0" cellpadding="0" align="center"
+           style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td style="padding-top:10px; padding-bottom:10px; width:100%; overflow:hidden; float:left;"><img
+                    src='{{ base_url }}{% static "mails/logo-otwarte-dane.png" %}' alt="Logo Otwarte Dane"></td>
+        </tr>
+        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+            <td align="left"
+                style="padding-top:10px; padding-bottom:10px; max-width:580px;border-collapse: collapse;text-align:left;vertical-align:middle">
+                <p style="text-align:left;font-size:16px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;display: block !important;">
+                    {% trans "Report of activity of observed objects on the dane.gov.pl portal" %}.
+                    <br/>
+                    {% trans "Changes made on the date:" %} <b>{{ date_from|date:"d-m-Y" }}</b>
+            </td>
+        </tr>
+    </table>
+
+    {% for item in notifications_lst %}
+        <table style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+<caption style="padding:10px; max-width:580px;border-collapse: collapse;text-align:left;vertical-align:middle; text-align:left;font-size:14px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;">
+                {{ item.grouper.get_object_name_display }}:
+                <a href="{{ base_url_with_lang }}/user/dashboard/my/followed" target="_blank" nh-safe-redirect="" data-saferedirecturl="*"
+                   style="text-align:left;font-size:18px; font-weight: bolder; font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;color: #1b86ff;text-decoration: underline;">{{ item.list.0.subscription.get_subscribed_obj_title_display }}</a>
+            </caption>
+
+            <thead>
+            <tr>
+                <th style="width: 30%; padding:10px; background-color:#e0e0e0; border-collapse: collapse;text-align:left;vertical-align:middle; text-align:left;font-size:14px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;">
+                    {% trans "Activity hour" %}
+                </th>
+                <th style="width:70%; padding:10px; background-color:#e0e0e0; border-collapse: collapse;text-align:left;vertical-align:middle; text-align:left;font-size:14px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;">
+                    {% trans "Type of activity" %}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for notification in item.list %}
+                <tr>
+                    <td style="padding:5px 10px; background-color:#f3f3f3; border-collapse: collapse;text-align:left;vertical-align:middle; text-align:left;font-size:14px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;">
+                        {{ notification.created|date:"H:i" }}
+                    </td>
+                    <td style="padding:5px 10px; background-color:#f3f3f3; border-collapse: collapse;text-align:left;vertical-align:middle; text-align:left;font-size:14px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;">
+                        {{ notification.get_notification_type_display }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    {% endfor %}
+                 <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+
+                       <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+                           <td style="padding-top:10px; padding-bottom:10px; vertical-align: top ;max-width:580px;width:100%; display:block;height:5px;text-align:center;background-color:#ffffff; ">
+                              <p style="display:inline-block;vertical-align:top;width:100%;max-width:580px;margin:0 auto;border-bottom-width:1px;border-style:solid;border-bottom-color:#e7e6ec;border-top:none;border-right:none;border-left:none;;height:2px;">&nbsp;</p>
+                           </td>
+                         </tr>
+
+
+                        <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+                           <td align="left" style="padding-top:10px; padding-bottom:10px; max-width:580px;border-collapse: collapse;text-align:left;vertical-align:middle">
+                              <p style="text-align:left;font-size:14px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;display: block !important;">
+                                  {% trans 'If you wish to unsubscribe from receiving e-mail notifications, please use the "Disable e-mail notifications" button. This function is available on the data.gov.pl portal in the "My account" section, "Observed" tab.' %}
+                              </p>
+                           </td>
+                        </tr>
+
+
+                     <br/>
+
+                      <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+                          <td style="padding-top:10px; padding-bottom:10px; vertical-align: top;max-width:580px; display:block;text-align:center; ">
+                                    <p style="text-align:left;font-size:14px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;display: block !important;">{% trans "The message was generated automatically." %}<br>{% trans "Please do not reply to it." %}</p>
+                          </td>
+                       </tr>
+                </table>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+{
+  "@context": {
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@graph": [
+    {
+      "@id": "_:N584755c141f64ed8a048d047c46babb8",
+      "@type": "csvw:TableGroup",
+      "csvw:table": {
+        "@id": "_:Ne12324a0df244c4f9c6f2d2ef6836f9b"
+      }
+    },
+    {
+      "@id": "_:Ne12324a0df244c4f9c6f2d2ef6836f9b",
+      "@type": "csvw:Table",
+      "csvw:row": [
+        {
+          "@id": "_:N4ec2a217efc54fb991d23c65a3a807a0"
+        },
+        {
+          "@id": "_:Nb9982c2b09fe48848f98193573d8b864"
+        },
+        {
+          "@id": "_:Na71722f76b3842d7bef37426591aed3f"
+        },
+        {
+          "@id": "_:N165e1f0fcca442fe8e898b42550aeae1"
+        },
+        {
+          "@id": "_:Ne96c27b56c9a4528919db9b2e0786a9d"
+        },
+        {
+          "@id": "_:Naf8a75a484f744ca869883dd1216a021"
+        }
+      ],
+      "csvw:url": {
+        "@id": "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx"
+      }
+    },
+    {
+      "@id": "_:N4ec2a217efc54fb991d23c65a3a807a0",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:N6d6da6c69ad0453d85b61a60839e3c27"
+      },
+      "csvw:rownum": 1,
+      "csvw:url": {
+        "@id": "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#row=2"
+      }
+    },
+    {
+      "@id": "_:N6d6da6c69ad0453d85b61a60839e3c27",
+      "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#%3Chtml%3E": "<head><title>404 Not Found</title></head>"
+    },
+    {
+      "@id": "_:Nb9982c2b09fe48848f98193573d8b864",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:N0b8d491ad5cf4f58928c06488ebcc220"
+      },
+      "csvw:rownum": 2,
+      "csvw:url": {
+        "@id": "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#row=3"
+      }
+    },
+    {
+      "@id": "_:N0b8d491ad5cf4f58928c06488ebcc220",
+      "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#%3Chtml%3E": "<body>"
+    },
+    {
+      "@id": "_:Na71722f76b3842d7bef37426591aed3f",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:Nc435b4f9d11b4da4ab13b58ee89c32ce"
+      },
+      "csvw:rownum": 3,
+      "csvw:url": {
+        "@id": "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#row=4"
+      }
+    },
+    {
+      "@id": "_:Nc435b4f9d11b4da4ab13b58ee89c32ce",
+      "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#%3Chtml%3E": "<center><h1>404 Not Found</h1></center>"
+    },
+    {
+      "@id": "_:N165e1f0fcca442fe8e898b42550aeae1",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:N92d6462e99f2470e81ab575165fd9e8f"
+      },
+      "csvw:rownum": 4,
+      "csvw:url": {
+        "@id": "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#row=5"
+      }
+    },
+    {
+      "@id": "_:N92d6462e99f2470e81ab575165fd9e8f",
+      "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#%3Chtml%3E": "<hr><center>nginx/1.16.1</center>"
+    },
+    {
+      "@id": "_:Ne96c27b56c9a4528919db9b2e0786a9d",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:Nb890dd17d33344509eb1eb172aa8b161"
+      },
+      "csvw:rownum": 5,
+      "csvw:url": {
+        "@id": "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#row=6"
+      }
+    },
+    {
+      "@id": "_:Nb890dd17d33344509eb1eb172aa8b161",
+      "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#%3Chtml%3E": "</body>"
+    },
+    {
+      "@id": "_:Naf8a75a484f744ca869883dd1216a021",
+      "@type": "csvw:Row",
+      "csvw:describes": {
+        "@id": "_:N04c5ad0d1b9b48c99f2aeef73c10236e"
+      },
+      "csvw:rownum": 6,
+      "csvw:url": {
+        "@id": "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#row=7"
+      }
+    },
+    {
+      "@id": "_:N04c5ad0d1b9b48c99f2aeef73c10236e",
+      "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx#%3Chtml%3E": "</html>"
+    }
+  ]
+}

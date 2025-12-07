@@ -1,0 +1,107 @@
+{% load i18n core_tags %}
+{# spaceless tag is required if this should be rendered as markdown #}
+{% spaceless %}
+        <p>{% trans "Search resources by dataset's ID (dataset[id]) or title (dataset[title])" %}.<br/></p>
+        <p>{% trans 'The dataset[id] field provides the following filters:' %}</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Filter</th>
+                <th>Description</th>
+                <th>Examples</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>term</strong></td>
+                <td>{% trans 'filters instances in which ID of the dataset matches to the provided value.' %}<br/>
+                    <i>{% trans 'Note, that this is default filter for this field.' %}</i></td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[id]=1">{{ doc_base_url }}/?dataset[id]=1</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[id][term]=2">{{ doc_base_url }}/?dataset[id][term]=2</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>terms</strong></td>
+                <td>{% trans 'filters instances in which ID of the dataset matches to any of the provided values.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[id][terms]=1,3">{{ doc_base_url }}/?dataset[id][terms]=1,3</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[id][terms]=1&dataset[id][terms]=3">{{ doc_base_url }}/?dataset[id][terms]=1&dataset[id][terms]=3</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>gt</strong></td>
+                <td>{% trans 'filters instances in which ID of the dataset is is greater than the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[id][gt]=1">{{ doc_base_url }}/?dataset[id][gt]=1</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>gte</strong></td>
+                <td>{% trans 'filters instances in which ID of the dataset is greater than or equal to the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[id][gte]=2">{{ doc_base_url }}/?dataset[id][gte]=2</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>lt</strong></td>
+                <td>{% trans 'filters instances in which ID of the dataset is lower than the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[id][lt]=3">{{ doc_base_url }}/?dataset[id][lt]=3</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>lte</strong></td>
+                <td>{% trans 'filters instances that have ID of the dataset that is lower than or equal to the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[id][lte]=4">{{ doc_base_url }}/?dataset[id][lte]=4</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>{% trans 'The dataset[title] field provides the following queries:' %}</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Query</th>
+                <th>Description</th>
+                <th>Examples</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>match</strong></td>
+                <td>{% trans 'searches for instances in which title of the dataset matches the provided value.' %}<br/>
+                    <i>{% trans 'Note, that this is default filter for this field.' %}</i></td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[title]=organizacja">{{ doc_base_url }}/?dataset[title]=organizacja</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[title][match]=organizacja">{{ doc_base_url }}/?dataset[title][match]=organizacja</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>phrase</strong></td>
+                <td>{% trans 'searches for instances in which title of the dataset matches the provided phrase.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[title][phrase]=Wspólna Organizacja Rynku">{{ doc_base_url }}/?dataset[title][phrase]=Wspólna Organizacja Rynku</a><br/>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>prefix</strong></td>
+                <td>{% trans 'searches for instances in which title of the dataset starts with the  provided phrase.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[title][prefix]=wspólna org">{{ doc_base_url }}/?dataset[title][prefix]=wspólna org</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>query</strong></td>
+                <td>{% trans 'searches for instances that matches the provided query string.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[title][query]=*lna* AND organizacja">{{ doc_base_url }}/?dataset[title][query]=*lna* AND organizacja</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?dataset[title][query]=wspólna OR organizacja">{{ doc_base_url }}/?dataset[title][query]=wspólna OR organizacja</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+{% endspaceless %}

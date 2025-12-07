@@ -1,0 +1,240 @@
+stages:
+  - prepare
+  - test
+  - build
+  - release
+
+variables:
+  PYTHONDONTWRITEBYTECODE: 1
+  FF_NETWORK_PER_BUILD: 1
+  REGISTRY_HOST: registry.dane.gov.pl
+  REGISTRY_PATH: registry.dane.gov.pl/mcod/backend
+  TEST_IMAGE_VERSION: latest
+
+prepare-images:
+  stage: prepare
+  script:
+    - docker build -f docker/elasticsearch/Dockerfile -t $REGISTRY_PATH/elasticsearch:6.8.23-mcod-1 .
+    - docker build -f docker/postgres/Dockerfile -t $REGISTRY_PATH/postgresql:13-trixie-mcod .
+    - docker build -f docker/tests/Dockerfile -t $REGISTRY_PATH/mcod-tests:${TEST_IMAGE_VERSION} .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $REGISTRY_HOST
+    - docker push $REGISTRY_PATH/elasticsearch:6.8.23-mcod-1
+    - docker push $REGISTRY_PATH/postgresql:13-trixie-mcod
+    - docker push $REGISTRY_PATH/mcod-tests:${TEST_IMAGE_VERSION}
+  except:
+    - tags
+    - master
+    - schedules
+    - /^release_.*$/
+  tags:
+    - shell
+
+test:
+  stage: test
+  image: $REGISTRY_PATH/mcod-tests:${TEST_IMAGE_VERSION}
+  variables:
+    PYTHONUNBUFFERED: 1
+    PYTHONDONTWRITEBYTECODE: 1
+    ENVIRONMENT: test
+    TEST_DEBUG: "yes"
+    ALLOWED_HOSTS: "*"
+    BASE_URL: http://test.mcod
+    API_URL: http://api.test.mcod
+    ADMIN_URL: http://admin.test.mcod
+    CMS_URL: http://cms.test.mcod
+    API_URL_INTERNAL: https://api.test.mcod
+    NO_REPLY_EMAIL: env@test.local
+    DEBUG: yes
+    # services
+    POSTGRES_PASSWORD: mcod
+    POSTGRES_USER: mcod
+    POSTGRES_DB: mcod
+    POSTGRES_PORT: 5432
+    POSTGRES_HOST_TYPE: docker
+    POSTGRES_HOST: postgres
+    REDIS_URL: redis://redis:6379
+    ELASTICSEARCH_HOSTS: elasticsearch:9200
+    RABBITMQ_HOST: rabbitmq:5672
+    ES_JAVA_OPTS: "-Xms2048m -Xmx2048m"
+    EMAIL_HOST: example.com
+    EMAIL_PORT: 25
+    EMAIL_USE_TLS: 0
+    EMAIL_HOST_USER: test@example.com
+    EMAIL_HOST_PASSWORD: password
+    SPARQL_USER: admin
+    ADMIN_PASSWORD: Britenet.1
+    FUSEKI_DATASET_1: ds
+    FUSEKI_URL: http://fuseki:3030
+    ALLOWED_MINIMUM_FREE_GB: 1
+    DISCOURSE_FORUM_ENABLED: false
+    DISCOURSE_USERNAME: user
+    DISCOURSE_PASSWORD: bitnami123
+    # tests specific
+    DATASET_ARCHIVE_FILES_TASK_DELAY: 1
+  services:
+    - name: redis:6.2
+      alias: redis
+    - name: rabbitmq:3.9.13-management
+      alias: rabbitmq
+    - name: stain/jena-fuseki:3.14.0
+      alias: fuseki
+    - name: $REGISTRY_PATH/elasticsearch:6.8.23-mcod-1
+      alias: elasticsearch
+      command:
+        [
+          "bin/elasticsearch",
+          "-Expack.security.enabled=false",
+          "-Ediscovery.type=single-node",
+          "-Eindex.store.type=niofs",
+          "-Ebootstrap.memory_lock=true",
+        ]
+    - name: $REGISTRY_PATH/postgresql:13-trixie-mcod
+      alias: postgres
+  script:
+    - python manage.py compilemessages --settings mcod.settings.test -v 3
+    - python manage.py makemigrations --check --settings mcod.settings.test
+    - pytest --cov-report term --cov-report xml:coverage.xml --cov -v -n5 mcod
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+  except:
+    - tags
+    - master
+    - pre-devel
+    - schedules
+    - /^release_.*$/
+  tags:
+    - docker
+
+lint:
+  stage: test
+  image: python:3.8.6
+  before_script:
+    - pip install pre-commit
+  script:
+    - pre-commit run --all-files
+  except:
+    - tags
+    - master
+    - pre-devel
+    - schedules
+  tags:
+    - docker
+
+check-docker-build:
+  stage: test
+  except:
+    - pre-devel
+    - devel
+    - tags
+    - master
+    - schedules
+    - /^release_.*$/
+  script:
+    - docker build --add-host $CI_LOCAL_GITLAB_ADDRESS -f docker/app/Dockerfile -t backend:${CI_COMMIT_REF_SLUG} .
+    - docker rmi backend:${CI_COMMIT_REF_SLUG}
+  tags:
+    - shell
+
+build-pre-devel:
+  stage: build
+  only:
+    - pre-devel
+  script:
+    - docker build --add-host $CI_LOCAL_GITLAB_ADDRESS -f docker/app/Dockerfile -t $REGISTRY_PATH/backend:pre-devel .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $REGISTRY_HOST
+    - docker push $REGISTRY_PATH/backend:pre-devel
+  tags:
+    - shell
+
+build-pre-devel-on-branch:
+  stage: build
+  when: manual
+  except:
+    - pre-devel
+    - devel
+    - tags
+    - master
+    - schedules
+    - /^release_.*$/
+  script:
+    - docker build --add-host $CI_LOCAL_GITLAB_ADDRESS -f docker/app/Dockerfile -t $REGISTRY_PATH/backend:pre-devel .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $REGISTRY_HOST
+    - docker push $REGISTRY_PATH/backend:pre-devel
+  tags:
+    - shell
+
+build-devel:
+  stage: build
+  only:
+    - devel
+  script:
+    - docker build --add-host $CI_LOCAL_GITLAB_ADDRESS -f docker/app/Dockerfile -t $REGISTRY_PATH/backend:devel .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $REGISTRY_HOST
+    - docker push $REGISTRY_PATH/backend:devel
+  tags:
+    - shell
+
+build-master:
+  stage: build
+  only:
+    - master
+  script:
+    - docker build --add-host $CI_LOCAL_GITLAB_ADDRESS -f docker/app/Dockerfile -t $REGISTRY_PATH/backend:master .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $REGISTRY_HOST
+    - docker push $REGISTRY_PATH/backend:master
+  tags:
+    - shell
+
+release-prod:
+  stage: release
+  before_script:
+    - export API_VERSION=$(changelog current)
+    - cat CHANGELOG.md
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $REGISTRY_HOST
+    - docker pull $REGISTRY_PATH/backend:master
+    - docker tag $REGISTRY_PATH/backend:master $REGISTRY_PATH/backend:master-$API_VERSION
+    - docker tag $REGISTRY_PATH/backend:master $REGISTRY_PATH/backend:master-prod-latest
+    - docker push $REGISTRY_PATH/backend:master-$API_VERSION
+    - docker push $REGISTRY_PATH/backend:master-prod-latest
+  except:
+    - pre-devel
+    - devel
+    - schedules
+  only:
+    - master
+    - tags
+  when: manual
+  tags:
+    - shell
+
+merge-to-master:on-schedule:
+  stage: release
+  script:
+    - merge-backend
+  only:
+    - schedules
+  tags:
+    - schedules
+
+publish-code:
+  stage: release
+  before_script:
+    - export API_VERSION=$(changelog current)
+  script:
+    - git archive --output /gluster/mcod/code/backend_$API_VERSION.zip -9 HEAD
+    - cd /gluster/mcod/code
+    - ln -sf backend_$API_VERSION.zip backend_latest.zip
+  except:
+    - pre-devel
+    - devel
+    - schedules
+  only:
+    - master
+    - tags
+  when: manual
+  tags:
+    - shell

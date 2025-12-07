@@ -1,0 +1,4 @@
+Provider;Dataset;Data;Link to data on the portal;Broken link to publisher data
+Instytucja 1;11;Zasób 1;http://mcod.local/pl/dataset/11/resource/1;www.fail.com
+Instytucja 2;12;Zasób 2;http://mcod.local/pl/dataset/12/resource/1;http://fail.com
+Instytucja 3;13;Zasób 3;http://mcod.local/pl/dataset/11/resource/1;https://fail.com

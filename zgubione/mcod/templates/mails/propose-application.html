@@ -1,0 +1,59 @@
+{% load static i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Zgłoszono propozycję aplikacji</title>
+   </head>
+   <body>
+		<div style="width:650px; margin:auto;">
+               <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+                    <tr style="max-width:580px;padding-top:10px;padding-bottom:10px;">
+                        <td width="580" style="width:100%;overflow:hidden;float:left;">
+                            <img src="{{ host }}{% static "mails/logo-otwarte-dane.png" %}" alt="{% trans 'Download images' %}" style="height:2cm;">
+                        </td>
+                    </tr>
+                    <tr style="max-width:580px;padding-top:10px;padding-bottom:10px;">
+                        <td width="580" align="left" style="padding-top:10px;padding-bottom:10px;max-width:580px;border-collapse:collapse;text-align:left;vertical-align:middle;">
+                            <div style="text-align:left;font-size:28px;font-family: Open Sans Light, Arial, Helvetica, sans-serif;text-decoration:none solid black;color:black;">
+                                Zgłoszenie aplikacji
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+                        <td width="580" align="left" style="padding-top:10px;padding-bottom:10px;max-width:580px;overflow:hidden;">
+                            <img src="{{ host }}{% static "mails/kreska-mail.png" %}" alt="{% trans 'Download images' %}">
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;max-width:580px;table-layout:fixed;clear:both;">
+                    {% include 'mails/proposal-row-label.html' with val='E-mail zgłaszającego:' %}
+                    {% include 'mails/proposal-row-value.html' with val=applicant_email|urlize %}
+                    {% include 'mails/proposal-row-label.html' with val='Tytuł aplikacji:' %}
+                    {% include 'mails/proposal-row-value.html' with val=title %}
+                    {% include 'mails/proposal-row-label.html' with val='Autor:' %}
+                    {% include 'mails/proposal-row-value.html' with val=author %}
+                    {% include 'mails/proposal-row-label.html' with val='Adres URL aplikacji:' %}
+                    {% include 'mails/proposal-row-value.html' with val=url|urlize %}
+                    {% include 'mails/proposal-row-label.html' with val='Opis aplikacji:' %}
+                    {% include 'mails/proposal-row-value.html' with val=notes|linebreaksbr %}
+                    {% include 'mails/proposal-row-label.html' with val='Logo aplikacji (opcjonalny, ale zalecany):' %}
+                    {% include 'mails/proposal-image.html' with image_src='cid:app-logo' %}
+                    {% if illustrative_graphics %}
+                        {% include 'mails/proposal-row-label.html' with val='Grafika ilustracyjna (opcjonalna):' %}
+                        {% include 'mails/proposal-image.html' with image_src='cid:illustrative-graphics' %}
+                    {% endif %}
+                    {% include 'mails/proposal-row-label.html' with val='Lista zbiorów z portalu dane.gov.pl wykorzystanych w aplikacji (opcjonalne):' %}
+                    {% include 'mails/proposal-row-value.html' with val=dataset_links|safe %}
+                    {% include 'mails/proposal-row-label.html' with val='Lista zbiorów danych zewnętrznych wykorzystanych w aplikacji (opcjonalne):' %}
+                    {% include 'mails/proposal-row-value.html' with val=external_dataset_links|safe %}
+                    {% include 'mails/proposal-row-label.html' with val='Słowa kluczowe (opcjonalne):' %}
+                    {% include 'mails/proposal-row-value.html' with val=keywords|join:", " %}
+                </table>
+                <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;clear:both;">
+                    {% trans 'Wiadomość została wygenerowana automatycznie przez oprogramowanie portalu na podstawie złożonej przez użytkownika propozycji aplikacji. Prosimy nie używać funkcji Odpowiedz nadawcy.<br><br>Kontakt z Zespołem portalu Dane.gov.pl: <a href="mailto:kontakt@dane.gov.pl" target="_blank">kontakt@dane.gov.pl</a>' as footer_txt %}
+                  {% include 'mails/_footer.html' with signature=False footer_txt=footer_txt font_color='black' %}
+                </table>
+		</div>
+   </body>
+</html>

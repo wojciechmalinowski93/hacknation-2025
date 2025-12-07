@@ -1,0 +1,110 @@
+/* LICENSES TAB & DATASET FORM STACKED IN ORGANIZATION FORM */
+.suit-tab-licenses .control-group.field-license_chosen li,
+div#datasets-2-group .control-group.field-license_chosen li {
+    display: inline;
+}
+
+.suit-tab-licenses .control-group.field-license_chosen li > label,
+div#datasets-2-group .control-group.field-license_chosen li > label {
+    display: inline-block;
+    width: 140px;
+    font-weight: bold;
+}
+
+.suit-tab-licenses .control-group.field-license_chosen ul:not(.errorlist) li:first-child,
+div#datasets-2-group .control-group.field-license_chosen ul:not(.errorlist) li:first-child {
+    display: none;
+}
+
+.suit-tab-licenses .control-group.field-license_condition_responsibilities .controls,
+.suit-tab-licenses .control-group.field-license_chosen .controls,
+div#datasets-2-group .control-group.field-license_condition_responsibilities .controls,
+div#datasets-2-group .control-group.field-license_chosen .controls {
+    padding-bottom: 30px;
+}
+
+.suit-tab-licenses .control-group.field-license_chosen ul,
+div#datasets-2-group .control-group.field-license_chosen ul {
+    margin: 0;
+}
+
+.suit-tab-licenses .control-group.field-license_chosen .controls input[type=radio],
+div#datasets-2-group .control-group.field-license_chosen .controls input[type=radio] {
+    margin: 0;
+}
+
+/* IMPORTED DATASET AND TRASH */
+.control-group.field-license_condition_source span.readonly,
+.control-group.field-license_condition_modification span.readonly,
+.control-group.field-license_condition_responsibilities span.readonly,
+.control-group.field-license_condition_db_or_copyrighted span.readonly {
+    line-height: normal;
+    margin-top: 10px;
+}
+
+.control-group.field-license_condition_source span.readonly::before,
+.control-group.field-license_condition_modification span.readonly::before,
+.control-group.field-license_condition_responsibilities span.readonly::before {
+    content: "CC BY 4.0";
+    display: block;
+}
+
+/* ACCORDION */
+div.accordion-wrapper {
+    background: white;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+div.accordion-block {
+    background: white;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    padding: 8px 15px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+div.accordion-body {
+    padding-top: 15px;
+    display: none;
+}
+
+p.accordion-header {
+    font-weight: bold;
+    color: #555;
+    margin: 0;
+}
+
+a.accordion-expander {
+    cursor: pointer;
+}
+
+a.accordion-expander::before {
+    content: "Zwiń opis";
+}
+
+a.accordion-expander.collapsed::before {
+    content: "Rozwiń opis";
+}
+
+/* UPDATE FREQUENCY NOTIFICATION FIELDS */
+input#id_update_notification_frequency, input[name$="update_notification_frequency"] {
+    width: 30px;
+}
+
+div.control-group.form-row.field-is_update_notification_enabled,
+div.control-group.form-row.field-update_notification_frequency
+{
+    display: none;
+}
+h3#conditions-header{
+    padding-left:0px;
+}
+
+p#article-paragraph{
+    margin-top:10px;
+    margin-bottom:10px;
+    font-weight:bold;
+}

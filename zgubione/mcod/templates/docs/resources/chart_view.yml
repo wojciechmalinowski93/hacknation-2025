@@ -1,0 +1,19 @@
+{% load i18n %}
+---
+tags:
+   - {% trans "API Endpoints" %}
+summary: {% trans "Get single chart" %}
+description: |
+  {% spaceless %}
+      <p>Returns chart with given ID.</p>
+      {% include "docs/resources/chart_description.html" %}
+  {% endspaceless %}
+parameters:
+    schema: ChartApiRequest
+responses:
+    200:
+        description: valid response in jsonapi format
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/Chart'

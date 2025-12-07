@@ -1,0 +1,20 @@
+{%load i18n %}
+---
+tags:
+ - {% trans "API Endpoints" %}
+summary: {% trans "Returns dataset's showcases" %}
+description: |
+  {% spaceless%}
+      <p>Gives the ability to browse, filter and search for showcases of given dataset.</p>
+  {% endspaceless %}
+security: []
+
+parameters:
+    schema: ShowcasesApiRequest
+responses:
+    200:
+        description: {% trans "Valid response in JSONAPI format" %}
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/Showcases'

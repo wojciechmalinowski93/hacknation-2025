@@ -1,0 +1,29 @@
+{% load i18n %}
+<select name="role" data-name="role" id="user-roles-filter" class="auto-width search-filter{% if spec.lookup_val or spec.used_parameters %} active{% endif %}" multiple="multiple">
+  {% for choice in choices %}
+    {% if forloop.first %}
+      <option value="" disabled>{{ title|capfirst }}</option>
+      <option value="" disabled>---</option>
+    {% else %}
+      <option {% if choice.additional %} data-additional="{{ choice.additional }}"{% endif %} data-name="{{ choice.name }}" value="{{ choice.val }}" {{ choice.selected|yesno:' selected="selected",' }}>{{ choice.display }}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#user-roles-filter').attr('name', 'role');
+        // http://davidstutz.github.io/bootstrap-multiselect/index.html#configuration-options
+        $('#user-roles-filter').multiselect({
+            nonSelectedText: "{{ title|capfirst }}",
+            numberDisplayed: 6,
+            onChange: function(option, checked) {
+              if (checked === true){
+                $('#user-roles-filter option[value=' + $(option).val() + ']').attr("selected", "selected");
+              } else {
+                $('#user-roles-filter option[value=' + $(option).val() + ']').removeAttr("selected");
+              }
+            },
+        });
+    });
+</script>

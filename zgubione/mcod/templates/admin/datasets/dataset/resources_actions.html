@@ -1,0 +1,17 @@
+{% extends "admin/actions.html" %}
+{% load i18n %}
+{% block actions_button %}
+    <a id="resources_actions_btn" type="button" class="btn" title="{% trans "Run the selected action" %}" name="index" value="{{ action_index|default:0 }}">{% trans "Go" %}</a>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('#resources_actions_btn').click(function(e){
+            e.preventDefault();
+            $('input[name="_selected_action"]:checked').each(function(){
+                $('<input>').attr('type', 'hidden').attr('name', '_selected_action').attr('value', $(this).val()).appendTo('#resources_actions_form');
+            });
+            $('<input>').attr('type', 'hidden').attr('name', 'action').attr('value', $('select[name="action"]').val()).appendTo('#resources_actions_form');
+            $('#resources_actions_form').submit();
+        });
+    });
+    </script>
+{% endblock %}

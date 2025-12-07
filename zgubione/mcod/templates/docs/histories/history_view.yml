@@ -1,0 +1,19 @@
+{% load i18n %}
+---
+tags:
+   - {% trans "API Endpoints" %}
+summary: {% trans "Get single history item" %}
+description: |
+  {% spaceless %}
+      <p>Returns history item with given ID.</p>
+      {% include "docs/histories/obj_description.html" %}
+  {% endspaceless %}
+parameters:
+    schema: HistoryApiRequest
+responses:
+    200:
+        description: valid response in jsonapi format
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/History'

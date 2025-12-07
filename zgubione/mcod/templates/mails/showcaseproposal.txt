@@ -1,0 +1,53 @@
+Zgłoszenie propozycji wykorzystania danych w zakładce PoCoTo:
+
+Kategoria:
+{{ obj.category_name }}
+
+Nazwa propozycji wykorzystania danych:
+{{ obj.title }}
+
+Adres URL do rozwiązania wykorzystującego dane:
+{{ obj.url }}
+{% if obj.is_app %}
+iOS - link do aplikacji mobilnej:
+{{ obj.mobile_apple_url|default:"-" }}
+
+Android - link do aplikacji mobilnej:
+{{ obj.mobile_google_url|default:"-" }}
+
+Windows - link do aplikacji desktopowej:
+{{ obj.desktop_windows_url|default:"-" }}
+
+Linux - link do aplikacji desktopowej:
+{{ obj.desktop_linux_url|default:"-" }}
+
+MacOS - link do aplikacji desktopowej:
+{{ obj.desktop_macos_url|default:"-" }}
+{% endif %}
+{% if not obj.is_other %}
+Rodzaj licencji:
+{{ obj.get_license_type_display|default:"-" }}
+{% endif %}
+Opis rozwiązania ponownego wykorzystania otwartych danych:
+{{ obj.notes }}
+
+Słowa kluczowe (opcjonalne):
+{{ obj.keywords|join:", "|default:"-" }}
+
+Autor:
+{{ obj.author }}
+
+Logo (opcjonalne, ale zalecane):
+{{ obj.image_absolute_url|default:"-" }}
+
+Grafika ilustracyjna (opcjonalne):
+{{ obj.illustrative_graphics_url|default:"-" }}
+
+Lista zbiorów z portalu dane.gov.pl wykorzystanych w propozycji (opcjonalne):
+{{ obj.datasets_links_info|default:"-" }}
+
+Lista zbiorów danych zewnętrznych wykorzystanych w propozycji (opcjonalne):
+{{ obj.external_datasets_info|default:"-" }}
+
+E-mail zgłaszającego:
+{{ obj.applicant_email }}

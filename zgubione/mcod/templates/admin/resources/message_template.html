@@ -1,0 +1,29 @@
+{% load i18n %}
+
+<style>
+    .tooltip {}
+
+</style>
+<span>{% blocktrans %}During the verification of column "{{ colname }}" with the rule "{{ rule }}" detected errors (max 5){% endblocktrans %}
+</span>
+
+<table class="table table-stripped">
+    <thead>
+    <tr>
+        <th>{% blocktrans %}Row number{% endblocktrans %}</th>
+        <th>{% blocktrans %}Invalid value{% endblocktrans %}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in results %}
+        <tr>
+            <td>{{ row.0 }}</td>
+            <td>{{ row.1 }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<div id="dvDiv"
+     style="display:none;position:absolute;padding:1px;border:1px solid #333333;;background-color:#fffedf;font-size:smaller;z-index:999;"></div>
+<iframe id="frm" style="display:none;position:absolute;z-index:998"></iframe>

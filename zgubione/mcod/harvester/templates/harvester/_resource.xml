@@ -1,0 +1,26 @@
+<resource{% if resource.status %} status="{{ resource.status }}"{% endif %}>
+<extIdent>{{ resource.ext_ident }}</extIdent>
+{% if resource.int_ident %}
+<intIdent>{{ resource.int_ident }}</intIdent>
+{% endif %}
+<url>{{ resource.url }}</url>
+<title>
+  <polish>{{ resource.title_pl }}</polish>
+  {% if resource.title_en %}
+    <english>{{ resource.title_en }}</english>
+  {% endif %}
+</title>
+<description>
+  <polish>{{ resource.description_pl }}</polish>
+  <english>{{ resource.description_en }}</english>
+</description>
+{% if resource.availability %}
+<availability>{{ resource.availability }}</availability>
+{% endif %}
+{% if resource.data_date %}
+<dataDate>{{ resource.data_date }}</dataDate>
+{% endif %}
+{% if resource.last_update_date %}
+<lastUpdateDate>{{ resource.last_update_date }}</lastUpdateDate>
+{% endif %}
+</resource>

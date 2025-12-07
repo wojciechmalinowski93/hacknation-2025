@@ -1,0 +1,6 @@
+<label for="{{ field_name }}" class="checkbox">
+{% for choice in choices %}
+    <input type="checkbox" name="{{ field_name }}" data-name="{{ field_name }}" {{ choice.selected|yesno:' checked="checked",' }} title="{{ title }}"/>
+{% endfor %}
+    {{ title }}
+</label>

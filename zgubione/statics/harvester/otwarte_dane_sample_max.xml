@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:datasets xmlns:p="urn:otwarte-dane:harvester:1.0-rc1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:otwarte-dane:harvester:1.0-rc1 otwarte_dane_1_0_rc1.xsd ">
+  <dataset status="published">
+    <extIdent>bip-zus-13323321</extIdent>
+    <title>
+      <polish>Prognoza wpływów i wydatków Funduszu Emerytalnego do 2080 roku</polish>
+      <english>Forecast of income and expenditure of the Pension Fund until 2080</english>
+    </title>
+    <description>
+      <polish>Długoterminowa prognoza emerytalna do roku 2080 pokazuje dużą odporność systemu emerytalnego na finansowe skutki zmian demograficznych.
+	  System emerytalny wprowadzony 20 lat temu, zwany "nowym", w odróżnieniu od poprzedniego ("starego"),
+	  jest ekwiwalentny w wymiarze indywidualnym. Obecnie nadal połowa świadczeń jest ze "starego" systemu,
+	  ale wraz z rosnącą liczbą świadczeń z "nowego" systemu, stopniowo zwiększa się wydolność funduszu – wskaźnik
+	  pokazujący stopień pokrycia wydatków wpływami ze składek.</polish>
+      <english>The long-term pension projection until 2080 shows that the pension system is highly resilient to the financial
+      consequences of demographic change. The pension system introduced 20 years ago, known as the 'new' pension system,
+      as opposed to the previous one ('old'), is equivalent in individual terms. Nowadays, half of the benefits are still from
+      the "old" system, but with the increasing number of benefits from the "new" system, the capacity of the fund is gradually
+      increasing - an indicator showing the degree to which expenditure is covered by contributions.</english>
+    </description>
+    <url>https://bip.zus.pl</url>
+    <updateFrequency>notApplicable</updateFrequency>
+    <categories>3 4 5</categories>
+    <license>notspecified</license>
+    <conditions>
+      <source>false</source>
+      <modification>false</modification>
+      <responsibilities></responsibilities>
+      <dbOrCopyrighted></dbOrCopyrighted>
+      <personalData></personalData>
+    </conditions>
+    <lastUpdateDate>2010-12-01T10:12:15</lastUpdateDate>
+    <resources>
+      <resource status="published">
+        <extIdent>bip-zus-13323321-1</extIdent>
+        <url>https://bip.zus.pl/documents/493361/494125/Prognoza_Fundusz_Emerytalny_2020-2080.pdf/6adcc789-79bf-b08e-4261-8fc5184a4e95</url>
+        <title>
+          <polish>Prognoza wpływów i wydatków Funduszu Emerytalnego do 2080 roku</polish>
+          <english>Forecast of income and expenditure of the Pension Fund until 2080</english>
+        </title>
+        <description>
+          <polish>Prezentowane wyniki dotyczą funduszu emerytalnego i obejmują okres od roku 2020 do roku 2080 i są efektem
+          przeliczeń modelu FUS17. Prognozę sporządziliśmy w trzech wariantach: wariant nr 1 – pośredni,
+          wariant nr 2 – pesymistyczny i wariant nr 3 – optymistyczny. W prognozie uwzględniliśmy zmiany przepisów
+          wprowadzone od czasu poprzedniej edycji, które mają wpływ na sytuację finansową funduszu emerytalnego.
+          Najważniejszą z nich jest obniżenie ustawowego wieku emerytalnego do 60 lat w przypadku kobiet i do 65 lat w przypadku mężczyzn.
+          Prognoza jest adekwatna do stanu prawnego obowiązującego na moment zakończenia budowy modelu prognostycznego (maj 2019 roku).</polish>
+          <english>The presented results relate to the pension fund and cover the period from 2020 to 2080 and are the effect of conversion
+          of the FUS model17. The forecast was prepared in three variants: variant no. 1 - indirect, variant no. 2 - pessimistic and
+          variant no. 3 - optimistic. The forecast takes into account the changes in regulations introduced since the previous edition,
+          which have an impact on the financial situation of the pension fund. The most important of these is the reduction of
+          the statutory retirement age to 60 for women and 65 for men. The forecast is adequate to the legal status in force at
+          the time of completion of the forecasting model (May 2019).</english>
+        </description>
+        <availability>remote</availability>
+        <dataDate>2010-12-01</dataDate>
+        <lastUpdateDate>2010-12-01T10:12:17</lastUpdateDate>
+      </resource>
+    </resources>
+    <tags>
+      <tag lang="pl">FUS</tag>
+      <tag lang="pl">ZUS</tag>
+      <tag lang="pl">Zakład Ubezpieczeń Społecznych</tag>
+      <tag lang="pl">emerytura</tag>
+      <tag lang="pl">prognoza FUS</tag>
+      <tag lang="en">ZUS</tag>
+      <tag lang="en">FUS</tag>
+      <tag lang="en">The Social Insurance Institution</tag>
+    </tags>
+  </dataset>
+</p:datasets>

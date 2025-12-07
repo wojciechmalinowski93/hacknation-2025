@@ -1,0 +1,21 @@
+{% extends "admin/delete_selected_confirmation.html" %}
+
+{% load i18n %}
+
+{% block perms_lacking %}
+
+{% for special_sign in queryset %}
+{% if special_sign.special_signs_resources.exists %}
+<p>{% blocktrans with obj=special_sign.symbol %}The selected convention mark {{ obj }} is used in the resources below. A
+    convention mark can only be removed if it is not used on any resource.{% endblocktrans %}</p>
+<ul>
+    {% for resource in special_sign.special_signs_resources.all %}
+    <li><a href="{{ resource.admin_change_url }}" target="_blank">{{ resource }}</a></li>
+    {% empty %}
+    <li>-</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endfor %}
+
+{% endblock perms_lacking %}

@@ -1,0 +1,121 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+{% load core_tags %}
+
+{% block extrastyle %}
+    {{ block.super }}
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+    {% if active_alerts %}
+        <div class="module">
+            <div class="alerts-app"><a href="/alerts/alert">{% trans "Active alerts" %}</a></div>
+            {% for alert in active_alerts %}
+                <div class="alert alert-info">
+                    <h4>{{ alert.title }}</h4>
+                    <p>{{ alert.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div id="content-main">
+        {% if app_list %}
+            {% for app in app_list %}
+                {% if app.app_label not in SETTINGS.SUIT_CONFIG.APPS_SKIPPED_IN_DASHBOARD %}
+                    <div class="module">
+                        <table class="table-overview applist minw-500"
+                               summary="{% blocktrans with name=app.name %}Models available in the {{ name }} application.{% endblocktrans %}">
+                            <caption><a href="{{ app.app_url }}"
+                                        class="section">{% trans app.name %} {{ app.skip_dashboard }}</a></caption>
+                            {% for model in app.models %}
+                                {% get_model_extra_data app.app_label model as model_data %}
+                                {% if not model_data.is_trash %}
+                                <tr>
+
+                                    <th class="col-5" scope="row">{{ model.name }}</th>
+
+                                    <td class="col-2">
+                                        {% if model.admin_url and model_data.show_change_button %}
+                                            <a id="{% get_main_page_table_change_button_id model.object_name %}" href="{{ model_data.admin_url }}" class="changelink icon">
+                                                {% trans 'Change' %}
+                                            </a>
+                                        {% endif %}
+                                    </td>
+
+                                    <td class="col-3">
+                                        {% if model.add_url %}
+                                            <a href="{{ model.add_url }}" class="addlink icon">
+                                                <i class="icon-plus-sign icon-alpha75"></i>{% trans 'Add' %}
+                                            </a>
+                                        {% endif %}
+                                    </td>
+
+                                    <td class="col-2">
+                                        {% if model_data.trash_url %}
+                                            <a href="{{ model_data.trash_url }}" class="changelink icon">
+                                                {% trans 'Trash' %}
+                                            </a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>{% trans "You don't have permission to edit anything." %}</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+
+{% block sidebar %}
+    <div id="content-related">
+        <div class="module" id="recent-actions-module">
+            <h3 class="italic-title">{% trans 'My Actions' %}</h3>
+
+            {% load log %}
+            {% get_admin_log 10 as admin_log for_user user %}
+            {% if not admin_log %}
+                <p>{% trans 'None available' %}</p>
+            {% else %}
+                <ul class="actionlist">
+                    {% for entry in admin_log %}
+                        <li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}text-error{% endif %}">
+
+                            <i class="{% if entry.is_addition %}icon-plus{% endif %}{% if entry.is_change %}icon-pencil{% endif %}{% if entry.is_deletion %}icon-trash{% endif %} icon-alpha5"></i>
+
+                            {% spaceless %}
+                                {% if entry.is_addition %}{% trans 'added'|capfirst %}{% endif %}
+                                {% if entry.is_change %}{% trans 'changed'|capfirst %}{% endif %}
+                                {% if entry.is_deletion %}{% trans 'deleted'|capfirst %}{% endif %}
+
+                                {% if entry.content_type %}
+                                    <span class="mini quiet">{% filter capfirst %}
+                                        {% trans entry.content_type.name %}{% endfilter %}</span>
+                                {% else %}
+                                    <span class="mini quiet">{% trans 'Unknown content' %}</span>
+                                {% endif %}
+                            {% endspaceless %}&nbsp;
+
+                            {% if entry.is_deletion or not entry.get_admin_url %}
+                                <span class="color-grey">{{ entry.object_repr }}</span>
+                            {% else %}
+                                <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

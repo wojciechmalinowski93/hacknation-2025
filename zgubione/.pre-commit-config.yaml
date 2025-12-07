@@ -1,0 +1,57 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.2.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: data
+      - id: end-of-file-fixer
+        exclude: data
+      - id: check-yaml
+        exclude: templates|data
+      - id: check-added-large-files
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args:
+          - "--multi-line"
+          - "3"
+          - "--trailing-comma"
+          - "--line-length"
+          - "100"
+          - "--combine-as"
+          - "--profile"
+          - "black"
+        exclude: settings|migrations|docs|translations|docker|temp|frontend
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.1.2 # last version supporting python 3.8.1
+    hooks:
+      - id: flake8
+        exclude: settings|migrations|docs|translations|docker|temp|frontend
+        args:
+          - "--max-line-length"
+          - "130" # rest of the config is in .flake8
+
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.3.0 # last version supporting python 3.8
+    hooks:
+      - id: black
+        language_version: python3.8
+        args:
+          - "--line-length"
+          - "130"
+        exclude: docs|translations|docker|temp|frontend
+
+  - repo: https://github.com/hukkin/mdformat
+    rev: 0.7.17 # last version supporting python 3.8
+    hooks:
+      - id: mdformat
+        files: |
+            (?x)^(
+                README.md|
+                CHANGELOG.md
+            )$

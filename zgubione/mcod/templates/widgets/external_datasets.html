@@ -1,0 +1,18 @@
+{% load i18n static %}
+
+{% for item in items_list %}
+<input type="text" name="json_key[customfields]" value="{{ item.title }}" placeholder="{% trans 'name' %}">
+<input type="url" name="json_value[customfields]" value="{{ item.url }}" placeholder="{% trans 'link' %}" class="customfields"><br>
+{% endfor %}
+
+<script type="text/javascript">
+    var button = '<button type="button" id="add_customfield" class="add-related customfields"><img src="{% static 'admin/img/icon-addlink.svg' %}" alt="{% trans 'Add' %}"></button>';
+    var pair = '<br><input type="text" name="json_key[customfields]" value="" placeholder="{% trans 'name' %}"><input type="url" name="json_value[customfields]" value="" placeholder="{% trans 'link' %}" size="35">';
+
+    $(document).ready(function(){
+        $('.customfields').last().after(button);
+        $('#add_customfield').click(function(){
+            $(this).before(pair);
+        });
+    });
+</script>

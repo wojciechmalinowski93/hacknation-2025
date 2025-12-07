@@ -1,0 +1,63 @@
+from django.db import models
+from django.utils.translation import gettext_lazy as _
+# Create your models here.
+
+
+class Item(models.Model):
+
+    STATUS_ITEM = [
+        ('lost', 'Zgubiony'),
+        ('found', 'Znaleziony'),
+        ('claimed', 'Odebrany'),
+    ]
+
+    CATEGORY_ITEM = [
+        ('electronics', 'Elektronika'),
+        ('clothing', 'Ubrania'),
+        ('wallets/money', 'portfel/pieniadze'),
+        ('jewellery', 'Bizuteria'),
+        ('documents', 'Dokumenty'),
+        ('animal', 'Zwierzeta'),
+        ('other', 'Inne'),
+    ]
+
+    category = models.CharField(max_length=20,
+                                choices=CATEGORY_ITEM,
+                                default=None)
+    name = models.CharField(max_length=255,
+                            verbose_name=_("Nazwa przedmiotu"),
+                            help_text=_("Np. Pęk kluczy z breloczkiem misia")
+                            )
+    description = models.TextField(
+        verbose_name=_("Opis szczegółowy"),
+        blank=True
+    )
+    date_found = models.DateField(
+			~/hackathon/zgubione/mcod/lost_and_found)
+    location_city = models.CharField(max_length=100, verbose_name=_("Miejscowość"))
+    location_description = models.TextField(
+        verbose_name=_("Miejsce znalezienia"),
+        help_text=_("Np. Park Miejski, ławka przy stawie, autobus linii 105"),
+        blank = True
+    )
+    is_claimed = models.BooleanField(default=False)
+    status = models.CharField(max_length=10,
+                              choices=STATUS_ITEM,
+                              default=None)
+    image = models.ImageField(
+        upload_to='lost_and_found/%Y/%m/',
+        verbose_name=_("Zdjęcie przedmiotu"),
+        blank=True, null=True
+    )
+    contact_info = models.TextField(
+        verbose_name=_("Informacje kontaktowe"),
+        help_text=_("Gdzie odebrać? Telefon, pokój w urzędzie itp.")
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("Rzecz znaleziona")
+        verbose_name_plural = _("Rzeczy znalezione")
+
+    def __str__(self):
+        return f"{self.name} ({self.location_city})"

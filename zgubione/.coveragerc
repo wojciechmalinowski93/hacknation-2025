@@ -1,0 +1,4 @@
+[run]
+branch = True
+source = mcod
+omit = *migrations*, *tests*, *templates*, *test-data*, *frontend*, mcod/wsgi.py, mcod/asgi.py, *settings/*, */factories.py*, mcod/applications/*, mcod/articles/*

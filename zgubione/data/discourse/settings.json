@@ -1,0 +1,155 @@
+[
+    {
+        "setting": "default_locale",
+        "value": "pl_PL"
+    },
+    {
+        "setting": "title",
+        "value": "Forum Otwarte Dane"
+    },
+    {
+        "setting": "contact_email",
+        "value": "kontakt@dane.gov.pl"
+    },
+    {
+        "setting": "notification_email",
+        "value": "user@example.com"
+    },
+    {
+        "setting": "site_contact_username",
+        "value": "user"
+    },
+    {
+        "setting": "logo",
+        "value": ""
+    },
+    {
+        "setting": "logo_small",
+        "value": ""
+    },
+    {
+        "setting": "login_required",
+        "value": "true"
+    },
+    {
+        "setting": "enable_local_logins",
+        "value": "false"
+    },
+    {
+        "setting": "enable_local_logins_via_email",
+        "value": "false"
+    },
+    {
+        "setting": "allow_new_registrations",
+        "value": "false"
+    },
+    {
+        "setting": "enable_signup_cta",
+        "value": "false"
+    },
+    {
+        "setting": "auth_skip_create_confirm",
+        "value": "true"
+    },
+    {
+        "setting": "enable_discourse_connect",
+        "value": "true"
+    },
+    {
+        "setting": "discourse_connect_allows_all_return_paths",
+        "value": "true"
+    },
+    {
+        "setting": "enable_discourse_connect_provider",
+        "value": "true"
+    },
+    {
+        "setting": "verbose_discourse_connect_logging",
+        "value": "true"
+    },
+    {
+        "setting": "discourse_connect_overrides_groups",
+        "value": "true"
+    },
+    {
+        "setting": "discourse_connect_overrides_bio",
+        "value": "true"
+    },
+    {
+        "setting": "email_editable",
+        "value": "false"
+    },
+    {
+        "setting": "auth_overrides_email",
+        "value": "true"
+    },
+    {
+        "setting": "auth_overrides_username",
+        "value": "true"
+    },
+    {
+        "setting": "auth_overrides_name",
+        "value": "true"
+    },
+    {
+        "setting": "reserved_usernames",
+        "value": "moderator|mod|sys|system|community|info|you|name|username|user|nickname|discourse|discourseorg|discourseforum|support"
+    },
+
+    {
+        "setting": "min_topic_title_length",
+        "value": "1"
+    },
+    {
+        "setting": "max_consecutive_replies",
+        "value": "3000"
+    },
+    {
+        "setting": "newuser_max_replies_per_topic",
+        "value": "3000"
+    },
+    {
+        "setting": "enable_page_publishing",
+        "value": "true"
+    },
+    {
+        "setting": "max_topics_per_day",
+        "value": "1000"
+    },
+    {
+        "setting": "max_personal_messages_per_day",
+        "value": "1000"
+    },
+    {
+        "setting": "max_likes_per_day",
+        "value": "1000"
+    },
+    {
+        "setting": "max_edits_per_day",
+        "value": "1000"
+    },
+    {
+        "setting": "max_invites_per_day",
+        "value": "1000"
+    },
+    {
+        "setting": "max_topics_in_first_day",
+        "value": "1000"
+    },
+    {
+        "setting": "max_replies_in_first_day",
+        "value": "1000"
+    },
+    {
+        "setting": "polling_interval",
+        "value": "30000"
+    },
+    {
+        "setting": "revoke_api_keys_days",
+        "value": "0"
+    },
+    {
+        "setting": "expire_user_api_keys_days",
+        "value": "0"
+    }
+]

@@ -1,0 +1,33 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+{% load static %}
+{% load core_tags %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/apps.css' %}" media="all">
+{% endblock %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block header_content %}
+{% endblock %}
+
+{% block footer_links %}
+    <a href="{% settings_value "BASE_URL" %}" target="_blank" class="icon"><i class="icon-home"></i>{% trans "Home page" %}</a>
+    <a href="mailto:{{ config.CONTACT_MAIL }}" target="_blank" class="icon"><i class="icon-envelope"></i>{% trans "Contact" %}</a>
+    <a href="{{ config.MANUAL_URL }}" target="_blank" class="icon"><i class="icon-question-sign"></i><strong>{% trans "Guide for data providers" %}</strong></a>
+{% endblock %}
+
+{% block copyright %}
+    {% trans "Maintened by" %} <a href="https://www.gov.pl/cyfryzacja" target="_blank">{% trans "Chancellery of the Prime Minister" %}</a>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block messages %}
+    {{ block.super }}
+{% endblock %}

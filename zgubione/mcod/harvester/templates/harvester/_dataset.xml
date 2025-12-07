@@ -1,0 +1,46 @@
+<dataset{% if dataset.status %} status="{{ dataset.status }}"{% endif %}>
+<extIdent>{{ dataset.ext_ident }}</extIdent>
+{% if dataset.int_ident %}
+  <intIdent>{{ dataset.int_ident }}</intIdent>
+{% endif %}
+<title>
+  <polish>{{ dataset.title_pl }}</polish>
+  {% if dataset.title_en %}
+  <english>{{ dataset.title_en }}</english>
+  {% endif %}
+</title>
+<description>
+  <polish>{{ dataset.notes_pl }}</polish>
+  <english>{{ dataset.notes_en }}</english>
+</description>
+{% if dataset.url %}
+<url>{{ dataset.url }}</url>
+{% endif %}
+<updateFrequency>{{ dataset.update_frequency }}</updateFrequency>
+<categories>{{ dataset.categories }}</categories>
+{% if dataset.license %}
+<license>{{ dataset.license }}</license>
+{% endif %}
+{% if dataset.conditions %}
+<conditions>
+  <source>{{ dataset.conditions.source }}</source>
+  <modification>{{ dataset.conditions.modification }}</modification>
+  <responsibilities>{{ dataset.conditions.responsibilities }}</responsibilities>
+  <dbOrCopyrighted>{{ dataset.conditions.db_or_copyrighted }}</dbOrCopyrighted>
+  <personalData>{{ dataset.conditions.personal_data }}</personalData>
+</conditions>
+{% endif %}
+{% if dataset.last_update_date %}
+<lastUpdateDate>{{ dataset.last_update_date }}</lastUpdateDate>
+{% endif %}
+<resources>
+    {% for resource in dataset.resources %}
+    {% include 'harvester/_resource.xml' %}
+    {% endfor %}
+</resources>
+<tags>
+    {% for tag in dataset.tags %}
+    <tag lang="{{ tag.lang }}">{{ tag.name }}</tag>
+    {% endfor %}
+</tags>
+</dataset>

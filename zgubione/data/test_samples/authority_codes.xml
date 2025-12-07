@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            original.entries.date="2015-10-07"
+            current.entries.date="2020-09-14"
+            table.structure.version="01-02.33-20200901"
+            table.id="data-theme"
+            ref.administration="cat.admin.xml"
+            xsi:noNamespaceSchemaLocation="http://publications.europa.eu/mdr/resource/authority-schema/cat-01-02.33-20200901.xsd"
+            version="20200923-0">
+   <record deprecated="false"
+           id="DTH0001"
+           IMMC.proposal.date="2015-10-09"
+           IMMC.approval.date="2015-10-09"
+           date.creation="2015-10-01"
+           adm.status="current">
+      <authority-code>AGRI</authority-code>
+      <label>
+         <lg.version lg="bul" script="Cyrillic">Селско стопанство, рибарство, горско стопанство и храни</lg.version>
+         <lg.version lg="ces">Zemědělství, rybolov, lesnictví a výživa</lg.version>
+         <lg.version lg="dan">Landbrug, fiskeri, skovbrug og fødevarer</lg.version>
+         <lg.version lg="deu">Landwirtschaft, Fischerei, Forstwirtschaft und Nahrungsmittel</lg.version>
+         <lg.version lg="ell" script="Greek">Γεωργία, αλιεία, δασοκομία και τρόφιμα</lg.version>
+         <lg.version lg="eng">Agriculture, fisheries, forestry and food</lg.version>
+         <lg.version lg="est">Põllumajandus, kalandus, metsandus ja toiduained</lg.version>
+         <lg.version lg="fin">Maatalous, kalastus, metsätalous ja elintarvikkeet</lg.version>
+         <lg.version lg="fra">Agriculture, pêche, sylviculture et alimentation</lg.version>
+         <lg.version lg="gle">Talmhaíocht, iascach, foraoiseacht agus bia</lg.version>
+         <lg.version lg="hrv">Poljoprivreda, ribarstvo, šumarstvo i hrana</lg.version>
+         <lg.version lg="hun">Mezőgazdaság, halászat, erdészet és élelmiszer</lg.version>
+         <lg.version lg="ita">Agricoltura, pesca, silvicoltura e prodotti alimentari</lg.version>
+         <lg.version lg="lav">Lauksaimniecība, zivsaimniecība, mežsaimniecība un pārtika</lg.version>
+         <lg.version lg="lit">Žemės ūkis, žuvininkystė, miškininkystė ir maistas</lg.version>
+         <lg.version lg="mlt">Agrikoltura, sajd, forestrija u ikel</lg.version>
+         <lg.version lg="nld">Landbouw, visserij, bosbouw en voeding</lg.version>
+         <lg.version lg="nno">Jordbruk, fiskeri, skogbruk og mat</lg.version>
+         <lg.version lg="nob">Jordbruk, fiskeri, skogbruk og mat</lg.version>
+         <lg.version lg="nor">Jordbruk, fiskeri, skogbruk og mat</lg.version>
+         <lg.version lg="pol">Rolnictwo, rybołówstwo, leśnictwo i żywność</lg.version>
+         <lg.version lg="por">Agricultura, pesca, silvicultura e alimentação</lg.version>
+         <lg.version lg="ron">Agricultură, pescuit, silvicultură şi hrană</lg.version>
+         <lg.version lg="slk">Poľnohospodárstvo, rybné hospodárstvo, lesníctvo a potravinárstvo</lg.version>
+         <lg.version lg="slv">Kmetijstvo, ribištvo, gozdarstvo in prehrana</lg.version>
+         <lg.version lg="spa">Agricultura, pesca, silvicultura y alimentación</lg.version>
+         <lg.version lg="swe">Jordbruk, fiske, skogsbruk och livsmedel</lg.version>
+      </label>
+      <use.context>DCAT_AP</use.context>
+      <use.context>IMMC</use.context>
+      <use.context>ODP</use.context>
+      <start.use>2015-10-01</start.use>
+      <sources>
+         <source date="2020-04-16" lg="eng">
+            <description>This concept identifies datasets covering such domains as agriculture, fisheries, forestry or food. Agriculture is the science and art of cultivating plants and livestock. Fisheries are activities leading to harvesting of fish; may involve capture of wild fish or raising of fish through aquaculture. Forestry is the science and craft of creating, managing, using, conserving and repairing forests, woodlands and associated resources for human and environmental benefits. Food is any substance consumed to provide nutritional support for an organism. Dataset examples: Agricultural and Vegetable Catalogue; The Community Fishing Fleet Register; Pan-European Map of Forest Biomass Increment; Food composition database for nutrient intake: selected vitamins and minerals in selected European countries.</description>
+            <provenance>OP</provenance>
+         </source>
+      </sources>
+   </record>
+   <record deprecated="false"
+           id="DTH0002"
+           IMMC.proposal.date="2015-10-09"
+           IMMC.approval.date="2015-10-09"
+           date.creation="2015-10-01"
+           adm.status="current">
+      <authority-code>EDUC</authority-code>
+      <label>
+         <lg.version lg="bul" script="Cyrillic">Образование, култура и спорт</lg.version>
+         <lg.version lg="ces">Vzdělávání, kultura a sport</lg.version>
+         <lg.version lg="dan">Uddannelse, kultur og sport</lg.version>
+         <lg.version lg="deu">Bildung, Kultur und Sport</lg.version>
+         <lg.version lg="ell" script="Greek">Παιδεία, πολιτιστικά θέματα και αθλητισμός</lg.version>
+         <lg.version lg="eng">Education, culture and sport</lg.version>
+         <lg.version lg="est">Haridus, kultuur ja sport</lg.version>
+         <lg.version lg="fin">Koulutus, kulttuuri ja urheilu</lg.version>
+         <lg.version lg="fra">Éducation, culture et sport</lg.version>
+         <lg.version lg="gle">Oideachas, cultúr agus spórt</lg.version>
+         <lg.version lg="hrv">Obrazovanje, kultura i sport</lg.version>
+         <lg.version lg="hun">Oktatás, kultúra és sport</lg.version>
+         <lg.version lg="ita">Istruzione, cultura e sport</lg.version>
+         <lg.version lg="lav">Izglītība, kultūra un sports</lg.version>
+         <lg.version lg="lit">Švietimas, kultūra ir sportas</lg.version>
+         <lg.version lg="mlt">Edukazzjoni, kultura u sport</lg.version>
+         <lg.version lg="nld">Onderwijs, cultuur en sport</lg.version>
+         <lg.version lg="nno">Utdanning, kultur og sport</lg.version>
+         <lg.version lg="nob">Utdanning, kultur og sport</lg.version>
+         <lg.version lg="nor">Utdanning, kultur og sport</lg.version>
+         <lg.version lg="pol">Edukacja, kultura i sport</lg.version>
+         <lg.version lg="por">Educação, cultura e desporto</lg.version>
+         <lg.version lg="ron">Educaţie, cultură şi sport</lg.version>
+         <lg.version lg="slk">Vzdelávanie, kultúra a šport</lg.version>
+         <lg.version lg="slv">Izobraževanje, kultura in šport</lg.version>
+         <lg.version lg="spa">Educación, cultura y deportes</lg.version>
+         <lg.version lg="swe">Utbildning, kultur och sport</lg.version>
+      </label>
+      <use.context>DCAT_AP</use.context>
+      <use.context>IMMC</use.context>
+      <use.context>ODP</use.context>
+      <start.use>2015-10-01</start.use>
+      <sources>
+         <source date="2020-04-16" lg="eng">
+            <description>This concept identifies datasets covering such domains as education, culture or sport. Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs and habits. Culture encompasses the social behavior and norms found in human societies, as well as the knowledge, beliefs, arts, laws, customs, capabilities and habits of the individuals in these groups. Sport includes all forms of competitive physical activity or games which maintain or improve physical ability and skills while providing enjoyment to participants, and in some cases, entertainment for spectators. Dataset examples: European Skills, Competences, Qualifications and Occupations (ESCO); EU Member States and international human rights obligations; Participation in any cultural or sport activities in the last 12 months by sex, age and educational attainment level.</description>
+            <provenance>OP</provenance>
+         </source>
+      </sources>
+   </record>
+</data-theme>

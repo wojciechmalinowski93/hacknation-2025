@@ -1,0 +1,6 @@
+# Migrate code style to Black
+f4bce4f2eac945ed4b5202bd1de114821bad4343
+# reformat-everything with isort
+3104ceb8613ad68af936437a3b6d4ceed7b3c43e
+# reformat-everything with pre-commit
+1c7526c562b18c264f96144492c98a6a2177bb8c

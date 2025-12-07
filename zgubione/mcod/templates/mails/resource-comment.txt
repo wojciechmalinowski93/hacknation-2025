@@ -1,0 +1,3 @@
+{% if test %}adresaci: {{ resource.comment_mail_recipients|join:", " }}{% endif %}
+Do zasobu {{ resource.title }} została zgłoszona uwaga:
+{{ comment }}

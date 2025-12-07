@@ -1,0 +1,22 @@
+{% extends 'admin/delete_confirmation.html' %}
+
+{% load i18n %}
+
+{% block delete_info %}
+    {% with count=object.resources.count %}
+    {% if count %}
+        <p class="lead">{% blocktrans with title=object|truncatewords:"18" %}Deleting the dataset <b>"{{ title }}"</b> will also delete data associated with it, that is:{% endblocktrans %}</p>
+        <ul>
+            {% for obj in object.resources.confirm_delete_items %}
+                <li>{{ obj|truncatewords:"18" }}</li>
+            {% endfor %}
+            {% if count > 10 %}
+                <br>
+                <li><small>{% blocktrans with other_count=count|add:-10 %}And {{ other_count }} other resources{% endblocktrans %}</small></li>
+            {% endif %}
+        </ul>
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+    {% endwith %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "wagtailadmin/base.html" %}
+{% load i18n %}
+{% block titletag %}{% blocktrans with form_title=form_page.title|capfirst %}Lista odpowiedzi dla ankiety {{ form_title }}{% endblocktrans %}{% endblock %}
+{% block extra_js %}
+    {{ block.super }}
+{% endblock %}
+{% block content %}
+    <header class="nice-padding" role="banner">
+        <form action="" method="get" novalidate>
+            <div class="row">
+                <div class="left">
+                    <div class="col header-title">
+                        <h1 class="icon icon-form">
+                        {% blocktrans with form_title=form_page.title|capfirst %}Odpowiedzi dla ankiety <span>{{ form_title }}</span>{% endblocktrans %}
+                        </h1>
+                    </div>
+                </div>
+                <div class="right">
+                   <button name="action" value="XLS" class="button bicolor icon icon-download">{% trans 'Pobierz wyniki' %}</button>
+                </div>
+            </div>
+        </form>
+    </header>
+    <div class="nice-padding">
+        {% if submissions %}
+                {% include "wagtailadmin/forms/list_submissions.html" %}
+                {% include "wagtailadmin/shared/pagination_nav.html" with items=page_obj %}
+        {% else %}
+            <p class="no-results-message">{% blocktrans with title=form_page.title %}Nie ma żadnych odpowiedzi dla ankiety '{{ title }}'.{% endblocktrans %}</p>
+        {% endif %}
+    </div>
+{% endblock %}

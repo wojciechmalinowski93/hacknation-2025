@@ -1,0 +1,47 @@
+{% load i18n admin_urls core_tags %}
+<div class="submit-row">
+    {% block submit-row %}
+
+        {# taken from django-admin-confirm becouse no template inheritance here. #}
+        {% if confirm_change %}<input type="hidden" name="_confirm_change" />{% endif %}
+        {% if confirm_add %}<input type="hidden" name="_confirm_add" />{% endif %}
+
+        {% if show_save %}
+            <button type="submit" class="btn btn-high  btn-success" {% title_attr adminform 'save' %} name="_save">{% trans 'Save' %}</button>
+        {% endif %}
+        {% if show_save_and_continue %}
+            <button type="submit" name="_continue" class="btn btn-high btn-link"{% title_attr adminform 'save_and_continue' %}>{% trans 'Save and continue editing' %}</button>
+        {% endif %}
+        {% if show_save_and_add_another %}
+            <button type="submit" name="_addanother" class="btn btn-link"{% title_attr adminform 'save_and_add_another' %}>{% trans 'Save and add another' %}</button>
+        {% endif %}
+
+        {% if show_save_as_new %}
+            <button type="submit" name="_saveasnew" class="btn"{% title_attr adminform 'save_as_new' %}>{% trans 'Save as new' %}</button>
+        {% endif %}
+        {% if show_close %}
+            <a href="{% url opts|admin_urlname:'changelist' %}" class="closelink btn"{% title_attr adminform 'close' %} style="padding-left:0;padding-right:0;">{% trans 'Close' %}</a>
+        {% endif %}
+
+        {% if show_delete_link and original %}
+            {% url opts|admin_urlname:'delete' original.pk|admin_urlquote as delete_url %}
+            <p class="deletelink-box">
+                <a href="{% add_preserved_filters delete_url %}" class="deletelink btn btn-danger "{% title_attr adminform 'delete' %}>{% trans "Delete" %}</a>
+            </p>
+        {% endif %}
+
+        <div>
+            <a class="btn extra-btn" id="cancel_button">{% trans "Cancel" %}</a>
+        </div>
+    {% endblock %}
+
+    <script>
+        $('#cancel_button').click(function() {
+            if (document.URL.endsWith('add/')) {
+                window.location.href = "../";
+            } else {
+                window.location.href = "../../";
+            }
+        })
+    </script>
+</div>

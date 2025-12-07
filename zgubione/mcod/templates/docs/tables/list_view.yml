@@ -1,0 +1,16 @@
+{% load i18n %}
+---
+summary: {% trans "Returns list of rows" %}
+security: []
+tags:
+    - {% trans "API Endpoints" %}
+
+parameters:
+    schema: TableApiSearchRequest
+responses:
+    200:
+        description: {% trans "Valid response in JSONAPI format"%}
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/Rows'

@@ -1,0 +1,72 @@
+{% extends 'admin/change_form.html' %}
+
+{% block extrajs %}
+    {{ block.super }}
+    <script type="text/javascript">
+     var $appGroups = $('.field-is_mobile_app,.field-is_desktop_app');
+     var $UrlInputs = $('#id_mobile_apple_url,#id_mobile_google_url,#id_desktop_macos_url,#id_desktop_linux_url,#id_desktop_windows_url');
+     var $appCheckboxes = $('#id_is_mobile_app,#id_is_desktop_app');
+     var $mobileGroup = $('.field-mobile_apple_url,.field-mobile_google_url');
+     var $mobileUrls = $('#id_mobile_apple_url,#id_mobile_google_url');
+     var $desktopGroup = $('.field-desktop_macos_url,.field-desktop_linux_url,.field-desktop_windows_url');
+     var $desktopUrls = $('#id_desktop_macos_url,#id_desktop_linux_url,#id_desktop_windows_url');
+     var $licenseGroup = $('.field-license_type');
+
+     var $selectCategory = $(document).find('select#id_category');
+    var $checkIsMobile = $(document).find('input#id_is_mobile_app');
+    var $checkIsDesktop = $(document).find('input#id_is_desktop_app');
+
+    function toggleShowcaseFields(val) {
+      if (val === 'app') {
+          $appGroups.css('display', 'inline');
+      } else {
+          $appGroups.css('display', 'none');
+          $mobileGroup.css('display', 'none');
+          $desktopGroup.css('display', 'none');
+          $UrlInputs.val('');
+          $appCheckboxes.prop('checked', false);
+      }
+      if (val === 'other') {
+          $licenseGroup.css('display', 'none');
+      } else {
+          $licenseGroup.css('display', 'inline');
+      }
+    }
+
+    function toggleMobileFields(val) {
+      if (val) {
+          $mobileGroup.css('display', 'inline');
+      } else {
+          $mobileGroup.css('display', 'none');
+          $mobileUrls.val('');
+      }
+    }
+
+    function toggleDesktopFields(val) {
+      if (val) {
+          $desktopGroup.css('display', 'inline');
+      } else {
+          $desktopGroup.css('display', 'none');
+          $desktopUrls.val('');
+      }
+    }
+
+    $(document).ready(function() {
+        if($selectCategory.length){
+            toggleMobileFields($checkIsMobile.is(':checked'));
+            toggleDesktopFields($checkIsDesktop.is(':checked'));
+            toggleShowcaseFields($selectCategory.val());
+        }
+    });
+
+    $selectCategory.change(function(){
+        toggleShowcaseFields($(this).val());
+    });
+    $checkIsMobile.change(function(){
+        toggleMobileFields($(this).is(':checked'));
+    });
+    $checkIsDesktop.change(function(){
+        toggleDesktopFields($(this).is(':checked'));
+    });
+    </script>
+{% endblock %}

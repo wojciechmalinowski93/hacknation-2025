@@ -1,0 +1,786 @@
+[
+{
+    "model": "users.user",
+    "pk": 1841,
+    "fields": {
+        "last_login": null,
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2022-07-26T14:14:18.068Z",
+        "modified": "2022-07-26T14:21:59.232Z",
+        "email": "admin@mcod.local",
+        "password": "argon2$argon2i$v=19$m=512,t=2,p=2$aHNRUG5qeUFaOFdR$lBgYs67Tj/hEcdFFRbCcgA",
+        "fullname": "test admin",
+        "phone": null,
+        "phone_internal": null,
+        "is_staff": true,
+        "is_superuser": true,
+        "is_official": true,
+        "is_agent": false,
+        "state": "active",
+        "email_confirmed": null,
+        "agent_organization_main": null,
+        "extra_agent_of": null,
+        "from_agent": null,
+        "subscriptions_report_opt_in": null,
+        "rodo_privacy_policy_opt_in": null,
+        "lang": "pl",
+        "discourse_user_name": null,
+        "discourse_api_key": null,
+        "is_active": true,
+        "fav_charts": {
+            "slot-1": {},
+            "slot-2": {}
+        },
+        "groups": [],
+        "user_permissions": [],
+        "organizations": [],
+        "agent_organizations": []
+    }
+},
+{
+    "model": "organizations.organization",
+    "pk": 2838,
+    "fields": {
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2022-03-16T09:43:21.851Z",
+        "modified": "2022-06-06T13:04:35.557Z",
+        "status": "published",
+        "status_changed": "2022-03-16T09:43:21.851Z",
+        "slug": "pierwsza-instytucja",
+        "uuid": "465b1331-a598-46c5-8621-6a1827f01f25",
+        "published_at": "2022-03-16T09:43:21.851Z",
+        "views_count": 0,
+        "removed_at": "2022-03-16T09:43:21.851Z",
+        "title": "Pierwsza instytucja",
+        "description": "<p>bardzo długi opis na 20 znaków</p>",
+        "image": "",
+        "postal_code": "00-001",
+        "city": "Warszawa",
+        "street_type": "ul.",
+        "street": "UlicaTest",
+        "street_number": "87/65",
+        "flat_number": null,
+        "email": "admin@mc.gov.pl",
+        "epuap": "http://www.kesek-kukier.pl/",
+        "fax": null,
+        "fax_internal": null,
+        "institution_type": "state",
+        "regon": "276115858",
+        "tel": "0048123456789",
+        "tel_internal": null,
+        "website": "https://www.stowarzyszenie.org/",
+        "abbreviation": "KTI",
+        "i18n": {
+            "title_en": "",
+            "description_en": ""
+        },
+        "created_by": 1841,
+        "modified_by": 1841
+    }
+},
+{
+    "model": "users.user",
+    "pk": 1838,
+    "fields": {
+        "last_login": null,
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2022-03-10T12:57:45.742Z",
+        "modified": "2022-07-26T14:18:36.835Z",
+        "email": "pelnomocnik@mcod.local",
+        "password": "argon2$argon2i$v=19$m=512,t=2,p=2$NnNodlFwRndxR3BO$bBH4XVbEUvd38it6D93UaA",
+        "fullname": "test pelnomocnik",
+        "phone": "0048111111111",
+        "phone_internal": null,
+        "is_staff": true,
+        "is_superuser": false,
+        "is_official": true,
+        "is_agent": true,
+        "state": "active",
+        "email_confirmed": null,
+        "agent_organization_main": 2838,
+        "extra_agent_of": null,
+        "from_agent": null,
+        "subscriptions_report_opt_in": null,
+        "rodo_privacy_policy_opt_in": null,
+        "lang": "pl",
+        "discourse_user_name": null,
+        "discourse_api_key": null,
+        "is_active": true,
+        "fav_charts": {
+            "slot-1": {},
+            "slot-2": {}
+        },
+        "groups": [],
+        "user_permissions": [],
+        "organizations": [
+            2838
+        ],
+        "agent_organizations": [
+            2838
+        ]
+    }
+},
+
+{
+    "model": "tags.tag",
+    "pk": 3166,
+    "fields": {
+        "created": "2021-09-20T12:40:57.315Z",
+        "modified": "2021-09-20T12:40:57.316Z",
+        "status": "published",
+        "status_changed": "2021-09-20T12:40:57.315Z",
+        "slug": "",
+        "uuid": "2cfc82e8-b32b-4549-94f9-ce906fcd6506",
+        "published_at": "2021-09-20T12:40:57.315Z",
+        "views_count": 0,
+        "name": "Liczba ludno\u015bci",
+        "language": "pl",
+        "created_by": null,
+        "modified_by": null,
+        "i18n": null
+    }
+},
+{
+    "model": "categories.category",
+    "pk": 138,
+    "fields": {
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2021-09-20T12:39:57.456Z",
+        "modified": "2021-09-20T12:39:57.457Z",
+        "status": "published",
+        "status_changed": "2021-09-20T12:39:57.456Z",
+        "slug": "rolnictwo-ryboowstwo-lesnictwo-i-zywnosc",
+        "uuid": "e95ba272-7e50-46d8-9e82-aa3dad77ae16",
+        "published_at": "2021-09-20T12:39:57.456Z",
+        "views_count": 0,
+        "removed_at": "2021-09-20T12:39:57.456Z",
+        "code": "AGRI",
+        "title": "Rolnictwo, rybo\u0142\u00f3wstwo, le\u015bnictwo i \u017cywno\u015b\u0107",
+        "description": null,
+        "color": "#000000",
+        "image": "",
+        "created_by": null,
+        "modified_by": null,
+        "i18n": {
+            "slug_en": "agriculture-fisheries-forestry-and-food",
+            "title_en": "Agriculture, fisheries, forestry and food",
+            "description_en": "This concept identifies datasets covering such domains as agriculture, fisheries, forestry or food. Agriculture is the science and art of cultivating plants and livestock. Fisheries are activities leading to harvesting of fish; may involve capture of wild fish or raising of fish through aquaculture. Forestry is the science and craft of creating, managing, using, conserving and repairing forests, woodlands and associated resources for human and environmental benefits. Food is any substance consumed to provide nutritional support for an organism. Dataset examples: Agricultural and Vegetable Catalogue; The Community Fishing Fleet Register; Pan-European Map of Forest Biomass Increment; Food composition database for nutrient intake: selected vitamins and minerals in selected European countries."
+        }
+    }
+},
+
+{
+    "model": "special_signs.specialsign",
+    "pk": 2,
+    "fields": {
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2022-03-23T10:07:48.391Z",
+        "modified": "2022-03-23T10:07:48.391Z",
+        "status": "published",
+        "status_changed": "2022-03-23T10:07:48.391Z",
+        "slug": "kreska",
+        "uuid": "fba72b3c-926e-4a2b-89e6-71ee9c2b3733",
+        "published_at": "2022-03-23T10:07:48.391Z",
+        "views_count": 0,
+        "removed_at": "2022-03-23T10:07:48.391Z",
+        "symbol": "-",
+        "name": "kreska",
+        "description": "Zjawisko nie wyst\u0105pi\u0142o.",
+        "created_by": 1841,
+        "modified_by": 1841,
+        "i18n": {
+            "description_en": ""
+        }
+    }
+},
+{
+    "model": "django_celery_results.taskresult",
+    "pk": 14390519,
+    "fields": {
+        "task_id": "ca6432c4-7009-4e85-97d9-20d068fceca0",
+        "task_name": "mcod.resources.tasks.process_resource_file_data_task",
+        "task_args": "\"(40206,)\"",
+        "task_kwargs": "\"{}\"",
+        "status": "SUCCESS",
+        "worker": "some_worker",
+        "content_type": "application/json",
+        "content_encoding": "utf-8",
+        "result": "\"{\\\"indexed\\\": 14, \\\"failed\\\": 0, \\\"uuid\\\": \\\"cd36cdea-b981-4587-aa26-b78986185be9\\\", \\\"link\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"format\\\": \\\"xlsx\\\", \\\"type\\\": \\\"file\\\", \\\"path\\\": \\\"/home/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"resource_id\\\": 40206, \\\"url\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\"}\"",
+        "date_created": "2022-03-23T11:49:22.125Z",
+        "date_done": "2022-03-23T11:49:22.628Z",
+        "traceback": null,
+        "meta": "{\"children\": []}"
+    }
+},
+{
+    "model": "django_celery_results.taskresult",
+    "pk": 14390528,
+    "fields": {
+        "task_id": "c81e4679-ab02-46cf-9182-7d5ee0e8d355",
+        "task_name": "mcod.resources.tasks.process_resource_file_data_task",
+        "task_args": "\"(40206,)\"",
+        "task_kwargs": "\"{}\"",
+        "status": "SUCCESS",
+        "worker": "some_worker",
+        "content_type": "application/json",
+        "content_encoding": "utf-8",
+        "result": "\"{\\\"indexed\\\": 14, \\\"failed\\\": 0, \\\"uuid\\\": \\\"cd36cdea-b981-4587-aa26-b78986185be9\\\", \\\"link\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"format\\\": \\\"xlsx\\\", \\\"type\\\": \\\"file\\\", \\\"path\\\": \\\"/home/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"resource_id\\\": 40206, \\\"url\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\"}\"",
+        "date_created": "2022-03-23T12:00:47.893Z",
+        "date_done": "2022-03-23T12:00:48.557Z",
+        "traceback": null,
+        "meta": "{\"children\": []}"
+    }
+},
+{
+    "model": "django_celery_results.taskresult",
+    "pk": 14390538,
+    "fields": {
+        "task_id": "319ff863-ac02-422c-9713-038d75ecf71f",
+        "task_name": "mcod.resources.tasks.process_resource_file_data_task",
+        "task_args": "\"(40206,)\"",
+        "task_kwargs": "\"{}\"",
+        "status": "SUCCESS",
+        "worker": "some_worker",
+        "content_type": "application/json",
+        "content_encoding": "utf-8",
+        "result": "\"{\\\"indexed\\\": 14, \\\"failed\\\": 0, \\\"uuid\\\": \\\"cd36cdea-b981-4587-aa26-b78986185be9\\\", \\\"link\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"format\\\": \\\"xlsx\\\", \\\"type\\\": \\\"file\\\", \\\"path\\\": \\\"/home/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"resource_id\\\": 40206, \\\"url\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\"}\"",
+        "date_created": "2022-03-23T12:05:29.397Z",
+        "date_done": "2022-03-23T12:05:29.955Z",
+        "traceback": null,
+        "meta": "{\"children\": []}"
+    }
+},
+{
+    "model": "django_celery_results.taskresult",
+    "pk": 14390511,
+    "fields": {
+        "task_id": "675c5f3e-ff9b-4c27-b67a-2b2166997841",
+        "task_name": "mcod.resources.tasks.process_resource_res_file_task",
+        "task_args": "\"(26578,)\"",
+        "task_kwargs": "\"{'update_file_archive': True}\"",
+        "status": "SUCCESS",
+        "worker": "some_worker",
+        "content_type": "application/json",
+        "content_encoding": "utf-8",
+        "result": "\"{\\\"uuid\\\": \\\"cd36cdea-b981-4587-aa26-b78986185be9\\\", \\\"link\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"format\\\": \\\"xlsx\\\", \\\"type\\\": \\\"file\\\", \\\"path\\\": \\\"/home/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"url\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\"}\"",
+        "date_created": "2022-03-23T11:49:20.013Z",
+        "date_done": "2022-03-23T11:49:20.105Z",
+        "traceback": null,
+        "meta": "{\"children\": [[[\"ca6432c4-7009-4e85-97d9-20d068fceca0\", null], null], [[\"82bea2bf-e77e-4401-b3fc-c27e5ff0179e\", null], null], [[\"6e44f542-76bc-4036-8ad8-cc5641ba63f1\", null], null]]}"
+    }
+},
+{
+    "model": "django_celery_results.taskresult",
+    "pk": 14390525,
+    "fields": {
+        "task_id": "d7617f6a-8064-4132-9b59-0b18d6d2ff62",
+        "task_name": "mcod.resources.tasks.process_resource_res_file_task",
+        "task_args": "\"(26578,)\"",
+        "task_kwargs": "\"{}\"",
+        "status": "SUCCESS",
+        "worker": "some_worker",
+        "content_type": "application/json",
+        "content_encoding": "utf-8",
+        "result": "\"{\\\"uuid\\\": \\\"cd36cdea-b981-4587-aa26-b78986185be9\\\", \\\"link\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"format\\\": \\\"xlsx\\\", \\\"type\\\": \\\"file\\\", \\\"path\\\": \\\"/home/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"url\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\"}\"",
+        "date_created": "2022-03-23T12:00:45.770Z",
+        "date_done": "2022-03-23T12:00:45.874Z",
+        "traceback": null,
+        "meta": "{\"children\": [[[\"c81e4679-ab02-46cf-9182-7d5ee0e8d355\", null], null], [[\"57e07333-308f-4428-b761-bb8c384e7972\", null], null]]}"
+    }
+},
+{
+    "model": "django_celery_results.taskresult",
+    "pk": 14390535,
+    "fields": {
+        "task_id": "d8f29df0-5b38-403e-a9c1-166cb871c0d5",
+        "task_name": "mcod.resources.tasks.process_resource_res_file_task",
+        "task_args": "\"(26578,)\"",
+        "task_kwargs": "\"{}\"",
+        "status": "SUCCESS",
+        "worker": "some_worker",
+        "content_type": "application/json",
+        "content_encoding": "utf-8",
+        "result": "\"{\\\"uuid\\\": \\\"cd36cdea-b981-4587-aa26-b78986185be9\\\", \\\"link\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"format\\\": \\\"xlsx\\\", \\\"type\\\": \\\"file\\\", \\\"path\\\": \\\"/home/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"url\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\"}\"",
+        "date_created": "2022-03-23T12:05:27.290Z",
+        "date_done": "2022-03-23T12:05:27.380Z",
+        "traceback": null,
+        "meta": "{\"children\": [[[\"319ff863-ac02-422c-9713-038d75ecf71f\", null], null], [[\"419e563f-57d1-48df-b340-634c956048e5\", null], null]]}"
+    }
+},
+{
+    "model": "django_celery_results.taskresult",
+    "pk": 14390518,
+    "fields": {
+        "task_id": "82bea2bf-e77e-4401-b3fc-c27e5ff0179e",
+        "task_name": "mcod.resources.tasks.process_resource_from_url_task",
+        "task_args": "\"(40206,)\"",
+        "task_kwargs": "\"{'update_file': False}\"",
+        "status": "SUCCESS",
+        "worker": "some_worker",
+        "content_type": "application/json",
+        "content_encoding": "utf-8",
+        "result": "\"{\\\"uuid\\\": \\\"cd36cdea-b981-4587-aa26-b78986185be9\\\", \\\"link\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"format\\\": \\\"xlsx\\\", \\\"type\\\": \\\"file\\\", \\\"path\\\": \\\"/home/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"url\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\"}\"",
+        "date_created": "2022-03-23T11:49:22.125Z",
+        "date_done": "2022-03-23T11:49:22.171Z",
+        "traceback": null,
+        "meta": "{\"children\": []}"
+    }
+},
+{
+    "model": "django_celery_results.taskresult",
+    "pk": 14390529,
+    "fields": {
+        "task_id": "57e07333-308f-4428-b761-bb8c384e7972",
+        "task_name": "mcod.resources.tasks.process_resource_from_url_task",
+        "task_args": "\"(40206,)\"",
+        "task_kwargs": "\"{'update_file': False}\"",
+        "status": "SUCCESS",
+        "worker": "some_worker",
+        "content_type": "application/json",
+        "content_encoding": "utf-8",
+        "result": "\"{\\\"uuid\\\": \\\"cd36cdea-b981-4587-aa26-b78986185be9\\\", \\\"link\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"format\\\": \\\"xlsx\\\", \\\"type\\\": \\\"file\\\", \\\"path\\\": \\\"/home/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"url\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\"}\"",
+        "date_created": "2022-03-23T12:00:47.894Z",
+        "date_done": "2022-03-23T12:00:47.934Z",
+        "traceback": null,
+        "meta": "{\"children\": []}"
+    }
+},
+{
+    "model": "django_celery_results.taskresult",
+    "pk": 14390539,
+    "fields": {
+        "task_id": "419e563f-57d1-48df-b340-634c956048e5",
+        "task_name": "mcod.resources.tasks.process_resource_from_url_task",
+        "task_args": "\"(40206,)\"",
+        "task_kwargs": "\"{'update_file': False}\"",
+        "status": "SUCCESS",
+        "worker": "some_worker",
+        "content_type": "application/json",
+        "content_encoding": "utf-8",
+        "result": "\"{\\\"uuid\\\": \\\"cd36cdea-b981-4587-aa26-b78986185be9\\\", \\\"link\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"format\\\": \\\"xlsx\\\", \\\"type\\\": \\\"file\\\", \\\"path\\\": \\\"/home/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\", \\\"url\\\": \\\"http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx\\\"}\"",
+        "date_created": "2022-03-23T12:05:29.405Z",
+        "date_done": "2022-03-23T12:05:29.448Z",
+        "traceback": null,
+        "meta": "{\"children\": []}"
+    }
+},
+{
+    "model": "datasets.dataset",
+    "pk": 4210,
+    "fields": {
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2022-03-16T09:44:14.678Z",
+        "modified": "2022-04-27T15:20:29.532Z",
+        "status": "published",
+        "status_changed": "2022-03-16T09:44:14.678Z",
+        "slug": "pierwszy-zbior-danych",
+        "uuid": "a638f5d9-53c2-4d6e-8a9b-1674c69c9588",
+        "published_at": "2022-03-16T09:44:14.678Z",
+        "views_count": 0,
+        "removed_at": "2022-03-16T09:44:14.678Z",
+        "ext_ident": "",
+        "title": "Pierwszy zbior danych",
+        "version": null,
+        "url": "",
+        "notes": "<p>bardzo dlugi opis na minimum 20 znakow</p>",
+        "license_chosen": null,
+        "license_old_id": null,
+        "license": null,
+        "license_condition_db_or_copyrighted": "",
+        "license_condition_personal_data": null,
+        "license_condition_modification": true,
+        "license_condition_original": null,
+        "license_condition_responsibilities": "<p>jaki\u015b tekst</p>",
+        "license_condition_cc40_responsibilities": false,
+        "license_condition_source": false,
+        "license_condition_timestamp": null,
+        "organization": 2838,
+        "customfields": {},
+        "update_frequency": "weekly",
+        "is_update_notification_enabled": true,
+        "has_dynamic_data": false,
+        "has_high_value_data": true,
+        "has_research_data": false,
+        "update_notification_frequency": null,
+        "update_notification_recipient_email": "admin@mcod.local",
+        "category": null,
+        "created_by": 1841,
+        "modified_by": 1841,
+        "source": null,
+        "verified": "2022-07-13T09:56:34.028Z",
+        "downloads_count": 0,
+        "image": "",
+        "image_alt": "",
+        "dcat_vocabularies": null,
+        "archived_resources_files": "dataset_4210/Pierwszy_zbior_danych.zip",
+        "license_condition_default_cc40": true,
+        "license_condition_custom_description": "<p>jaki\u015b tekst</p>",
+        "is_promoted": false,
+        "i18n": {
+            "notes_en": ""
+        },
+        "categories": [
+            138
+        ],
+        "tags": [
+            3166
+        ]
+    }
+},
+{
+    "model": "resources.resource",
+    "pk": 40206,
+    "fields": {
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2022-03-23T11:49:17.924Z",
+        "modified": "2022-03-23T11:49:17.924Z",
+        "status": "published",
+        "status_changed": "2022-03-23T11:49:17.924Z",
+        "slug": "szczni-dane-plik",
+        "uuid": "cd36cdea-b981-4587-aa26-b78986185be9",
+        "published_at": "2022-03-23T11:49:17.924Z",
+        "views_count": 0,
+        "removed_at": "2022-03-23T11:49:17.924Z",
+        "ext_ident": "",
+        "availability": null,
+        "file": "",
+        "packed_file": "",
+        "csv_file": "",
+        "jsonld_file": "",
+        "file_mimetype": null,
+        "file_info": null,
+        "file_encoding": null,
+        "link": "http://api.mcod.local/media/resources/20220323/rejestr-instytucji-kultury1.xlsx",
+        "title": "szczni dane plik",
+        "description": "<p>jakis bardzo dlugi opis</p>",
+        "position": 1,
+        "dataset": 4210,
+        "format": "xlsx",
+        "type": "file",
+        "forced_api_type": false,
+        "forced_file_type": false,
+        "openness_score": 4,
+        "created_by": 1841,
+        "modified_by": 1841,
+        "link_tasks_last_status": "SUCCESS",
+        "file_tasks_last_status": "SUCCESS",
+        "data_tasks_last_status": "SUCCESS",
+        "old_file": "",
+        "old_resource_type": null,
+        "old_format": null,
+        "old_customfields": null,
+        "old_link": null,
+        "downloads_count": 0,
+        "show_tabular_view": true,
+        "has_chart": false,
+        "has_dynamic_data": false,
+        "has_high_value_data": false,
+        "has_map": false,
+        "has_research_data": false,
+        "has_table": true,
+        "is_chart_creation_blocked": false,
+        "tabular_data_schema": {
+            "fields": [
+                {
+                    "name": "Nazwa pe\u0142na",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Nazwa skr\u00f3cona",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Data pierwszego wpisu do RIK",
+                    "type": "date",
+                    "format": "any"
+                },
+                {
+                    "name": "Przedmiot dzia\u0142alno\u015bci",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Adres siedziby",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Kod pocztowy",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Miejscowo\u015b\u0107",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Oznaczenie organizatora",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Oznaczenie  aktu o utworzeniu instytucji kultury",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Dyrektor jednostki",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Nr aktu",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "Nazwa podmiotu, z kt\u00f3rym organizator wsp\u00f3lnie prowadzi instytucj\u0119 kultury",
+                    "type": "string",
+                    "format": "default"
+                },
+                {
+                    "name": "NIP",
+                    "type": "integer",
+                    "format": "default"
+                },
+                {
+                    "name": "REGON",
+                    "type": "integer",
+                    "format": "default"
+                }
+            ],
+            "missingValues": [
+                "-"
+            ]
+        },
+        "data_date": "2022-03-23",
+        "language": "pl",
+        "verified": "2022-03-23T12:05:29.955Z",
+        "from_resource": null,
+        "related_resource": null,
+        "is_auto_data_date": false,
+        "data_date_update_period": null,
+        "automatic_data_date_start": null,
+        "automatic_data_date_end": null,
+        "endless_data_date_update": false,
+        "i18n": {
+            "title_en": "",
+            "description_en": ""
+        },
+        "link_tasks": [
+            14390539,
+            14390529,
+            14390518
+        ],
+        "file_tasks": [
+            14390535,
+            14390525,
+            14390511
+        ],
+        "data_tasks": [
+            14390538,
+            14390528,
+            14390519
+        ],
+        "special_signs": [
+            2
+        ]
+    }
+},
+    {
+    "model": "resources.resourcefile",
+    "pk": 26580,
+    "fields": {
+        "resource": 40206,
+        "file": "20220323/rejestr-instytucji-kultury1.jsonld",
+        "format": "jsonld",
+        "mimetype": null,
+        "info": null,
+        "encoding": null,
+        "is_main": false,
+        "openness_score": 4
+    }
+},
+{
+    "model": "resources.resourcefile",
+    "pk": 26579,
+    "fields": {
+        "resource": 40206,
+        "file": "20220323/rejestr-instytucji-kultury1.csv",
+        "format": "csv",
+        "mimetype": null,
+        "info": null,
+        "encoding": null,
+        "is_main": false,
+        "openness_score": 3
+    }
+},
+{
+    "model": "resources.resourcefile",
+    "pk": 26578,
+    "fields": {
+        "resource": 40206,
+        "file": "20220323/rejestr-instytucji-kultury1.xlsx",
+        "format": "xlsx",
+        "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "info": "Microsoft Excel 2007+",
+        "encoding": "Windows-1250",
+        "is_main": true,
+        "openness_score": 2
+    }
+},
+{
+    "model": "tags.tag",
+    "pk": 3633,
+    "fields": {
+        "created": "2022-06-13T07:56:21.063Z",
+        "modified": "2022-06-13T07:58:00.124Z",
+        "status": "published",
+        "status_changed": "2022-06-13T07:56:21.063Z",
+        "slug": "pocototag",
+        "uuid": "38224772-3e7c-446f-83af-5a822bbce020",
+        "published_at": "2022-06-13T07:56:21.063Z",
+        "views_count": 0,
+        "name": "PoCoToTag",
+        "language": "pl",
+        "created_by": 1841,
+        "modified_by": 1841,
+        "i18n": {}
+    }
+},
+{
+    "model": "showcases.showcase",
+    "pk": 1,
+    "fields": {
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2021-12-15T16:06:24.324Z",
+        "modified": "2022-06-13T07:56:23.165Z",
+        "status": "draft",
+        "status_changed": "2021-12-15T16:06:24.327Z",
+        "slug": "testowa-inowacja",
+        "uuid": "9a5e51cd-e57b-4685-a4c8-2543b0209fa6",
+        "published_at": "2021-12-15T16:06:24.324Z",
+        "views_count": 0,
+        "removed_at": "2021-12-15T16:06:24.324Z",
+        "category": "app",
+        "title": "testowa inowacja",
+        "notes": "<p>opisssssssssss</p>",
+        "author": null,
+        "url": "https://google.com",
+        "external_datasets": [],
+        "is_mobile_app": false,
+        "is_desktop_app": true,
+        "mobile_apple_url": "",
+        "mobile_google_url": "",
+        "desktop_linux_url": "https://google.com",
+        "desktop_macos_url": "",
+        "desktop_windows_url": "",
+        "license_type": "free",
+        "image": "",
+        "illustrative_graphics": "",
+        "illustrative_graphics_alt": "",
+        "image_thumb": "",
+        "image_alt": null,
+        "main_page_position": 1,
+        "created_by": 1841,
+        "modified_by": 1841,
+        "i18n": {
+            "notes_en": ""
+        },
+        "datasets": [],
+        "tags": [
+            3633
+        ]
+    }
+},
+{
+    "model": "laboratory.labevent",
+    "pk": 1,
+    "fields": {
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2021-10-07T12:41:17.787Z",
+        "modified": "2022-07-26T14:09:52.190Z",
+        "status": "published",
+        "status_changed": "2021-10-07T12:41:17.787Z",
+        "slug": "test-lab",
+        "uuid": "1290ab6f-8483-4214-a38e-7134019bd76b",
+        "published_at": "2021-10-07T12:41:17.787Z",
+        "views_count": 0,
+        "removed_at": "2021-10-07T12:41:17.787Z",
+        "title": "test lab",
+        "event_type": "research",
+        "notes": "<p>Bardzo d\u0142ugi opis obiektu</p>",
+        "execution_date": "2021-12-14",
+        "i18n": {
+            "notes_en": ""
+        }
+    }
+},
+{
+    "model": "harvester.datasource",
+    "pk": 4,
+    "fields": {
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "modified": "2022-05-19T10:56:56.661Z",
+        "name": "Szczecin",
+        "description": "<p>Dane otwarte udost\u0119pniane przez Urz\u0105d Miasta Szczecin oraz jednostki podleg\u0142e</p>",
+        "frequency_in_days": 1,
+        "status": "active",
+        "license_condition_db_or_copyrighted": "",
+        "institution_type": "other",
+        "source_type": "xml",
+        "emails": "test@test.pl",
+        "last_activation_date": "2022-04-28T15:17:30.693Z",
+        "category": null,
+        "created": "2022-03-23T13:42:56.310Z",
+        "created_by": 1841,
+        "modified_by": 1841,
+        "last_import_status": "ok",
+        "last_import_timestamp": "2022-05-19T10:56:54.813Z",
+        "portal_url": "",
+        "api_url": "",
+        "xml_url": "https://dane.szczecin.eu/files/umszczecin.xml",
+        "source_hash": "29d5344b0c2af17b1bfa96bf1be6d194",
+        "organization": 2838,
+        "sparql_query": "",
+        "categories": []
+    }
+},
+{
+    "model": "academy.course",
+    "pk": 1,
+    "fields": {
+        "is_removed": false,
+        "is_permanently_removed": false,
+        "created": "2021-12-14T14:45:00.616Z",
+        "modified": "2022-07-26T14:08:22.216Z",
+        "status": "published",
+        "status_changed": "2021-12-14T14:45:00.616Z",
+        "slug": "testowy-kurs",
+        "uuid": "750659c4-be6f-4c45-bac6-863dd3dcaa39",
+        "published_at": "2021-12-14T14:45:00.616Z",
+        "views_count": 0,
+        "removed_at": "2021-12-14T14:45:00.616Z",
+        "title": "Testowy kurs",
+        "notes": "bardzo d\u0142ugi pis kursu",
+        "venue": "Warszawa",
+        "participants_number": 15,
+        "file": "",
+        "materials_file": "",
+        "i18n": null
+    }
+}
+]

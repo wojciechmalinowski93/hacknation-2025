@@ -1,0 +1,7 @@
+{% load i18n admin_urls %}
+{% if has_history_permission %}
+    {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+    <a href="{% add_preserved_filters history_url %}" class="historylink">
+      <i class="icon-time icon-alpha75"></i>{% trans "History" %}
+    </a>
+{% endif %}

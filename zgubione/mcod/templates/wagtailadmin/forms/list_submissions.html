@@ -1,0 +1,35 @@
+{% load i18n %}
+<div class="overflow">
+<table class="listing">
+    <col />
+    <colgroup span="2"></colgroup>
+    <colgroup span="2"></colgroup>
+    <thead>
+        <tr>
+            <td rowspan="2"></td>
+            {% for heading,subheaders in data_headings.items %}
+                <th colspan="{{ subheaders|length}}" scope="colgroup">
+                  {{ heading }}
+                </th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for heading, subheaders in data_headings.items %}
+                {% for subheader in subheaders %}
+                    <th scope="col">{{subheader}}</th>
+                {% endfor %}
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data_rows %}
+            <tr>
+            <th scope="row">{{ forloop.counter|add:start_index }}</th>
+            {% for item in row.submission_data%}
+                <td>{{ item }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>

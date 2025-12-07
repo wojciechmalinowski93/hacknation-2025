@@ -1,0 +1,274 @@
+[
+  {
+    "model": "cms.rootpage",
+    "pk": 1000,
+    "fields": {
+      "path": "00010002",
+      "depth": 2,
+      "numchild": 4,
+      "title": "Otwarte Dane",
+      "url_path": "/",
+      "over_login_section_cb": "[{\"type\": \"raw_html\", \"value\": \"<!-- CMS RAW HTML - 2 col -->\\r\\n    <div class=\\\"bg-gov bg-gov--coronavirus\\\">\\r\\n        <a target=\\\"_blank\\\" href=\\\"https://www.gov.pl/web/koronawirus\\\" \\r\\n            class=\\\"d-flex flex-column flex-md-row justify-content-between align-items-center container py-2\\\">\\r\\n            \\r\\n            <span class=\\\"h5 mb-0 font-weight-bold\\\">\\r\\n                [CMS - Kod HTML] Koronawirus: aktualne informacje i zalecenia\\r\\n            </span>\\r\\n            \\r\\n            <span class=\\\"underline\\\">\\r\\n                DOWIEDZ SI\\u0118 WI\\u0118CEJ \\r\\n                <span class=\\\"sr-only\\\">(Otwiera si\\u0119 w nowym oknie)</span>\\r\\n            </span>\\r\\n        </a>\\r\\n    </div>\\r\\n<div class=\\\"home-section home-section--coronavirus ng-star-inserted\\\">\", \"id\": \"88267a24-11e0-4128-9ebf-cdea3f95a2a0\"}]",
+      "over_search_field_cb": "[{\"type\": \"banner\", \"value\": {\"image\": 4, \"action_url\": \"https://dane.gov.pl\", \"target\": \"_blank\"}, \"id\": \"18f78def-0409-480e-aabd-d3136eedfc45\"}]",
+      "over_latest_news_cb": "[{\"type\": \"banner\", \"value\": {\"image\": 5, \"action_url\": \"https://dane.gov.pl\", \"target\": \"_self\"}, \"id\": \"a91ef0e7-2164-4cef-86fe-532bfc46da7b\"}]"
+    }
+  },
+  {
+    "model": "cms.kbrootpage",
+    "pk": 1001,
+    "fields": {
+      "path": "000100020001",
+      "depth": 3,
+      "numchild": 2,
+      "title": "Baza wiedzy",
+      "title_en": "Knowledge Base"
+    }
+  },
+  {
+    "model": "cms.landingpageindex",
+    "pk": 1002,
+    "fields": {
+      "path": "000100020002",
+      "depth": 3,
+      "numchild": 1,
+      "title": "Strony promocyjne"
+    }
+  },
+  {
+    "model": "cms.formpageindex",
+    "pk": 1003,
+    "fields": {
+      "path": "000100020003",
+      "depth": 3,
+      "numchild": 1,
+      "title": "Formularze i ankiety"
+    }
+  },
+  {
+    "model": "cms.simplepageindex",
+    "pk": 1004,
+    "fields": {
+      "path": "000100020004",
+      "depth": 3,
+      "numchild": 2,
+      "title": "Pozostałe strony WWW"
+    }
+  },
+  {
+    "model": "cms.kbcategorypage",
+    "pk": 1005,
+    "fields": {
+      "path": "0001000200010001",
+      "depth": 4,
+      "numchild": 1,
+      "title": "Przydatne materiały",
+      "title_en": "Useful materials",
+      "slug": "useful-materials",
+      "body": "{\"blocks\": [{\"type\": \"section\", \"children\": [{\"type\": \"heading\", \"children\": [], \"settings\": {\"type\": \"H3\", \"text\": \"Heading\"}, \"id\": \"i1613593920_5\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"video\", \"children\": [], \"settings\": {\"video_url\": \"https://www.youtube.com/watch?v=hyF2RPoYX40\", \"video_caption\": \"Otwarte Dane\"}, \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}, \"id\": \"i1613593933_7\"}, {\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p><span dir=\\\"ltr\\\" lang=\\\"en\\\">This text is in english</span></p><p><span dir=\\\"ltr\\\" lang=\\\"pl\\\">Ten tekst jest po polsku</span></p><p>Ten tekst nie ma j\\u0119zyka</p><p><a href=\\\"https://www.youtube.com\\\" target=\\\"_blank\\\" title=\\\"Link\\\">Link</a></p><h1>Heading</h1><p><strong>bold</strong></p><p><em>italic</em></p><p><u>underline</u></p><p><br></p><ol><li>Jeden</li><li>Dwa</li><li>Trzy</li></ol><p><br></p><ul><li>Jab\\u0142ko</li><li>Gruszka</li><li>Banan</li></ul>\"}, \"id\": \"i1613593977_9\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"image\", \"children\": [], \"settings\": {\"image\": {\"id\": 5, \"title\": \"AOD.original_HoDBjau.png\", \"url\": \"http://cms.mcod.local:8001/media/images/AOD.original_HoDBjau.original.png\", \"alt\": \"Akademia Otwartych Danych\"}}, \"id\": \"i1613594098_11\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"link\", \"children\": [{\"type\": \"image\", \"children\": [], \"settings\": {\"image\": {\"id\": 4, \"title\": \"kartkaswiateczna-na-storne.original.jpg\", \"url\": \"http://cms.mcod.local:8001/media/images/kartkaswiateczna-na-storne.original.original.jpg\", \"alt\": \"Kartka \\u015bwi\\u0105teczna\"}}, \"id\": \"i1613594141_16\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"row\", \"children\": [{\"type\": \"column\", \"children\": [{\"type\": \"video\", \"children\": [], \"settings\": {\"video_url\": \"https://www.youtube.com/watch?v=hyF2RPoYX40\", \"video_caption\": \"Czym s\\u0105 otwarte dane?\"}, \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}, \"id\": \"i1613594244_28\"}, {\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p>Tekst pod filmem nr 1</p>\"}, \"id\": \"i1613594410_37\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"sizeLG\": 4, \"sizeMD\": 4, \"sizeSM\": 4, \"sizeXS\": 4, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594159_20\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"column\", \"children\": [{\"type\": \"video\", \"children\": [], \"settings\": {\"video_url\": \"https://www.youtube.com/watch?v=IlCMjW8PROw\"}, \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}, \"id\": \"i1613594350_32\"}, {\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p>Tekst pod filmem nr 2</p>\"}, \"id\": \"i1613594426_39\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"sizeLG\": 4, \"sizeMD\": 4, \"sizeSM\": 4, \"sizeXS\": 4, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594221_26\"}, {\"type\": \"column\", \"children\": [{\"type\": \"image\", \"children\": [], \"settings\": {\"image\": {\"id\": 5, \"title\": \"AOD.original_HoDBjau.png\", \"url\": \"http://cms.mcod.local:8001/media/images/AOD.original_HoDBjau.original.png\", \"alt\": \"Akademia Otwartych Danych\"}}, \"id\": \"i1613594386_34\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p>Tekst pod obrazkiem nr 3</p>\"}, \"id\": \"i1613594443_41\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"sizeLG\": 4, \"sizeMD\": 4, \"sizeSM\": 4, \"sizeXS\": 4, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594221_25\"}], \"id\": \"i1613594159_19\"}], \"extra\": {\"searchable\": true}, \"settings\": {\"url\": \"http://google.pl\", \"title\": \"Wyszukiwarka\"}, \"id\": \"i1613594116_14\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"type\": \"Box\"}, \"id\": \"i1613593902_3\"}]}",
+      "body_en": "{\"blocks\": [{\"type\": \"section\", \"children\": [{\"type\": \"row\", \"children\": [{\"type\": \"column\", \"children\": [{\"type\": \"row\", \"children\": [{\"type\": \"column\", \"children\": [{\"type\": \"image\", \"children\": [], \"settings\": {\"image\": {\"id\": 5, \"title\": \"AOD.original_HoDBjau.png\", \"url\": \"http://cms.mcod.local:8001/media/images/AOD.original_HoDBjau.original.png\", \"alt\": \"Akademia Otwartych Danych\"}}, \"id\": \"i1613594560_18\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p>Tekst pod obrazkiem</p>\"}, \"id\": \"i1613594593_26\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p>Tekst pod obrazkiem</p>\"}, \"id\": \"i1613594603_28\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"sizeLG\": 6, \"sizeMD\": 6, \"sizeSM\": 6, \"sizeXS\": 6, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594538_14\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"column\", \"children\": [{\"type\": \"image\", \"children\": [], \"settings\": {\"image\": {\"id\": 4, \"title\": \"kartkaswiateczna-na-storne.original.jpg\", \"url\": \"http://cms.mcod.local:8001/media/images/kartkaswiateczna-na-storne.original.original.jpg\", \"alt\": \"Kartka \\u015bwi\\u0105teczna\"}}, \"id\": \"i1613594570_21\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"link\", \"children\": [{\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p>Tekst linku.</p>\"}, \"id\": \"i1613594627_31\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"extra\": {\"searchable\": true}, \"settings\": {\"title\": \"Link pod obrazkiem\", \"url\": \"http://youtube.com\"}, \"id\": \"i1613594608_29\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"sizeLG\": 6, \"sizeMD\": 6, \"sizeSM\": 6, \"sizeXS\": 6, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594550_16\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"id\": \"i1613594538_13\"}, {\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p>Przyk\\u0142adowy tekst</p>\"}, \"id\": \"i1613594583_24\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"sizeLG\": 6, \"sizeMD\": 6, \"sizeSM\": 6, \"sizeXS\": 6, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594503_6\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"column\", \"children\": [{\"type\": \"heading\", \"children\": [], \"settings\": {\"type\": \"H1\", \"text\": \"Heading\"}, \"id\": \"i1613594643_33\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p>Przyk\\u0142adowy tekst</p>\"}, \"id\": \"i1613594659_35\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"sizeLG\": 6, \"sizeMD\": 6, \"sizeSM\": 6, \"sizeXS\": 6, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594517_8\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"id\": \"i1613594503_5\"}, {\"type\": \"row\", \"children\": [{\"type\": \"column\", \"children\": [], \"settings\": {\"sizeLG\": 6, \"sizeMD\": 6, \"sizeSM\": 6, \"sizeXS\": 6, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594519_10\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"column\", \"children\": [], \"settings\": {\"sizeLG\": 6, \"sizeMD\": 6, \"sizeSM\": 6, \"sizeXS\": 6, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594532_12\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"id\": \"i1613594519_9\"}], \"settings\": {\"type\": \"Box\"}, \"id\": \"i1613594494_2\"}, {\"type\": \"section\", \"children\": [{\"type\": \"image\", \"children\": [], \"settings\": {}, \"id\": \"i1613594674_37\"}, {\"type\": \"heading\", \"children\": [], \"settings\": {\"type\": \"H3\"}, \"id\": \"i1613594677_38\"}, {\"type\": \"row\", \"children\": [{\"type\": \"column\", \"children\": [], \"settings\": {\"sizeLG\": 12, \"sizeMD\": 12, \"sizeSM\": 12, \"sizeXS\": 12, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594680_40\"}], \"id\": \"i1613594680_39\"}, {\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<p><br></p>\"}, \"id\": \"i1613594684_41\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"image\", \"children\": [], \"settings\": {}, \"id\": \"i1613594692_43\"}, {\"type\": \"link\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {}, \"id\": \"i1613594695_44\"}], \"settings\": {\"type\": \"Box\"}, \"id\": \"i1613594499_3\"}, {\"type\": \"section\", \"children\": [], \"settings\": {\"type\": \"Box\"}, \"id\": \"i1613594500_4\"}]}",
+      "top_content_box": "[{\"type\": \"text\", \"value\": \"<p>Tekst nad g\\u0142\\u00f3wnym blokiem.</p>\", \"id\": \"1fd1a45a-5df4-4b9b-891a-521e4879732e\"}]",
+      "bottom_content_box": "[{\"type\": \"text\", \"value\": \"<p>Tekst pod g\\u0142\\u00f3wnym blokiem.</p>\", \"id\": \"ac8f7b4c-6272-4254-b49c-060031ed4b46\"}]"
+    }
+  },
+  {
+    "model": "cms.kbcategorypage",
+    "pk": 1006,
+    "fields": {
+      "path": "0001000200010002",
+      "depth": 4,
+      "numchild": 1,
+      "title": "Szkolenia multimedialne",
+      "title_en": "Multimedia Training",
+      "slug": "multimedia-training"
+    }
+  },
+  {
+    "model": "cms.landingpage",
+    "pk": 1007,
+    "fields": {
+      "path": "0001000200020001",
+      "depth": 4,
+      "numchild": 0,
+      "title": "O konferencji",
+      "body": "{\"blocks\": [{\"type\": \"section\", \"children\": [{\"type\": \"row\", \"children\": [{\"type\": \"column\", \"children\": [{\"type\": \"image\", \"children\": [], \"settings\": {\"image\": {\"id\": 5, \"title\": \"AOD.original_HoDBjau.png\", \"url\": \"http://cms.mcod.local:8001/media/images/AOD.original_HoDBjau.original.png\", \"alt\": \"Akademia Otwartych Danych\"}}, \"id\": \"i1613594889_6\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"sizeLG\": 6, \"sizeMD\": 6, \"sizeSM\": 6, \"sizeXS\": 6, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594862_3\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}, {\"type\": \"column\", \"children\": [{\"type\": \"text\", \"children\": [], \"extra\": {\"searchable\": true}, \"settings\": {\"text\": \"<h3><strong>O KONFERENCJI</strong></h3><p><br></p><p>The Future is Data. Przysz\\u0142o\\u015b\\u0107 to dane to konferencja organizowana przez Kancelari\\u0119 Prezesa Rady Ministr\\u00f3w. G\\u0142\\u00f3wnym celem konferencji jest wymiana wiedzy i do\\u015bwiadcze\\u0144 na temat szans i wyzwa\\u0144 w zakresie otwierania danych, promocja ich potencja\\u0142u oraz zach\\u0119cenie do ich wykorzystywania w innowacyjnych produktach i us\\u0142ugach.</p><p>Konferencja skierowana jest do przedstawicieli administracji rz\\u0105dowej i samorz\\u0105dowej, przedsi\\u0119biorc\\u00f3w, organizacji pozarz\\u0105dowych oraz polskich i zagranicznych ekspert\\u00f3w.</p><p>Wydarzenie b\\u0119dzie r\\u00f3wnie\\u017c okazj\\u0105 do wymiany do\\u015bwiadcze\\u0144 i najlepszych praktyk w zakresie zwi\\u0119kszania dost\\u0119pno\\u015bci danych publicznych oraz ich ponownego wykorzystywania.</p>\"}, \"id\": \"i1613594903_9\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"settings\": {\"sizeLG\": 6, \"sizeMD\": 6, \"sizeSM\": 6, \"sizeXS\": 6, \"offsetLG\": 0, \"offsetMD\": 0, \"offsetSM\": 0, \"offsetXS\": 0}, \"id\": \"i1613594881_5\", \"general\": {\"padding\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}, \"margin\": {\"unit\": \"px\", \"left\": null, \"top\": null, \"right\": null, \"bottom\": null}}}], \"id\": \"i1613594862_2\"}], \"settings\": {\"type\": \"Box\"}, \"id\": \"i1613594839_1\"}]}"
+    }
+  },
+  {
+    "model": "cms.formpage",
+    "pk": 1008,
+    "fields": {
+      "path": "0001000200030001",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Testowa ankieta",
+      "intro": "<p>Wstęp do testowej ankiety.</p><p></p><embed embedtype=\"media\" url=\"https://www.youtube.com/watch?v=hyF2RPoYX40\"/><p></p><embed alt=\"Akademia Otwartych Danych\" embedtype=\"image\" format=\"left\" id=\"5\"/><p></p>",
+      "thank_you_text": "<p>Dziękujemy za wypełnienie ankiety.</p>"
+    }
+  },
+  {
+    "model": "cms.simplepage",
+    "pk": 1009,
+    "fields": {
+      "path": "0001000200040001",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Polityka prywatności i RODO",
+      "slug": "rodo",
+      "body": "<h2>Polityka prywatności</h2><p><a href=\"https://www.youtube.com/\">Podlinkowany tekst za pomocą opcji &#x27;Link&#x27; we wbudowanym edytorze tekstowym</a></p><p>Serwis wykorzystuje pliki cookies (ciasteczka). Są to dane tekstowe, zapisywane przez przeglądarkę na urządzeniu użytkownika. Serwis Otwarte Dane ma dostęp do tych danych oraz wykorzystuje je do obsługi udogodnień zalogowanych użytkowników. Korzystanie z serwisu dane.gov.pl oznacza zgodę na wykorzystywanie plików cookies. Możesz zmienić ustawienia obsługi cookies w swojej przeglądarce.</p>"
+    }
+  },
+  {
+    "model": "cms.extrasimplepage",
+    "pk": 1010,
+    "fields": {
+      "path": "0001000200040002",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Deklaracja dostępności",
+      "body": "<h1 id=\"a11y-deklaracja\">Deklaracja dostępności Portalu Otwarte Dane</h1>"
+    }
+  },
+  {
+    "model": "cms.kbpage",
+    "pk": 1011,
+    "fields": {
+      "path": "00010002000100010001",
+      "depth": 5,
+      "numchild": 0,
+      "title": "Pomoc",
+      "body": "[{\"type\": \"text\", \"value\": \"<p><span dir=\\\"ltr\\\" lang=\\\"en\\\">English text</span></p><p><span dir=\\\"ltr\\\" lang=\\\"pl\\\">Polski tekst</span></p><p>Tekst bez j\\u0119zyka</p><p><a id=\\\"1000\\\" linktype=\\\"page\\\">Link</a></p><h2>Header2</h2><h3>Header3</h3><h4>Header4</h4><p><b>bold</b></p><p><i>italic</i></p><p><sup>superscript</sup></p><p><sub>subscript</sub></p><ol><li>Jeden</li><li>Dwa</li><li>Trzy</li></ol><ul><li>Jab\\u0142ko</li><li>Banan</li><li>Gruszka</li></ul>\", \"id\": \"bc147469-36ce-4b0e-97d9-bcd2fc3592de\"}, {\"type\": \"banner\", \"value\": {\"image\": 5, \"action_url\": \"http://dane.gov.pl/pl/\", \"target\": \"_self\"}, \"id\": \"5e4f325c-96b1-47bf-83e0-b550936e89b0\"}, {\"type\": \"image\", \"value\": 5, \"id\": \"43dcbe3a-8239-4826-941b-e814d3aabb27\"}]",
+      "body_en": "[{\"type\": \"text\", \"value\": \"<p>English content.</p>\", \"id\": \"718ce3a0-3b87-4565-84a3-d2614231c474\"}, {\"type\": \"banner\", \"value\": {\"image\": 5, \"action_url\": \"http://dane.gov.pl/en/\", \"target\": \"_blank\"}, \"id\": \"61c0fc54-9980-4103-a26b-c7086400f1ab\"}, {\"type\": \"video\", \"value\": {\"video\": \"https://www.youtube.com/watch?v=hyF2RPoYX40\", \"caption\": \"Czym s\\u0105 otwarte dane?\"}, \"id\": \"c20445ee-a0c1-4e00-9fa3-80630d5ac89c\"}, {\"type\": \"raw_html\", \"value\": \"<p>Akapit</p>\", \"id\": \"f8ca5a56-3ac9-4d3f-8fa4-3c83a32f127d\"}]"
+    }
+  },
+  {
+    "model": "cms.kbpage",
+    "pk": 1012,
+    "fields": {
+      "path": "00010002000100020001",
+      "depth": 5,
+      "numchild": 0,
+      "title": "Przykładowe Szkolenie",
+      "title_en": "Sample Training",
+      "body": "[{\"type\": \"text\", \"value\": \"<p>Tekst.</p><p><a id=\\\"1001\\\" linktype=\\\"page\\\">Baza wiedzy</a></p><p><a href=\\\"https://www.youtube.com/\\\">Link zewn\\u0119trzny (youtube)</a></p><p><a href=\\\"mailto:kontakt@dane.gov.pl\\\">Email link</a></p><p><a href=\\\"tel:123456789\\\">Phone link</a></p><p><a href=\\\"#anchor\\\">Kotwica</a></p>\", \"id\": \"9de59859-c005-4e35-a87b-618044a442c9\"}, {\"type\": \"image\", \"value\": 4, \"id\": \"44813183-9aa6-4ec9-92b2-893e5f924ecd\"}]"
+    }
+  },
+  {
+    "model": "cms.DGARootPage",
+    "pk": 1013,
+    "fields": {
+      "path": "000100020005",
+      "depth": 3,
+      "numchild": 2,
+      "title": "DGA",
+      "title_en": "DGA"
+    }
+  },
+  {
+    "model": "cms.DGAInformation",
+    "pk": 1014,
+    "fields": {
+      "path": "0001000200050001",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Informacje",
+      "title_en": "Information",
+      "body": "[{\"type\": \"text\", \"value\": \"<p>Jakiś tekst.</p>\"}]",
+      "body_en": "[{\"type\": \"text\", \"value\": \"<p>Some text.</p>\"}]"
+    }
+  },
+  {
+    "model": "cms.DGAAccessApplication",
+    "pk": 1015,
+    "fields": {
+      "path": "0001000200050002",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Wniosek o dostęp do chronionych danych",
+      "title_en": "Information",
+      "body": "[{\"type\": \"text\", \"value\": \"<p>Treść - wniosek dostęp do chronionych danych.</p>\"}]",
+      "body_en": "[{\"type\": \"text\", \"value\": \"<p>Content - an application to access protected data.</p>\"}]"
+    }
+  },
+  {
+    "model": "cms.DGAProtectedDataList",
+    "pk": 1016,
+    "fields": {
+      "path": "0001000200050003",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Wykaz chronionych danych",
+      "title_en": "Protected data list",
+      "body": "[{\"type\": \"text\", \"value\": \"<p>Jakiś tekst.</p>\"}]",
+      "body_en": "[{\"type\": \"text\", \"value\": \"<p>Some text.</p>\"}]"
+    }
+  },
+  {
+    "model": "cms.DGANewSubPage",
+    "pk": 1017,
+    "fields": {
+      "path": "0001000200050004",
+      "depth": 4,
+      "numchild": 0,
+      "title": "Podstrona 1",
+      "title_en": "Subpage 1",
+      "body": "[{\"type\": \"text\", \"value\": \"<p>Jakiś tekst podstrony 1.</p>\"}]",
+      "body_en": "[{\"type\": \"text\", \"value\": \"<p>Some text of subpage 1.</p>\"}]"
+    }
+  },
+  {
+    "model": "wagtailcore.site",
+    "pk": 1000,
+    "fields": {
+      "hostname": "localhost",
+      "port": 80,
+      "site_name": "Otwarte Dane",
+      "root_page_id": 1000,
+      "is_default_site": true
+    }
+  },
+  {
+    "model": "cms.formset",
+    "pk": 1000,
+    "fields": {
+      "sort_order": 0,
+      "title": "Pytanie jednokrotnego wyboru.",
+      "description": "<p>Wybierz jedną odpowiedź.</p>",
+      "required": true,
+      "ident": "7fd5c06a-7766-4a07-89a2-49dd4b02e276",
+      "default_value": "",
+      "help_text": "",
+      "fields": "[{\"type\": \"radiobutton\", \"value\": {\"label\": \"A\", \"help_text\": \"Armenia\", \"value\": \"a\", \"checked\": true}, \"id\": \"c05473d3-5316-4342-8e15-3121a67e5dc9\"}, {\"type\": \"radiobutton\", \"value\": {\"label\": \"B\", \"help_text\": \"Bu\\u0142garia\", \"value\": \"b\", \"checked\": false}, \"id\": \"1e15a50b-06c3-44a9-827e-ff4caf50c1a6\"}, {\"type\": \"radiobuttonwithmultilineinput\", \"value\": {\"label\": \"C\", \"help_text\": \"Inne\", \"checked\": false, \"input_label\": \"\", \"input_help_text\": \"\", \"input_default_value\": \"\", \"input_placeholder\": \"\"}, \"id\": \"1b7460db-4fce-4076-a171-ab1742ee88a1\"}]",
+      "page_id": 1008
+    }
+  },
+  {
+    "model": "cms.formset",
+    "pk": 1001,
+    "fields": {
+      "sort_order": 1,
+      "title": "Pytanie wielokrotnego wyboru",
+      "description": "<p>Możesz wybrać wiele odpowiedzi.</p>",
+      "required": true,
+      "ident": "18221213-e085-4c47-867d-ec1abb38f0de",
+      "default_value": "",
+      "help_text": "",
+      "fields": "[{\"type\": \"checkbox\", \"value\": {\"label\": \"A\", \"help_text\": \"Armenia\", \"value\": \"a\", \"checked\": false}, \"id\": \"b1f2c6e8-0e52-41fb-9535-4e9979dde104\"}, {\"type\": \"checkboxwithmultilineinput\", \"value\": {\"label\": \"B\", \"help_text\": \"Bu\\u0142garia\", \"checked\": false, \"input_label\": \"\", \"input_help_text\": \"\", \"input_default_value\": \"\", \"input_placeholder\": \"\"}, \"id\": \"dd55bc1f-2785-4fa3-b845-fc20787fbaf5\"}]",
+      "page_id": 1008
+    }
+  },
+  {
+    "model": "cms.formset",
+    "pk": 1002,
+    "fields": {
+      "sort_order": 2,
+      "title": "Pytanie otwarte",
+      "description": "<p>Wpisz co myślisz.</p>",
+      "required": false,
+      "ident": "eb4c91ee-b814-4c90-a9e3-7a1b8a9cfb2d",
+      "default_value": "",
+      "help_text": "",
+      "fields": "[{\"type\": \"multilinetextinput\", \"value\": {\"label\": \"\", \"help_text\": \"\", \"value\": \"\", \"placeholder\": \"\"}, \"id\": \"65f43cab-a498-4a8a-b9e2-1b70533e0ae6\"}]",
+      "page_id": 1008
+    }
+  }
+]

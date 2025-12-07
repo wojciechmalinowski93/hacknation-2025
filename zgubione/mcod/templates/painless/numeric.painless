@@ -1,0 +1,16 @@
+{% extends 'painless/base.painless'%}
+{% block content %}
+if ({{ col }} instanceof int || {{ col }} instanceof long || {{ col }} instanceof double || {{ col }} instanceof float) {
+    return false
+} else {
+    def result = false;
+    try {
+        if ({{ col }}!=null) {
+            def res = Float.parseFloat({{ col }});
+        }
+    } catch (Exception e) {
+        result = true;
+    }
+    return result
+}
+{% endblock %}

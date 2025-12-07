@@ -1,0 +1,24 @@
+/* Chrome 77 fix */
+#suit-left {
+   position: absolute;
+   left: 0;
+   margin-left: 0;
+}
+
+.alerts-app {
+    font-size: 17px;
+    font-weight: normal;
+    margin: 0 0 5px 5px;
+    text-decoration: none;
+    text-align: left;
+}
+
+.alerts-app a {
+    color: #0088cc;
+    text-decoration: none;
+}
+
+p.help-constance {
+    text-align: left;
+    color: #999;
+}

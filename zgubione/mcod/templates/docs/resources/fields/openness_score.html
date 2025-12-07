@@ -1,0 +1,66 @@
+{% load i18n core_tags %}
+{# spaceless tag is required if this should be rendered as markdown #}
+{% spaceless %}
+{% block field_description %}
+        <p>{% trans 'Search instances by' %} {{ doc_field_name }}.<br/></p>
+{% endblock %}
+{% block filters_description %}
+        <p>{% trans 'This field provides following filters:' %}</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Filter</th>
+                <th>Description</th>
+                <th>Examples</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>term</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'matches to the provided value.' %}<br/>
+                    <i>{% trans 'Note, that this is default filter for this field.' %}</i></td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}=1">{{ doc_base_url }}/?{{ name }}=1</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[term]=2">{{ doc_base_url }}/?{{ name }}[term]=2</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>terms</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'matches to any of the provided values.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[terms]=1,3">{{ doc_base_url }}/?{{ name }}[terms]=1,3</a><br/>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[terms]=1&{{ name }}[terms]=3">{{ doc_base_url }}/?{{ name }}[terms]=1&{{ name }}[terms]=3</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>gt</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'is is greater than the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[gt]=1">{{ doc_base_url }}/?{{ name }}[gt]=1</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>gte</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'is greater than or equal to the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[gte]=2">{{ doc_base_url }}/?{{ name }}[gte]=2</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>lt</strong></td>
+                <td>{% trans 'filters instances in which ' %} {{ doc_field_name }} {% trans 'is lower than the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[lt]=3">{{ doc_base_url }}/?{{ name }}[lt]=3</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>lte</strong></td>
+                <td>{% trans 'filters instances that have ' %} {{ doc_field_name }} {% trans 'that is lower than or equal to the provided value.' %}</td>
+                <td>
+                    <a href="{{ settings.API_URL }}{{ doc_base_url }}/?{{ name }}[lte]=4">{{ doc_base_url }}/?{{ name }}[lte]=4</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+{% endblock %}
+{% endspaceless %}

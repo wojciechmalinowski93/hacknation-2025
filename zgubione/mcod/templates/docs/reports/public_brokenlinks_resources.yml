@@ -1,0 +1,19 @@
+{% load i18n %}
+---
+tags:
+   - {% trans "API Endpoints" %}
+summary: {% trans "Get info about brokenlinks report" %}
+description: |
+  {% spaceless %}
+      <p>Returns info about last generated Brokenlinks report.</p>
+  {% endspaceless %}
+
+parameters:
+    schema: BrokenlinksReportApiRequest
+responses:
+    200:
+        description: valid response in jsonapi format
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/BrokenlinksReport'

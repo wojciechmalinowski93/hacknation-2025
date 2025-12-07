@@ -1,0 +1,33 @@
+{% load i18n %}
+{% if signature|default_if_none:True %}
+<tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+    <td align="left" style="padding-top:10px; padding-bottom:10px; max-width:580px; border-collapse: collapse;text-align:left; vertical-align:middle">
+        <p style="text-align:left;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;display: block !important; font-weight:bold; ">
+             {% blocktrans %}Sincerely,{% endblocktrans %} <br>
+             {% blocktrans %}The Open Data Data Administrators team{% endblocktrans %}
+        </p>
+    </td>
+</tr>
+{% endif %}
+{% if strip %}
+
+<tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+    <td style="padding-top:10px; padding-bottom:10px; vertical-align: top ;max-width:580px;width:100%; display:block;height:5px;text-align:center;background-color:#ffffff; ">
+        <p style="display:inline-block;vertical-align:top;width:100%;max-width:580px;margin:0 auto;border-bottom-width:1px;border-style:solid;border-bottom-color:#e7e6ec;border-top:none;border-right:none;border-left:none;;height:2px;">
+            &nbsp;
+        </p>
+    </td>
+</tr>
+
+{% endif %}
+<tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+    <td style="padding-top:10px; padding-bottom:10px; vertical-align: top;max-width:580px; display:block;text-align:center;">
+        <p style="text-align:left;font-family: Open Sans Light , Arial, Helvetica, sans-serif;font-size:14px;text-decoration:none solid {{ font_color|default:"rgb(102, 102, 102)" }};color:{{ font_color|default:"rgb(102, 102, 102)" }};line-height:140%;display: block !important;">
+        {% if footer_txt %}
+            {{ footer_txt }}
+        {% else %}
+            {% blocktrans %}The message was generated automatically, please do not reply to it.{% endblocktrans %}
+        {% endif %}
+        </p>
+    </td>
+</tr>

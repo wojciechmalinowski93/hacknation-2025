@@ -1,0 +1,110 @@
+{% extends "admin/change_form.html" %}
+{% load static core_tags %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/dataset_change_form.css' %}" media="all">
+{% endblock extrastyle %}
+
+{% block extrajs %}
+    {{ block.super }}
+    {% include 'admin/datasets/licenses/licenses_script.html' %}
+    {% include 'admin/datasets/extra.html' %}
+
+    <script>
+        var $updateNotificationRecipientEmailControlGroup = $("div.control-group.form-row.field-update_notification_recipient_email");
+        var $updateNotificationRecipientEmailHelpInline = $updateNotificationRecipientEmailControlGroup.find('span.help-inline');
+        var $updateFrequency = $("div.field-update_frequency");
+        var $updateFrequencySelect = $updateFrequency.find('select#id_update_frequency');
+        var frequencyNotifications = {
+            weekly: {value: 1, text: 'dzień'},
+            monthly: {value: 3, text: 'dni'},
+            quarterly: {value: 7, text: 'dni'},
+            everyHalfYear: {value: 7, text: 'dni'},
+            yearly: {value: 7, text: 'dni'}
+        };
+        var $updateNotificationRecipientEmailInput = $("input#id_update_notification_recipient_email");
+
+        {% if user.is_superuser %}
+            var $updateNotificationFrequencyInput = $("input#id_update_notification_frequency");
+            var $isUpdateNotificationEnabledControlGroup = $("div.control-group.form-row.field-is_update_notification_enabled");
+            var $updateNotificationFrequencyControlGroup = $("div.control-group.form-row.field-update_notification_frequency");
+
+            function toggleFrequencyFields(updateFrequency, initial=false) {
+                var frequencyNotification = frequencyNotifications[updateFrequency];
+                if (frequencyNotification === undefined) {
+                    $isUpdateNotificationEnabledControlGroup.css('display', 'none');
+                    $updateNotificationFrequencyControlGroup.css('display', 'none');
+                    if (!initial) {
+                        $updateNotificationFrequencyInput.val('');
+                    }
+                } else {
+                    $isUpdateNotificationEnabledControlGroup.css('display', 'inline');
+                    $updateNotificationFrequencyControlGroup.css('display', 'inline');
+                    if (!initial || $updateNotificationFrequencyInput.val() === '') {
+                        $updateNotificationFrequencyInput.val(frequencyNotification.value);
+                    }
+                }
+            }
+
+            toggleFrequencyFields($updateFrequencySelect.val(), true);
+            if($updateNotificationRecipientEmailInput.val() === "") {
+                $updateNotificationRecipientEmailInput.val("{{ user.email }}");
+            }
+
+            $updateFrequencySelect.change(function(){
+                toggleFrequencyFields($(this).val());
+            });
+
+            function showEmailHelpInline() {
+                $updateNotificationRecipientEmailHelpInline.css('display', 'block');
+            }
+
+            $updateNotificationRecipientEmailInput.change(showEmailHelpInline).keyup(showEmailHelpInline);
+
+        {% else %}
+            $updateNotificationRecipientEmailInput.val("{{ user.email }}");
+            $updateNotificationRecipientEmailInput.prop('readonly', true);
+            $updateFrequency.find('.controls').append('<span class="help-inline" style="margin-top: 5px;"></span>');
+            var $updateFrequencyHelp = $updateFrequency.find('.help-inline');
+
+            function updateUpdateFrequencyHelp(updateFrequency) {
+                var frequencyNotification = frequencyNotifications[updateFrequency];
+                var alertText = "";
+                if (frequencyNotification !== undefined) {
+                    var daysText = `${frequencyNotification.value} ${frequencyNotification.text}`;
+                    alertText = `Powiadomienie o zbliżającym się terminie aktualizacji danych zostanie wysłane ${daysText} przed datą aktualizacji, jeżeli chcesz zmienić dzień wysyłki powiadomienia skontaktuj się z administratorem`;
+                }
+                $updateFrequencyHelp.text(alertText);
+            }
+
+            updateUpdateFrequencyHelp($updateFrequencySelect.val());
+            $updateFrequencySelect.change(function(){
+                updateUpdateFrequencyHelp($(this).val());
+            });
+        {% endif %}
+    $('input[name="has_dynamic_data"]').click(function(){
+      $('input[name="has_dynamic_data"]').prop('checked', false);
+      $(this).prop('checked', true);
+    });
+    $('input[name="has_high_value_data"]').click(function(){
+      $('input[name="has_high_value_data"]').prop('checked', false);
+      $(this).prop('checked', true);
+    });
+    $('input[name="has_high_value_data_from_ec_list"]').click(function(){
+      $('input[name="has_high_value_data_from_ec_list"]').prop('checked', false);
+      $(this).prop('checked', true);
+    });
+    $('input[name="has_research_data"]').click(function(){
+      $('input[name="has_research_data"]').prop('checked', false);
+      $(this).prop('checked', true);
+    });
+    </script>
+{% endblock extrajs %}
+
+{% block content %}
+    {{ block.super }}
+    <form id="resources_actions_form" method="post" action="{% url 'admin:resources_resource_changelist' %}" novalidate>
+    {% csrf_token %}
+    </form>
+{% endblock %}

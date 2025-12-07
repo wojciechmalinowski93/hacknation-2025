@@ -1,0 +1,75 @@
+# Usage:
+# docker compose -f docker-compose.local.yml run mcod-local-tests mcod/guides/tests/test_api.py --no-cov
+
+include:
+  - docker-compose.yml  # services like database, redis
+
+services:
+  mcod-local-tests: &local-container-no-service
+    container_name: mcod-tests
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: docker/tests/Dockerfile
+    environment: &local-container-env
+      PYTHONUNBUFFERED: 1
+      PYTHONDONTWRITEBYTECODE: 1
+      ENVIRONMENT: test
+      TEST_DEBUG: "yes"
+      ALLOWED_HOSTS: "*"
+      BASE_URL: http://mcod.local
+      API_URL: https://api.mcod.local
+      ADMIN_URL: http://admin.mcod.local
+      CMS_URL: http://cms.mcod.local
+      API_URL_INTERNAL: https://api.mcod.local
+      NO_REPLY_EMAIL: env@test.local
+      DEBUG: yes
+      # services
+      POSTGRES_PASSWORD: mcod
+      POSTGRES_USER: mcod
+      POSTGRES_DB: mcod
+      POSTGRES_PORT: 5432
+      POSTGRES_HOST_TYPE: docker
+      POSTGRES_HOST: mcod-db
+      REDIS_URL: redis://mcod-redis:6379
+      ELASTICSEARCH_HOSTS: mcod-elasticsearch:9200
+      RABBITMQ_HOST: mcod-rabbitmq:5672
+      ES_JAVA_OPTS: "-Xms2048m -Xmx2048m"
+      EMAIL_HOST: mcod-smtp
+      EMAIL_PORT: 1025
+      EMAIL_USE_TLS: 0
+      EMAIL_HOST_USER: test@mcod.local
+      EMAIL_HOST_PASSWORD: password
+      SPARQL_USER: admin
+      ADMIN_PASSWORD: Britenet.1
+      FUSEKI_DATASET_1: ds
+      FUSEKI_URL: http://mcod-rdfdb:3030
+      ALLOWED_MINIMUM_FREE_GB: 1
+      DISCOURSE_FORUM_ENABLED: false
+      DISCOURSE_USERNAME: user
+      DISCOURSE_PASSWORD: bitnami123
+      # tests specific
+      DATASET_ARCHIVE_FILES_TASK_DELAY: 1
+    volumes:
+      - ./docker/tests:/usr/src/mcod_backend/tests
+      - ./pytest.ini:/usr/src/mcod_backend/pytest.ini
+      - ./.flake8:/usr/src/mcod_backend/.flake8
+      - ./.coveragerc:/usr/src/mcod_backend/.coveragerc
+      - ./mcod:/usr/src/mcod_backend/mcod
+      - ./translations:/usr/src/mcod_backend/translations
+      - ./data:/usr/src/mcod_backend/data
+      - ./test-data:/usr/src/mcod_backend/test-data
+      - ./database:/usr/src/mcod_backend/database
+    entrypoint:
+      - "/usr/src/mcod_backend/tests/tests-entrypoint.sh"
+    depends_on:
+      - mcod-db
+      - mcod-redis
+      - mcod-elasticsearch
+      - mcod-rdfdb
+      - mcod-smtp
+      - mcod-rabbitmq
+    networks:
+      backend:
+    mem_limit: 2000m
+    mem_swappiness: 0

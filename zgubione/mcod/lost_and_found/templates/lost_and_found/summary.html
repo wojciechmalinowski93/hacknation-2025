@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Potwierdzenie zgłoszenia</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; text-align: center; }
+        .card { background: white; border: 1px solid #ddd; padding: 30px; max-width: 600px; margin: 0 auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #0052a5; margin-bottom: 25px; }
+        .data-row { display: flex; justify-content: space-between; margin: 12px 0; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        .label { font-weight: bold; color: #555; }
+        .actions { margin-top: 30px; display: flex; justify-content: center; gap: 15px; }
+        
+        .btn { display: inline-block; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; transition: background 0.3s; }
+        
+        .btn-primary { background: #0052a5; color: white; }
+        .btn-primary:hover { background: #003d7a; }
+        
+        .btn-secondary { background: #6c757d; color: white; }
+        .btn-secondary:hover { background: #5a6268; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>✅ Zgłoszenie przyjęte!</h1>
+        <p>Poniższe dane zostały dodane do bazy rzeczy znalezionych.</p>
+        
+        <div class="data-row">
+            <span class="label">Nazwa:</span>
+            <span>{{ item.name }}</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Kategoria:</span>
+            <span>{{ item.get_category_display }}</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Miejsce:</span>
+            <span>{{ item.location_city }}</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Data znalezienia:</span>
+            <span>{{ item.date_found }}</span>
+        </div>
+        <div class="actions">
+            <a href="{% url 'admin:lost_and_found_item_changelist' %}" class="btn btn-secondary">
+                ← Wróć do listy
+            </a>
+
+            <a href="{% url 'admin:lost_and_found_item_add' %}" class="btn btn-primary">
+                Dodaj kolejne zgłoszenie
+            </a>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

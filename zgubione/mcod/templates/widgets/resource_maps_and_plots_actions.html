@@ -1,0 +1,16 @@
+{% load i18n %}
+<div id="widget_actions">
+    <button id="map_save" type="submit" class="btn btn-info tab-button" name="_map_save">
+        {% trans 'Save the map definition' %}
+    </button>
+    {% if original.map_preview %}
+        <a id="map_preview" class="btn tab-button" target="_blank" href="{{ original.map_preview }}">
+            {% trans 'Map preview' %}
+        </a>
+    {% endif %}
+    {% if original.chart_preview %}
+        <a id="chart_preview" class="btn tab-button" target="_blank" href="{{ original.chart_preview }}">
+            {% trans 'Chart definition and preview' %}
+        </a>
+    {% endif %}
+</div>

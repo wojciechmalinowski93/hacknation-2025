@@ -1,0 +1,51 @@
+{% load i18n static %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>{% trans 'Activating the newsletter of dane.gov.pl portal' %}</title>
+</head>
+<body>
+<div style="width:650px; margin:auto;">
+   <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+      <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+         <td align="left" style="padding-top:10px; padding-bottom:10px; max-width:580px;border-collapse: collapse;text-align:left;vertical-align:middle">
+            <p style="text-align:left;font-size:16px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(0, 0, 0);color:rgb(0, 0, 0);line-height:140%;display: block !important;">
+               {% trans 'Dear Sir or Madam,' %}
+               <br/><br/>
+               {% trans 'Thank you for your interest in the newsletter of dane.gov.pl. To confirm the subscription, click the link:' %}
+               <br/><br/>
+               <a href="{{ url }}" target="_blank" nh-safe-redirect="" data-saferedirecturl="*" style="text-align:left;font-size:16px; font-weight: bolder; font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(102, 102, 102);color:rgb(102, 102, 102);line-height:140%;color: #1b86ff;text-decoration: underline;">
+                  {{ url }}
+               </a>
+               <br/><br/>
+               {% trans 'The link above will be active for 24 hours.' %}
+            </p>
+         </td>
+      </tr>
+   </table>
+
+   <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+      <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+         <td style="padding-top:10px; padding-bottom:10px; vertical-align: top ;max-width:580px;width:100%; display:block;height:5px;text-align:center;background-color:#ffffff; ">
+            <p style="display:inline-block;vertical-align:top;width:100%;max-width:580px;margin:0 auto;border-bottom-width:1px;border-style:solid;border-bottom-color:#e7e6ec;border-top:none;border-right:none;border-left:none;;height:2px;">&nbsp;</p>
+         </td>
+      </tr>
+      <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+         <td style="padding-top:10px; padding-bottom:10px; vertical-align: top;max-width:580px; display:block;text-align:center; ">
+            <p style="text-align:left;font-size:14px;font-family: Open Sans Light , Arial, Helvetica, sans-serif;text-decoration:none solid rgb(0, 0, 0);color:rgb(0, 0, 0);line-height:140%;display: block !important;">{% trans 'The message has been generated automatically.' %}<br>{% trans 'Please do not reply.' %}</p>
+         </td>
+      </tr>
+   </table>
+
+   <table border="0" cellspacing="0" cellpadding="0" align="center" style="width:100%;display:block;margin:0 auto;border:none;max-width:580px;table-layout:fixed;">
+      <tr style="max-width:580px; padding-top:10px; padding-bottom:10px;">
+         <td style="padding-top:10px; padding-bottom:10px; width:100%; overflow:hidden; float:left;" >
+            <img src="{{ host }}{% static 'mails/loga.png' %}" alt="{% trans 'Download images' %}" >
+         </td>
+      </tr>
+   </table>
+</div>
+</body>
+</html>

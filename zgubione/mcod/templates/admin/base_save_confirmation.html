@@ -1,0 +1,51 @@
+{% extends "admin/delete_confirmation.html" %}
+
+{% load admin_urls i18n %}
+
+
+{% block title %}
+    {% if title == _('Are you sure?') %}
+        {% trans 'Warning!' %}
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block content_title %}
+    {% if title == _('Are you sure?') %}
+        <h2 class="content-title">{% trans 'Warning!' %}</h2>
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div id="save_dga_confirmation" class="alert alert-block alert-error">
+        {% block delete_info %}
+            {% block confirmation_warning %}
+                <!-- Warning and details -->
+            {% endblock %}
+        {% endblock %}
+        <form method="post">{% csrf_token %}
+            <div>
+                <input type="hidden" name="confirm_save" value="True">
+                <input type="hidden" name="file_ref" value="{{ file_ref }}">
+                {% for key, value in post_data.items %}
+                    {% if key != 'csrfmiddlewaretoken' %}
+                        <input type="hidden" name="{{ key }}" value="{{ value }}">
+                    {% endif %}
+                {% endfor %}
+
+                {% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1">{% endif %}
+                {% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}">{% endif %}
+                {% block delete_buttons %}
+                    {% block confirmation_buttons %}
+                        <br>
+                        <input type="submit" value="{% blocktrans %}Yes, save resource{% endblocktrans %}" class="btn btn-danger">
+                        <a href="#" onclick="window.history.back()" class="btn btn-success cancel-link">{% trans "No, stop the operation" %}</a>
+                    {% endblock %}
+                {% endblock %}
+            </div>
+        </form>
+    </div>
+{% endblock %}

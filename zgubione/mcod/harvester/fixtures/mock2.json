@@ -1,0 +1,69 @@
+{
+  "help": "https://ckan.multimediagdansk.pl/api/3/action/help_show?name=current_package_list_with_resources",
+  "success": true,
+  "result": [
+        {
+      "license_title": "Creative Commons Attribution",
+      "maintainer": "Wydzia\u0142 Komunikacji",
+      "relationships_as_object": [],
+      "private": false,
+      "maintainer_email": "",
+      "num_tags": 1,
+      "id": "6c152707-4c20-445b-bcc8-b4746897a6a5",
+      "metadata_created": "2016-06-03T10:39:56.751447",
+      "metadata_modified": "2017-11-23T14:40:38.071937",
+      "author": "",
+      "author_email": "wk@gdansk.gda.pl",
+      "state": "active",
+      "version": "",
+      "creator_user_id": "376cc6a0-e600-47c4-8ac2-41276a9d361c",
+      "type": "dataset",
+      "resources": [
+      ],
+      "num_resources": 1,
+      "tags": [
+        {
+          "vocabulary_id": null,
+          "state": "active",
+          "display_name": "transport",
+          "id": "a9454272-aacd-4d92-b549-232261a6edad",
+          "name": "transport"
+        }
+      ],
+      "groups": [
+        {
+          "display_name": "Transport",
+          "description": "",
+          "image_display_url": "https://ckan.multimediagdansk.pl/uploads/group/2018-10-12-104913.045133transportred.png",
+          "title": "Transport",
+          "id": "736fbc44-c2cd-43be-9b96-3c0b51d14c02",
+          "name": "transport"
+        }
+      ],
+      "license_id": "cc-by",
+      "relationships_as_subject": [],
+      "organization": {
+        "description": "Urz\u0105d Miejski w Gda\u0144sku",
+        "created": "2015-09-24T13:22:20.434398",
+        "title": "UM Gda\u0144sk",
+        "name": "um-gdansk",
+        "is_organization": true,
+        "state": "active",
+        "image_url": "2016-02-11-125757.655661Gdansk.png",
+        "revision_id": "56b9dd95-67fe-456e-be29-672f72794b8d",
+        "type": "organization",
+        "id": "29f756be-8188-4563-b028-52a444581345",
+        "approval_status": "approved"
+      },
+      "name": "indywidualne-tablice-rejestracyjne",
+      "isopen": true,
+      "url": "",
+      "notes": "Informacje dotycz\u0105ce indywidualnych tablic rejestracyjnych zarejestrowanych w Gda\u0144sku od 2010 roku.<br><br>\r\nWizualizacja danych dost\u0119pna jest pod adresem:<br> \r\n<a href=\"http://www.gdansk.pl/indywidualne-tablice-rejestracyjne\">http://www.gdansk.pl/indywidualne-tablice-rejestracyjne</a> ",
+      "owner_org": "29f756be-8188-4563-b028-52a444581345",
+      "extras": [],
+      "license_url": "http://www.opendefinition.org/licenses/cc-by",
+      "title": "Indywidualne tablice rejestracyjne",
+      "revision_id": "38c7869b-f389-4898-b7c1-7d724eada240"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{% load i18n static admin_modify suit_tags core_tags admin_urls %}
+{% load url from suit_compat %}
+
+<div class="btn-group" data-toggle="buttons-radio">
+    <button id='{{ widget.name }}-tf' type="button"
+            class="btn btn-mini{% if widget.value == 'file' %} active{% endif %} js-switch-to-file"
+            autocomplete="off">{% blocktrans %}File from disk{% endblocktrans %} {{ new }}
+    </button>
+    <button id='{{ widget.name }}-tu' type="button"
+            class="btn btn-mini{% if widget.value == 'link' %} active{% endif %} js-switch-to-link"
+            autocomplete="off">{% blocktrans %}URL address{% endblocktrans %}
+    </button>
+    <input type="{{ widget.type }}" name="{{ widget.name }}"{% if widget.value != None %}
+           value="{{ widget.value|stringformat:'s' }}"{% endif %}{% include "django/forms/widgets/attrs.html" %}
+           class="js-switcher"/>
+</div>
+
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            $('body').off('form-ready').on('form-ready', function (event, form) {
+                let file_field = null;
+                let url_field = null;
+
+                let root = form;
+                let switcher = form.find('.js-switcher');
+
+                let url_switch = form.find('.js-switch-to-link');
+                url_switch.off('click').on('click', function (ev) {
+                    let inline_form = $(ev.target).closest('fieldset.module');
+                    inline_form.find('.field-file').hide();
+                    inline_form.find('.field-data_date').hide();
+                    inline_form.find('.field-link').show();
+                    switcher.val('link');
+                });
+
+                let file_switch = form.find('.js-switch-to-file');
+                file_switch.off('click').on('click', function (ev) {
+                    let inline_form = $(ev.target).closest('fieldset.module');
+                    inline_form.find('.field-link').hide();
+                    inline_form.find('.field-file').show();
+                    inline_form.find('.field-data_date').show();
+                    switcher.val('file');
+                });
+
+                form.off('file-field-rendered').on('file-field-rendered', function (ev, field) {
+                    file_field = field;
+                    setupSwitcher();
+                });
+
+                form.off('url-field-rendered').on('url-field-rendered', function (ev, field) {
+                    url_field = field;
+                    setupSwitcher();
+                });
+
+                let setupSwitcher = function () {
+                    if (root && switcher && file_field && url_field) {
+                        let value = switcher.val();
+                        if (!value) {
+                            value = 'file';
+                        }
+                        let sw = root.find('.js-switch-to-' + value);
+                        sw.trigger('click');
+                    }
+                };
+                $('body').trigger('switcher-ready', [root, switcher]);
+            });
+        });
+    }(django.jQuery));
+</script>

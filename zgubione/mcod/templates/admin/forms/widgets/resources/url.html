@@ -1,0 +1,13 @@
+<input type="{{ widget.type }}" name="{{ widget.name }}"{% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% endif %}{% include "django/forms/widgets/attrs.html" %} class="js-switcher-link" />
+
+<script>
+    (function ($) {
+        $(document).ready(function ($) {
+            $('body').bind('switcher-ready', function(event, form, switcher) {
+                var me = form.find('.field-link');
+                switcher.trigger('url-field-rendered',[me]);
+            });
+        });
+
+    }(django.jQuery));
+</script>

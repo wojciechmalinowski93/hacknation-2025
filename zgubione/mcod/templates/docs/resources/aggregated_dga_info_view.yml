@@ -1,0 +1,16 @@
+{% load i18n %}
+---
+tags:
+   - API Endpoints
+summary: Returns info about Aggregated DGA resource
+description: |
+  {% spaceless %}
+      <p>Returns data about Aggregated DGA resource - especially resource_id and dataset_id.</p>
+  {% endspaceless %}
+responses:
+  200:
+    description: valid response in jsonapi format
+    content:
+      application/vnd.api+json:
+        schema:
+          $ref: '#/components/schemas/AggregatedDGAInfo'

@@ -1,0 +1,5 @@
+{% load i18n wagtailadmin_tags %}
+{% trans "Add an anchor link" as anchor_str %}
+{% trans 'Insert anchor' as anchor_submit %}
+{% include "wagtailadmin/shared/header.html" with title=anchor_str %}
+{% include "wagtailadmin/includes/form_div.html" with link_type_label='anchor' action_url='wagtailadmin_choose_page_titled_anchor_link' submit_text=anchor_submit %}

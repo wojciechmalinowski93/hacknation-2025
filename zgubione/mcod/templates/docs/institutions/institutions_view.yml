@@ -1,0 +1,21 @@
+{% load i18n %}
+---
+summary: {% trans "Returns list of institutions" %}
+security: []
+tags:
+    - {% trans "API Endpoints" %}
+description: |
+  {% spaceless %}
+      <p>Gives the ability to browse, filter and search for institutions.</p>
+      {% include "docs/institutions/obj_description.html" %}
+  {% endspaceless %}
+
+parameters:
+    schema: InstitutionApiSearchRequest
+responses:
+    200:
+        description: {% trans "Valid response in JSONAPI format"%}
+        content:
+            application/vnd.api+json:
+                schema:
+                    $ref: '#/components/schemas/Institutions'

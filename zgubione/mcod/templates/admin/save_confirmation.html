@@ -1,0 +1,8 @@
+{% extends "admin/base_save_confirmation.html" %}
+
+{% load admin_urls i18n %}
+
+{% block confirmation_warning %}
+    <p class="lead">{% trans "Are you sure you want this to be an up-to-date list of protected data?" %}</p>
+    <p>{% blocktrans with title=post_data.title %}If so, the data from the resource '{{ current_dga_resource_title }}' will be removed from the master list of protected data. Data from resource '{{ title }}' will be added to the master list of protected data. Only one published resource can have a designation with protected data.{% endblocktrans %}</p>
+{% endblock %}
