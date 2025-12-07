@@ -63,8 +63,8 @@ RUN chmod +x /usr/local/bin/start-api
 COPY ./docker/app/start-django.sh /usr/local/bin/start-django
 RUN chmod +x /usr/local/bin/start-django
 
-COPY ./docker/app/start-celery.sh /usr/local/bin/start-celery
-RUN chmod +x /usr/local/bin/start-celery
+#COPY ./docker/app/start-celery.sh /usr/local/bin/start-celery
+#RUN chmod +x /usr/local/bin/start-celery
 
 ADD . /usr/src/mcod_backend
 RUN python manage.py compilemessages --settings mcod.settings.test -v 3
