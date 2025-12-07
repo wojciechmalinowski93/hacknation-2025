@@ -1,0 +1,1 @@
+Projekt zawiera kopię portalu Otwarte Dane z wszytym w niego prototypem mechanizmu / modułu poświęconego wprowadzaniu danych o rzeczach znalezionych. Główna część mechanizmu znajduje się w zgubione/mcod/lost_and_found 
