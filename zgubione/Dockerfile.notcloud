@@ -18,9 +18,6 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     apt-transport-https \
     lsb-release \
     ca-certificates \
-    firefox-esr \
-    ffmpeg \
-    unrar \
     libxmlsec1-dev
 
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
